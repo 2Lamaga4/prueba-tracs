@@ -1,0 +1,254 @@
+/*
+css de
+parametrizacion_cuneta.php
+(cuenta.php)
+*/ 
+#modulos img{
+	height:55px;
+	width:300px;
+}
+#subtitulo{
+	height:35px;
+	left:1px;
+	margin-left:-565px;
+	position:absolute;
+	top:5px;
+	width:350px;
+	z-index:8;
+}
+#utilidades{
+	left:811px;
+	width:100px;
+	height:20px;
+	top:90px;
+}
+/*--------------estructura--------------*/
+.tree {
+    margin: 0px;
+	padding: 0 0 0 20px;
+}
+.tree div {
+	position: relative; 
+	margin-left: -15px;
+	list-style: none;
+	padding: 0px;
+}
+div input {
+	position: absolute;
+	left: 0;
+	margin-left: 0;
+	z-index: 2;
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+	top: 0;
+}
+.tree div input + article > div {
+	height: 0;
+	overflow: hidden;
+	margin-left: -14px !important;
+	padding-left: 1px;
+}
+.tree div label {
+	cursor: pointer;
+	padding-left: 10px;
+}
+
+.tree div input:checked + article {
+	margin: -1.463em 0 0 -44px; 
+	padding: 1.563em 0 0 75px;
+	height: auto;
+}
+.tree div input:checked + article > div {
+	height: auto;
+	margin: 0px;
+}
+#N1{
+	bottom: 0;
+	margin: 0;
+	padding:0;
+	padding-bottom: 24px;
+	position: relative;
+	top:0px;
+}
+#N2{
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	margin-left:23px;
+	margin-top: -41px;
+	margin-bottom: 8px;
+	padding: 0px;
+	padding-top: 10px;
+	position: relative;
+	top:32px;
+}
+#N3{
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	margin-left:17px;
+	margin-top: -20px;
+	margin-bottom: 8px;
+	padding: 0px;
+	padding-bottom:14px;
+	position: relative;
+	top:22px;
+}
+#N4{
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	margin-left:22px;
+	margin-top: -30px;
+	margin-bottom:13px;
+	padding: 0px;
+	position: relative;
+	top:10px;
+}
+#N5{
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	margin-left:13px;
+	margin-top: -27px;
+	margin-bottom:-10px;
+	padding:0px;
+	padding-top: 12px;
+	padding-bottom: 5px;
+	position: relative;
+	top:-6px;
+}
+/*-------------------------niveles----------------*/
+
+.td_nivel1{
+	font-size: 16px; 
+	font-family: Verdana, Geneva, sans-serif;
+	height:25px;
+	margin:0px 50px;
+	padding-bottom:-2px;
+	padding-left:0px;
+	padding-top:5px;
+	width:797px;
+}
+.td_nivel2{
+	font-family: Verdana, Geneva, sans-serif; 
+	font-size: 12px;
+	height:20px;
+	left:41px;
+	position:absolute;
+	padding-bottom:0px;
+	padding-left:12px;
+	padding-top:4px;
+	width:785px;
+}
+.td_nivel3{
+	font-family: Verdana, Geneva, sans-serif; 
+	font-size: 12px;
+	height:20px;
+	position:relative;
+	padding-top: 3px;
+	left:53px;
+	width:765px;
+}
+.td_nivel4{
+	font: 12px Verdana, Geneva, sans-serif;
+	height:20px;
+	position:relative;
+	padding-top: 4px;
+	left:44px;
+	width:758px;
+}
+.tr_tabla_interna{
+	font: 12px Verdana, Geneva, sans-serif;
+	height:20px;
+	position:relative;
+	left:80px;
+	text-align: left;
+	width:486px;
+}
+/*----------------mas y menos ubicacion-----------------*/
+#selectEventTree_0{
+	position:absolute;
+	top:6px;
+	left:815px;
+}
+#selectEventTree_1{
+	position:relative;
+	margin-left:692px;
+	top:3px;
+}
+#selectEventTree_2{
+	margin:0px;
+	margin-left:688px;
+	padding: 0;
+	position:relative;
+	top:-21px;
+}
+#selectEventTree_3{
+	position:relative;
+	margin-left:680px;
+	top:-22px;
+}
+/*-------------------eliminar modificar---------*/
+.boton_modificar_int{
+	top: 3px;	
+	margin-left:540px;
+}
+.boton_eliminar_int{
+	position:relative;
+	top:3px;
+	position: absolute;	
+	margin-left:630px;
+}
+.mo4,
+.mo3{
+	left: 0;
+	margin-left:523px;
+}
+.mo5{
+	left: 0;
+	margin-left:488px;
+}
+.eli4,
+.eli3{
+	left: 0;
+	margin-left:613px;
+}
+.eli5{
+	left: 0;
+	margin-left:578px;
+}
+/*---------boton mas y menos---------------*/
+input[type="checkbox"]{
+    /*border-radius*/
+	-webkit-border-radius:1px;
+	   -moz-border-radius:1px;
+	        border-radius:1px;
+	-webkit-appearance:none;
+	/*transition*/
+	-webkit-transition:all 500ms;
+	   -moz-transition:all 500ms;
+	     -o-transition:all 500ms;
+	        transition:all 500ms;
+	background: url(../../images/btn_mas.jpg);
+	cursor:pointer;
+	height:18px;
+	position:relative;
+	margin:0px;
+	padding: 0;
+	width:24px;
+}
+input[type="checkbox"]:checked{
+/*transform*/
+	-webkit-transform:scale(-1, 1);
+	   -moz-transform:scale(-1, 1);
+	    -ms-transform:scale(-1, 1);
+	     -o-transform:scale(-1, 1);
+	        transform:scale(-1, 1);
+	background:url(../../images/btn_menos.jpg);
+}
+#t3 input[type="checkbox"]{
+	width: 0;
+	height: 0;
+}

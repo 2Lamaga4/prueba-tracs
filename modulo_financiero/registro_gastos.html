@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
+<title>Cassius - software de propiedad horizontal</title>
+<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<style type="text/css">
+#subtitulo {
+	position:absolute;
+	left:50%;
+	top:95px;
+	width:350px;
+	height:35px;
+	z-index:8;
+	margin-left:-150px;
+}
+</style>
+</head>
+<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
+<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
+</head>
+
+<body class="interna2" onload="MM_preloadImages('images/btn_param_gastos.jpg')" OnContextMenu="return false">
+<div id="salir2">
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='administracion_home.html'"/>
+</div>
+<div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
+<div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
+<div id="fondo_home_administracion"></div>
+<div id="contenido_tabla">
+  <table width="900" border="0" align="center" cellpadding="0" cellspacing="1">
+    <tr>
+      <td width="810" height="20" colspan="3"><table width="900" border="0" align="center" cellpadding="0" cellspacing="2">
+        <tr>
+          <td height="40"><table width="900" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="481" height="70" valign="top"><a href="gastos.html"><img src="images/btn_param_gastos_down.jpg" name="param_gastos" width="481" height="46" border="0" id="param_gastos" onmouseover="MM_swapImage('param_gastos','','images/btn_param_gastos.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+              <td width="419" valign="top"><img src="images/btn_reg_gastos_active.jpg" name="reg_gastos" width="477" height="46" border="0" id="reg_gastos" /></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="40" bgcolor="#EAEAEA"><table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="72" height="35" class="texto_azul" >&nbsp;</td>
+              <td width="96" class="texto_azul" align="left"><strong>Categoría:</strong></td>
+              <td width="211" class="texto_azul" align="left"><select name="categoria" class="textarea_redondo2" id="categoria" style="width:200px; height:27px;">
+                <option>--</option>
+                <option>Servicios publicos</option>
+                <option>Honorarios</option>
+                <option>Asesorias</option>
+                <option>Otros</option>
+              </select></td>
+              <td width="89" class="texto_azul"align="left"><strong>Tercero:</strong></td>
+              <td width="332" class="texto_azul" align="left"><select name="tercero" class="textarea_redondo2" id="tercero" style="width:300px; height:27px;">
+                <option>--</option>
+                <option>Codensa</option>
+                <option>EEAA</option>
+                <option>Contaduria</option>
+                <option>Revisor Fiscal</option>
+              </select></td>
+            </tr>
+          </table></td>
+          </tr>
+        <tr>
+          <td height="40" bgcolor="#E4EEF9"><table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="72" height="35" class="texto_azul" >&nbsp;</td>
+              <td width="96" class="texto_azul" align="left"><strong>Fecha:</strong></td>
+              <td width="211" class="texto_azul" align="left"><select name="categoria2" class="textarea_redondo2" id="categoria2" style="width:50px; height:27px;">
+                <option>--</option>
+                <option>11</option>
+              </select>
+                <select name="categoria3" class="textarea_redondo2" id="categoria3" style="width:50px; height:27px;">
+                  <option>--</option>
+                  <option>11</option>
+                </select>
+                <select name="categoria4" class="textarea_redondo2" id="categoria4" style="width:80px; height:27px;">
+                  <option>--</option>
+                  <option>2012</option>
+                </select></td>
+              <td width="89" class="texto_azul"align="left"><strong>Valor:</strong></td>
+              <td width="332" class="texto_azul" align="left"><input name="nombres3" type="text" class="textarea_redondo2" id="nombres3" style="width:100px;"/></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="20" colspan="3"><img src="images/line2.gif" width="895" height="1" /></td>
+    </tr>
+    <tr>
+      <td height="40" colspan="3" align="center"><input name="agregar_propietario" type="button" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" onclick="location.href='administracion_home.html'"/></td>
+    </tr>
+  </table>
+</div>
+<div class="titulos" id="subtitulo">&gt; Gastos</div>
+</body>
+</html>

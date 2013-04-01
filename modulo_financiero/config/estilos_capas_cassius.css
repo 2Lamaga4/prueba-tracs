@@ -1,0 +1,240 @@
+/*--------------------HOME------------------------*/
+
+#logo {
+	position:absolute;
+	left:50%;
+	top:53px;
+	width:590px;
+	height:215px;
+	z-index:1;
+	margin-left:-450px;
+}
+#logueo {
+	position:absolute;
+	left:50%;
+	top:313px;
+	width:246px;
+	height:117px;
+	z-index:2;
+	margin-left:115px;
+}
+
+/*---------------------MENU HOME----------------------*/
+
+#logo_small2 {
+	position:absolute;
+	left:50%;
+	top:-20px;
+	width:293px;
+	height:103px;
+	z-index:2;
+	margin-left:-500px;
+}
+#items {
+	position:absolute;
+	left:50%;
+	top:95px;
+	width:822px;
+	height:504px;
+	z-index:1;
+	background-image: url(../images/items.png);
+	margin-left:-411px;
+	text-align: center;
+}
+
+#item_vigilante {
+	position:absolute;
+	left:50%;
+	top:95px;
+	width:380px;
+	height:258px;
+	z-index:1;
+	background-image: url(../images/item_vigilante.png);
+	margin-left:-190px;
+	text-align: center;
+}
+#salir {
+	position:absolute;
+	left:50%;
+	top:27px;
+	width:245px;
+	height:55px;
+	z-index:3;
+	margin-left:155px;
+}
+
+/*---------------------VIVIENDAS----------------------*/
+
+#salir2 {
+	position:absolute;
+	left:50%;
+	top:24px;
+	width:104px;
+	height:37px;
+	z-index:5;
+	margin-left:-180px;
+}
+
+#logo_small3 {
+	position:absolute;
+	left:50%;
+	top:5px;
+	width:322px;
+	height:65px;
+	z-index:1;
+	margin-left:-500px;
+}
+#modulos {
+	position:absolute;
+	left:50%;
+	top:9px;
+	width:290px;
+	height:67px;
+	z-index:2;
+	margin-left:200px;
+}
+
+#fondo_contenido {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_vivienda.png);
+	margin-left:-497px;
+}
+
+#utilidades {
+	position:absolute;
+	left:50%;
+	top:90px;
+	width:444px;
+	height:38px;
+	z-index:6;
+	margin-left:60px;
+}
+#contenido_tabla {
+	position:absolute;
+	left:50%;
+	top:143px;
+	width:951px;
+	height:450px;
+	z-index:7;
+	margin-left:-475px;
+	text-align: center;
+}
+
+#contenido_tabla {
+	position:absolute;
+	left:50%;
+	top:143px;
+	width:951px;
+	height:450px;
+	z-index:7;
+	margin-left:-475px;
+	text-align: center;
+}
+
+#contenido_tabla2 {
+	position:absolute;
+	left:50%;
+	top:143px;
+	width:972px;
+	height:450px;
+	z-index:7;
+	margin-left:-484px;
+	text-align: center;
+	overflow:auto;
+}
+
+/*---------------------RESIDENTES----------------------*/
+
+#fondo_contenido_residentes {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_residentes.png);
+	margin-left:-497px;
+}
+
+/*---------------------ENTRADA VISITANTES----------------------*/
+
+#fondo_entrada_visitantes {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_entrada_visitantes.png);
+	margin-left:-497px;
+}
+
+/*---------------------SALIDA VISITANTES----------------------*/
+
+#fondo_salida_visitantes {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_salida_visitantes.png);
+	margin-left:-497px;
+}
+
+/*---------------------HISTORIAL VISITANTES----------------------*/
+
+#fondo_historial_visitantes {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_historial_visitantes.png);
+	margin-left:-497px;
+}
+
+/*---------------------CONTABILIDAD----------------------*/
+
+#fondo_home_contabilidad {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_contabilidad.png);
+	margin-left:-497px;
+}
+
+/*---------------------ADMINISTRACION----------------------*/
+
+#fondo_home_administracion {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:100%;
+	z-index:3;
+	background-image: url(../images/fondo_administracion.png);
+	margin-left:-497px;
+}
+
+/*---------------------CONFIGURACION----------------------*/
+
+#fondo_home_configuracion {
+	position:absolute;
+	left:50%;
+	top:0px;
+	width:995px;
+	height:105%;
+	z-index:3;
+	background-image: url(../images/fondo_configuracion.png);
+	margin-left:-497px;
+}

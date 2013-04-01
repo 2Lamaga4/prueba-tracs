@@ -1,0 +1,17 @@
+[17-Feb-2013 15:14:17 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_fiscal.php on line 126
+[17-Feb-2013 15:14:22 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[17-Feb-2013 15:14:48 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[17-Feb-2013 15:58:43 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[17-Feb-2013 15:58:49 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_administrador.php on line 126
+[17-Feb-2013 15:58:54 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_fiscal.php on line 126
+[18-Feb-2013 00:39:39 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_fiscal.php on line 126
+[18-Feb-2013 00:39:44 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_administrador.php on line 126
+[18-Feb-2013 00:39:47 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[18-Feb-2013 00:40:03 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[18-Feb-2013 01:08:39 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[18-Feb-2013 01:08:55 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[18-Feb-2013 01:11:07 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_administrador.php on line 126
+[18-Feb-2013 01:12:08 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_administrador.php on line 126
+[18-Feb-2013 01:12:43 UTC] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_fiscal.php on line 126
+[21-Mar-2013 01:28:53 America/Chicago] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125
+[21-Mar-2013 15:44:30 America/Chicago] PHP Fatal error:  Call to a member function getNombres() on a non-object in /home2/bhcontra/public_html/cassiusph.com/modulo_financiero/parametrizacion_contador.php on line 125

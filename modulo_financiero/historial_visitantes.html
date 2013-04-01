@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
+<title>Cassius - software de propiedad horizontal</title>
+<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  ventana=window.open(theURL,winName,features);
+  alto=screen.height;
+  ancho=screen.width;
+  yposi=(alto-530)/2;
+  xposi=(ancho-460)/2;
+  ventana.moveTo(xposi,yposi);
+}
+
+</script>
+</head>
+<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
+<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
+<script src="Scripts/transicion.js" type="text/javascript"></script>
+</head>
+
+<body class="interna2" onload="MM_preloadImages('images/btn_flecha_atras_roll.png','images/btn_flecha_adelante_roll.png')" OnContextMenu="return false">
+<div id="salir2">
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='menu_home.html'"/>
+</div>
+<div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
+<div id="modulos"><img src="images/modulo_visitantes.png" name="mod_registro" width="291" height="64" id="mod_registro" /></div>
+<div id="fondo_historial_visitantes"></div>
+
+<div id="utilidades">
+  <table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="35%" align="center"><input name="buscar3" type="button" class="boton_excel" id="buscar3" value="     Descargar Excel"/></td>
+      <td width="34%"><input name="buscar2" type="button" class="boton_pdf" id="buscar2" value="     Descargar PDF"/></td>
+      <td width="27%"><input name="buscar" type="button" class="boton_buscar" id="buscar" value="Buscar" onclick="MM_openBrWindow('buscar_visitante_historial.html','AgregarPropietario','width=460px,height=480px')"/></td>
+      <td width="4%">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div id="contenido_tabla">
+  <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align=""><table width="750" border="0" align="center" cellpadding="0" cellspacing="2">
+        <tr class="texto_blanco" >
+          <td height="50" colspan="4" align="center" valign="middle" bgcolor="#6CA3D2"><table width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="92">Fecha: <strong>Desde</strong></td>
+                <td width="129"><input name="fecha2" type="text" class="textarea_redondo2" id="fecha2" style="width:100px;"/></td>
+                <td width="175"><strong>Hasta</strong>
+<input name="fecha" type="text" class="textarea_redondo2" id="fecha" style="width:100px;"/></td>
+                <td width="104"><input style="width:90px;"name="Entrar" type="button" class="boton_redondo" id="Entrar" value="::: Aceptar :::"/></td>
+              </tr>
+        </table></td>
+          </tr>
+        <tr class="texto_blanco" >
+          <td width="118" height="17" bgcolor="#04447D" align="center"><strong>Entrada</strong></td>
+          <td width="108" bgcolor="#04447D" align="center"><strong>Salida</strong></td>
+          <td width="93" bgcolor="#04447D" align="center"><strong>Vivienda</strong></td>
+          <td width="421" bgcolor="#04447D" align="center"><strong>Nombre</strong></td>
+        </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Julian Andres Caicedo Barrera</td>
+        </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Martin Caicedo</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Ivan Porras</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Omar Andres Pichimata Consuegra</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Martin Caicedo</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Ivan Mauricio Gómez Piñeras</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Julian Andres Caicedo Barrera</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Martin Caicedo</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Julian Andres Caicedo Barrera</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Martin Caicedo</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Omar Andres Pichimata Consuegra</td>
+          </tr>
+        <tr class="tr_tabla_interna">
+          <td height="17" class="td_tabla_interna" align="center">2012-05-23<br />
+            <strong>08:00 A.M.</strong></td>
+          <td class="td_tabla_interna" align="center">2012-05-23 <strong>08:50 A.M.</strong></td>
+          <td class="td_tabla_interna">2 201</td>
+          <td class="td_tabla_interna">Ivan Mauricio Gómez Piñeras</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="5" align="center"><img src="images/line.gif" width="945" height="1" /></td>
+    </tr>
+    <tr>
+      <td align="rigth"><table width="230" border="0" align="right" cellpadding="0" cellspacing="1">
+        <tr>
+          <td width="50" class="texto_azul">Página:</td>
+          <td width="30"><img src="images/btn_flecha_atras.png" name="atras" width="30" height="20" border="0" id="atras" onmouseover="MM_swapImage('atras','','images/btn_flecha_atras_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+          <td width="30" class="td_paginacion_resaltado">1</td>
+          <td width="30" class="td_paginacion">2</td>
+          <td width="30" class="td_paginacion">3</td>
+          <td width="30" class="td_paginacion">4</td>
+          <td width="30"><img src="images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

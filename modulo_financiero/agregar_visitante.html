@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
+<title>Cassius - software de propiedad horizontal</title>
+<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  ventana=window.open(theURL,winName,features);
+  alto=screen.height;
+  ancho=screen.width;
+  yposi=(alto-530)/2;
+  xposi=(ancho-560)/2;
+  ventana.moveTo(xposi,yposi);
+}
+</script>
+</head>
+<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
+<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
+>
+</head>
+
+<body class="interna2" OnContextMenu="return false">
+<form id="form1" name="form1" method="post" action="">
+<div id="salir2">
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='entrada_visitantes.html'"/>
+</div>
+<div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
+<div id="modulos"><img src="images/modulo_visitantes.png" name="mod_registro" width="291" height="64" id="mod_registro" /></div>
+<div id="fondo_entrada_visitantes"></div>
+
+<div id="utilidades">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="31%" align="center">&nbsp;</td>
+      <td width="69%" class="titulos">Agregar Visitante</td>
+      </tr>
+  </table>
+</div>
+<div id="contenido_tabla2">
+  <table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align=""><table width="700" border="0" align="center" cellpadding="0" cellspacing="2">
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="77" height="40" class="texto_azul">Destino:</td>
+              <td width="157"><input name="destino2" type="text" class="textarea_redondo2" id="destino2" style="width:130px;"/></td>
+              <td width="166" class="texto_azul"><input name="buscar2" type="button" class="boton_buscar" id="buscar2" value="  Buscar Destino" style="width:150px;" onclick="MM_openBrWindow('buscar_destino.html','AgregarPropietario','width=560px,height=530px')"/></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="77" height="40" class="texto_azul">Autorizó:</td>
+              <td><select name="autorizo" class="textarea_redondo2" id="autorizo" style="width:305px; height:27px;">
+                <option>--</option>
+                <option>liliana gomez</option>
+                <option>julian urrego</option>
+              </select></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="10"></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="89" height="40" class="texto_azul">Tipo de documento:</td>
+              <td width="217"><label for="documento_tipo2"></label>
+                <select name="documento_tipo2" class="textarea_redondo2" id="documento_tipo2" style="width:161px; height:27px;">
+                  <option>--</option>
+                  <option>CC</option>
+                  <option>CC Extranjero</option>
+                </select></td>
+              <td width="98" class="texto_azul">Número de documento:</td>
+              <td width="196"><input name="documento_numero2" type="text" class="textarea_redondo2" id="documento_numero2" style="width:150px;"/></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="89" >Nombres:</td>
+              <td width="217"><input name="nombres_visitante" type="text" class="textarea_redondo2" id="nombres_visitante" style="width:150px;"/></td>
+              <td width="98">Apellidos:</td>
+              <td width="196"><input name="apellidos_visitante" type="text" class="textarea_redondo2" id="apellidos_visitante" style="width:150px;"/></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="89" height="40" class="texto_azul">Género:</td>
+              <td width="217"><label for="documento_tipo7"></label>
+                <select name="genero" class="textarea_redondo2" id="genero" style="width:161px; height:27px;">
+                  <option>--</option>
+                  <option>Masculino</option>
+                  <option>Femenino</option>
+                </select></td>
+              <td width="98" class="texto_azul">Edad:</td>
+              <td width="196"><input name="edad" type="text" class="textarea_redondo2" id="identifica7" style="width:150px;"/></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="650" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="320" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="30" class="texto_azul"><strong>Foto persona:</strong></td>
+                  </tr>
+                <tr>
+                  <td height="240" background="images/fondo_defoult_foto.jpg">&nbsp;</td>
+                  </tr>
+                <tr>
+                  <td align="center">&nbsp;</td>
+                  </tr>
+                <tr>
+                  <td width="74" align="center"><input style="width:90px;"name="Capturar" type="button" class="boton_redondo" id="Capturar" value="::: Capturar :::" onclick="location.href='#'"/></td>
+                  </tr>
+                <tr>
+                  <td height="40" align="center">&nbsp;</td>
+                  </tr>
+                </table></td>
+              <td><table width="320" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="61" height="30" class="texto_azul">&nbsp;</td>
+                  <td width="83" class="texto_azul"><strong>Carro:</strong></td>
+                  <td width="40"><strong>No</strong></td>
+                  <td width="40"><input name="principal" type="checkbox" class="chekbox2" id="principal" checked="checked" /></td>
+                  <td width="26"><strong>Si</strong></td>
+                  <td width="70"><input name="principal2" type="checkbox" class="chekbox2" id="principal2" /></td>
+                  </tr>
+                <tr>
+                  <td height="240" colspan="6"><table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td height="40" class="texto_azul">Placa:</td>
+                      <td><input name="placa" type="text" disabled="disabled" class="textarea_redondo2" id="placa" style="width:70px;"/></td>
+                      </tr>
+                    <tr>
+                      <td height="40" class="texto_azul">Marca:</td>
+                      <td><input name="marca" type="text" disabled="disabled" class="textarea_redondo2" id="marca" style="width:70px;"/></td>
+                      </tr>
+                    <tr>
+                      <td height="40" class="texto_azul">Color:</td>
+                      <td><input name="color" type="text" disabled="disabled" class="textarea_redondo2" id="color" style="width:70px;"/></td>
+                      </tr>
+                    <tr>
+                      <td width="121" height="40" class="texto_azul">Parqueadero No:</td>
+                      <td width="79"><input name="parqueadero" type="text" disabled="disabled" class="textarea_redondo2" id="parqueadero" style="width:70px;"/></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                <tr>
+                  <td height="70" colspan="6">&nbsp;</td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="100" height="40" class="texto_azul">Novedades:</td>
+              <td><textarea name="descripcion_vivienda" cols="45" rows="5" class="textarea_redondo2" id="descripcion_vivienda" style="width:350px; height:67px"></textarea></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="45" class="tr_tabla_interna2"><table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="82" height="40" class="texto_azul">Fecha:</td>
+              <td width="125"><label for="documento_tipo6"></label>
+                <input name="fecha" type="text" class="textarea_redondo2" id="fecha" style="width:100px;" value="02 / Feb / 2012" readonly="readonly"/></td>
+              <td width="73" class="texto_azul">Hora de entrada:</td>
+              <td width="120"><input name="hora_entrada" type="text" class="textarea_redondo2" id="hora_entrada" style="width:100px;" value="08:00 A.M." readonly="readonly"/></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"><img src="images/line.gif" width="945" height="1" /></td>
+    </tr>
+    <tr>
+      <td height="40" align="center"><input style="width:90px;"name="Entrar" type="button" class="boton_redondo" id="Entrar" value="::: Aceptar :::" onclick="location.href='entrada_visitantes.html'"/></td>
+    </tr>
+  </table>
+</div>
+</form>
+</body>
+</html>

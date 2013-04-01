@@ -1,0 +1,42 @@
+/* Accordian Stylesheet */
+
+/*****Reset*****/
+
+
+
+/*****Basic Layout*****/
+
+
+/*****Accordion Styles*****/
+ul#accordion, ul#accordion ul { list-style: none;  }
+ul#accordion { border-bottom: 0px solid #000E2E;  }
+ul#accordion li { border: 0px solid #000E2E; }
+
+ul#accordion ul li:last-child { border-bottom: none; }
+ul#accordion a.heading { 
+	background-image:url(../images/barra_cuentas_mas.png);
+	background-position:right;
+	background-repeat:no-repeat;
+	font: 16px Verdana, Geneva, sans-serif;
+	color:#ffffff;
+	display: block;
+	line-height: 0px;
+	text-decoration: none;
+	width:797px;
+	padding: 0px 0px 0px 80px;
+	text-align:left;
+}
+
+ul#accordion a.heading:hover {  background-image:url(../images/barra_cuentas_mas2.png); }
+ul#accordion li.ui-accordion-selected a.heading, ul#accordion li.current a.heading { background-image:url(../images/barra_cuentas_menos.png); }
+
+
+
+/*****Additional Custom Accordion Styles*****/
+body#customAccordion ul#accordion li ul { display: none; }
+body#customAccordion ul#accordion li.current ul { display: block; }
+
+
+
+
+

@@ -1,0 +1,68 @@
+/*css de index.php(contabilidad_home.php)*/
+#contenido_tabla img{
+	height:420px;
+	left:475px;
+	position:absolute;
+	top:0px;
+	width:1px;
+}
+#logo_small3 img{
+	height:62px;
+	width:317px;
+}
+#modulos img{
+	height:55px;
+	width:300px;
+}
+/*---------contenido de los modulos-------------*/
+#Tder,
+#Tizq{
+	height:400px;
+	width:375px;
+}
+#Tder img,
+#Tizq img{
+	position:absolute;
+}
+#Tder ul,
+#Tizq ul{
+	margin-top:84px;
+	padding:0;
+	text-align:center;
+}
+#Tder ul li,
+#Tizq ul li{
+	display:inline-block;
+	height:40px;
+	line-height:50px;
+	margin:0px;
+	padding:0px 0;
+	vertical-align:top;
+	width:95%;
+}
+#Tizq{
+float:left;
+	margin-left:80px;
+}
+#Tizq img{
+	height:81px;
+	left:89px;
+	top:4px;
+	width:354px;
+}
+#Tizq ul{
+	margin-left:-3px;
+}
+#Tder{
+	float:right;
+	margin-right:80px;
+}
+#Tder img{
+	height:66px;
+	left:508px;
+	top:12px;
+	width:354px;
+}
+#Tder ul{
+	margin-left:3px;
+}
