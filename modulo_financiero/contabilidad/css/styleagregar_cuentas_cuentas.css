@@ -1,0 +1,24 @@
+#agregar_grupo {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 20px;
+	top: 153px;
+}
+#agregar_cuenta {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 25px;
+	top: 195px;
+}
+#agregar_subcuenta {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 25px;
+	top: 233px;
+}

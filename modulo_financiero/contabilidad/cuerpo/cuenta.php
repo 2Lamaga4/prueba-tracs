@@ -1,8 +1,5 @@
 <article class="tree">
   <?php
-
-
-
    foreach($cuentas as $item){
   $cuentasN2 = $CuentaDAO->Lista_Nivel($item->getCuenta(),2);
   ?>
@@ -61,7 +58,7 @@
                     <div class="item">
                       <section class="tr_tabla_interna">    
                         <label>
-                          <?php echo $item5->getCuenta()." ".$item5->getDenominacion(); ?></label>
+                          <?php echo $item5->getCuenta()."</label><u>".$item5->getDenominacion(); ?></u>
                         <input name="modificar_int2" type="button" class="boton_modificar_int mo5" id="modificar_int3" value="Modificar" onclick="MM_openBrWindow('../modificar_cuenta.php?id=<?php echo $item5->getId(); ?>&nm=null','ModificarCuenta','width=560px,height=550px,scrollbars=yes')"/></td>
                         <input name="eliminar_int2" type="button" class="boton_eliminar_int eli5" id="eliminar_int3" value="Eliminar" onclick="borrar(<?php echo $item5->getId(); ?>)"/></td>
                       </section>
