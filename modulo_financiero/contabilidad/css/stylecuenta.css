@@ -28,20 +28,20 @@ parametrizacion_cuneta.php
 	padding: 0 0 0 20px;
 }
 .tree div {
-	position: relative; 
+	position   : relative; 
 	margin-left: -15px;
-	list-style: none;
-	padding: 0px;
+	list-style : none;
+	padding    : 0px;
 }
 div input {
-	position: absolute;
-	left: 0;
+	position   : absolute;
+	left       : 0;
 	margin-left: 0;
-	z-index: 2;
-	cursor: pointer;
-	height: 1em;
-	width: 1em;
-	top: 0;
+	z-index    : 2;
+	cursor     : pointer;
+	height     : 1em;
+	width      : 1em;
+	top        : 0;
 }
 .tree div input + article > div {
 	height: 0;
@@ -120,7 +120,6 @@ div input {
 	top:-6px;
 }
 /*-------------------------niveles----------------*/
-
 .td_nivel1{
 	font-size: 16px; 
 	font-family: Verdana, Geneva, sans-serif;
@@ -158,6 +157,8 @@ div input {
 	padding-top: 4px;
 	left:44px;
 	width:758px;
+	border-top: 1px solid #fff;
+
 }
 .tr_tabla_interna{
 	font: 12px Verdana, Geneva, sans-serif;
@@ -217,15 +218,6 @@ div input {
 	position: absolute;	
 	margin-left:630px;
 }
-.mo4,
-.mo3{
-	left: 0;
-	margin-left:523px;
-}
-.mo5{
-	left: 0;
-	margin-left:488px;
-}
 .eli4,
 .eli3{
 	left: 0;
@@ -234,6 +226,15 @@ div input {
 .eli5{
 	left: 0;
 	margin-left:578px;
+}
+.mo4,
+.mo3{
+	left: 0;
+	margin-left:523px;
+}
+.mo5{
+	left: 0;
+	margin-left:488px;
 }
 /*---------boton mas y menos---------------*/
 input[type="checkbox"]{
@@ -267,4 +268,5 @@ input[type="checkbox"]:checked{
 #t3 input[type="checkbox"]{
 	width: 0;
 	height: 0;
+	border-top: 18px #fff solid;
 }

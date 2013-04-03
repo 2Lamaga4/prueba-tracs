@@ -1,6 +1,6 @@
 <?php session_start();?>
 <?php
-
+//se llama la conexion,las funciones, y la entidades
 require_once('../../../php/dao/daoConnection.php');
 require_once('../../../php/dao/TercerosDAO.php');
 require_once('../../../php/entities/terceros.php');

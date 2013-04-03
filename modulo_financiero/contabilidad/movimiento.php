@@ -41,8 +41,7 @@
        <?php 
        foreach($movimiento as $item){ 
             $tercero = $TercerosDAO->get($item->getTercero());
-            $doc = $DocumentoDAO->get($item->getTipodoc());
-            
+            $doc = $DocumentoDAO->get($item->getTipodoc());            
             $mvCuentas = $MovimientosDAO->getList_cuentas($item->getId());
        ?>
         <tr>
@@ -67,12 +66,10 @@
               <td width="595" class="td_resaltado_azul">Descripción</td>
               <td align="center" class="td_resaltado_azul"><div align="center">Débito</div></td>
               <td align="center" class="td_resaltado_azul"><div align="center">Crédito</div></td>
-            </tr>
-            
-              
-            <?php foreach($mvCuentas as $item2){ 
-             $cuenta = $CuentaDAO->get($item2->getCodcuenta());
-                
+            </tr>             
+            <?php 
+            foreach($mvCuentas as $item2){ 
+             $cuenta = $CuentaDAO->get($item2->getCodcuenta());                
             ?> 
                 <tr class="tr_tabla_interna">
                   <td width="74" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
@@ -89,13 +86,10 @@
        
       </table></td>
     </tr>
-   <?php }else{ ?>
-       
-         <tr>
-        
+   <?php }else{ ?>       
+         <tr>        
           <td height="30" align="center" valign="middle" class="texto_azul"><strong>No hay registro</strong></td>
-    </tr>       
-        
+    </tr>     
          <?php } ?>  
   </table>
 </div>

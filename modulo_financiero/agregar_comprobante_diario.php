@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 include "php/include_dao.php";
 
 $MovimientosDAO = new MovimientosDAO();

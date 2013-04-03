@@ -49,7 +49,7 @@ class AfectaDAO{
 
         $sql = 'SELECT * from afecta WHERE idpuc = '.$id.' and iddocumentos = '.$iddoc;
 
-
+        
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();

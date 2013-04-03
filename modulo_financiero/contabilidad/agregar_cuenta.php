@@ -32,10 +32,13 @@
 
     $view= new stdClass(); 
     $view->disableLayout=false;
-
+     /**
+     * [$view->objeto de validación]
+     * @var boolean
+     */
     if ($view->disableLayout==false)
     {
-      include_once ('cuerpo/agregar.php');//se llama el la tabla 
+      include_once ('cuerpo/agregar.php');//se llama el cuerpo de agregar
     }
 ?>
 </body>

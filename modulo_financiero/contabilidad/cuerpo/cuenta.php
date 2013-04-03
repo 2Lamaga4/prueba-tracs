@@ -18,7 +18,13 @@
             <input name="modificar_int2" type="button" class="boton_modificar_int" id="modificar_int3" value="Modificar" onclick="MM_openBrWindow('../modificar_cuenta.php?id=<?php echo $item2->getId(); ?>&nm=1','ModificarCuenta','width=560px,height=550px,scrollbars=yes')"/>
             <input name="eliminar_int2" type="button" class="boton_eliminar_int" id="eliminar_int3" value="Eliminar" onclick="borrar(<?php echo $item2->getId(); ?>)"/>
           </section>
-            <input type="checkbox" id="selectEventTree_1">
+            <?php 
+             if ($cuentasN3){?>
+              <input type="checkbox" id="selectEventTree_1">
+            <?php
+             }else{?>
+              <div id="t3"><input type="checkbox"></div>
+            <?php }?>
             <article id="N3">
             <?php foreach($cuentasN3 as $item3){ 
               $cuentasN4 = $CuentaDAO->Lista_Nivel($item3->getCuenta(),4);
