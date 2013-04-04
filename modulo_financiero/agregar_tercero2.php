@@ -109,6 +109,8 @@ function validar_existe(){
 $view= new stdClass(); 
     $view->disableLayout=false;
 
+$prueba = $_GET['nombre'];
+
     if ($view->disableLayout==false)
     {
       include_once ('contabilidad/movimientos/agregar_tercero2.php');

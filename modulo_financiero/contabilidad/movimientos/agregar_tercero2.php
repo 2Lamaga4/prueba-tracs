@@ -50,7 +50,7 @@
                   <td align="left" class="texto_azul" width="136">
                     <strong>Nombre:</strong></td>
                   <td width="579">
-                    <input class="textarea_redondo2" id="nombre" name="nombre" style="width:565px;" type="text" /></td>
+                    <input class="textarea_redondo2"  value="<?php echo $prueba;?>" id="nombre" name="nombre" style="width:565px;" type="text" /></td>
                 </tr>
               </tbody>
             </table>

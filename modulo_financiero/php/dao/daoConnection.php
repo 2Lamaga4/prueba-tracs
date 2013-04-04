@@ -1,6 +1,6 @@
 <?php
 
-class conexion{
+class DAO {
 
     /* variables de conexion */
     var $BaseDatos;
@@ -46,10 +46,8 @@ class conexion{
         return $this->Conexion_ID;
     } 
 
- }
+ 
 
-
-class DAO extends conexion{
 	
 	/* Ejecuta un consulta */
 	function consulta($sql = ""){

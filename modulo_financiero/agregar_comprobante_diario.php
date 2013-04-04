@@ -200,7 +200,7 @@ function eliminar_cuenta(id){
 		
 	
 function agregar_Tercero(){
-	MM_openBrWindow('agregar_tercero2.php','AgregarTercero','scrollbars=yes,width=970px,height=400px')
+	MM_openBrWindow('agregar_tercero2.php?nombre='+document.getElementById('tercero').value,'AgregarTercero','scrollbars=yes,width=970px,height=400px')
 }
 
 

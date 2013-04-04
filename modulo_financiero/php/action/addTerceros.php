@@ -18,7 +18,6 @@ $regimen = $_REQUEST['regimen'];
 if($_REQUEST['des'] == 1){
 	$location = "location: ./../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
 }else{
-	$location = "location: ./../../terceros.php?OK=1";	
 }
 
 $TercerosDAO = new TercerosDAO();
@@ -31,8 +30,7 @@ $terceros->setDireccion($direccion);
 $terceros->setTelefono($telefono);
 $terceros->setEmail($correo);
 $terceros->setRegimen($regimen);
-
-$TercerosDAO->save($terceros);
+$TercerosDAO->save($terceros);//resive la informacion contenida en el objeto terceros de la clase terceros
 
 header($location);
 exit;

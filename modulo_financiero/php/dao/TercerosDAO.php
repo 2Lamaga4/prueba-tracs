@@ -28,7 +28,8 @@ class TercerosDAO{
 
         for($i = 0; $i < $numregistros ; $i++){
             $newTerceros= new terceros();
-            $newTerceros->setId($this->daoConnection->ObjetoConsulta2[$i][0]);
+          
+           $newTerceros->setId($this->daoConnection->ObjetoConsulta2[$i][0]);
 			$newTerceros->setTipodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
 			$newTerceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][2]);
 			$newTerceros->setNombretercero($this->daoConnection->ObjetoConsulta2[$i][3]);
@@ -36,6 +37,7 @@ class TercerosDAO{
 			$newTerceros->setTelefono($this->daoConnection->ObjetoConsulta2[$i][5]);
 			$newTerceros->setEmail($this->daoConnection->ObjetoConsulta2[$i][6]);
 			$newTerceros->setRegimen($this->daoConnection->ObjetoConsulta2[$i][7]);
+			/*lusestela*/
 			
             $lista[$i] = $newTerceros;
         }
@@ -154,7 +156,11 @@ class TercerosDAO{
         return $newTerceros;
 
     }
-
+    /**
+     * [save ->esta funcion inserta los datos de los terceros]
+     * @param  [type=objeto] $obj [resive informacion de la clase terceros url php/entities/terceros.php]
+     * @return [type]      [description]
+     */
 	function save($obj){
         $newTerceros = new terceros();
         $newTerceros = $obj;
