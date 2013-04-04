@@ -90,7 +90,7 @@
                   <td align="left" class="texto_azul" width="137">
                     <strong>Correo:</strong></td>
                   <td width="163">
-                    <input class="textarea_redondo2" id="correo" name="correo" style="width:110px;" type="text" /></td>
+                  <input class="textarea_redondo2" id="correo" name="correo" style="width:110px;" type="email" placeholder="me@example.com"/></td>
                 </tr>
               </tbody>
             </table>

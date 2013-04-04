@@ -1,21 +1,37 @@
 <?php session_start();
 include "php/include_dao.php";
 
-session_unset($_SESSION['datos']);
-session_unset($_SESSION['sigla_d']);
-session_unset($_SESSION['nombre_d']);
-session_unset($_SESSION['descripcion_d']);
+if(isset($_SESSION['datos'])){
+session_unset($_SESSION['datos']);}
+
+if(isset($_SESSION['sigla_d'])){
+session_unset($_SESSION['sigla_d']);}
+
+if(isset($_SESSION['nombre_d'])){
+session_unset($_SESSION['nombre_d']);}
+
+if(isset($_SESSION['descripcion_d'])){
+session_unset($_SESSION['descripcion_d']);}
 
 $DocumentoDAO = new DocumentoDAO();
 $documentos = new documentos();
 $documento = $DocumentoDAO->getList();
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
+<meta charset="utf-8" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="description" content="software de propiedad horizontal">
+<meta property="og:title" content="Cassius" />
+<meta property="og:type" content="software" />
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
@@ -27,12 +43,9 @@ function MM_preloadImages() { //v3.0
 function borrar(id){
 	if (confirm('¿Estas seguro que desea borrar este Documento?')){ 
       location.href = "php/action/deleteDocumento.php?id="+id;
-    } 
-	
-	
-}
+    } 	
 
-function OK(){
+}function OK(){
 	alert('Documento borrada con exito.');
 }
 function OK2(){
@@ -56,7 +69,7 @@ function OK2(){
 <script src="Scripts/transicion.js" type="text/javascript"></script>
 </head>
 
-<body class="interna2" OnContextMenu="return false" <?php if($_GET['OK_de'] == 1){?>onload="OK()"<?php } ?> <?php if($_GET['OK_de'] == 2){?>onload="OK2()"<?php } ?>>
+<body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK_de'])){if($_GET['OK_de'] == 1){?>onload="OK()"<?php }} ?> <?php if(isset($_GET['OK_de'])){if($_GET['OK_de'] == 2){?>onload="OK2()"<?php }} ?>>
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad_home.html'"/>
 </div>
