@@ -26,62 +26,10 @@ function MM_preloadImages() { //v3.0
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
 
-function validar(){
-  
-	var documento = document.getElementById('documento').value;
-	if(documento == 0){
-		alert('Seleccione un tipo de documento.');
-		document.getElementById('documento').focus();
-		return false;
-	}	
-	var numero = document.getElementById('numero').value;
-	if(numero == ""){
-		alert('Digite el numero del documento.');
-		document.getElementById('numero').focus();
-		return false;
-	}
-	var nombre = document.getElementById('nombre').value;
-	if(nombre == ""){
-		alert('Digite el Nombre.');
-		document.getElementById('nombre').focus();
-		return false;
-	}	
-	var telefono = document.getElementById('telefono').value;
-	if(telefono == ""){
-		alert('Digite el Telefono.');
-		document.getElementById('telefono').focus();
-		return false;
-	}
-	var direccion = document.getElementById('direccion').value;
-	if(direccion == ""){
-		alert('Digite la Direccion.');
-		document.getElementById('direccion').focus();
-		return false;
-	}	
-	var correo = document.getElementById('correo').value;
-	if (correo == ""){
-		alert("Digite el Correo.");
-		document.getElementById('correo').focus();
-		return false;
-	}	
-	
-	if ((correo.indexOf('@', 0) == -1) || (correo.length < 5) || (correo.indexOf('.', 0) == -1)) 	
-	{
-	  alert("Correo no válido (ejemplo@cassius.com).");
-	  return false
-	}
-	var regimen = document.getElementById('regimen').value;
-	if(regimen == 0){
-		alert('Seleccione un Regimen.');
-		document.getElementById('regimen').focus();
-		return false;
-	}
-}
-
 function validar_tercero(){
 	var numero = <?php echo $_REQUEST['i']; ?>;
+	alert(numero);
 	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
-
 	//window.close();
 }
 

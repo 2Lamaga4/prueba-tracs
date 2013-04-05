@@ -19,7 +19,7 @@
                   <td align="left" class="texto_azul" width="137">
                     <strong>Tipo de documento:</strong></td>
                   <td width="163">
-                    <select class="textarea_redondo2" id="documento" name="documento" style="width:122px; height:27px;"><option value="0">--</option><option value="1">CC</option><option value="2">CC Extranjero</option></select></td>
+                    <select class="textarea_redondo2" id="documento" name="documento" style="width:122px; height:27px;" required><option value="0">--</option><option value="1" required>CC</option><option value="2" required>CC Extranjero</option></select></td>
                 </tr>
               </tbody>
             </table>
@@ -32,10 +32,9 @@
                     <td align="left" class="texto_azul" style="color: rgb(0, 0, 51);" width="74">
                       <strong>N&uacute;mero:</strong></td>
                     <td width="226">
-                      <input class="textarea_redondo2" id="numero" name="numero" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; border: 1px solid rgb(0, 0, 102); padding: 3px 5px; font-family: Arial, Helvetica, Verdana, sans-serif; height: 20px; width: 200px;" type="text" value="" /></td>
+                      <input class="textarea_redondo2" id="numero" name="numero" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; border: 1px solid rgb(0, 0, 102); padding: 3px 5px; font-family: Arial, Helvetica, Verdana, sans-serif; height: 20px; width: 200px;" type="number" value="" required/></td>
                   </tr>
                   <tr>
-     
                   </tr>
                 </tbody>
               </table>
@@ -50,7 +49,7 @@
                   <td align="left" class="texto_azul" width="136">
                     <strong>Nombre:</strong></td>
                   <td width="579">
-                    <input class="textarea_redondo2"  value="<?php echo $prueba;?>" id="nombre" name="nombre" style="width:565px;" type="text" /></td>
+                    <input class="textarea_redondo2"  value="<?php echo $prueba;?>" id="nombre" name="nombre" style="width:565px;" type="text" required/></td>
                 </tr>
               </tbody>
             </table>
@@ -64,7 +63,7 @@
                   <td align="left" class="texto_azul" width="137">
                     <strong>Tel&eacute;fono:</strong></td>
                   <td width="163">
-                    <input class="textarea_redondo2" id="telefono" name="telefono" style="width:110px;" type="text" /></td>
+                    <input class="textarea_redondo2" id="telefono" name="telefono" style="width:110px;" type="number" required /></td>
                 </tr>
               </tbody>
             </table>
@@ -76,7 +75,7 @@
                   <td align="left" class="texto_azul" width="74">
                     <strong>Direcci&oacute;n:</strong></td>
                   <td width="226">
-                    <input class="textarea_redondo2" id="direccion" name="direccion" style="width:200px;" type="text" /></td>
+                    <input class="textarea_redondo2" id="direccion" name="direccion" style="width:200px;" type="text" required/></td>
                 </tr>
               </tbody>
             </table>
@@ -90,7 +89,7 @@
                   <td align="left" class="texto_azul" width="137">
                     <strong>Correo:</strong></td>
                   <td width="163">
-                  <input class="textarea_redondo2" id="correo" name="correo" style="width:110px;" type="email" placeholder="me@example.com"/></td>
+                  <input class="textarea_redondo2" id="correo" name="correo" style="width:110px;" type="email" placeholder="me@example.com" required/></td>
                 </tr>
               </tbody>
             </table>
@@ -102,7 +101,7 @@
                   <td align="left" class="texto_azul" width="74">
                     <strong>R&eacute;gimen:</strong></td>
                   <td>
-                    <select class="textarea_redondo2" id="regimen" name="regimen" style="width:212px; height:27px;"><option value="0">--</option><option value="1">Simplificado</option><option value="2">Com&uacute;n</option><option value="3">Gran contribuyente</option></select></td>
+                    <select class="textarea_redondo2" id="regimen" name="regimen" style="width:212px; height:27px;" required><option value="0">--</option><option value="1">Simplificado</option><option value="2">Com&uacute;n</option><option value="3">Gran contribuyente</option></select></td>
                 </tr>
               </tbody>
             </table>
@@ -124,6 +123,5 @@
       </tbody>
     </table>
   </form>
-
 </div>
 <p>&nbsp;</p>
