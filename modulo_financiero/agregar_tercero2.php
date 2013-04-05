@@ -28,7 +28,6 @@ function MM_preloadImages() { //v3.0
 
 function validar_tercero(){
 	var numero = <?php echo $_REQUEST['i']; ?>;
-	alert(numero);
 	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
 	//window.close();
 }
@@ -47,7 +46,6 @@ function validar_existe(){
 <?php }else{?>
 	 window.close();
 	 <?php }?>
-
 </script>
 </head>
 
