@@ -29,7 +29,7 @@ function MM_preloadImages() { //v3.0
 function validar_tercero(){
 	var numero = <?php echo $_REQUEST['i']; ?>;
 	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
-	//window.close();
+	
 }
 
 function validar_existe(){
@@ -38,19 +38,29 @@ function validar_existe(){
 
 	llamarasincrono('validar_tercero.php?numero=numero,nom_tercero');
 }
+function cerrarVentana(){ 
+
+
+alert('Agregarado exitosamente');
+ window.opener.location.href = window.opener.location.href; 	
+  if (window.opener.progressWindow){     
+    window.opener.progressWindow.close()
+  } 
+  // window.close(); 
+
+
+
+}
 
 <?php if($_REQUEST['OK'] == 2){?>
-	alert('Agregando tercero.');
 	opener.datos_tercero(<?php echo $_REQUEST['i']; ?>,<?php echo $_REQUEST['nombre']; ?>);
    
 <?php }else{?>
-	 window.close();
+	 	window.close();
 	 <?php }?>
 </script>
 </head>
-
-<body class="popup" OnContextMenu="return false" onload="validar_tercero();">
-
+<body class="popup"   <?php if($_GET['OK'] == 2){?> onload="cerrarVentana();"<?php } ?>   OnContextMenu="return false" onload="validar_tercero();">
 <?php
 $view= new stdClass(); 
     $view->disableLayout=false;

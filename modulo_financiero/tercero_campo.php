@@ -5,8 +5,11 @@ unset($_SESSION['arreglo']);
 unset($_SESSION['numero']);
 
 $nombre = "";
+
+
 if($_REQUEST['tercero'] != ""){
 	$nombre = $_REQUEST['tercero'];
+
 }
 
 $TercerosDAO = new TercerosDAO();

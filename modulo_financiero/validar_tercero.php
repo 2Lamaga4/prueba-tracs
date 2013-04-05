@@ -27,8 +27,7 @@ if($numero != ""){
       	<?php if(count($tercero) > 0){ ?>
       	<span style="color:#FF0000">
       		* Ya se encuentra registrado este documento.</span><?php }else{ 
-      			
-
+           echo "<span style='color:#000'>encuentra</span>";
       			 }?></td>
     </tr>
 </table>
