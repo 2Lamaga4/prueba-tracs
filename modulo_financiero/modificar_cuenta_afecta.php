@@ -122,7 +122,7 @@ foreach($cuentas as $item){
 ?>
 
 		
-			<li<?php if($section == '' || $section == 'recent'): ?> class="current"<?php endif; ?>>
+			<li<?php if(isset($section)){if($section == '' || $section == 'recent'): ?> class="current"<?php endif;} ?>>
 				
                 <a href="?section=recent" class="heading ">
                 

@@ -4,9 +4,8 @@ $id = "";
 if($_REQUEST['id'] != ""){
 	$id = $_REQUEST['id'];
 }
-
-
-
+ if(isset($i)){
+   if(isset($_SESSION['datos'][$i])){
 if($id != ""){
 	unset($_SESSION['datos'][$_REQUEST['id']]);
 	
@@ -18,10 +17,12 @@ if($id != ""){
 		}
 	}
 	
-}
-if($_REQUEST['m'] == 1){
+}}}
+if($id == 1){
+
 	echo "<script> location.href = 'modificar_documento.php?id=$id'; </script>";
 }else{
 	echo "<script> location.href = 'agregar_documento.php?id=1'; </script>";
 }
+
 ?>
