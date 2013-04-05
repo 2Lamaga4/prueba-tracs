@@ -71,7 +71,7 @@ function OK2(){
 
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK_de'])){if($_GET['OK_de'] == 1){?>onload="OK()"<?php }} ?> <?php if(isset($_GET['OK_de'])){if($_GET['OK_de'] == 2){?>onload="OK2()"<?php }} ?>>
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad_home.html'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad_home.php'"/>
 </div>
 <div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>

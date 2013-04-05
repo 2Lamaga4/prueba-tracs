@@ -84,14 +84,14 @@ function agregar_r(){
       <td width="273" height="40" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="101" class="texto_azul" align="left"><strong>Sigla:</strong></td>
-          <td width="99"><input name="sigla" type="text" class="textarea_redondo2" id="sigla" style="width:50px;" value="<?php if($_SESSION['sigla_d'] != ""){ echo $_SESSION['sigla_d']; }else{ echo $doc->getSigla(); } ?>" /></td>
+          <td width="99"><input name="sigla" type="text" class="textarea_redondo2" id="sigla" style="width:50px;" value="<?php echo $doc->getSigla();  ?>" /></td>
         </tr>
       </table></td>
 
       <td width="576" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="76" class="texto_azul" align="left"><strong>Nombre:</strong></td>
-          <td width="474"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" style="width:385px;" value="<?php if($_SESSION['nombre_d'] != ""){ echo $_SESSION['nombre_d']; }else{ echo $doc->getNombredoc(); } ?>" /></td>
+          <td width="474"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" style="width:385px;" value="<?php  echo $doc->getNombredoc();  ?>" /></td>
         </tr>
       </table></td>
     </tr>
@@ -99,7 +99,7 @@ function agregar_r(){
       <td height="20" colspan="2" class="tr_tabla_interna2"><table width="777" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="102" class="texto_azul" align="left"><strong>Descripción:</strong></td>
-          <td width="675"><textarea name="descripcion" cols="45" rows="5" class="textarea_redondo2" id="descripcion" style="width:625px; height:40px"><?php if($_SESSION['descripcion_d'] != ""){ echo $_SESSION['descripcion_d']; }else{ echo $doc->getDescripcion(); } ?></textarea></td>
+          <td width="675"><textarea name="descripcion" cols="45" rows="5" class="textarea_redondo2" id="descripcion" style="width:625px; height:40px"><?php echo $doc->getDescripcion();?></textarea></td>
         </tr>
       </table></td>
     </tr>
@@ -119,7 +119,9 @@ function agregar_r(){
         </tr>
         <tr>
           <td width="634" height="35" valign="top"><table width="630" border="0" align="center" cellpadding="0" cellspacing="2">
-           <?php if(count($_SESSION['datos']) > 0){
+           <?php 
+           if(isset($_SESSION['datos'])){
+           if(count($_SESSION['datos']) > 0){
 		   for($i = 0; $i < count($_SESSION['datos']); $i++){ 
 		   		$cuentasN5 = $CuentaDAO->get($_SESSION['datos'][$i]);
 		   		if(count($cuentasN5) > 0){	
@@ -130,7 +132,7 @@ function agregar_r(){
                   <td width="76" class="td_tabla_interna"><?php echo $_SESSION['tipo'][$i]; ?></td>
                   <td width="87"><input name="eliminar_int2" type="button" class="boton_eliminar_int" id="eliminar_int2" value="Eliminar" onclick="location.href='eliminar_afecta.php?id=<?php echo $i; ?>&m=1&id_d=<?php echo $_REQUEST['id']; ?>'"/></td>
                 </tr>
-           <?php }
+           <?php }}
 		   } 
 		   }else{
 		  		foreach($afe as $item){

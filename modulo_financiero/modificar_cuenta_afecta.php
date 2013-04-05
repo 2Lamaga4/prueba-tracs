@@ -168,11 +168,13 @@ foreach($cuentas as $item){
                             <tr>
                               <td height="20" class="td_nivel4"><strong><?php echo $item4->getCuenta(); ?></strong> <?php echo $item4->getDenominacion(); ?></td>
                             </tr>
-							   <?php foreach($cuentasN5 as $item5){ 
-							   		if(count($_SESSION['datos']) > 0){
+							   <?php foreach($cuentasN5 as $item5){                
+                    $dt = "";
+							   		if($dt != ""){
 										
 										$sel = "";
 										$sel2 = "";
+                    if(isset($_SESSION['datos'])){
 										for($a = 0; $a < count($_SESSION['datos']); $a++){
 											if(($_SESSION['datos'][$a] == $item5->getId()) && ($_SESSION['tipo'][$a] == "Débito")){
 												$sel = "checked";
@@ -188,7 +190,7 @@ foreach($cuentas as $item){
 												$sel2 = "";
 											}
 										}
-										
+									}	
 										
 										
 							   ?>
