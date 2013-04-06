@@ -12,6 +12,8 @@ if($numero != ""){
 	$tercero = $TercerosDAO->Validar_tercero($numero);    
  }
 
+print_r($_GET);
+
 ?>
 
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">

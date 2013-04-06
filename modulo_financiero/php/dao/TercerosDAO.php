@@ -172,7 +172,10 @@ class TercerosDAO{
 		if (!$result){
             echo 'Ooops (saveTerceros): '.mysql_error();
             return false;
-        }
+        } else
+         {
+         	echo "<script type='text/javascript'>alert('Guardo correctamente');</script>";
+         }
         return true;
     }
 

@@ -1,11 +1,12 @@
 <?php session_start();?>
+
 <?php
 
 require_once('../dao/daoConnection.php');
 require_once('../dao/TercerosDAO.php');
 require_once('../entities/terceros.php');
 
-
+print_r($_POST);
 $documento = $_REQUEST['documento']; 
 $numero = $_REQUEST['numero']; 
 $nombre = $_REQUEST['nombre']; 
@@ -18,6 +19,7 @@ $regimen = $_REQUEST['regimen'];
 if($_REQUEST['des'] == 1){
 	$location = "location: ./../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
 }else{
+
 }
 
 $TercerosDAO = new TercerosDAO();
@@ -33,7 +35,7 @@ $terceros->setRegimen($regimen);
 $TercerosDAO->save($terceros);//resive la informacion contenida en el objeto terceros de la clase terceros
 
 header($location);
-exit;
+//exit;
 
 function accents2HTML($mensaje){
     $mensaje = str_replace("á","&aacute;",$mensaje);

@@ -2,7 +2,7 @@
   &gt; Agregar Tercero</div>
 <div id="subtitulo">
 
-  <form action="contabilidad/php/action/addTerceros.php" id="form1" method="post" name="form1" onsubmit="return validar();">
+  <form action="contabilidad/php/action/addTerceros.php" id="form1" method="post" name="form1" >
     <table align="center" border="0" cellpadding="0" cellspacing="1" width="850">
       <tbody>
         <tr>
@@ -101,7 +101,7 @@
                   <td align="left" class="texto_azul" width="74">
                     <strong>R&eacute;gimen:</strong></td>
                   <td>
-                    <select class="textarea_redondo2" id="regimen" name="regimen" style="width:212px; height:27px;" required><option value="0">--</option><option value="1">Simplificado</option><option value="2">Com&uacute;n</option><option value="3">Gran contribuyente</option></select></td>
+                    <select class="textarea_redondo2" id="regimen" name="regimen" style="width:212px; height:27px;" required><option value="0">--</option><option value="1" required>Simplificado</option><option value="2" required>Com&uacute;n</option><option value="3" required>Gran contribuyente</option></select></td>
                 </tr>
               </tbody>
             </table>

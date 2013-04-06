@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="Scripts/codigo.js"></script>
+<script type="text/javascript" src="Scripts/codigo.js"></script>///de aqui sale la funcion llamarsincrono
 <link href="contabilidad/css/stylesgregar_tercero.css" rel="stylesheet" type="text/css" />
 <script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
@@ -28,8 +28,8 @@ function MM_preloadImages() { //v3.0
 
 function validar_tercero(){
 	var numero = <?php echo $_REQUEST['i']; ?>;
-	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
-	
+	llamarasincrono('validar_tercero.php?tipodoc='+document.getElementById('documento').value'&numero='+numero, 'nom_tercero');
+	//tipodoc,nombre,telefono,correo,numero,direccion,regimen
 }
 
 function validar_existe(){
@@ -46,7 +46,7 @@ alert('Agregarado exitosamente');
   if (window.opener.progressWindow){     
     window.opener.progressWindow.close()
   } 
-  // window.close(); 
+  window.close(); 
 
 
 
@@ -60,7 +60,7 @@ alert('Agregarado exitosamente');
 	 <?php }?>
 </script>
 </head>
-<body class="popup"   <?php if($_GET['OK'] == 2){?> onload="cerrarVentana();"<?php } ?>   OnContextMenu="return false" onload="validar_tercero();">
+<body class="popup"   <?php if($_GET['OK'] == 2){?> onload="cerrarVentana();"<?php } ?>   OnContextMenu="return false">
 <?php
 $view= new stdClass(); 
     $view->disableLayout=false;
