@@ -1,4 +1,4 @@
-select Identificacion,nodocumento,nombretercero from terceros inner join identificacion;
+select Sigla,nodocumento,nombretercero from terceros inner join identificacion;
 
 SELECT * FROM  identificacion;
 

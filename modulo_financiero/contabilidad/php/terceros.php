@@ -18,7 +18,7 @@ class TerceroDAO{
     
     function getList(){
 
-        $sql = 'select Identificacion,nodocumento,nombretercero from terceros inner join identificacion';
+        $sql = 'select Sigla,nodocumento,nombretercero from terceros inner join identificacion';
 
 
         $this->daoConnection->consulta($sql);
