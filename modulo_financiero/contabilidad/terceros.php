@@ -1,10 +1,3 @@
- 	<?php include "php/include_dao.php";
-
-$TercerosDAO = new TercerosDAO();
-$terceros = new terceros();
-$tercero = $TercerosDAO->getList();
-
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -74,21 +67,12 @@ function borrar(id){
 </div>
 <div id="contenido_tabla">
   <table width="780" border="0" align="center" cellpadding="0" cellspacing="2">
-    <?php $docu = "";
-	foreach($tercero as $item){ 
-		if($item->getTipodocumento() == 1){
-			$docu = "CC";
-		}else if($item->getTipodocumento() == 2){
-			$docu = "CC Extranjero";
-		}
-	?>
-        <tr class="tr_tabla_interna">
-          <td width="145" class="td_tabla_interna"><?php echo $docu." ".$item->getNodocumento(); ?></td>
-          <td width="451" class="td_tabla_interna"><?php echo $item->getNombretercero(); ?></td>
-          <td width="87"><input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id=<?php echo $item->getId(); ?>'"/></td>
-          <td width="87"><input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="borrar(<?php echo $item->getId(); ?>)" /></td>
+      <tr class="tr_tabla_interna">
+          <td width="145" class="td_tabla_interna"></td>
+          <td width="451" class="td_tabla_interna"></td>
+          <td width="87"><input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
+          <td width="87"><input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="//borrar(<?php echo $item->getId(); ?>)" /></td>
         </tr>
-    <?php } ?>
   </table>
 </div>
 <div class="titulos" id="subtitulo">&gt; Parametrización Terceros</div>
