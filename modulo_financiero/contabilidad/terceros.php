@@ -49,10 +49,10 @@ function borrar(id){
 
 <body class="interna2" OnContextMenu="return false"  <?php if($_GET['OK'] == 1){?>onload="OK()"<?php } ?> <?php if($_GET['OK'] == 2){?>onload="OK2()"<?php } ?> <?php if($_GET['OK'] == 3){?>onload="OK3()"<?php } ?>>
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad_home.html'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad_home.php'"/>
 </div>
-<div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
-<div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
+<div id="logo_small3"><img src="../images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
+<div id="modulos"><img src="../images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
 <div id="fondo_home_contabilidad">
   <div id="utilidades">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
