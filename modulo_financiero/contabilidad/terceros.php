@@ -24,7 +24,7 @@ function MM_preloadImages() { //v3.0
 
 function OK(){
 	alert('Tercero creado con exito.');
-}
+
 
 function OK2(){
 	alert('Tercero modificado con exito.');
@@ -67,10 +67,10 @@ function borrar(id){
 <div id="contenido_tabla">
   <table width="780" border="0" align="center" cellpadding="0" cellspacing="2">
       <tr class="tr_tabla_interna">
-          <td width="145" class="td_tabla_interna"></td>
-          <td width="451" class="td_tabla_interna"></td>
-          <td width="87"><input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
-          <td width="87"><input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="//borrar(<?php echo $item->getId(); ?>)" /></td>
+          <td width="145" class="td_tabla_interna">1</td>
+          <td width="451" class="td_tabla_interna">2</td>
+          <td width="87">3<input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
+          <td width="87">4<input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="//borrar(<?php echo $item->getId(); ?>)" /></td>
         </tr>
   </table>
 </div>
