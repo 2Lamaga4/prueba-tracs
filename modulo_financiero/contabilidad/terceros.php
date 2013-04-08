@@ -13,7 +13,7 @@
 <meta property="og:image" content="" />
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="css/styleterceros.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 function MM_preloadImages() { //v3.0
