@@ -1,3 +1,9 @@
+#NN{
+	position: relative;
+	text-align: center;
+   	left: 0px;
+   	margin-left: 150px;
+}
 #subtitulo {
 	position:absolute;
 	left:50%;
@@ -6,4 +12,9 @@
 	height:35px;
 	z-index:8;
 	margin-left:-190px;
+}
+.td_tabla_interna{
+	position: relative;
+	text-align: left;
+   	left: 15px;
 }

@@ -22,9 +22,9 @@
     ?>
       <tr class="tr_tabla_interna">
           <td width="145" class="td_tabla_interna"><?php echo $item->getId(); ?> <?php echo $item->getNodocumento(); ?></td>
-          <td width="451" class="td_tabla_interna"><?php echo $item->getnombretercero(); ?></td>
-          <td width="87">3<input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
-          <td width="87">4<input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar"  /></td>
+          <td width="451" class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></td>
+          <td width="87"><input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
+          <td width="87"><input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar"  /></td>
         </tr>
   <?php } ?>   
   </table>
