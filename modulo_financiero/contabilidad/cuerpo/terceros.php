@@ -30,6 +30,87 @@
 
   <?php } ?>  
    </ul>
+      <div id="linea"><img src="../images/line.gif" width="945" height="1" /></div>
    </section>
+
 </div>
 	<div class="titulos" id="subtitulo">&gt; Parametrización Terceros</div>
+  <style type="text/css">
+n{
+    color: rgb(0, 0, 51); 
+    font-family: Verdana, Geneva, sans-serif; 
+    font-size: 12px; text-align: center;
+   
+}
+#linea{
+  position: absolute;;
+  padding: 0;
+  left: 0;
+  margin-left: -90px;
+  margin-top: -30px;
+}
+#atras{
+  position: relative;
+}
+.simplePagerNav {
+  clear: both;
+  position: relative;
+  top:25px;
+  padding: 0;
+  left: 300px;
+}
+
+.simplePagerNav.red {
+  outline:10px solid red;
+}
+
+.simplePagerNav.simplePagerNav li{
+    color: rgb(255, 255, 255);
+    cursor: pointer; 
+    display:block;
+    display: inline-block;
+    font-family: georgia;
+    font-size: 12px; font-family: Verdana, Geneva, sans-serif; 
+    padding: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 30px;
+    z-index: 0;
+}
+
+.simplePagerNav li a{
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.simplePagerNav li{
+   background: url(../images/fondo_btn.jpg); 
+   position: relative;
+   top:-5px;
+   margin-top: 0;
+}
+
+li.currentPage {
+ background-image: url(../images/fondo_btnver.jpg); 
+  color: rgb(255, 255, 255);  
+  font-family: Verdana, Geneva, sans-serif; 
+  font-size: 12px;
+  z-index: 999; 
+}
+
+.simplePagerNav li.currentPage a {
+  color: #fff;  
+}
+
+table.pageme {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}  
+
+table.pageme td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+} 
+  </style>

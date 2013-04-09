@@ -15,6 +15,7 @@
 <title>Cassius - software de propiedad horizontal</title>
 <link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="css/styleterceros.css" rel="stylesheet" type="text/css"/>
+<link href="" rel="stylesheet" type="text/css"/>
 <script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="Scripts/transicion.js" type="text/javascript"></script>
