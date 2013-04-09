@@ -7,7 +7,8 @@
   <div id="utilidades">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="97%" align="right"><input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='agregar_tercero.php'"/>
+  
+        <td width="97%" align="right"><input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='../agregar_tercero.php?OK=1'"/>
           &nbsp;</td>
         <td width="3%">&nbsp;</td>
       </tr>
@@ -16,8 +17,8 @@
 </div>
 <div id="contenido_tabla">
   <table width="780" border="0" align="center" cellpadding="0" cellspacing="2">
-
     <?php
+
        foreach($Terceros as $item){ 
     ?>
       <tr class="tr_tabla_interna">

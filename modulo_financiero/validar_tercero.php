@@ -4,7 +4,7 @@ $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
 
 $numero = "";
-if($_REQUEST['numero'] != ""){
+if(isset($_REQUEST['numero']) != ""){
 	$numero = $_REQUEST['numero'];
 }
 
@@ -12,8 +12,8 @@ if($numero != ""){
 	$tercero = $TercerosDAO->Validar_tercero($numero);    
  }
 
-print_r($_GET);
 
+//print_r($_GET);
 ?>
 
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -26,11 +26,11 @@ print_r($_GET);
     </tr>
     <tr>
       <td colspan="2" align="left">
-      	<?php if(count($tercero) > 0){ ?>
+      	<?php if(isset($tercero)){if(count($tercero) > 0){ ?>
       	<span style="color:#FF0000">
       		* Ya se encuentra registrado este documento.</span><?php }else{ 
            echo "<span style='color:#000'>encuentra</span>";
-      			 }?></td>
+      			 }}?></td>
     </tr>
 </table>
 

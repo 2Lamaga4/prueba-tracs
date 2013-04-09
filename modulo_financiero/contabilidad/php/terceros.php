@@ -38,16 +38,12 @@ class TerceroDAO{
 
             $newTerceros->setId($this->daoConnection->ObjetoConsulta2[$i][0]);
             $newTerceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
-            $newTerceros->setnombretercero($this->daoConnection->ObjetoConsulta2[$i][2]);
-            
+            $newTerceros->setnombretercero($this->daoConnection->ObjetoConsulta2[$i][2]);            
 
             $lista[$i] = $newTerceros;
         }
-
-
         return $lista;
     }   
 
 }
-
 ?>

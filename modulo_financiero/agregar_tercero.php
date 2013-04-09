@@ -103,7 +103,7 @@ function validar_existe(){
 
 <body class="interna2" OnContextMenu="return false" onload="validar_tercero();">
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='terceros.php'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad/terceros.php'"/>
 </div>
 <div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
@@ -118,8 +118,10 @@ function validar_existe(){
     <tr>
       <td height="40" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td width="137" class="texto_azul" align="left"><strong>Tipo de documento:</strong></td>
-          <td width="163"><select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
+          <td width="137" class="texto_azul" align="left">
+            <strong>Tipo de documento:</strong></td>
+          <td width="163">
+          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
             <option value="0">--</option>
             <option value="1">CC</option>
             <option value="2">CC Extranjero</option>
@@ -179,7 +181,10 @@ function validar_existe(){
       <td height="40" colspan="2" align="center"><img src="images/line2.gif" width="850" height="1" /></td>
     </tr>
     <tr>
-      <td height="40" colspan="2" align="center"><input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" /></td>
+      <td height="40" colspan="2" align="center">
+        <input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" />
+        <input type="hidden" name="des" id="des" value="2" />
+      </td>
     </tr>
     <tr>
       <td height="40" colspan="2" align="center">&nbsp;</td>
