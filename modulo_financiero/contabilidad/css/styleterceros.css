@@ -1,9 +1,7 @@
-#NN{
-	position: relative;
-	text-align: center;
-   	left: 0px;
-   	margin-left: 150px;
-}
+/**
+ * stylos de terceros
+ */
+
 #subtitulo {
 	position:absolute;
 	left:50%;
@@ -13,8 +11,70 @@
 	z-index:8;
 	margin-left:-190px;
 }
+#eliminar_int{
+	margin-top: 0;
+	margin-right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#modificar_int{
+	margin-top: 0;
+	margin-right: 90px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#NN{
+	position: relative;
+	text-align: center;
+    margin-left: 75px;
+   	border-right: 2px solid #fff;
+   	left: 0px;
+   	padding-bottom: 3px;
+   	width: 591px;
+}
+#N0{
+	border-right: 2px solid #fff;
+	left: 0;
+	height: 14px;
+	margin-left: 15px;
+	margin-top: 0px;
+	padding-bottom: 3px;
+	position: absolute;
+	width: 130px;
+}
+#N0 span{
+	position: absolute;
+	left: 0;
+	margin-left: 35px;
+	margin-top: 0;
+	top: 0;
+}
 .td_tabla_interna{
+	left: 15px;
 	position: relative;
 	text-align: left;
-   	left: 15px;
+}
+.tr_tabla_interna{
+	margin: 0 auto;
+	position: relative;
+	width: 780px;
+}
+.tr_tabla{
+	left: 0px;
+	margin-left: 90px;
+	margin-top: 0px;
+	position: absolute;
+}
+.tr_tabla ul{
+	margin: 0;
+	padding:0;
+	width: 780px;
+}
+.tr_tabla_interna{/**/
+	display: inline-block;
+	height:17px;
+	padding:0;
+	margin: 0;
 }

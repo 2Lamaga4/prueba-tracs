@@ -18,6 +18,15 @@
 <script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="Scripts/transicion.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.quick.pagination.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("ul.pagination1").quickPagination();
+  $("ul.pagination2").quickPagination({pagerLocation:"both"});
+  $("ul.pagination3").quickPagination({pagerLocation:"both",pageSize:"3"});
+});
+</script>
 </head>
 <body class="interna2" OnContextMenu="return false" >
 <?php

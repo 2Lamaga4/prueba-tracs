@@ -16,18 +16,20 @@
   </div>
 </div>
 <div id="contenido_tabla">
-  <table width="780" border="0" align="center" cellpadding="0" cellspacing="2">
+  <section class="tr_tabla">
+   <ul class="pagination1">
     <?php
-
        foreach($Terceros as $item){ 
     ?>
-      <tr class="tr_tabla_interna">
-          <td width="145" class="td_tabla_interna"><?php echo $item->getId(); ?> <?php echo $item->getNodocumento(); ?></td>
-          <td width="451" class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></td>
-          <td width="87"><input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/></td>
-          <td width="87"><input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar"  /></td>
-        </tr>
-  <?php } ?>   
-  </table>
+          <li class="tr_tabla_interna"> 
+                <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
+                <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
+                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/>
+                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar"  />
+          </li>
+
+  <?php } ?>  
+   </ul>
+   </section>
 </div>
 	<div class="titulos" id="subtitulo">&gt; Parametrización Terceros</div>
