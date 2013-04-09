@@ -59,13 +59,15 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   xposi=(ancho-970)/2;
   ventana.moveTo(xposi,yposi);
 }
+
+
 function dato_tercero(){
 	var tercero = document.getElementById('tercero').value;
-	
 	llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
 	llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');
-	
 }
+
+
 function dato_tercero2(){
 	llamarasincrono('tercero_campo.php', 'ter');
 	llamarasincrono('tercero_campo2.php', 'ter2');
@@ -174,10 +176,12 @@ function agregar_item(num){
 }	
 function eliminar_cuenta(id){
 	llamarasincrono('campo_cuenta_movi.php?id='+id, 'compo_cuenta_m'+id);
-}	
-function agregar_Tercero(){
-	MM_openBrWindow('agregar_tercero2.php?OK=1&nombre='+document.getElementById('tercero').value,'AgregarTercero','scrollbars=yes,width=970px,height=400px')
 }
+////////////////////////////////////////////////	
+function agregar_Tercero(){
+	MM_openBrWindow('agregar_tercero.php?s=1&OK=1&nombre='+document.getElementById('tercero').value,'AgregarTercero','scrollbars=yes,width=1060px,height=510px')
+}
+//////////////////////////////////////////////////
 function cerrarVentana(){ 
 	alert('Movimiento creado con exito.');
 	 window.opener.location.href = window.opener.location.href; 

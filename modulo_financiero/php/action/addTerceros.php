@@ -17,9 +17,9 @@ $regimen = $_REQUEST['regimen'];
 
 
 if($_REQUEST['des'] == 1){
-	$location = "location: ../../contabilidad/tercer.php?OK=2&i=".$numero."&nombre=".$nombre;
+	$location = "location: ../../contabilidad/tercer.php?OK=2&i=".$numero."&nombre=".$nombre;//movimientos
 }elseif($_REQUEST['des'] == 2){
- $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+ $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;//terceros
 }
 
 $TercerosDAO = new TercerosDAO();

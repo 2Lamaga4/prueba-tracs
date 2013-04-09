@@ -31,7 +31,7 @@
       <td height="40" colspan="2" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="715" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="136" class="texto_azul" align="left"><strong>Nombre:</strong></td>
-          <td width="579"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" style="width:565px;"/>
+          <td width="579"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" value="<?php if(isset($_GET['nombre'])){echo $_GET['nombre'];}?>"  style="width:565px;"/>
             </td>
         </tr>
       </table></td>
@@ -79,7 +79,9 @@
     <tr>
       <td height="40" colspan="2" align="center">
         <input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" />
-        <input type="hidden" name="des" id="des" value="2" />
+        <input type="hidden" name="des" id="des" value="1" />
+        <input type="hidden" name="s" id="s" value="<?php echo $_GET['s'];?>" />
+
       </td>
     </tr>
     <tr>

@@ -164,7 +164,6 @@ class TercerosDAO{
 	function save($obj){
         $newTerceros = new terceros();
         $newTerceros = $obj;
-
         $querty =   "insert into terceros
                     (tipodocumento,nodocumento,nombretercero,direccion,telefono,email,regimen) VALUES ('".mysql_real_escape_string($newTerceros->getTipodocumento())."', '".mysql_real_escape_string($newTerceros->getNodocumento())."', '".mysql_real_escape_string($newTerceros->getNombretercero())."', '".mysql_real_escape_string($newTerceros->getDireccion())."', '".mysql_real_escape_string($newTerceros->getTelefono())."', '".mysql_real_escape_string($newTerceros->getEmail())."', '".mysql_real_escape_string($newTerceros->getRegimen())."')";
 
