@@ -24,8 +24,8 @@
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='modificar_tercero.php?id='"/>
-                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar"  />
+                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../modificar_tercero.php?id='"/>
+                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="borrar(<?php echo $item->getId(); ?>)" />
           </li>
 
   <?php } ?>  

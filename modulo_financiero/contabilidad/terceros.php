@@ -27,6 +27,11 @@ $(document).ready(function() {
   $("ul.pagination2").quickPagination({pagerLocation:"both"});
   $("ul.pagination3").quickPagination({pagerLocation:"both",pageSize:"3"});
 });
+function borrar(id){
+  if (confirm('¿Estas seguro que desea borrar este Tercero?')){ 
+     // location.href = "../php/action/deleteTerceros.php?id="+id;
+    } 
+}
 </script>
 </head>
 <body class="interna2" OnContextMenu="return false" >
