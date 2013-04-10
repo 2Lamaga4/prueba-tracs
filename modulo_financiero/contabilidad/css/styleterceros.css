@@ -133,14 +133,14 @@ n{
     padding-right: 10px;
 }
 .simplePagerNav li{
-   background: url(../images/fondo_btn.jpg); 
+   background: url(../../images/fondo_btn.jpg); 
    position: relative;
    top:-5px;
    margin-top: 0;
 }
 
 li.currentPage {
- background-image: url(../images/fondo_btnver.jpg); 
+ background-image: url(../../images/fondo_btnver.jpg); 
   color: rgb(255, 255, 255);  
   font-family: Verdana, Geneva, sans-serif; 
   font-size: 12px;
