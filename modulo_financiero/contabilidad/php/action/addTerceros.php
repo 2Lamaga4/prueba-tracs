@@ -14,14 +14,16 @@ $direccion = $_REQUEST['direccion'];
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
 
-
-if($_REQUEST['des'] == 1){
-    
-     $location = "location: ../../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
-    }
-    elseif($_REQUEST['des'] == 2){
-
-      $location = "location: ../../../terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+switch ($_REQUEST['des']) {
+    case 1:
+          $location = "location: ../../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
+        break;
+    case 2:
+     $location = "location: ../../../terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+       break;
+    default:
+        # code...
+        break;
 }
 
 $TercerosDAO = new TercerosDAO();

@@ -6,7 +6,7 @@ require_once('../dao/daoConnection.php');
 require_once('../dao/TercerosDAO.php');
 require_once('../entities/terceros.php');
 
-print_r($_POST);
+print_r($_GET);
 $documento = $_REQUEST['documento']; 
 $numero = $_REQUEST['numero']; 
 $nombre = $_REQUEST['nombre']; 
@@ -14,12 +14,14 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion']; 
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
-
+if(isset($_REQUEST['s'])!=""){
+    $location = "location: ../agregar_comprobante_diario.php";
+}
 
 if($_REQUEST['des'] == 1){
-	$location = "location: ../../contabilidad/tercer.php?OK=2&i=".$numero."&nombre=".$nombre;//movimientos
+	$location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;//movimientos
 }elseif($_REQUEST['des'] == 2){
- $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;//terceros
+ $location = "location: ../agregar_comprobante_diario.php";
 }
 
 $TercerosDAO = new TercerosDAO();
