@@ -29,7 +29,7 @@ $(document).ready(function() {
 });
 function borrar(id){
   if (confirm('¿Estas seguro que desea borrar este Tercero?')){ 
-     // location.href = "../php/action/deleteTerceros.php?id="+id;
+     location.href = "../php/action/deleteTerceros.php?id="+id;
     } 
 }
 </script>

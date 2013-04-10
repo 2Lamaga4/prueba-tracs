@@ -8,7 +8,7 @@ require_once('../entities/terceros.php');
 $id = $_REQUEST['id']; 
 
 
-$location = "location: ./../../terceros.php?OK=3";
+$location = "location: ./../../contabilidad/terceros.php?OK=3";
 
 
 $TercerosDAO = new TercerosDAO();
