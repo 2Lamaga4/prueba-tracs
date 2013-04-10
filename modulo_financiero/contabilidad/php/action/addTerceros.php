@@ -14,7 +14,8 @@ $direccion = $_REQUEST['direccion'];
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
 
-switch ($_REQUEST['des']) {
+switch ($_REQUEST['des'])
+ {
     case 1:
           $location = "location: ../../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
         break;
@@ -22,7 +23,6 @@ switch ($_REQUEST['des']) {
      $location = "location: ../../../terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
        break;
     default:
-        # code...
         break;
 }
 

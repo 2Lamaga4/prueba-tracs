@@ -14,15 +14,26 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion']; 
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
-if(isset($_REQUEST['s'])!=""){
-    $location = "location: ../agregar_comprobante_diario.php";
-}
+///manejar un switch case
 
-if($_REQUEST['des'] == 1){
-	$location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;//movimientos
-}elseif($_REQUEST['des'] == 2){
- $location = "location: ../agregar_comprobante_diario.php";
+if(isset($ejm)!=null){
+    echo "<script>alert('si');</script>";
 }
+else{
+ echo "<script>alert('no');</script>";
+}/*
+switch ($_REQUEST['des'])
+ {
+    case 1:
+          $location = "location: ../../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
+        break;
+    case 2:
+     $location = "location: ../../../terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+       break;
+    default:
+        break;
+}*/
+
 
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
@@ -40,19 +51,19 @@ header($location);
 //exit;
 
 function accents2HTML($mensaje){
-    $mensaje = str_replace("·","&aacute;",$mensaje);
-    $mensaje = str_replace("È","&eacute;",$mensaje);
-    $mensaje = str_replace("Ì","&iacute;",$mensaje);
-    $mensaje = str_replace("Û","&oacute;",$mensaje);
-    $mensaje = str_replace("˙","&uacute;",$mensaje);
-    $mensaje = str_replace("Ò","&ntilde;",$mensaje);
+    $mensaje = str_replace("√°","&aacute;",$mensaje);
+    $mensaje = str_replace("√©","&eacute;",$mensaje);
+    $mensaje = str_replace("√≠","&iacute;",$mensaje);
+    $mensaje = str_replace("√≥","&oacute;",$mensaje);
+    $mensaje = str_replace("√∫","&uacute;",$mensaje);
+    $mensaje = str_replace("√±","&ntilde;",$mensaje);
     
-	$mensaje = str_replace("¡","&Aacute;",$mensaje);
-    $mensaje = str_replace("…","&Eacute;",$mensaje);
-    $mensaje = str_replace("Õ","&Iacute;",$mensaje);
-    $mensaje = str_replace("”","&Oacute;",$mensaje);
-    $mensaje = str_replace("⁄","&Uacute;",$mensaje);
-    $mensaje = str_replace("—","&Ntilde;",$mensaje);
+	$mensaje = str_replace("√Å","&Aacute;",$mensaje);
+    $mensaje = str_replace("√â","&Eacute;",$mensaje);
+    $mensaje = str_replace("√ç","&Iacute;",$mensaje);
+    $mensaje = str_replace("√ì","&Oacute;",$mensaje);
+    $mensaje = str_replace("√ö","&Uacute;",$mensaje);
+    $mensaje = str_replace("√ë","&Ntilde;",$mensaje);
     return $mensaje;
 }
 
