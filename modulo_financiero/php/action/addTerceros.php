@@ -19,11 +19,10 @@ $regimen = $_REQUEST['regimen'];
 switch ($_REQUEST['des'])
  {
     case 1:
-         
-           $location = "location: ../../../agregar_tercero2?OK=2&i=".$numero."&nombre=".$nombre;
+           $location = "location: ../../contabilidad/terceros.php?OK=3&i=".$numero."&nombre=".$nombre;//movimientos
         break;
     case 2:
-            $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+            $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;//tercero
        break;
     default:
         break;
