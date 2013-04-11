@@ -1,6 +1,10 @@
+<?php
+  if(isset($_GET['s'])==1){ }else{ ?>
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad/terceros.php'"/>
 </div>
+  <?php } ?> 
+
 <div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
 <div id="fondo_home_contabilidad"></div>
@@ -80,7 +84,6 @@
       <td height="40" colspan="2" align="center">
         <input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" />
        <?php
-     
        if(isset($_GET['s'])==1){
        echo'<input type="hidden" name="des" id="des" value="1" />';
          }else{ 
