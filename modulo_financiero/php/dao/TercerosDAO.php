@@ -165,7 +165,7 @@ class TercerosDAO{
         $newTerceros = new terceros();
         $newTerceros = $obj;
         $querty =   "insert into terceros
-                    (tipodocumento,nodocumento,nombretercero,direccion,telefono,email,regimen) VALUES ('".mysql_real_escape_string($newTerceros->getTipodocumento())."', '".mysql_real_escape_string($newTerceros->getNodocumento())."', '".mysql_real_escape_string($newTerceros->getNombretercero())."', '".mysql_real_escape_string($newTerceros->getDireccion())."', '".mysql_real_escape_string($newTerceros->getTelefono())."', '".mysql_real_escape_string($newTerceros->getEmail())."', '".mysql_real_escape_string($newTerceros->getRegimen())."')";
+                    (tipodocumento,nodocumento,nombretercero,direccion,telefono,email,regimen,Estado) VALUES ('".mysql_real_escape_string($newTerceros->getTipodocumento())."', '".mysql_real_escape_string($newTerceros->getNodocumento())."', '".mysql_real_escape_string($newTerceros->getNombretercero())."', '".mysql_real_escape_string($newTerceros->getDireccion())."', '".mysql_real_escape_string($newTerceros->getTelefono())."', '".mysql_real_escape_string($newTerceros->getEmail())."', '".mysql_real_escape_string($newTerceros->getRegimen())."',1)";
 
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
 		if (!$result){

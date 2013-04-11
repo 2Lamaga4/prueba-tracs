@@ -16,23 +16,18 @@ $correo = $_REQUEST['correo'];
 $regimen = $_REQUEST['regimen']; 
 ///manejar un switch case
 
-if(isset($ejm)!=null){
-    echo "<script>alert('si');</script>";
-}
-else{
- echo "<script>alert('no');</script>";
-}/*
 switch ($_REQUEST['des'])
  {
     case 1:
-          $location = "location: ../../../agregar_tercero2.php?OK=2&i=".$numero."&nombre=".$nombre;
+         
+           $location = "location: ../../../agregar_tercero2?OK=2&i=".$numero."&nombre=".$nombre;
         break;
     case 2:
-     $location = "location: ../../../terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
+            $location = "location: ../../contabilidad/terceros.php?OK=2&i=".$numero."&nombre=".$nombre;
        break;
     default:
         break;
-}*/
+}
 
 
 $TercerosDAO = new TercerosDAO();
