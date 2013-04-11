@@ -6,11 +6,20 @@ $terceros = new terceros();
 $tercero = $TercerosDAO->get($_REQUEST['id']);
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
+<meta charset="utf-8" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="description" content="software de propiedad horizontal">
+<meta property="og:title" content="Cassius" />
+<meta property="og:type" content="software" />
+<meta property="og:url" content=""/>
+<meta property="og:image" content="" />
+<meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="Scripts/codigo.js"></script>
@@ -82,20 +91,20 @@ function validar(){
 
 }
 
-
+/*
 function validar_tercero(){
-	llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
+  llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
 }
 
 
 function validar_existe(){
-	var numero = document.getElementById('numero').value;
-	if(<?php echo $tercero->getNodocumento(); ?> == numero){
-		llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
-	}else{
-		llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
-	}
-}
+  var numero = document.getElementById('numero').value;
+  if(<?php echo $tercero->getNodocumento(); ?> == numero){
+    llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
+  }else{
+    llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
+  }
+}*/
 
 
 </script>

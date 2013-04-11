@@ -1,0 +1,215 @@
+Arquitectura(Analisis y Diseño)
+Analisis: levantamiento de datos e identifacion de la metodologia para solucionar los requerimientos
+          requerimiento funcionales y atrivutos de calidad
+Diseños: 
+		casos de uso
+		casos de negocio //El comportamiento de la ideologia que se pretente manejar con el programa
+		Digrama de flujo de datos nivel 0 hastas n
+		Diagrama de paquetes //// esto contiene los diagramas de clases de cada modulo
+        Diagrama de clases
+        Diagrama de procesos
+        Diagrame de entidas
+        Modelo logico de base de datos
+        Modelo Fisico
+        Digrama de flujo 
+        *Diseño para cliente(Grafico-Maqueta)
+        
+
+MVC(Modelo Vista Controlador)
+
+cada una de estos estaria contenido en una carpeta(3 carpetas principales).
+
+Vista:
+
+	html-css-*jquery-*canvas-*imagenes
+						-->interacion del usuario
+
+Controlador:
+
+	javascript-jquery
+						-->actuliazon de vista - modifica estado  del aplicativo*(manejo de variables)
+Modelo:
+
+	php*(programacion)-sql
+						-->notificaion de cambios de estado*(proceso de base de datos-programcion)
+
+lenguajes:
+
+sql(mysql-oracle-server-posgres)
+			ESTRUCTURA:
+
+				DROP
+				CREATE TABLE
+				"FUNSIONES"
+				"PROCEDIMIENTOS ALMACENADOS"
+				"VISTAS"
+				"LANSADORES-->TRIGERS"
+				
+			Palabras reservadas:(Mayuscula)
+				ejemplo:CREATE, DROP, SELECT, UPDATE, DELETE, INNERT JOIN, FROM ....
+
+			varaibles: 
+			creacion de tablas
+			ejemplo(MSQL):  CREATE  IF  NOT EXISTS TablaCreada ( );
+
+				ATRIBUTOS:
+				   	   SIEMPRE SE COLOCARA UN ID NATIVO DE LA TABLA(PRIMAKY KEY) Y SE USA LA NOTACION CAMELLO EN LAS VARIABLE(TablId)
+				   	   			ejemplo(MYSQL):
+				   	   	CREATE  IF  NOT EXISTS TablaCreada (TablId 				INT 		NOT NULL  AUTO_INCREMENT,
+				   	   										TablCedula 			VARCHAR		NOT NULL,
+				   	   										TablTablaHeredada	INT 		NOT NULL,
+				   	   										PRIMARY KEY(TablId),
+				   	   										FOREIGN KEY(TablTablaHeredada) REFERENCES TablaHeredada (TaHeId)ON UPDATE CASCADE ON DELETE RESTRICT,
+															UNIQUE 	KEY(TablCedula)
+				   	   										)ENGINE=innodb DEFAULT CHANSET=utf8 AUTO_INCREMENT=1;
+				   	   	*sangria y alinecion
+
+			COMENTARIOS:
+				TIPOS
+					/* */   --  /*****/ 
+				CONTENIDO DEL COMENTARIO
+				  
+				  /* */   -->PARA UN DATO ESPECIFICO
+				  
+				  /*CAMPO QUE SE UTILISARA PARA VALIDAR...*/
+
+				  --   -->PARA DIVICIONES DE BOQUES CON JUSTIFICACION Y NOMBRE DE NUEVO BLOQUE 
+				  
+				  -- JUSTIFICACION
+				  -- ----------------------------------
+				  --			 USUARIOS
+
+				  /*****/ -->PARA TABLAS, VISTAS, FUNCIONES Y OTROS BLOQUES DE CONTENIDO
+
+				  /*
+				  *NOMBRE(LO QUE HACE) 
+				  *@RETURN [TYPE=] 
+				  *@TYPE DATOS[DATE,VARCHAR...]
+				  *@COMENTARIO EXTRA
+				   */
+				  
+
+html
+ Estructura:
+      arbol DOM(HTML5)-->
+		<!DOCTYPE html>
+		<html lang="es">
+		<head>
+		<meta charset    ="utf-8" />
+		<meta http-equiv ="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name       ="viewport" 		content="width = device-width, initial-scale=1, maximum-scale=1"/>
+		<meta name       ="description" 	content="EDITOR WEB CON HTML5 CSS3 Y JAVASCRIPT">
+		<meta property   ="og:title" 		content="Editor MJplayV" />
+		<meta property   ="og:type" 		content="website" />
+		<meta property   ="og:url" 			content="http://mjplay-v.16mb.com/recursos/editor-all.html"/>
+		<meta property   ="og:image" 		content="https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn1/561117_277654852340416_780149522_n.jpg" />
+		<meta property   ="og:site_name" 	content="mjplay-v" />
+		<link rel="shortcut icon" href="/imagenes/icono.ico" />  
+		<link href="/css/editor/editor.css" rel="stylesheet" /> 
+		<script src="/javascript/editor.js"></script>
+		<?php include_once('url.php'); ?><!--programacion--!>
+		<title></title>
+		</head>
+		<body>
+			<header></header>
+			<nav></nav>
+			<aside></aside>
+				<section>
+					<header></header>
+					<article></article>
+					<section></section>
+					<div>
+						<?php echo "00";?><!--llamdo para intereccion--!>
+					</div>
+					<footer></footer>
+				</section>
+			<footer></footer>
+		</body>
+		</html>
+	               *sangria y alinecion
+		etiquetas
+					solo se usan las aprobadas por la W3E de (html5)
+					id y class
+					prefijos notacion camello
+					ejemplo:
+						<artcle id="ArtMarco"> --> Art(prefijo de article) Marco(nombre de la varible)
+		COMENTARIOS:
+		 para aclarar para que se va usar el bloque de caja y la pagina
+		 	ejemplo:
+
+		 	<!-- comenario--!>
+
+css
+		ESTRUCTURA:*regla importante(en orden alfabetico)
+			@import url(url.css);//arviso externos
+			etiquetas nativas--->html,body,div,h1....
+			::selection{}//las selection son en orden alfabetico
+			/*-----bloque-----*/
+					#id{}//los id son en orden alfabetico
+					.class{}//las class son en orden alfabetico
+					/**dentro del los id y de las class/
+					{
+						border:...;
+						margin:0; -->Si se define (left, right, top, bottom) no puede ir margin  solo, de be incluir los otros 3
+						padding:0;-->Si se define (left, right, top, bottom) no puede ir padding solo, de be incluir los otros 3
+						/*
+						correcto
+						{
+						padding:0;
+					    margin-bottom:0;
+					    margin-left:0;
+					    margin-right:0;
+					    margin-top:1px;
+						}
+						incorrecto
+						{
+						margin-bottom:3px;
+						padding-top:2px;
+						padding:0;
+						}
+
+						 */
+						position:...;
+					}
+			/*--fin de bloque--*/
+			/*---------------responsa designer--------*/
+			@media screen and (max-width:...px) {}
+			@media screen and (max-height:...px) {}
+
+	*sangria y alinecion
+
+	comentarios
+		TIPOS
+					// /**/ /****/
+				CONTENIDO DEL COMENTARIO
+				  
+				  //   -->PARA UN DATO ESPECIFICO
+				  
+				  //CAMPO QUE SE UTILISARA PARA VALIDAR...
+
+				  /*------Bloke----*/   -->PARA DIVICIONES DE BOQUES CON JUSTIFICACION Y NOMBRE DE NUEVO BLOQUE 
+				  
+				  /* JUSTIFICACION
+			
+				  			 USUARIOS*/
+
+				  /*****/ -->PARA bloques de cajas o simples
+
+				  /*
+				  *NOMBRE(LO QUE HACE) 
+				  *@UTILIZADO [Url][Url]
+				  *@COMENTARIO EXTRA
+				   */
+
+
+
+javascript
+
+
+
+jquery
+
+
+php* (lenguaje de programacion)
+
+
