@@ -210,8 +210,10 @@ class TercerosDAO{
 
 
 	 function delete($id){
+             //$id -> numero de documento
 
-			$sql = 'Delete from terceros WHERE idterceros = '.$id;
+			$sql = 'update terceros  set  Estado = 0 where  nodocumento ='.$id;
+
 			$this->daoConnection->consulta($sql);
 	}
 

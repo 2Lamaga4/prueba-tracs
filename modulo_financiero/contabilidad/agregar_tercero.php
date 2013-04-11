@@ -80,8 +80,7 @@
       <td height="40" colspan="2" align="center">
         <input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" />
         <input type="hidden" name="des" id="des" value="1" />
-        <input type="hidden" name="s" id="s" value="<?php echo $_GET['s'];?>" />
-
+        <input type="hidden" name="s" id="s" value="<?php echo $_GET['s'];?>"/>
       </td>
     </tr>
     <tr>
