@@ -91,20 +91,11 @@ function validar_existe(){
 	var numero = document.getElementById('numero').value;
 	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
 }
-function cerrarVentana(){ 
-	 window.opener.location.href = window.opener.location.href; 
-	//window.opener.document.forms[0].submit();
-  if (window.opener.progressWindow) 		
- { 
-    window.opener.progressWindow.close()
-  } 
-  window.close(); 
 
-}
 </script>
 </head>
 
-<body class="interna2" OnContextMenu="return false" onload="validar_tercero();" <?php if($_GET['OK'] == 3){?>cerrarVentana()<?php } ?>">
+<body class="interna2" OnContextMenu="return false" onload="validar_tercero();">
 <?php
   
     $view= new stdClass(); 

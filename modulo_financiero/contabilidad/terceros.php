@@ -32,9 +32,20 @@ function borrar(id){
      location.href = "../php/action/deleteTerceros.php?id="+id;
     } 
 }
+function cerrarVentana(){ 
+ window.opener.location.href = window.opener.location.href; 
+  //window.opener.document.forms[0].submit();
+  if (window.opener.progressWindow)     
+ { 
+    window.opener.progressWindow.close()
+  } 
+
+  window.close(); 
+
+}
 </script>
 </head>
-<body class="interna2" OnContextMenu="return false" >
+<body class="interna2" OnContextMenu="return false" <?php if($_GET['OK'] == 3){ ?> onload="cerrarVentana()"<?php } ?>>
 <?php
 
     include "php/terceros.php";//se hace el llamdo a la parte de interaccion con la base de datos
