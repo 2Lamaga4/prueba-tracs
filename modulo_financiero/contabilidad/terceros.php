@@ -45,7 +45,7 @@ function cerrarVentana(){
 }
 </script>
 </head>
-<body class="interna2" OnContextMenu="return false" <?php if($_GET['OK'] == 3){ ?> onload="cerrarVentana()"<?php } ?>>
+<body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 3){ ?> onload="cerrarVentana()"<?php } ?>>
 <?php
 
     include "php/terceros.php";//se hace el llamdo a la parte de interaccion con la base de datos
