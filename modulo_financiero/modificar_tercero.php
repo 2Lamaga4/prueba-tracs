@@ -30,81 +30,21 @@ function MM_preloadImages() { //v3.0
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
 
-function validar(){
-
-	var documento = document.getElementById('documento').value;
-	if(documento == 0){
-		alert('Seleccione un tipo de documento.');
-		document.getElementById('documento').focus();
-		return false;
-	}
-	
-	var numero = document.getElementById('numero').value;
-	if(numero == ""){
-		alert('Digite el numero del documento.');
-		document.getElementById('numero').focus();
-		return false;
-	}
-	
-	var nombre = document.getElementById('nombre').value;
-	if(nombre == ""){
-		alert('Digite el Nombre.');
-		document.getElementById('nombre').focus();
-		return false;
-	}
-	
-	var telefono = document.getElementById('telefono').value;
-	if(telefono == ""){
-		alert('Digite el Telefono.');
-		document.getElementById('telefono').focus();
-		return false;
-	}
-	
-	var direccion = document.getElementById('direccion').value;
-	if(direccion == ""){
-		alert('Digite la Direccion.');
-		document.getElementById('direccion').focus();
-		return false;
-	}
-	
-	
-	var correo = document.getElementById('correo').value;
-	if (correo == ""){
-		alert("Digite el Correo.");
-		document.getElementById('correo').focus();
-		return false;
-	}	
-	
-	if ((correo.indexOf('@', 0) == -1) || (correo.length < 5) || (correo.indexOf('.', 0) == -1)) 	
-	{
-	  alert("Correo no válido (ejemplo@cassius.com).");
-	  return false
-	}
-
-	var regimen = document.getElementById('regimen').value;
-	if(regimen == 0){
-		alert('Seleccione un Regimen.');
-		document.getElementById('regimen').focus();
-		return false;
-	}
-
-
-}
-
-/*
 function validar_tercero(){
-  llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
+  llamarasincrono('validar_tercero2.php?num=<?php echo $_REQUEST["id"];?>', 'nom_tercero');
 }
-
-
 function validar_existe(){
   var numero = document.getElementById('numero').value;
   if(<?php echo $tercero->getNodocumento(); ?> == numero){
+    alert('si');
     llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
   }else{
+      alert('no');
     llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
   }
-}*/
+}
+
+
 
 
 </script>
@@ -127,7 +67,7 @@ function validar_existe(){
 
 <body class="interna2" OnContextMenu="return false" onload="validar_tercero();">
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='terceros.php'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad/terceros.php'"/>
 </div>
 <div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>

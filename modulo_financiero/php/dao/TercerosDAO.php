@@ -45,10 +45,10 @@ class TercerosDAO{
     }
 
 	function get($id){
-
+            echo "somos troles";
         $newTerceros = new terceros();
 
-        $sql = 'SELECT * from terceros where idterceros	 = "'.mysql_real_escape_string($id).'"';
+        $sql = 'SELECT * from terceros where nodocumento = "'.mysql_real_escape_string($id).'"';
 
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
@@ -74,14 +74,12 @@ class TercerosDAO{
         return $newTerceros;
     }
 	function Validar_tercero($documento){
-
+        echo "soy validar tercero".$documento;
         $newTerceros = new terceros();
-
-        $sql = 'SELECT * from terceros where nodocumento = "'.mysql_real_escape_string($documento).'"';
+        $sql = 'SELECT * from terceros where nodocumento = "'.$documento.'"';
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
-
         if($numregistros == 0){
             return null;
         }	
@@ -96,8 +94,10 @@ class TercerosDAO{
 			$newTerceros->setEmail($this->daoConnection->ObjetoConsulta2[$i][6]);
 			$newTerceros->setRegimen($this->daoConnection->ObjetoConsulta2[$i][7]);
 
+
         //$noticiaToPoblate = $newnoticia;
         return $newTerceros;
+
     }	
 	function Validar_tercero2($tercero){
 
