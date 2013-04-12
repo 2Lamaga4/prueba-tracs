@@ -198,7 +198,7 @@ class TercerosDAO{
 		if($newTerceros->getRegimen())  
 			 $update_fields[7]="regimen = '".mysql_real_escape_string($newTerceros->getRegimen())."'";	 	 
 			 	 	
-        $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE idterceros = '".$newTerceros->getId()."' ";
+        $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE nodocumento = '".$newTerceros->getId()."' ";
         //echo $querty.'<br />';
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
 		if (!$result){

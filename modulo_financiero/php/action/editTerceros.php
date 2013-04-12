@@ -4,7 +4,7 @@
 require_once('../dao/daoConnection.php');
 require_once('../dao/TercerosDAO.php');
 require_once('../entities/terceros.php');
-
+print_r($_REQUEST);
 $id = $_REQUEST['id']; 
 $documento = $_REQUEST['documento']; 
 $numero = $_REQUEST['numero']; 
@@ -31,7 +31,7 @@ $terceros->setRegimen($regimen);
 
 $TercerosDAO->update($terceros);
 
-header($location);
+//header($location);
 exit;
 
 
