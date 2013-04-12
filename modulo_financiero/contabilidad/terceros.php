@@ -43,6 +43,7 @@ function cerrarVentana(){
   window.close(); 
 
 }
+
 </script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 3){ ?> onload="cerrarVentana()"<?php } ?>>
