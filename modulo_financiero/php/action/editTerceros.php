@@ -14,7 +14,7 @@ $direccion = $_REQUEST['direccion'];
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
 
-$location = "location: ./../../terceros.php?OK=2";
+$location = "location: ../../contabilidad/terceros.php?OK=2";
 
 
 $TercerosDAO = new TercerosDAO();
@@ -31,7 +31,7 @@ $terceros->setRegimen($regimen);
 
 $TercerosDAO->update($terceros);
 
-//header($location);
+header($location);
 exit;
 
 
