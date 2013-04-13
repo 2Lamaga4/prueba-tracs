@@ -4,7 +4,6 @@
 
 2)modulo_financiero/rc_movimientos.php
 
-*movimientos ordenarlos de forma asendente
 *modificar cuentas Xnuevo --->solicitar la maqueta
 
 
@@ -23,3 +22,5 @@
 tablas q maneja el aplicativo
 
 
+
+** mirar titulos....
