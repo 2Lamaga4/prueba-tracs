@@ -87,7 +87,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td height="20" colspan="2"><img src="images/line2.gif" width="850" height="1" /></td>
+      <td height="20" colspan="2"><img src="../images/line2.gif" width="850" height="1" /></td>
     </tr>
     <tr>
       <td height="40" colspan="2" align="center"><input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Guardar :::" />
@@ -102,4 +102,4 @@
   </form>
 </div>
 
-<div class="titulos" id="subtitulo">&gt; Parametrización Contador</div>
+<div class="titulos" id="subtitulo1">&gt; Parametrización Contador</div>

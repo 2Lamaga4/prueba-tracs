@@ -7,3 +7,21 @@
 	z-index:8;
 	margin-left:-190px;
 }
+#subtitulo1 {
+position:absolute;
+	left:50%;
+	top:95px;
+	width:384px;
+	height:35px;
+	z-index:8;
+	margin-left:-190px;
+}
+#subtitulo2 {
+	position:absolute;
+	left:50%;
+	top:95px;
+	width:565px;
+	height:35px;
+	z-index:8;
+	margin-left:-190px;
+}
