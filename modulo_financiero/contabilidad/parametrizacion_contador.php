@@ -23,6 +23,14 @@
 <body class="interna2" OnContextMenu="return false">
 <?php
 
+    include "../php/dao/daoConnection.php";
+    include "../php/entities/funcionarios.php";
+    include "../php/dao/FuncionariosDAO.php";
+
+    $FuncionariosDAO = new FuncionariosDAO();
+    $funcionarios = new funcionarios();
+    $funcionario = $FuncionariosDAO->get(2);
+
     $view= new stdClass(); 
     $view->disableLayout=false;
      /**
