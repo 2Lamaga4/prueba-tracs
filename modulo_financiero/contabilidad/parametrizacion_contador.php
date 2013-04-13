@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es">s
 <head>
 <meta charset="utf-8" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,8 +19,9 @@
 <script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="../Scripts/transicion.js" type="text/javascript"></script>
+<script src="script/funcionarios.js" type="text/javascript"></script>
 </head>
-<body class="interna2" OnContextMenu="return false">
+<body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 2){?>onload="OK2()"<?php } ?>>
 <?php
 
     include "../php/dao/daoConnection.php";

@@ -17,7 +17,7 @@ $direccion = $_REQUEST['direccion'];
 $cargo = $_REQUEST['cargo']; 
 $url = $_REQUEST['url']; 
 
-$location = "location: ./../../".$url.".php?OK=2";
+$location = "location: ./../../contabilidad/".$url.".php?OK=2";
 
 
 $FuncionariosDAO = new FuncionariosDAO();
