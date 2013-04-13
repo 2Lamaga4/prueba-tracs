@@ -22,7 +22,7 @@
       <td width="400"><table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Apellidos:</strong></td>
-          <td width="191"><input name="apellido" type="text" class="textarea_redondo2" id="apellido" style="width:200px;" value="<?php echo $funcionario->getApellidos(); ?>" />
+          <td width="191"><input name="apellido" type="text" class="textarea_redondo2" id="apellido" style="width:200px;" value="<?php echo $funcionario->getApellidos(); ?>" required/>
             </td>
         </tr>
       </table></td>
@@ -60,7 +60,7 @@
       <td><table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Teléfono fijo:</strong></td>
-          <td width="191"><input name="telefono" type="number" class="textarea_redondo2" id="telefono" style="width:200px;" value="<?php echo $funcionario->getTelefono(); ?>" required="number"/>
+          <td width="191"><input name="telefono" type="text" class="textarea_redondo2" id="telefono" style="width:200px;" value="<?php echo $funcionario->getTelefono(); ?>" />
             </td>
         </tr>
       </table></td>
