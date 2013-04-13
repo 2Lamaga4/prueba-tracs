@@ -49,6 +49,8 @@ class TercerosDAO{
         $newTerceros = new terceros();
 
         $sql = 'SELECT * from terceros where nodocumento = "'.mysql_real_escape_string($id).'"';
+       // $sql = 'SELECT * from terceros where idterceros  = "'.mysql_real_escape_string($id).'"';
+
 
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
