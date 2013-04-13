@@ -23,12 +23,8 @@
 <script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="Scripts/transicion.js" type="text/javascript"></script>
+<script type="text/javascript" src="Scripts/img.js"></script>
 <script type="text/javascript">
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   ventana=window.open(theURL,winName,features);
   alto=screen.height;
@@ -41,7 +37,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 		new vlaDatePicker('exampleI');
 		new vlaDatePicker('exampleII');		
 	});	
-</script>    
+</script>   
+ 
 </head>
 <body class="interna2" OnContextMenu="return false">
  <?php

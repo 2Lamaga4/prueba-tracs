@@ -45,12 +45,8 @@ $documento = $DocumentoDAO->getList();
 <script type="text/javascript" src="js/eye.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
+<script type="text/javascript" src="Scripts/img.js"></script>
 <script type="text/javascript">
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   ventana=window.open(theURL,winName,features);
   alto=screen.height;
@@ -59,15 +55,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   xposi=(ancho-970)/2;
   ventana.moveTo(xposi,yposi);
 }
-
-
 function dato_tercero(){
 	var tercero = document.getElementById('tercero').value;
 	llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
 	llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');
 }
-
-
 function dato_tercero2(){
 	llamarasincrono('tercero_campo.php', 'ter');
 	llamarasincrono('tercero_campo2.php', 'ter2');
@@ -219,8 +211,6 @@ var tercero = [
 	}
 ?>
 ];
-
-
 $().ready(function() {
 	$("#tercero").autocomplete(tercero);
 	

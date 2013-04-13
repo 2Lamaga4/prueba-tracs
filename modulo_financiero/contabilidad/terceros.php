@@ -21,6 +21,7 @@
 <script src="Scripts/transicion.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.quick.pagination.min.js"></script>
+<script type="text/javascript" src="../Scripts/img.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
   $("ul.pagination1").quickPagination();
@@ -34,21 +35,16 @@ function borrar(id){
 }
 function cerrarVentana(){ 
  window.opener.location.href = window.opener.location.href; 
-  //window.opener.document.forms[0].submit();
   if (window.opener.progressWindow)     
  { 
     window.opener.progressWindow.close()
   } 
-
-  window.close(); 
-
+ window.close(); 
 }
-
 </script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 3){ ?> onload="cerrarVentana()"<?php } ?>>
 <?php
-
     include "php/terceros.php";//se hace el llamdo a la parte de interaccion con la base de datos
     $TerceroDAO = new TerceroDAO();
     $newTerceros = new Terceros();

@@ -45,7 +45,7 @@ class TercerosDAO{
     }
 
 	function get($id){
-            echo "somos troles";
+           
         $newTerceros = new terceros();
 
         $sql = 'SELECT * from terceros where nodocumento = "'.mysql_real_escape_string($id).'"';

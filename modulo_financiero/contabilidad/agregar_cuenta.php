@@ -20,9 +20,9 @@
 <script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
+<script type="text/javascript" src="../Scripts/img.js"></script>
 </head>
 <body  class="popup" OnContextMenu="return false" onUnload="cerrar_v()">  
-
 <?php
     include "../php/include_dao.php";
 
