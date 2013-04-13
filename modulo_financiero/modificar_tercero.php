@@ -32,13 +32,14 @@ $tercero = $TercerosDAO->get($_REQUEST['id']);
 function validar_tercero(){
   llamarasincrono('validar_tercero2.php?num=<?php echo $_REQUEST["id2"];?>', 'nom_tercero');
 }
-function validar_existe2(){
+function validar_existe(){
   var numero = document.getElementById('numero').value;
   if(<?php echo $tercero->getNodocumento(); ?> == numero){
     llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
+    //llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
   }else{
-llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
-    llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
+    llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');
+   // llamarasincrono('validar_tercero2.php?numero='+numero, 'nom_tercero');
   }
 }
 </script>

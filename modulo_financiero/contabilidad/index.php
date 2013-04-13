@@ -36,7 +36,7 @@
       <li><input name="documentos" type="button" class="boton_general" id="documentos" value="Documentos" onclick="location.href='parametrizacion_documentos.php'"/></li>
       <li><input name="terceros" type="button" class="boton_general" id="terceros" value="Terceros" onclick="location.href='contabilidad/terceros.php'"/></li>
       <li>------------------------------------------------</li>
-      <li><input name="contador" type="button" class="boton_general" id="contador" value="Contador" onclick="location.href='parametrizacion_contador.html'"/></li>
+      <li><input name="contador" type="button" class="boton_general" id="contador" value="Contador" onclick="location.href='contabilidad/parametrizacion_contador.php'"/></li>
       <li><input name="administrador" type="button" class="boton_general" id="administrador" value="Administrador - conjunto" onclick="location.href='parametrizacion_administrador.html'"/></li>
       <li><input name="revisor_fiscal" type="button" class="boton_general" id="revisor_fiscal" value="Revisor Fiscal" onclick="location.href='parametrizacion_fiscal.html'"/></li>
     </ul>
