@@ -54,7 +54,10 @@
               <td><img src="images/line2.gif" width="760" height="1" /></td>
             </tr>
             <tr>
-              <td><strong>&nbsp;Nombre de tercero:</strong> <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> <?php echo $item->getConcepto(); ?></td>
+              <td><strong>&nbsp;Nombre de tercero:</strong> 
+                <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
+                <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
+                <?php echo $item->getConcepto(); ?></td>
             </tr>
           </table></td>
           <td width="164" align="left" valign="middle" bgcolor="#D9B0B3" class="texto_azul"> &nbsp;&nbsp;<span class="texto_azul_peque">Documento</span>: <?php echo $doc->getSigla(); ?> <?php echo $item->getNumdoc(); ?></td>
