@@ -1,15 +1,16 @@
 <?php session_start();
 $n = 0;
-if($_REQUEST['n'] != ""){
+if(isset($_REQUEST['n']) != ""){
 	$n = $_REQUEST['n'];
 }
 
 
-if($_REQUEST['id'] != ""){
+if(isset($_REQUEST['id']) != ""){
 	unset($_SESSION['arreglo'][$_REQUEST['id']]);
 	unset($_SESSION['arreglo']);
 	$_SESSION['numero'] = $_SESSION['numero'] - 1;
 }else{
+
 	$_SESSION['numero'] = $_SESSION['numero'] + $n;
 }
 
@@ -20,7 +21,7 @@ for($a = 0; $a < $_SESSION['numero']; $a++){
 
 
 ?>
-<?php if($_REQUEST['n'] > 0){ ?>
+<?php if(isset($_REQUEST['n']) > 0){ ?>
 <table width="725" border="0" align="center" cellpadding="0" cellspacing="2">
 <?php if($_REQUEST['n'] == 2){ ?>
     <tr>
@@ -31,7 +32,7 @@ for($a = 0; $a < $_SESSION['numero']; $a++){
         <td width="99" align="center" class="td_resaltado_azul">Crédito</td>
     </tr>
 <?php } ?>
-<?php if($id != $n){ ?>
+<?php if(isset($id) != $n){ ?>
  <tr id="item_nuevo" class="tr_tabla_interna">
     <td height="30"  width="16" valign="middle"><a href="#" onClick="javascript:eliminar_cuenta(<?php echo $_REQUEST['n']; ?>)"> <img src="images/eliminar.png" width="16" height="16" border="0"></a></td>
     <td height="30" colspan="2" class="td_tabla_interna">

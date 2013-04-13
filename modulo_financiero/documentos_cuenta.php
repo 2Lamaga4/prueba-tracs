@@ -20,22 +20,26 @@ if($id_documento != 0){
 ?>
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="2">
 
-<?php if(count($afectas) > 0){ 
-	$i = 0;
+
+
+<?php 
+if(isset($afectas)){
+if(count($afectas)> 0 ){ 
+  $i = 0;
 ?>
-	<tr>
+  <tr>
         <td height="30" class="td_resaltado_azul">Cuenta</td>
         <td width="471" class="td_resaltado_azul">Descripción</td>
         <td class="td_resaltado_azul">Débito</td>
         <td class="td_resaltado_azul">Crédito</td>
     </tr>
-<?php 	
-	foreach($afectas as $item){
-		$cuenta = $CuentaDAO->get($item->getIdpuc());
-		unset($_SESSION['arreglo']);
-	    unset($_SESSION['numero']);
+<?php   
+  foreach($afectas as $item){
+    $cuenta = $CuentaDAO->get($item->getIdpuc());
+    unset($_SESSION['arreglo']);
+      unset($_SESSION['numero']);
 ?>
-	
+  
     <tr class="tr_tabla_interna">
     <td width="80" height="30" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
     <td class="td_tabla_interna"><?php echo $cuenta->getDenominacion(); ?></td>
@@ -45,14 +49,23 @@ if($id_documento != 0){
    
 <?php }
  $i++;
- }else{ ?>
+}else{ ?>
    <?php for($a = 1; $a <= 50; $a++){ ?>
         <div id="compo_cuenta_m<?php echo $a; ?>"></div>
-   <?php } ?>	
+   <?php } ?> 
         <tr class="tr_tabla_interna" id="tb_item" >
           <td height="30" colspan="5" class="td_tabla_interna" align="left"><div id="agregar_i"></div></td>
        </tr>
-<?php } ?>
+<?php }
+
+} else{ ?>
+   <?php for($a = 1; $a <= 50; $a++){ ?>
+        <div id="compo_cuenta_m<?php echo $a; ?>"></div>
+   <?php } ?> 
+        <tr class="tr_tabla_interna" id="tb_item" >
+          <td height="30" colspan="5" class="td_tabla_interna" align="left"><div id="agregar_i"></div></td>
+       </tr>
+<?php }?>
 
 
 

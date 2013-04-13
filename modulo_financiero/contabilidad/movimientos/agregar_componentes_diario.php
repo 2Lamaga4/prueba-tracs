@@ -41,7 +41,7 @@
 
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
               <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
-               style="width:180px;" onblur="javascript:dato_tercero()"/>               
+               style="width:180px;" onblur="javascript:dato_tercero()" value=""/>               
               <td valign="middle"><div id="ter2"></div></td>
               <center><div id="ter"></div></center>
             </td>

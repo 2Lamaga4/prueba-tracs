@@ -77,7 +77,7 @@ function numero_documento(){
 	var documento = document.getElementById('documento').value;
 	var tercero = document.getElementById('tercero').value;
 	
-	if(tercero == ""){
+	if(tercero == null){
 		alert('Por favor ingrese un tercero.');
 		document.getElementById('identifica').value = "";
 		document.getElementById('documento').value = 0;

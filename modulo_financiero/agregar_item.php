@@ -1,7 +1,7 @@
 <?php session_start();
 
 $n = 1;
-if($_REQUEST['n'] != ""){
+if(isset($_REQUEST['n']) != ""){
 	$n = $_REQUEST['n'];
 }
 
