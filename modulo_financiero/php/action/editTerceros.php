@@ -13,13 +13,11 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion']; 
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
-
+/////////////
 $location = "location: ../../contabilidad/terceros.php?OK=2";
-
-
+////////////
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
-
 $terceros->setId($id);
 $terceros->setTipodocumento($documento);
 $terceros->setNodocumento($numero);
@@ -33,7 +31,6 @@ $TercerosDAO->update($terceros);
 
 header($location);
 exit;
-
 
 function accents2HTML($mensaje){
     $mensaje = str_replace("á","&aacute;",$mensaje);
