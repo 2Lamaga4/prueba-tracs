@@ -6,7 +6,6 @@ $terceros = new terceros();
 $numero = "";
 if(isset($_REQUEST['numero']) != ""){
 	$numero = $_REQUEST['numero'];
-  echo "nada".$numero;
 }
 
 $num = "";

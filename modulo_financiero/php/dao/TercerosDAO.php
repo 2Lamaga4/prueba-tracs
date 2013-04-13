@@ -48,8 +48,7 @@ class TercerosDAO{
            
         $newTerceros = new terceros();
 
-        $sql = 'SELECT * from terceros where nodocumento = "'.mysql_real_escape_string($id).'"';
-       // $sql = 'SELECT * from terceros where idterceros  = "'.mysql_real_escape_string($id).'"';
+      $sql = 'SELECT * from terceros where idterceros  = "'.mysql_real_escape_string($id).'"';
 
 
 		$this->daoConnection->consulta($sql);
@@ -71,12 +70,10 @@ class TercerosDAO{
 			$newTerceros->setEmail($this->daoConnection->ObjetoConsulta2[$i][6]);
 			$newTerceros->setRegimen($this->daoConnection->ObjetoConsulta2[$i][7]);
 
-
-        //$noticiaToPoblate = $newnoticia;
         return $newTerceros;
     }
 	function Validar_tercero($documento){
-        echo "soy validar tercero".$documento;
+        
         $newTerceros = new terceros();
         $sql = 'SELECT * from terceros where nodocumento = "'.$documento.'"';
 		$this->daoConnection->consulta($sql);
@@ -200,7 +197,7 @@ class TercerosDAO{
 		if($newTerceros->getRegimen())  
 			 $update_fields[7]="regimen = '".mysql_real_escape_string($newTerceros->getRegimen())."'";	 	 
 			 	 	
-        $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE nodocumento = '".$newTerceros->getId()."' ";
+        $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE idterceros= '".$newTerceros->getId()."' ";
         //echo $querty.'<br />';
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
 		if (!$result){

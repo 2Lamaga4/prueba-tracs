@@ -30,9 +30,9 @@ $tercero = $TercerosDAO->get($_REQUEST['id']);
 <script type="text/javascript" src="Scripts/img.js"></script>
 <script type="text/javascript">
 function validar_tercero(){
-  llamarasincrono('validar_tercero2.php?num=<?php echo $_REQUEST["id"];?>', 'nom_tercero');
+  llamarasincrono('validar_tercero2.php?num=<?php echo $_REQUEST["id2"];?>', 'nom_tercero');
 }
-function validar_existe(){
+function validar_existe2(){
   var numero = document.getElementById('numero').value;
   if(<?php echo $tercero->getNodocumento(); ?> == numero){
     llamarasincrono('validar_tercero2.php?num=<?php echo $tercero->getNodocumento(); ?>', 'nom_tercero');

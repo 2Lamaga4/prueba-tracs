@@ -18,7 +18,7 @@ class TerceroDAO{
     
     function getList(){
 
-        $sql = 'select Sigla,nodocumento,nombretercero from terceros inner join identificacion where tipodocumento = IdTipoidentificacion && estado = 1;';
+        $sql = 'select Sigla,nodocumento,nombretercero,idterceros from terceros inner join identificacion where tipodocumento = IdTipoidentificacion && estado = 1;';
 
 
         $this->daoConnection->consulta($sql);
@@ -38,7 +38,9 @@ class TerceroDAO{
 
             $newTerceros->setId($this->daoConnection->ObjetoConsulta2[$i][0]);
             $newTerceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
-            $newTerceros->setnombretercero($this->daoConnection->ObjetoConsulta2[$i][2]);            
+            $newTerceros->setnombretercero($this->daoConnection->ObjetoConsulta2[$i][2]);  
+            $newTerceros->setTipodocumento($this->daoConnection->ObjetoConsulta2[$i][3]); 
+
 
             $lista[$i] = $newTerceros;
         }
