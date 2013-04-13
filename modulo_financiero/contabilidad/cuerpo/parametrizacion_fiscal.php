@@ -15,14 +15,14 @@
       <td width="400" height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Nombres:</strong></td>
-          <td width="241"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" style="width:200px;" value="<?php echo $funcionario->getNombres(); ?>" />
+          <td width="241"><input name="nombre" type="text" class="textarea_redondo2" id="nombre" style="width:200px;" value="<?php echo $funcionario->getNombres(); ?>" required />
             </td>
         </tr>
       </table></td>
       <td width="400"><table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Apellidos:</strong></td>
-          <td width="191"><input name="apellido" type="text" class="textarea_redondo2" id="apellido" style="width:200px;" value="<?php echo $funcionario->getApellidos(); ?>" />
+          <td width="191"><input name="apellido" type="text" class="textarea_redondo2" id="apellido" style="width:200px;" value="<?php echo $funcionario->getApellidos(); ?>" required/>
             </td>
         </tr>
       </table></td>
@@ -32,7 +32,7 @@
       <td height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Tipo Cédula:</strong></td>
-          <td width="241" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
+          <td width="241" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" >
             <option value="0">--</option>
             <option value="1" <?php if($funcionario->getTipodocumento() == 1){ ?>selected="selected"<?php } ?>>CC</option>
             <option value="2" <?php if($funcionario->getTipodocumento() == 2){ ?>selected="selected"<?php } ?>>CC Extranjero</option>
@@ -44,7 +44,7 @@
     <table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Cédula:</strong></td>
-          <td width="191"><input name="cedula" type="text" class="textarea_redondo2" id="cedula" style="width:200px;" value="<?php echo $funcionario->getNodocumento(); ?>" />
+          <td width="191"><input name="cedula" type="number" class="textarea_redondo2" id="cedula" style="width:200px;" value="<?php echo $funcionario->getNodocumento();?>" required="number" />
             </td>
         </tr>
       </table></td>
@@ -53,7 +53,7 @@
       <td height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Rut/Nit:</strong></td>
-          <td width="241"><input name="rut" type="text" class="textarea_redondo2" id="rut" style="width:200px;" value="<?php echo $funcionario->getRutnit(); ?>" />
+          <td width="241"><input name="rut" type="text" class="textarea_redondo2" id="rut" style="width:200px;" value="<?php echo $funcionario->getRutnit(); ?>" required />
             </td>
         </tr>
       </table></td>
@@ -69,14 +69,14 @@
       <td height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Celular:</strong></td>
-          <td width="241"><input name="celular" type="text" class="textarea_redondo2" id="celular" style="width:200px;" value="<?php echo $funcionario->getCelular(); ?>" />
+          <td width="241"><input name="celular" type="number" class="textarea_redondo2" id="celular" style="width:200px;" value="<?php echo $funcionario->getCelular(); ?>" required="number"/>
             </td>
         </tr>
       </table></td>
       <td><table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Dirección:</strong></td>
-          <td width="191"><input name="direccion" type="text" class="textarea_redondo2" id="direccion" style="width:200px;" value="<?php echo $funcionario->getDireccion(); ?>" />
+          <td width="191"><input name="direccion" type="text" class="textarea_redondo2" id="direccion" style="width:200px;" value="<?php echo $funcionario->getDireccion(); ?>" required/>
             </td>
         </tr>
       </table></td>
@@ -101,5 +101,4 @@
   </table>
   </form>
 </div>
-
 <div class="titulos" id="subtitulo1">&gt; Parametrización Revisor Fiscal</div>
