@@ -1,0 +1,61 @@
+/*css de index.php(agregar_cuentas.php)*/
+#agregar_grupo {
+	height:115px;
+	left: 20px;
+	position:absolute;
+	top: 153px;
+	width:200px;
+	z-index:1;
+}
+#agregar_cuenta {
+	height:115px;
+	left: 25px;
+	position:absolute;
+	top: 195px;
+	width:200px;
+	z-index:2;
+}
+#agregar_subcuenta {
+	height:115px;
+	left: 25px;
+	position:absolute;
+	top: 233px;
+	width:200px;
+	z-index:3;
+}
+#body{
+	height: auto;
+	margin: 0 auto;
+	width: 550px;
+}
+#body input:button{
+	position: relative;
+	margin-left: 100px;
+}
+#clases{
+	height:35px;
+	margin: 0 auto;
+	padding-top: 5px;
+	position: relative;
+	top: 21px;
+	width:500px;
+}
+#grupo_combo{
+	position: relative;
+	padding: 0;
+	margin-top: 25px;
+	margin-left: 25px;
+
+}
+#title{
+	background-color:#ADB1CB;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 11px;
+	padding-top: 10px;
+	text-align: center;
+}
+.boton_redondo{
+	position: relative;
+	left: 220px;
+}

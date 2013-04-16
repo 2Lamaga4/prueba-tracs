@@ -50,18 +50,19 @@ sql(mysql-oracle-server-posgres)
 
 			varaibles: 
 			creacion de tablas
-			ejemplo(MSQL):  CREATE  IF  NOT EXISTS TablaCreada ( );
+			ejemplo(MSQL):  CREATE TABLE IF  NOT EXISTS TablaCreada ( );
 
 				ATRIBUTOS:
 				   	   SIEMPRE SE COLOCARA UN ID NATIVO DE LA TABLA(PRIMAKY KEY) Y SE USA LA NOTACION CAMELLO EN LAS VARIABLE(TablId)
 				   	   			ejemplo(MYSQL):
-				   	   	CREATE  IF  NOT EXISTS TablaCreada (TablId 				INT 		NOT NULL  AUTO_INCREMENT,
+				   	   	CREATE TABLE IF  NOT EXISTS TablaCreada (TablId 				INT 		NOT NULL  AUTO_INCREMENT,
 				   	   										TablCedula 			VARCHAR		NOT NULL,
 				   	   										TablTablaHeredada	INT 		NOT NULL,
 				   	   										PRIMARY KEY(TablId),
 				   	   										FOREIGN KEY(TablTablaHeredada) REFERENCES TablaHeredada (TaHeId)ON UPDATE CASCADE ON DELETE RESTRICT,
 															UNIQUE 	KEY(TablCedula)
 				   	   										)ENGINE=innodb DEFAULT CHANSET=utf8 AUTO_INCREMENT=1;
+				   	   										
 				   	   	*sangria y alinecion
 
 			COMENTARIOS:
