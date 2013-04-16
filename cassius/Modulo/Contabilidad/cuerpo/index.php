@@ -20,7 +20,7 @@
     <img src="images/icono_parametrizacion.jpg" all="Parametrizacion"/>
     <ul>
       <li><input name="cuentas" type="button" class="boton_general" id="cuentas" value="Cuentas" onclick="location.href='Parametrizacion/'"/></li>
-      <li><input name="documentos" type="button" class="boton_general" id="documentos" value="Documentos" onclick="location.href='parametrizacion_documentos.php'"/></li>
+      <li><input name="documentos" type="button" class="boton_general" id="documentos" value="Documentos" onclick="location.href='Parametrizacion/parametrizacion_documentos.php'"/></li>
       <li><input name="terceros" type="button" class="boton_general" id="terceros" value="Terceros" onclick="location.href='contabilidad/terceros.php'"/></li>
       <li>------------------------------------------------</li>
       <li><input name="contador" type="button" class="boton_general" id="contador" value="Contador" onclick="location.href='contabilidad/parametrizacion_contador.php'"/></li>

@@ -8,6 +8,7 @@
 <script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="../Scripts/transicion.js" type="text/javascript"></script>
 <script type="text/javascript" src="../Scripts/img.js"></script>
+<!-- -->
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'/></script>
 </head>
 <body class="interna2" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
@@ -26,7 +27,9 @@
 </div> 
 <div id="contenido_tabla2"> 
   <?php
-    include "../php/include_dao.php";
+    include "../php/dao/daoConnection.php";
+    include "../php/entities/cuentas.php";
+    include "../php/dao/CuentaDAO.php";
 
     $CuentaDAO = new CuentaDAO();
     $cuenta = new cuentas();

@@ -8,7 +8,6 @@ $cuentasN5 = $CuentaDAO->getList(5);
 
 ?>
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -59,7 +58,7 @@ function agregar_r(){
 
 <body class="interna2" OnContextMenu="return false">
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='parametrizacion_documentos.php'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='Parametrizacion/parametrizacion_documentos.php'"/>
 </div>
 <div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
@@ -138,7 +137,8 @@ function agregar_r(){
       <td height="40" colspan="2" align="center"><img src="images/line2.gif" width="850" height="1" /></td>
     </tr>
     <tr>
-      <td height="40" colspan="2" align="center"><input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" /></td>
+      <td height="40" colspan="2" align="center">
+        <input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" /></td>
     </tr>
     <tr>
       <td height="40" colspan="2" align="center">&nbsp;</td>

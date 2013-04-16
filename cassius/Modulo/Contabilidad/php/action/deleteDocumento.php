@@ -10,7 +10,7 @@ require_once('../entities/afecta.php');
 
 $id = $_REQUEST['id'];
 
-$location = "location: ./../../parametrizacion_documentos.php?OK_de=1";
+$location = "location: ./../../Parametrizacion/parametrizacion_documentos.php?OK_de=1";
 
 
 $DocumentoDAO = new DocumentoDAO();
