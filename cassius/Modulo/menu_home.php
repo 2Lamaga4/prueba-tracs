@@ -58,7 +58,7 @@
         <tr>
           <td height="40" align="center">
   <!--contabilidad-->            
-            <input name="contabilidad" type="button" class="boton_contabilidad" id="contabilidad" value="Contabilidad" onclick="location.href='Contabilidad/contabilidad_home.php'"/></td>
+            <input name="contabilidad" type="button" class="boton_contabilidad" id="contabilidad" value="Contabilidad" onclick="location.href='Contabilidad/'"/></td>
         </tr>
         <tr>
           <td height="40" align="center">

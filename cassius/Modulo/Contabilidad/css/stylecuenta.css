@@ -248,7 +248,7 @@ input[type="checkbox"]{
 	   -moz-transition:all 500ms;
 	     -o-transition:all 500ms;
 	        transition:all 500ms;
-	background: url(../../images/btn_mas.jpg);
+	background: url(../images/btn_mas.jpg);
 	cursor:pointer;
 	height:18px;
 	position:relative;
@@ -263,7 +263,7 @@ input[type="checkbox"]:checked{
 	    -ms-transform:scale(-1, 1);
 	     -o-transform:scale(-1, 1);
 	        transform:scale(-1, 1);
-	background:url(../../images/btn_menos.jpg);
+	background:url(../images/btn_menos.jpg);
 }
 #t3 input[type="checkbox"]{
 	width: 0;

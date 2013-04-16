@@ -1,5 +1,5 @@
 <div id="salir2">
-<input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../contabilidad_home.php'"/>
+<input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../'"/>
 </div>
 <div id="logo_small3"><img src="../images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
 <div id="modulos"><img src="../images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>

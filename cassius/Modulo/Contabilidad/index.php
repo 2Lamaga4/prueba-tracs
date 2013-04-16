@@ -5,7 +5,7 @@ $view->disableLayout=false;
 
 if ($view->disableLayout==false)
 {
-    include_once ('contabilidad/index.php');
+    include_once ('cuerpo/index.php');
 }
 
 ?>
