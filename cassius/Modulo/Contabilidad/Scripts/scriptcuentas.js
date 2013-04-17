@@ -60,7 +60,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
  */
 function borrar(id){
   if (confirm('¿Estas seguro que desea borrar esta cuenta?')){ 
-      location.href = "php/action/deleteCuenta.php?id="+id;
+      location.href = "../php/action/deleteCuenta.php?id="+id;
     } 
 }
 /**

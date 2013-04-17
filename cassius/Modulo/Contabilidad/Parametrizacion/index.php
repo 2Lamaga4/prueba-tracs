@@ -8,8 +8,7 @@
 <script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
 <script src="../Scripts/transicion.js" type="text/javascript"></script>
 <script type="text/javascript" src="../Scripts/img.js"></script>
-<!-- -->
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'/></script>
+<script src='../Scripts/jquery.js' type='text/javascript'/></script>
 </head>
 <body class="interna2" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
 <div id="salir2">
@@ -21,7 +20,7 @@
   <div id="utilidades">
     <div class="titulos" id="subtitulo">&gt; Parametrización Cuentas</div>
     <section id="butAg">
-      <input name="agregar" type="button" class="boton_agregar"  value="Agregar" onclick="MM_openBrWindow('../agregar_cuenta.php','AgregarCuenta','width=560px,height=550px,scrollbars=yes')"/>
+      <input name="agregar" type="button" class="boton_agregar"  value="Agregar" onclick="MM_openBrWindow('agregar_cuenta.php','AgregarCuenta','width=560px,height=550px,scrollbars=yes')"/>
     </section>
   </div>
 </div> 

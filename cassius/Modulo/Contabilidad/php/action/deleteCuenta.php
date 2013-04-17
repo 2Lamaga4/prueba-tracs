@@ -9,7 +9,7 @@ require_once('../entities/cuentas.php');
 
 $id = $_GET['id'];
 
-$location = "location: ./../../parametrizacion_cuentas.php?OK_de=1";
+$location = "location: ./../../Parametrizacion/index.php?OK_de=1";
 
 
 $CuentaDAO = new CuentaDAO();

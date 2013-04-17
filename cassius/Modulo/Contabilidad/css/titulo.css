@@ -1,3 +1,5 @@
+
+#subtitulo3,
 #subtitulo2,
 #subtitulo1,
 #subtitulo{
@@ -23,4 +25,10 @@
 	top:95px;
 	width:565px;
 	height:35px;
+}
+#subtitulo3 {
+	height:35px;
+	left:50%;
+	top:95px;
+	width:552px;
 }

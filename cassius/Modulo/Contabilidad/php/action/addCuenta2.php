@@ -14,11 +14,11 @@ $denominacion = accents2HTML($_REQUEST['denominacion_g'.$nivel]);
 $descripcion = accents2HTML($_REQUEST['descripcion_g'.$nivel]); 
 
 if($nivel == 2){
-	$location = "location: ./../../agregar_grupo.php?OK=1";
+	$location = "location: ./../../Parametrizacion/agregar_grupo.php?OK=1";
 }else if($nivel == 3){
-	$location = "location: ./../../agregar_cuenta_p.php?OK=1";
+	$location = "location: ./../../Parametrizacion/agregar_cuenta_p.php?OK=1";
 }else if($nivel == 4){
-	$location = "location: ./../../agregar_subcuenta.php?OK=1";
+	$location = "location: ./../../Parametrizacion/agregar_subcuenta.php?OK=1";
 }
 
 $CuentaDAO = new CuentaDAO();

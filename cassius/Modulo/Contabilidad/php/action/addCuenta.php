@@ -15,7 +15,7 @@ $denominacion = accents2HTML($_REQUEST['denominacion']);
 $descripcion_vivienda = accents2HTML($_REQUEST['descripcion_vivienda']); 
 
 
-$location = "location: ./../../agregar_cuenta.php?OK=1";
+$location = "location: ./../../Parametrizacion/agregar_cuenta.php?OK=1";
 
 
 $CuentaDAO = new CuentaDAO();

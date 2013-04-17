@@ -10,7 +10,7 @@
 <meta property="og:title" content="Cassius - software de propiedad horizontal" />
 <meta property="og:type" content="software" />
 <meta property="og:url" content="Cassius.com"/>
-<meta property="og:image" content="logo.JPG" />
+<meta property="og:image" content="http://cassiusph.com/cassius/logo.JPG" />
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius</title>
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="http://cassiusph.com/cassius/favicon.ico" />

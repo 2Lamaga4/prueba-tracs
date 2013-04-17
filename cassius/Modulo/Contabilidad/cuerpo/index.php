@@ -34,7 +34,7 @@
     <ul>
       <li><input name="balance_inicial" type="button" class="boton_general" id="balance_inicial" value="Balance inicial" onclick="location.href='balance_inicial.html'"/></li>
       <li><input name="registro_documentos" type="button" class="boton_general" id="registro_documentos" value="Registro de documentos" onclick="location.href='registro_documentos.html'"/></li>
-      <li><input name="movimientos" type="button" class="boton_general" id="movimientos" value="Movimientos" onclick="location.href='rc_movimientos.php'"/></li>
+      <li><input name="movimientos" type="button" class="boton_general" id="movimientos" value="Movimientos" onclick="location.href='RegistroContable/rc_movimientos.php'"/></li>
       <li>------------------------------------------------</li>
       <li><input name="estados_financieros" type="button" class="boton_general" id="estados_financieros" value="Estados Financieros" onclick="location.href='rc_estados_financieros.html'"/></li>
       <li><input name="caja" type="button" class="boton_general" id="caja" value="Movimiento caja menor" onclick="location.href='rc_caja.html'"/></li>
