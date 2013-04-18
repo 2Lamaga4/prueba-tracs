@@ -32,7 +32,6 @@
   <article id="Tder">
     <img src="images/icono_registro_contable.jpg" all="RegistroContable" />
     <ul>
-      <li><input name="balance_inicial" type="button" class="boton_general" id="balance_inicial" value="Balance inicial" onclick="location.href='balance_inicial.html'"/></li>
       <li><input name="registro_documentos" type="button" class="boton_general" id="registro_documentos" value="Registro de documentos" onclick="location.href='registro_documentos.html'"/></li>
       <li><input name="movimientos" type="button" class="boton_general" id="movimientos" value="Movimientos" onclick="location.href='RegistroContable/rc_movimientos.php'"/></li>
       <li>------------------------------------------------</li>
