@@ -2,7 +2,7 @@
 header("Content-type: application/vnd.ms-excel");
 header("Content-Disposition:  filename=\"movimientos.xls\";")?>
 <p><meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-<link href='http://cassiusph.com/modulo_financiero/config/estilos_cassius.css' rel='stylesheet' type='text/css' />
+<link href='http://cassiusph.com/modulo_financiero/config/estilos_cassius.css' rel='stylesheet />
 <table width='300' border='0' align='center' cellpadding='0' cellspacing='1'>
     <tr>
       <td height='30' align='center'><table width='700' border='0' align='center' cellpadding='0' cellspacing='2'><tr>

@@ -1,7 +1,7 @@
 <?php
  include_once ('info.php');//se llama la informacion de la pagina
 ?>
-<link href="Modulo/Contabilidad/config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="Modulo/Contabilidad/config/estilos_cassius.css" rel="stylesheet" />
 <script src="Modulo/Contabilidad/Scripts/swfobject_modified.js"></script>
 <script src="Modulo/Contabilidad/Scripts/bloqueo_clic_derecho.js"></script>
 <script src="Modulo/Contabilidad/Scripts/globos_ayuda.js"></script>

@@ -23,15 +23,16 @@ $_SESSION['descripcion_d'] = $_REQUEST['descripcion'];
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
 <title>Cassius - software de propiedad horizontal</title>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<link href="stylesheets/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+<link href="config/estilos_cassius.css" rel="stylesheet"/>
+<link href="stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
 <!--[if lt IE 7]>
 <link href="stylesheets/screen-ie6.css" type="text/css" rel="stylesheet" media="screen,projection" />
 <![endif]-->
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<script type="text/javascript" src="scripts/jquery-scrollTo.js"></script>
-<script type="text/javascript" src="scripts/accordion.js"></script>
-<script type="text/javascript">
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery-scrollTo.js"></script>
+<script src="scripts/accordion.js"></script>
+<script>
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
@@ -91,9 +92,9 @@ function validar(id,valor){
 
 </script>
 </head>
-<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Scripts/transicion.js" type="text/javascript"></script>
+<script src="Scripts/globos_ayuda.js" ></script>
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/transicion.js" ></script>
 </head>
 
 <body class="popup" onload="MM_preloadImages('images/btn_menos_roll.jpg','images/btn_mas_roll.jpg')" OnContextMenu="return false">

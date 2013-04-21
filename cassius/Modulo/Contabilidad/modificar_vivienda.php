@@ -35,9 +35,8 @@ $resultadoRe = $conecc -> consulta($residente);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
 	<title>Cassius - software de propiedad horizontal</title>
-	<link href="config/estilos_cassius.css" rel="stylesheet"
-		type="text/css" />
-<script type="text/javascript">
+	<link href="config/estilos_cassius.css" rel="stylesheet"/>
+<script >
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
@@ -134,9 +133,9 @@ function MM_swapImage() { //v3.0
 }
 </style>
 </head>
-<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Scripts/uelimina.js" type="text/javascript"></script>
+<script src="Scripts/globos_ayuda.js" ></script>
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/uelimina.js" ></script>
 
 </head>
 

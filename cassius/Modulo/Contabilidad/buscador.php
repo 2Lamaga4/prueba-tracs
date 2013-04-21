@@ -59,15 +59,15 @@ $query = $conecct -> consulta($sqlStr.$limit);
 <title>Cassius - software de propiedad horizontal</title>
 <link rel="stylesheet" href="pagination.css" media="screen">
 <link rel="stylesheet" href="style.css" media="screen">
-<script src="include/buscador.js" type="text/javascript" language="javascript"></script>
+<script src="include/buscador.js" language="javascript"></script>
 <script language="javascript">
 <?php if($e==1){?>
 alert("Se actualizo un Registro");
 <?php }?>
 </script>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<link href="config/estilos_capas_cassius.css" rel="stylesheet" type="text/css" />
-<link href="config/estilos_globos_ayuda_cassius.css" rel="stylesheet" type="text/css" />
+<link href="config/estilos_cassius.css" rel="stylesheet" />
+<link href="config/estilos_capas_cassius.css" rel="stylesheet"/>
+<link href="config/estilos_globos_ayuda_cassius.css" rel="stylesheet"/>
 </head>
 
 <body class="interna2"

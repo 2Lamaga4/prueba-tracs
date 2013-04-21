@@ -28,9 +28,9 @@ $origen		= $_GET['origen'];
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
 <title>Cassius - software de propiedad horizontal</title>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="config/estilos_cassius.css" rel="stylesheet"/>
 <script src="Ajaxnuevo.js"></script>
-<script type="text/javascript">
+<script>
 function mostrar(a) {
 //alert(a);
 if(a =='1'){
@@ -98,9 +98,9 @@ function MM_swapImage() { //v3.0
 }
 </style>
 </head>
-<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Scripts/transicion.js" type="text/javascript"></script>
+<script src="Scripts/globos_ayuda.js" ></script>
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/transicion.js" ></script>
 </head>
 
 <body class="interna2" onload="MM_preloadImages('images/btn_comunales.jpg','images/btn_visitantes.jpg')" OnContextMenu="return false">

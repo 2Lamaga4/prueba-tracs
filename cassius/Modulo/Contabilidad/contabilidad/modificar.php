@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="../config/estilos_cassius.css" rel="stylesheet"/>
-<script type="text/javascript" src="../Scripts/codigo.js"></script> 
-<script type="text/javascript" src="../scriptagregar_cuentas.js"></script>
+<script src="../Scripts/codigo.js"></script> 
+<script src="../scriptagregar_cuentas.js"></script>
 <link href="css/styleagregar_cuentas.css" rel="stylesheet"/>
-<script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script type="text/javascript" src="../Scripts/img.js"></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/img.js"></script>
 </head>
 <body  class="popup" OnContextMenu="return false" onUnload="cerrar_v()">  
 

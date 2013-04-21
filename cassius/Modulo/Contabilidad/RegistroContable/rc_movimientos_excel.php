@@ -2,11 +2,11 @@
 include "cuerpo/rc_movimientos_excel.php";
 include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
-<link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<link href="../css/titulo.css" rel="stylesheet" type="text/css" />
-<script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="../Scripts/transicion.js" type="text/javascript"></script>   
+<link href="../config/estilos_cassius.css" rel="stylesheet"/>
+<link href="../css/titulo.css" rel="stylesheet"/>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>   
 </head>
 <body class="interna2" OnContextMenu="return false">
 <div id="salir2">

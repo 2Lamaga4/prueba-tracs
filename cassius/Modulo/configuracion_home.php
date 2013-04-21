@@ -1,11 +1,11 @@
 <?php
  include_once ('../info.php');//se llama la informacion de la pagina
 ?>
-<link href="Contabilidad/config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="Contabilidad/config/estilos_cassius.css" rel="stylesheet"/>
 <script src="script/Scriptimg.js"></script>
-<script src="Contabilidad/Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Contabilidad/Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Contabilidad/Scripts/transicion.js" type="text/javascript"></script>
+<script src="Contabilidad/Scripts/globos_ayuda.js" ></script>
+<script src="Contabilidad/Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Contabilidad/Scripts/transicion.js" ></script>
 </head>
 
 <body class="interna2" OnContextMenu="return false">

@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="Scripts/codigo.js"></script>
+<link href="../config/estilos_cassius.css" rel="stylesheet" />
+<script src="Scripts/codigo.js"></script>
 <title></title>
 <style type="text/css">
 #apDiv1 {

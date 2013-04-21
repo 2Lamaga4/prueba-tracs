@@ -21,31 +21,23 @@ $documento = $DocumentoDAO->getList();
 
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
-<title>Cassius - software de propiedad horizontal</title>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-
-
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script type="text/javascript" src="Scripts/codigo.js"></script>
-
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type='text/javascript' src='js/jquery.bgiframe.min.js'></script>
-<script type='text/javascript' src='js/jquery.autocomplete.js'></script>
+<?php
+ include_once ('../../info.php');//se llama la informacion de la pagina
+?>
+<link href="config/estilos_cassius.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="js/jquery.autocomplete.css" />
-
-<link rel="stylesheet" href="css/datepicker.css" type="text/css" />
-<script type="text/javascript" src="js/datepicker.js"></script>
-<script type="text/javascript" src="js/eye.js"></script>
-<script type="text/javascript" src="js/utils.js"></script>
-<script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
-<script type="text/javascript" src="Scripts/img.js"></script>
-<script type="text/javascript">
+<link rel="stylesheet" href="css/datepicker.css" />
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/codigo.js"></script>
+<script src="js/jquery.js"></script>
+<script src='js/jquery.bgiframe.min.js'></script>
+<script src='js/jquery.autocomplete.js'></script>
+<script src="js/datepicker.js"></script>
+<script src="js/eye.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/layout.js?ver=1.0.2"></script>
+<script src="Scripts/img.js"></script>
+<script>
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   ventana=window.open(theURL,winName,features);
   alto=screen.height;

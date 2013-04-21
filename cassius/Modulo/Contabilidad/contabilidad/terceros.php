@@ -4,13 +4,13 @@
 <link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="css/styleterceros.css" rel="stylesheet" type="text/css"/>
 <link href="" rel="stylesheet" type="text/css"/>
-<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Scripts/transicion.js" type="text/javascript"></script>
-<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.quick.pagination.min.js"></script>
-<script type="text/javascript" src="../Scripts/img.js"></script>
-<script type="text/javascript">
+<script src="Scripts/globos_ayuda.js" ></script>
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/transicion.js" ></script>
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script src="../js/jquery.quick.pagination.min.js"></script>
+<script src="../Scripts/img.js"></script>
+<script >
 $(document).ready(function() {
   $("ul.pagination1").quickPagination();
   $("ul.pagination2").quickPagination({pagerLocation:"both"});

@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../Scripts/img.js"></script>
+<script src="../Scripts/img.js"></script>
 <link href="css/stylesgregar_tercero.css" rel="stylesheet" type="text/css"/>
-<script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="../Scripts/transicion.js" type="text/javascript"></script>
-<script src="script/funcionarios.js" type="text/javascript"></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>
+<script src="script/funcionarios.js" ></script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 2){?>onload="OK2()"<?php } ?>>
 <?php

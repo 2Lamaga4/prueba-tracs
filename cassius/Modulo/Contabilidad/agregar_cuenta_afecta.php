@@ -10,16 +10,11 @@ $_SESSION['sigla_d'] = $_REQUEST['sigla'];
 $_SESSION['nombre_d'] = $_REQUEST['nombre'];
 $_SESSION['descripcion_d'] = $_REQUEST['descripcion'];
 
+ include_once ('../../info.php');//se llama la informacion de la pagina
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
-<title>Cassius - software de propiedad horizontal</title>
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<link href="stylesheets/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
-<script type="text/javascript">
+<link href="config/estilos_cassius.css" rel="stylesheet" />
+<link href="stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
+<script>
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
@@ -78,9 +73,8 @@ function validar(id,valor){
 
 
 </script>
-
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js' type='text/javascript'/></script>
-<script type='text/javascript'>
+<script>
 //<![CDATA[
 
 $(document).ready(function(){
@@ -136,12 +130,9 @@ $(document).ready(function(){
     padding: 0px 0px 0px 50px;
   }
 </style>
-
-
-</head>
-<script src="Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="Scripts/transicion.js" type="text/javascript"></script>
+<script src="Scripts/globos_ayuda.js" ></script>
+<script src="Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="Scripts/transicion.js" ></script>
 </head>
 
 <body class="popup" onload="MM_preloadImages('images/btn_menos_roll.jpg','images/btn_mas_roll.jpg')" OnContextMenu="return false">

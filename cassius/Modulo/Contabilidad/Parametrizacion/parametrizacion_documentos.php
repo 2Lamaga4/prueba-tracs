@@ -13,14 +13,14 @@
 <meta property="og:image" content="" />
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
-<link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="../config/estilos_cassius.css" rel="stylesheet" />
 <link href="../css/styleagregar_cuentas.css" rel="stylesheet"/>
 <link href="../css/titulo.css" rel="stylesheet"/>
 <script src="../Scripts/img.js"></script>
-<script src="../Scripts/globos_ayuda.js" type="text/javascript"></script>
-<script src="../Scripts/bloqueo_clic_derecho.js" type="text/javascript"></script>
-<script src="../Scripts/transicion.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>
+<script >
 function borrar(id){
 	if (confirm('¿Estas seguro que desea borrar este Documento?')){ 
       location.href = "../php/action/deleteDocumento.php?id="+id;

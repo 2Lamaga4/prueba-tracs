@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   ventana=window.open(theURL,winName,features);
   alto=screen.height;

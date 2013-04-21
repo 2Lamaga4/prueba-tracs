@@ -42,8 +42,8 @@ $query = $conecct -> consulta($sqlStr.$limit);
 
 
 ?>
-<link href="config/estilos_capas_cassius.css" rel="stylesheet" type="text/css" />
-<link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+<link href="config/estilos_capas_cassius.css" rel="stylesheet"/>
+<link href="config/estilos_cassius.css" rel="stylesheet"/>
 	<?php
 
 		if($aux['total'] and isset($busqueda)){
