@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.5
+-- version 3.5.7
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-04-2013 a las 07:37:29
--- Versión del servidor: 5.1.68-cll
--- Versión de PHP: 5.3.17
+-- Tiempo de generación: 22-04-2013 a las 06:02:29
+-- Versión del servidor: 6.0.10-alpha-community
+-- Versión de PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `bhcontra_pruebas`
+-- Base de datos: `dbconjun`
 --
 
 -- --------------------------------------------------------
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `aptoparq` (
   PRIMARY KEY (`id_reg`),
   KEY `idx_des_apartamento` (`IdunidadV`),
   KEY `idx_aptoparq` (`idparqueadero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Volcado de datos para la tabla `aptoparq`
@@ -90,7 +90,8 @@ INSERT INTO `aptoparq` (`id_reg`, `IdunidadV`, `idparqueadero`) VALUES
 (25, 1, 3),
 (28, 13, 13),
 (29, 7, 16),
-(30, 23, 21);
+(30, 91, 22),
+(31, 3, 23);
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,16 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   PRIMARY KEY (`idfuncionarios`),
   KEY `idx_funcionarios` (`cargo`),
   KEY `idx_funcionarios_0` (`tipodocumento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `funcionarios`
+--
+
+INSERT INTO `funcionarios` (`idfuncionarios`, `tipodocumento`, `nodocumento`, `nombres`, `apellidos`, `rutnit`, `telefono`, `celular`, `direccion`, `cargo`) VALUES
+(1, 1, 80188262, 'Ernesto Andres', 'Alvarez lopez', '69235842-21', '5489263', '3105263984', 'Cll 34 No 58- 26 cuadrante 8 bloque 6', 2),
+(2, 1, 80188262, 'Nelsi aurora', 'Mendez gomez', '69235842-21', '5489263', '3105263984', 'Cll 99 No 100- 26 cuadrante 8 bloque 6', 1),
+(3, 1, 80188262, 'Cesar mauricio', 'Mendez gomez', '79.235.369', '5489263', '3105263984', 'Cll 23 NO 56-96', 3);
 
 -- --------------------------------------------------------
 
@@ -293,40 +303,40 @@ CREATE TABLE IF NOT EXISTS `historico` (
 --
 
 INSERT INTO `historico` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelularContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
-(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '', '', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '', '', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '', '', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, '', '', '2012-12-09', NULL, NULL, NULL, NULL),
-(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, '', '', '2012-12-09', NULL, NULL, NULL, NULL),
-(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, '', '', '2012-12-09', NULL, NULL, NULL, NULL),
-(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, '', '', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, '', '', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', '', '2013-03-01', NULL, NULL, NULL, NULL),
-(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', '', '2013-03-01', NULL, NULL, NULL, NULL),
-(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, '', '', '2013-03-01', NULL, NULL, NULL, NULL),
-(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, '', '', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, '', '', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, '', '', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, '', '', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, '', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
-(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, '', '', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '\0', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, '', '', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL),
-(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '', '', '2013-03-17', NULL, NULL, NULL, NULL);
+(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, b'1', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
+(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, b'1', b'1', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -337,6 +347,7 @@ INSERT INTO `historico` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentifi
 CREATE TABLE IF NOT EXISTS `identificacion` (
   `IdTipoidentificacion` int(11) NOT NULL AUTO_INCREMENT COMMENT 'indice',
   `Identificacion` varchar(255) DEFAULT NULL COMMENT 'Tipo de Identificacion por ejemplo Cedula de Ciudadania',
+  `Sigla` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`IdTipoidentificacion`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -344,9 +355,9 @@ CREATE TABLE IF NOT EXISTS `identificacion` (
 -- Volcado de datos para la tabla `identificacion`
 --
 
-INSERT INTO `identificacion` (`IdTipoidentificacion`, `Identificacion`) VALUES
-(1, 'Cedula'),
-(2, 'Tarjeta identidad');
+INSERT INTO `identificacion` (`IdTipoidentificacion`, `Identificacion`, `Sigla`) VALUES
+(1, 'Cedula', 'CC'),
+(2, 'Tarjeta identidad', 'TI');
 
 -- --------------------------------------------------------
 
@@ -382,15 +393,20 @@ CREATE TABLE IF NOT EXISTS `minuta` (
   `hora` time DEFAULT NULL,
   `titulo` varchar(255) DEFAULT NULL,
   `novedad` text,
+  `IdUsuario_Creacion` varchar(255) NOT NULL,
+  `Fecha_Creacion` datetime NOT NULL,
+  `IdUsuario_Modificacion` varchar(255) NOT NULL,
+  `Fecha_Modificacion` datetime NOT NULL,
   PRIMARY KEY (`idregistro`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `minuta`
 --
 
-INSERT INTO `minuta` (`idregistro`, `fecha`, `hora`, `titulo`, `novedad`) VALUES
-(1, '2013-03-28', '20:02:22', 'entrega de turno', 'se entrega turno sin novedad');
+INSERT INTO `minuta` (`idregistro`, `fecha`, `hora`, `titulo`, `novedad`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
+(1, '2013-03-28', '20:02:22', 'entrega de turno', 'se entrega turno sin novedad wwwww', '', '0000-00-00 00:00:00', '1', '2013-04-07 23:11:48'),
+(2, '2013-04-07', '23:12:28', 'jjj', 'fffffff', '1', '2013-04-07 23:12:28', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -407,7 +423,7 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
   PRIMARY KEY (`idmovcuentas`),
   KEY `idx_movcuentas` (`idmovimiento`),
   KEY `idx_movcuentas_0` (`codcuenta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `movcuentas`
@@ -415,7 +431,11 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
 
 INSERT INTO `movcuentas` (`idmovcuentas`, `codcuenta`, `debito`, `credito`, `idmovimiento`) VALUES
 (1, 1, 34566, 0, 1),
-(2, 2, 0, 34566, 1);
+(2, 2, 0, 34566, 1),
+(3, 1, 321, 0, 3),
+(4, 2, 0, 2, 3),
+(5, 8, 2, 0, 5),
+(6, 8, 0, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -436,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
   KEY `idx_movimiento` (`tipodoc`),
   KEY `idx_movimiento_0` (`estado`),
   KEY `idx_movimiento_1` (`tercero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `movimiento`
@@ -444,7 +464,11 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
 
 INSERT INTO `movimiento` (`id`, `numero`, `fecha`, `tipodoc`, `numdoc`, `concepto`, `estado`, `tercero`) VALUES
 (1, 1, '2013-03-29 00:00:00', 1, 1, 'awsedrftgyhu', 1, 2),
-(2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2);
+(2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2),
+(3, 3, '2013-04-18 00:00:00', 1, 2, 'hola', 1, 1),
+(4, 4, '2013-04-19 00:00:00', 1, 3, '1', 1, 1),
+(5, 5, '2013-04-19 00:00:00', 1, 4, '2', 1, 1),
+(6, 6, '2013-04-19 00:00:00', 1, 5, '2', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -491,7 +515,7 @@ CREATE TABLE IF NOT EXISTS `parqueaderos` (
   `estado` varchar(5) NOT NULL,
   PRIMARY KEY (`idparqueadero`),
   KEY `idx_parqueaderos` (`idtipopq`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Volcado de datos para la tabla `parqueaderos`
@@ -500,16 +524,21 @@ CREATE TABLE IF NOT EXISTS `parqueaderos` (
 INSERT INTO `parqueaderos` (`idparqueadero`, `parqueadero`, `Descripcion`, `Coheficiente`, `Matinmobiliaria`, `idtipopq`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`, `estado`) VALUES
 (0, 'Ingreso Peatonal', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 'X'),
 (1, '001', 'Parqueadero de 3X2mts', 1.25, 'Mtr254549', 1, NULL, NULL, NULL, NULL, ''),
-(2, '1', '', 89, 'tyu567', 1, NULL, NULL, NULL, NULL, ''),
+(2, '14322', 'ZXCdddd', 89, 'tyu567', 1, NULL, NULL, '1', '2013-04-07 21:41:39', ''),
 (3, '2', '', 53, 'uio789', 1, NULL, NULL, NULL, NULL, ''),
 (4, '12', NULL, NULL, 'iop789', 2, NULL, NULL, NULL, NULL, ''),
 (13, 'c1', NULL, NULL, 'rty456', 2, NULL, NULL, NULL, NULL, ''),
-(16, '3', 'wedrftyguh', 1.25, 'erdftyguhj', 1, NULL, NULL, NULL, NULL, ''),
+(14, 'V001', NULL, NULL, 'uio789', 3, NULL, NULL, NULL, NULL, 'X'),
+(15, 'V002', NULL, NULL, 'MTROIRN', 3, NULL, NULL, NULL, NULL, 'X'),
+(16, 'B 17', 'wedrftyguh', 1.25, 'erdftyguhj', 1, NULL, NULL, NULL, NULL, ''),
 (17, 'C002', NULL, NULL, '', 2, NULL, NULL, NULL, NULL, ''),
 (18, 'C002', NULL, NULL, '', 2, NULL, NULL, NULL, NULL, ''),
-(19, 'V1', NULL, NULL, 'MTIDFHKJ', 3, NULL, NULL, NULL, NULL, ''),
-(20, 'V2', NULL, NULL, 'sss332', 3, NULL, NULL, NULL, NULL, 'X'),
-(21, 'c2', NULL, NULL, 'wer456', 2, NULL, NULL, NULL, NULL, '');
+(19, 'V003', NULL, NULL, 'MTIDFHKJ', 3, NULL, NULL, NULL, NULL, 'X'),
+(20, 'V004', NULL, NULL, '', 3, NULL, NULL, NULL, NULL, ''),
+(21, '345', NULL, NULL, 'e2ed', 3, NULL, NULL, '1', '2013-04-07 22:40:15', ''),
+(22, '5', '', 23, 'wer456', 1, '1', '2013-04-12 08:26:08', NULL, NULL, ''),
+(23, 'c2', NULL, NULL, 'rty567', 2, NULL, NULL, NULL, NULL, ''),
+(24, 'v5', NULL, NULL, 'kjh876', 3, '1', '2013-04-12 20:49:58', NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -880,213 +909,214 @@ CREATE TABLE IF NOT EXISTS `residentes` (
 INSERT INTO `residentes` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelefonoContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
 (1, 'Celia Rosalia', 'Bessada Ovies', 1, '7460052', 5667631, 1938279434, '', '1992-03-11', 'Bogota', 2, '_', 1342522, 2147483647, 'dictum@elit.ca', 17, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (2, 'Enrique German', 'Stornaiuolo Saade', 1, '7462341', 2817107, 2147483647, NULL, '1994-09-09', 'Bogota', 1, 'Raul O. Arz', 3329722, 2147483647, 'ipsum@tincidunt.net', 25, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(3, 'Basilio Jesus', 'Solorzano Potes', 1, '7595092', 7863994, 2147483647, NULL, '1987-03-02', 'Bogota', 1, 'Vilma X. Zabaleta', 6624659, 2147483647, 'Nulla@etmalesuadafames.com', 21, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(4, 'Regina Vilma', 'Tribin Shiffman', 1, '7878906', 6444818, 1554196352, NULL, '1978-05-06', 'Bogota', 2, 'Xochitl B. Willis', 2758289, 2147483647, 'enim@euodiotristique.com', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(5, 'Jairo Gerardo', 'Centura Carre', 1, '7952148', 3061915, 2147483647, NULL, '1988-09-29', 'Bogota', 1, 'Lazaro A. Almeida', 6948247, 2147483647, 'convallis.in.cursus@laoreetposuere.ca', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(6, 'Eliana Rosana', 'Martina Pomp', 1, '8064300', 3188683, 2034669600, NULL, '1971-08-21', 'Bogota', 2, 'Cora U. Valenzuela', 3760942, 2147483647, 'dictum.mi@eratin.edu', 47, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(7, 'Sonia Florinda', 'Tarquino Canola', 1, '8327514', 7839589, 2147483647, NULL, '1959-09-26', 'Bogota', 2, 'Walter A. Sibar', 6426942, 1917620169, 'vestibulum.Mauris.magna@liberodui.edu', 31, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(8, 'Homero Jesus', 'Perfetti Brunal', 1, '8689147', 5438644, 1198364883, NULL, '1956-04-19', 'Bogota', 1, 'Serena V. Pote', 8280621, 2147483647, 'quis@orcilobortis.ca', 28, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(9, 'Martin omar', 'Privatelli Rumazo', 1, '8789855', 5515569, 2147483647, '', '1979-11-20', 'Bogota', 1, 'Andre R. Quiceno_', 6557617, 2147483647, 'leo@commodoauctor.com', 3, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(10, 'Samanta Ximena', 'Fiorenzano Roth', 1, '9259063', 2840259, 2147483647, NULL, '1960-03-31', 'Bogota', 2, 'Dolores Y. Wood', 7771576, 2147483647, 'Maecenas@metusAenean.com', 29, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(11, 'Tomas Federico', 'Ran Rico', 1, '9339172', 6007966, 2147483647, NULL, '1991-04-04', 'Bogota', 1, 'Franco V. Prieur', 4873842, 2147483647, 'egestas@nisl.net', 13, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(12, 'Yadira Gertrudis', 'Gasaro Urquiza', 1, '9650451', 8157718, 2147483647, NULL, '1992-08-01', 'Bogota', 2, 'Adela T. Jara', 4568877, 2147483647, 'vestibulum.lorem@penatibus.com', 34, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(13, 'Araceli Irene', 'Brinkerhoff Pereda', 1, '9847290', 6831226, 2147483647, NULL, '1967-11-20', 'Bogota', 2, 'Antonia O. Anguiano', 5241160, 2147483647, 'odio@infelis.com', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(14, 'Clemente Dario', 'Bruson Lagoeyte', 1, '10529357', 2369408, 2147483647, NULL, '1968-08-28', 'Bogota', 1, 'Zoraida P. Cleves', 6833477, 2147483647, 'urna.et@Donecatarcu.com', 42, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(15, 'Emiliano Felix', 'Ruethlisberger Pineres', 1, '11094696', 5271871, 2147483647, NULL, '1994-11-07', 'Bogota', 1, 'Samara T. Cazar', 4376623, 2147483647, 'ultrices.sit.amet@scelerisquemollis.co.uk', 73, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(16, 'Linda Paloma', 'Riva Ballen', 1, '11410553', 1721766, 2147483647, NULL, '1983-08-25', 'Bogota', 2, 'Cornelio B. Antig?edad', 6676288, 2147483647, 'augue@acmetus.org', 69, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(17, 'Leopoldo Carmelo', 'Pina Tirc', 1, '11916381', 5305459, 2147483647, NULL, '1991-12-01', 'Bogota', 1, 'Yajaira L. Villamor', 4356807, 2147483647, 'augue.malesuada@sollicitudinadipiscingligula.org', 68, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(18, 'Elvira Ruth', 'Angadelo Romay', 1, '12007934', 9602008, 2147483647, NULL, '1991-09-30', 'Bogota', 2, 'Ernesto G. Borray', 5549793, 2147483647, 'elit.pretium.et@congue.edu', 19, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(19, 'Azucena Samanta', 'Townsend Schroeder', 1, '12236816', 3245477, 1376953119, NULL, '1984-12-25', 'Bogota', 2, 'Teresa H. Perfetti', 6740131, 2147483647, 'ultrices.a@Classaptenttaciti.com', 30, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(20, 'Eduardo Walter', 'Valiente Cleves', 1, '12337524', 2332292, 2147483647, NULL, '1966-07-18', 'Bogota', 1, 'Elena Y. Camarasa', 3617032, 2147483647, 'Sed.auctor@liberoatauctor.ca', 25, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(21, 'Daniela Dinora', 'Uriza Villafane', 1, '12628204', 1552926, 2147483647, NULL, '1987-05-04', 'Bogota', 2, 'Paloma D. Sabater', 8553300, 2147483647, 'diam@Proinmi.edu', 68, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(22, 'Fausto Jacinto', 'Oette Bula', 1, '13154632', 9966738, 1594939019, NULL, '1977-03-25', 'Bogota', 1, 'Pablo H. Bandera', 1883742, 2147483647, 'mauris.eu.elit@maurissitamet.co.uk', 40, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(23, 'Alexandra Trinidad', 'Recan Aquilino', 1, '13381225', 6458630, 2147483647, NULL, '1989-04-17', 'Bogota', 2, 'Bruno I. Zuluaga', 4573138, 2147483647, 'ipsum.dolor@placeratorci.edu', 17, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(24, 'Pablo Fidel', 'Yanguas Tena', 1, '13511688', 5164750, 1813636994, NULL, '1974-05-05', 'Bogota', 1, 'Adela F. Schrader', 1440661, 2147483647, 'pede.ultrices.a@Suspendissealiquetmolestie.edu', 47, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(25, 'Javier Rogelio', 'Villarraga Kalckar', 1, '13935119', 8331170, 2147483647, NULL, '1990-04-20', 'Bogota', 1, 'valentina S. Tapicha', 4594271, 2147483647, 'tempor.bibendum@nonenim.net', 36, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(26, 'Sabrina Victoria', 'Prompt Seleno', 1, '14328796', 3898295, 2147483647, NULL, '1984-04-12', 'Bogota', 2, 'Valentino U. Reyes', 4533870, 2147483647, 'porttitor@ipsumleoelementum.edu', 56, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(27, 'Dario Hector', 'Umba Lacoste', 1, '15464050', 2112182, 2147483647, NULL, '1971-07-13', 'Bogota', 1, 'Alonso Y. Peuluey', 2804188, 2147483647, 'non@Ut.net', 36, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(28, 'Sol Carmen', 'Koros Urquiola', 1, '15631134', 8277396, 2147483647, NULL, '1963-02-01', 'Bogota', 2, 'Dario M. Calancha', 4063136, 2147483647, 'Cras.vulputate.velit@velitjusto.org', 6, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(29, 'Melisa Fatima', 'Cerra Tsao', 1, '16851074', 4258133, 2147483647, NULL, '1957-10-24', 'Bogota', 2, 'Marvin H. Narvaez', 1365239, 2147483647, 'Donec@Loremipsumdolor.com', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(30, 'Encarnacion Vivian', 'Cera Aliaga', 1, '17350036', 1192216, 2147483647, NULL, '1992-11-19', 'Bogota', 2, 'Elias Q. Gaillard', 7894569, 2147483647, 'lorem@magnisdis.com', 14, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(31, 'Dulce Paola', 'Urbano Balanta', 1, '17485077', 2398569, 2027228542, NULL, '1955-10-20', 'Bogota', 2, 'Lazaro H. Cabal', 9311575, 2147483647, 'Proin.dolor.Nulla@Donec.net', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(32, 'Elizabeth Miriam', 'Laitano Celemin', 1, '17835266', 9956881, 2147483647, NULL, '1981-02-13', 'Bogota', 2, 'Juliana C. Archer', 7184362, 2147483647, 'Nunc.sollicitudin.commodo@egestas.com', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(33, 'Nicolas Bruno', 'Klinkert Pintor', 1, '18309051', 7661614, 2147483647, NULL, '1988-09-12', 'Bogota', 1, 'Cruz V. Lehman', 6565129, 2147483647, 'lacus@Duisgravida.edu', 13, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(34, 'Greta Yadira', 'Sopo Salido', 1, '18672973', 2410435, 2147483647, NULL, '1989-08-04', 'Bogota', 2, 'Flora U. Carriazo', 9365635, 2147483647, 'elit.fermentum.risus@libero.net', 67, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(35, 'Sol Rocio', 'Subieta Liendo', 1, '19380218', 5267879, 2147483647, NULL, '1969-08-23', 'Bogota', 2, 'Andre S. Schurer', 4416059, 1129428506, 'mauris@mollis.ca', 41, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(36, 'Fatima Zita', 'Vieira Pineiro', 1, '19448883', 8485734, 2147483647, NULL, '1957-06-25', 'Bogota', 2, 'Rene M. Perafan', 9869686, 1104194011, 'posuere.at.velit@duiCras.co.uk', 24, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(37, 'Marisol Veronica', 'Viga Canavera', 1, '20288879', 7198864, 2147483647, NULL, '1989-11-15', 'Bogota', 2, 'Concepcion V. Yaza', 2809695, 2147483647, 'nunc.risus.varius@nuncrisusvarius.ca', 54, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(38, 'Marta Samara', 'Willis Salido', 1, '21046478', 5494601, 2147483647, NULL, '1979-04-10', 'Bogota', 2, 'Gloria K. Rasch', 2419265, 2147483647, 'at@vulputatedui.co.uk', 27, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(39, 'Vilma Jasmin', 'Norena Duran', 1, '21188385', 5230673, 2147483647, NULL, '1971-03-28', 'Bogota', 2, 'Angelica I. Agudelo', 1917585, 2147483647, 'augue.scelerisque.mollis@at.ca', 77, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(40, 'Fernando Adrian', 'Serrate Vitto', 1, '22323639', 4553560, 2147483647, '', '1982-05-31', 'Bogota', 1, '_', 6361203, 1849019823, 'Aliquam@nonummyipsum.net', 10, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(41, 'Osvaldo Romeo', 'Noya Ibarg?en', 1, '22369415', 7602830, 2147483647, NULL, '1974-07-13', 'Bogota', 1, 'Florencia E. Yipula', 4947595, 2119677812, 'tortor.Integer@Nulla.edu', 48, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(42, 'Filiberto Max', 'Cuellar Rico', 1, '22440368', 6070361, 2147483647, NULL, '1980-05-29', 'Bogota', 1, 'Emiliano O. Kemble', 7041785, 2147483647, 'leo.Morbi.neque@dui.net', 26, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(43, 'Karina Alicia', 'Benitez Schwabe', 1, '22870666', 8896480, 2147483647, NULL, '1961-01-11', 'Bogota', 2, 'Amanda D. Licasale', 3755760, 2147483647, 'blandit.viverra@rhoncusidmollis.org', 74, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(44, 'Ema Samanta', 'Poca Quiceno', 1, '23177368', 9546090, 2147483647, NULL, '1966-05-03', 'Bogota', 2, 'Ruben M. Pulido', 5978783, 2147483647, 'egestas.a.scelerisque@metusfacilisis.edu', 8, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(45, 'Ismael angel', 'Subieta Cartagena', 1, '23239166', 5024355, 2147483647, NULL, '1978-05-28', 'Bogota', 1, 'Aldo X. Videla', 1746205, 2147483647, 'eu.placerat@tristiqueac.net', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(46, 'Patricio Fermin', 'Anda Pincha', 1, '23243744', 7424488, 1849504375, NULL, '1985-11-30', 'Bogota', 1, 'Roger R. Heras', 6607236, 2147483647, 'dolor.dolor@sapienCrasdolor.co.uk', 22, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(47, 'Samara Rosana', 'Gallo Tarazona', 1, '23381073', 5860317, 2147483647, NULL, '1991-03-10', 'Bogota', 2, 'Dario V. Manas', 5395817, 2147483647, 'cursus.Integer.mollis@purusaccumsaninterdum.co.uk', 43, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(48, 'Estefania Rebeca', 'Barberena Sarda', 1, '23527557', 7005412, 2147483647, NULL, '1978-10-05', 'Bogota', 2, 'omar F. Villaseca', 5265714, 2147483647, 'feugiat.metus@turpisvitae.com', 23, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(49, 'German Edgardo', 'Pernett Anaya', 1, '23625976', 1942761, 2147483647, NULL, '1980-07-10', 'Bogota', 1, 'valentina Q. Carazas', 2294438, 2147483647, 'ipsum.dolor@dapibusgravida.com', 5, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(50, 'Cintia Ana', 'Zachinson Vinasco', 1, '23932678', 2692370, 2147483647, NULL, '1984-10-31', 'Bogota', 2, 'Rolando A. Rioja', 5768805, 2147483647, 'Nullam@Sednulla.edu', 9, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(51, 'Jose Sebastian', 'Borda Peramato', 1, '25415832', 2335013, 2147483647, NULL, '1984-07-08', 'Bogota', 1, 'Ida P. Manzur', 7086703, 2147483647, 'ornare.libero.at@Proin.ca', 56, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(52, 'Constantino Luciano', 'Silvestre Schimoz', 1, '25525696', 6201114, 1089861436, NULL, '1967-07-26', 'Bogota', 1, 'Monica J. Gardeazabal', 1205848, 2147483647, 'dui.Cum@tempor.ca', 41, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(53, 'Bruno Donato', 'Carrasquilla Salvatierra', 1, '25699646', 2816037, 2147483647, NULL, '1974-10-15', 'Bogota', 1, 'Homero F. Wickman', 9143518, 2147483647, 'viverra.Donec@fringillacursuspurus.edu', 64, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(54, 'Mario Fernando', 'Garaves Power', 1, '26583130', 6518861, 2147483647, NULL, '1983-12-13', 'Bogota', 1, 'Aida T. Coady', 4111685, 2147483647, 'vulputate.eu.odio@nasceturridiculus.co.uk', 46, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(55, 'Higinia Samanta', 'Durango Brauer', 1, '27006561', 9794270, 2147483647, NULL, '1962-05-26', 'Bogota', 2, 'Sonia U. Sarmati', 6087424, 2147483647, 'et@enimMauris.ca', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(56, 'Eleonor Ines', 'Raondo Rosas', 1, '27294952', 2665338, 2147483647, '', '1957-07-17', 'Bogota', 2, '_', 7770258, 2147483647, 'sit@egestashendrerit.com', 12, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(57, 'Julieta Trinidad', 'Mares Ferrucci', 1, '28697998', 8140364, 1048745074, NULL, '1988-03-17', 'Bogota', 2, 'Jacinto C. Canarte', 6937335, 2147483647, 'commodo@orciluctus.com', 18, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(58, 'Blanca Amelia', 'Leano Urretavisque', 1, '29778320', 9526705, 2147483647, NULL, '1982-09-29', 'Bogota', 2, 'Mayerli W. Vicuna', 6673467, 2147483647, 'Morbi.non.sapien@aliquameuaccumsan.com', 49, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(59, 'Constantino Ezequiel', 'Palacio Zubiaurre', 1, '29954559', 2480104, 2147483647, NULL, '1971-03-17', 'Bogota', 1, 'Amara U. Perlaza', 8716628, 2147483647, 'mauris.ut@elita.net', 25, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(60, 'Cruz Marco', 'Piedrahita Lanz', 1, '30188019', 6413716, 2147483647, NULL, '1977-09-17', 'Bogota', 1, 'Julio X. Lee', 5728615, 2147483647, 'cursus.vestibulum@sitamet.org', 57, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(61, 'Hugo Josue', 'Gonzalez Mancini', 1, '30309326', 2439650, 2147483647, NULL, '1956-11-11', 'Bogota', 1, 'Elvira G. Levenson', 3569636, 2147483647, 'Maecenas@rutrumeu.edu', 35, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(62, 'Fermin Julian', 'Cazar Zerda', 1, '30423767', 7705894, 2147483647, NULL, '1977-08-08', 'Bogota', 1, 'angel J. Tumani', 9487016, 1462461495, 'risus@scelerisqueduiSuspendisse.net', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(63, 'Dina Consuelo', 'Raymond Ceron', 1, '30654938', 6598839, 2147483647, NULL, '1954-10-23', 'Bogota', 2, 'Sandra M. Arcaya', 1913394, 1206702593, 'massa.non.ante@Pellentesqueultriciesdignissim.net', 73, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(65, 'Adelmo Joaquin', 'Igarai Zabala', 1, '31174499', 7451931, 2147483647, NULL, '1985-10-16', 'Bogota', 1, 'Donato G. Walschap', 9074414, 1932954745, 'Mauris@sollicitudincommodo.net', 47, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(66, 'Liliana Dulce', 'Ugarriza Sancristobal', 1, '31398804', 7604267, 1895939053, NULL, '1977-05-02', 'Bogota', 2, 'Efrain E. Lecuna', 5343167, 2147483647, 'dignissim.tempor@libero.ca', 76, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(67, 'Antonio Fernando', 'Tibaquira Schea', 1, '31506378', 6331792, 1368657431, NULL, '1985-04-22', 'Bogota', 1, 'Ronaldo O. Paulian', 5731567, 2147483647, 'ac.ipsum.Phasellus@euodiotristique.ca', 76, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(68, 'Florencio Jesus', 'Calderon Fex', 1, '32211334', 3848669, 2147483647, NULL, '1958-09-20', 'Bogota', 1, 'Renato E. Schnepel', 4969298, 2147483647, 'quam@natoquepenatibus.net', 61, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(69, 'Antonio Flavio', 'Afanador Gamio', 1, '32225067', 9128088, 2147483647, NULL, '1994-10-04', 'Bogota', 1, 'Gracia Q. Ronderos', 6742850, 1621149307, 'neque.sed.dictum@lectusantedictum.ca', 21, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(70, 'Estrella Mariana', 'Umbarita Sternberg', 1, '32579834', 9177434, 2147483647, NULL, '1969-01-13', 'Bogota', 2, 'Zita U. Price', 9800014, 2147483647, 'lorem.luctus.ut@vestibulumnec.com', 42, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(71, 'Nicolas Adelmo', 'Quirama Dieck', 1, '33149750', 5488049, 2147483647, NULL, '1970-07-09', 'Bogota', 1, 'Donato F. Roba', 4939092, 2147483647, 'dignissim@at.org', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(72, 'Pedro Alberto', 'Arcesse Cano', 1, '34529907', 9984390, 2147483647, NULL, '1971-04-06', 'Bogota', 1, 'Israel X. Zarate', 3327870, 1434402706, 'amet.lorem@ipsumnon.org', 6, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(73, 'Isadora Macarena', 'Berroeta Bertoita', 1, '34971649', 2740251, 2147483647, NULL, '1967-02-12', 'Bogota', 2, 'Amelia K. Yusti', 2240435, 1522852427, 'dolor.sit.amet@diamvelarcu.edu', 12, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(74, 'Angelica Ruth', 'Garrido Zipaquira', 1, '34983093', 3770094, 2147483647, NULL, '1967-07-23', 'Bogota', 2, 'Cesar I. Liendo', 7525352, 2147483647, 'a.neque.Nullam@Vivamus.org', 62, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(75, 'Rosalia Ada', 'Umba Vidual', 1, '35598785', 1230889, 2147483647, NULL, '1955-07-18', 'Bogota', 2, 'Jaime Q. Alvira', 7060209, 2147483647, 'Cum.sociis@CurabiturdictumPhasellus.edu', 54, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(76, 'Ruben Franco', 'Aulestia Bossa', 1, '35736114', 8686718, 2147483647, NULL, '1988-03-05', 'Bogota', 1, 'Ignacio Y. Russell', 6334007, 2147483647, 'In.faucibus@pedeacurna.ca', 75, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(77, 'Gustavo Leopoldo', 'Estrella Zuluaga', 1, '35747558', 9616550, 2147483647, NULL, '1957-03-26', 'Bogota', 1, 'Dina T. Castaneda', 8683403, 2147483647, 'quis.urna@elitelit.net', 8, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(78, 'Delia Angelina', 'Simo Canavera', 1, '35763580', 2155536, 2147483647, NULL, '1990-03-18', 'Bogota', 2, 'Martin Z. Upegui', 4642720, 2147483647, 'mi.lacinia@eunulla.edu', 79, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(79, 'Domingo Vladimir', 'Prisco Aunque', 1, '35802490', 6654106, 2147483647, NULL, '1968-10-02', 'Bogota', 1, 'Alexis N. Echegoyen', 4061047, 2147483647, 'leo@sapienmolestieorci.org', 29, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(80, 'Ramiro Horacio', 'Salgado Verderamo', 1, '36161835', 8002794, 2147483647, NULL, '1964-04-13', 'Bogota', 1, 'Sonia A. Pisa', 3204241, 2147483647, 'neque.pellentesque.massa@maurissagittis.org', 45, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(81, 'Manuel Guillermo', 'Antonio Toquica', 1, '36683685', 5016363, 1324331211, NULL, '1970-06-11', 'Bogota', 1, 'Rafael L. Liano', 3370212, 2147483647, 'lorem.fringilla.ornare@acfacilisis.net', 14, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(82, 'Alejo Santiago', 'Lafaurie Rosasco', 1, '36788971', 7592321, 2147483647, NULL, '1974-04-18', 'Bogota', 1, 'Julia A. Soberon', 2119162, 2147483647, 'felis@semconsequat.com', 15, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(83, 'Adela Rocio', 'Burgos Turriago', 1, '36885101', 4299014, 2147483647, NULL, '1979-06-04', 'Bogota', 2, 'Higinio L. Pungiluppi', 8255677, 2147483647, 'eget.tincidunt.dui@enimdiamvel.com', 40, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(84, 'Celso Hipolito', 'Prias Wester', 1, '37141449', 1301200, 2147483647, NULL, '1962-08-15', 'Bogota', 1, 'Catalina W. Pungiluppi', 7157336, 2147483647, 'libero.et@lobortisultrices.com', 63, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(85, 'Lilia Vilma', 'Antes Rosano', 1, '38022644', 9763577, 2147483647, NULL, '1960-05-03', 'Bogota', 2, 'Israel B. Perea', 4499285, 1578552680, 'mus.Aenean@luctus.com', 55, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(86, 'America Nuria', 'Sampedro Corral', 1, '39022858', 7981101, 2147483647, '', '1956-12-31', 'Bogota', 2, '_', 9519363, 2147483647, 'ornare.In@vulputatenisi.edu', 7, 0, 2, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(87, 'Jeremias Marvin', 'Loor Longas', 1, '39226562', 2205329, 2147483647, NULL, '1956-03-15', 'Bogota', 1, 'Florencio Q. Ablanque', 4071658, 2147483647, 'sed.dictum.eleifend@vitae.com', 14, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(88, 'Diana Norma', 'Borigoff Strasbugh', 1, '39512665', 8036919, 2147483647, NULL, '1962-04-08', 'Bogota', 2, 'Yadira L. Sasson', 6230149, 2147483647, 'velit.dui.semper@musProinvel.ca', 19, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(89, 'Rocio Ximena', 'Villoria Kelly', 1, '39949829', 8492738, 2147483647, NULL, '1958-09-18', 'Bogota', 2, 'Griselda Q. Pemberthy', 6395668, 2147483647, 'posuere@imperdieterat.org', 32, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(90, 'Yamila Leonora', 'Kopp Zipamocha', 1, '40963776', 3809782, 2147483647, NULL, '1978-06-14', 'Bogota', 2, 'Cristian M. Bejarano', 6304550, 2147483647, 'non.arcu@Sedidrisus.edu', 25, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(92, 'Amalia Celina', 'Buenes Alban', 1, '41741974', 6035657, 2147483647, NULL, '1993-03-17', 'Bogota', 2, 'Samuel T. Goenaga', 2578217, 2147483647, 'Nunc.mauris.sapien@egestasblandit.org', 74, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(93, 'Samanta Hilda', 'Corradine Ferreira', 1, '41893036', 1660895, 2147483647, NULL, '1966-04-13', 'Bogota', 2, 'Iris Y. Wright', 4353940, 2147483647, 'malesuada.vel.venenatis@Inatpede.org', 12, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(94, 'Edgar Bartolome', 'Bueno Rothstein', 1, '42581970', 4738777, 2147483647, NULL, '1976-10-27', 'Bogota', 1, 'Nuria F. Aljure', 5908687, 2147483647, 'feugiat.metus.sit@neceuismodin.edu', 21, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(95, 'Jeronimo Aurelio', 'Russi Villota', 1, '43014557', 3704463, 2147483647, NULL, '1955-06-02', 'Bogota', 1, 'Angelica C. Guyau', 2076637, 2147483647, 'ultrices.posuere.cubilia@orciquislectus.ca', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(96, 'Matilde Sofia', 'Yipula Posadas', 1, '43385345', 5182804, 2147483647, NULL, '1982-09-26', 'Bogota', 2, 'Ines V. Otero', 2310298, 2147483647, 'parturient@pharetranibh.com', 49, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(97, 'Gloria Flora', 'Artuz Corrales', 1, '43769867', 4850643, 1381961470, NULL, '1957-07-04', 'Bogota', 2, 'Sigifredo G. Wilches', 4126255, 2147483647, 'vitae@enimconsequatpurus.ca', 35, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(98, 'Blanca Adela', 'Puell Arcaya', 1, '43861420', 9147293, 2147483647, NULL, '1965-10-08', 'Bogota', 2, 'Viviana Y. Ortiz', 9715537, 2147483647, 'lorem.semper@fermentumrisus.edu', 75, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(99, 'Osvaldo Andre', 'Reales Ubaldes', 1, '43911774', 4695605, 2147483647, NULL, '1970-05-12', 'Bogota', 1, 'Magdalena O. Aparicio', 3584760, 2147483647, 'gravida.Praesent.eu@Craseutellus.net', 51, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(100, 'Paul Isaac', 'Toro Henriquez', 1, '44106323', 5129657, 2147483647, NULL, '1959-12-12', 'Bogota', 1, 'Timoteo O. Infantino', 2354839, 2147483647, 'adipiscing@rhoncus.co.uk', 64, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(101, 'Ulises Celso', 'Cepero Manzaneque', 1, '44362671', 2231843, 2147483647, NULL, '1972-08-05', 'Bogota', 1, 'Eleonor B. Torre', 4837754, 2147483647, 'Nullam@eu.co.uk', 6, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(102, 'Maite Victoria', 'Tunon Rockwood', 1, '44472534', 5118944, 2147483647, NULL, '1962-11-07', 'Bogota', 2, 'Vilma F. Stork', 3534948, 2147483647, 'cursus.et.magna@idsapienCras.ca', 62, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(103, 'Julieta Melina', 'Wandurraga Baer', 1, '45014984', 7050632, 2147483647, NULL, '1973-06-16', 'Bogota', 2, 'Felix G. Iannini', 1005182, 2147483647, 'ultrices@tellusSuspendisse.org', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(104, 'Ruben Manuel', 'Palacio Augusto', 1, '45390350', 2938205, 2147483647, NULL, '1958-11-11', 'Bogota', 1, 'Diana W. Dagua', 5404738, 2147483647, 'orci.luctus@scelerisquescelerisquedui.org', 33, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(105, 'Luciano Armando', 'Villada Piral', 1, '45463593', 8546203, 1334561072, NULL, '1990-10-02', 'Bogota', 1, 'Zacarias M. Ochoa', 8521262, 2147483647, 'mauris.id.sapien@vestibulumneque.ca', 59, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(106, 'Camila Greta', 'Carbo Stornaiuolo', 1, '45493347', 8265607, 2147483647, NULL, '1989-02-19', 'Bogota', 2, 'agata A. Piedrahita', 6760894, 2147483647, 'bibendum.sed.est@malesuadautsem.edu', 65, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(107, 'Catalina Amara', 'Navarrete Camarasa', 1, '46678955', 2137907, 2147483647, NULL, '1956-07-11', 'Bogota', 2, 'Marvin B. Rey', 4148312, 2147483647, 'a.purus@nullaDonec.org', 76, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(108, 'Leonel Leopoldo', 'Yucason Borde', 1, '46745331', 9005395, 2147483647, NULL, '1966-06-10', 'Bogota', 1, 'Ruth R. Albis', 9758605, 2147483647, 'elit.pellentesque@imperdiet.com', 56, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(109, 'Monica Fatima', 'Villaman Diaz', 1, '47484619', 8722690, 2147483647, NULL, '1968-01-08', 'Bogota', 2, 'Vicente A. Herazo', 1294515, 2147483647, 'diam.dictum@justofaucibus.net', 12, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(110, 'Salvador Virgilio', 'Buenahora Ferrero', 1, '47779877', 8342467, 2147483647, NULL, '1983-03-31', 'Bogota', 1, 'Salome H. Ubala', 8674041, 2147483647, 'Integer.aliquam@ligulaAliquam.com', 30, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(111, 'agata Nancy', 'Patin Ruiz', 1, '48093445', 8642775, 2147483647, NULL, '1962-08-03', 'Bogota', 2, 'Lucia J. Recuero', 3138758, 2147483647, 'rhoncus.Nullam.velit@musDonec.ca', 41, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(112, 'Imelda Maria', 'Yegama Upegui', 1, '49423248', 8490603, 2147483647, NULL, '1963-05-04', 'Bogota', 2, 'Zoe C. Krohne', 6700403, 2147483647, 'in.consequat@feugiatSed.org', 5, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(113, 'Ezequiel Ramiro', 'Retis Cumplido', 1, '51654846', 2639817, 2147483647, '', '1979-09-30', 'Bogota', 1, '_', 5100285, 2147483647, 'Sed.eu.nibh@commodotinciduntnibh.org', 10, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(114, 'Cecilia Griselda', 'Bustillos Isabella', 1, '52661926', 7407151, 2147483647, NULL, '1962-01-01', 'Bogota', 2, 'Ronald Q. Echandia', 6307371, 2147483647, 'consectetuer.adipiscing.elit@nonleoVivamus.edu', 45, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(115, 'Mateo Ramiro', 'Landron Urigo', 1, '52748901', 1204677, 2147483647, NULL, '1974-09-17', 'Bogota', 1, 'Abel F. Alvis', 6759813, 2147483647, 'suscipit.est@nisiAeneaneget.org', 16, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(116, 'Liliana Laura', 'Yanguas Calancha', 1, '52941162', 5698042, 1528530826, NULL, '1967-10-11', 'Bogota', 2, 'Estela N. Lamprea', 6105625, 2147483647, 'egestas.nunc@ultricesposuere.co.uk', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(117, 'Gracia Jasmin', 'Gonima Bachhuber', 1, '53463013', 2601711, 2147483647, NULL, '1963-04-15', 'Bogota', 2, 'Araceli B. Arbelaez', 5661014, 2147483647, 'Vivamus.nisi@egestasadui.edu', 46, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(118, 'Cesar Antonio', 'Vetro Rosano', 1, '53497345', 4710148, 2147483647, NULL, '1954-09-19', 'Bogota', 1, 'Delia N. Ortiz', 1812777, 2147483647, 'Ut@sedturpisnec.edu', 51, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(119, 'Raimundo Demetrio', 'Prats Vergel', 1, '53916199', 5597425, 2147483647, NULL, '1990-10-18', 'Bogota', 1, 'Ramon Q. Urdanegui', 4996535, 2147483647, 'tellus@arcuSedeu.com', 75, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(120, 'Vilma valentina', 'Notiva Lagoeyte', 1, '54579956', 2355156, 2147483647, NULL, '1985-06-27', 'Bogota', 2, 'Celestina E. Quesada', 1063483, 1076841989, 'Phasellus.in.felis@Morbivehicula.edu', 75, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(121, 'Cora Iris', 'Urzola Varelas', 1, '54760773', 6690789, 2147483647, NULL, '1986-10-17', 'Bogota', 2, 'Adelmo E. Zapatero', 6450958, 1486764084, 'diam@aliquetProinvelit.ca', 40, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(122, 'Maite Amparo', 'Ochodez Salicetti', 1, '55603058', 1553375, 2147483647, NULL, '1994-04-24', 'Bogota', 2, 'Nestor K. Sanin', 5723055, 2147483647, 'rutrum@malesuada.net', 67, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(123, 'Yajaira Juana', 'Souza Tomich', 1, '55765564', 6218456, 2147483647, NULL, '1978-03-06', 'Bogota', 2, 'Fermin C. Manosca', 2570836, 2147483647, 'euismod@fringilla.net', 65, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(124, 'Rolando Roger', 'Reguera Alaix', 1, '56170685', 1715314, 2147483647, NULL, '1991-12-23', 'Bogota', 1, 'Jaime G. Robledo', 8870087, 2147483647, 'pede.et.risus@egetipsumSuspendisse.org', 60, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(125, 'Gustavo Virgilio', 'Isola Ziganek', 1, '56532318', 8303579, 1904232381, NULL, '1990-04-08', 'Bogota', 1, 'Cornelio L. Manrique', 4867400, 2147483647, 'imperdiet.erat.nonummy@odioPhasellus.edu', 63, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(126, 'angela Carmen', 'Trejos Bula', 1, '57205231', 9052485, 2147483647, NULL, '1991-04-25', 'Bogota', 2, 'Adolfo B. Vina', 8638632, 2147483647, 'orci.in.consequat@convallisest.net', 15, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(127, 'Aldo Noe', 'Barazar Amado', 1, '57418091', 9165979, 2147483647, NULL, '1988-10-26', 'Bogota', 1, 'Rafael U. Peraza', 5325013, 2147483647, 'Donec.porttitor@Ut.com', 32, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(128, 'Beatriz Telma', 'Amorocho Asencio', 1, '57633240', 6518938, 2147483647, NULL, '1986-10-20', 'Bogota', 2, 'Rosana K. Nope', 1263930, 2147483647, 'ipsum@pharetraNam.ca', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(129, 'Daniel Carmelo', 'Lecc Pisa', 1, '58470947', 8171592, 2147483647, NULL, '1987-05-06', 'Bogota', 1, 'Marina X. Querubin', 9680795, 2147483647, 'quam.a@consectetueradipiscingelit.org', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(130, 'Fidel Sebastian', 'Sounders Washington', 1, '58784516', 7372801, 2147483647, NULL, '1964-02-21', 'Bogota', 1, 'Leopoldo H. Ramos', 3362790, 2147483647, 'lobortis.augue.scelerisque@sitametante.co.uk', 5, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(131, 'Ines Isadora', 'Bahamonde Astigarreta', 1, '59912903', 8056098, 2147483647, NULL, '1991-05-31', 'Bogota', 2, 'Mariano F. Garantiva', 5577909, 2147483647, 'urna.justo@ametconsectetueradipiscing.org', 33, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(132, 'Florencio Eufemio', 'Kelafor Rios', 1, '60416443', 6499215, 2147483647, NULL, '1988-10-03', 'Bogota', 1, 'Bianca Y. Notiva', 1720701, 1712456835, 'adipiscing@bibendum.com', 18, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(133, 'Gabriela Marisol', 'Leal Amorocho', 1, '60649903', 1522827, 1569570253, NULL, '1967-02-26', 'Bogota', 2, 'Gustavo L. Zornoza', 6927482, 2147483647, 'nec.leo@pedeNuncsed.edu', 52, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(134, 'Ramon Emilio', 'Ablanque Izquierdo', 1, '60734589', 7189667, 2147483647, NULL, '1974-12-02', 'Bogota', 1, 'Rosa H. Utrey', 9043218, 2147483647, 'dui.in@ultrices.org', 57, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(135, 'Rosario Penelope', 'Carballo Vallecilla', 1, '60929138', 8713608, 2147483647, NULL, '1969-11-11', 'Bogota', 2, 'Ada F. Penso', 3434893, 2147483647, 'nibh@atortorNunc.com', 78, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(136, 'Salomon Agustin', 'Otalora Randell', 1, '61824066', 4355374, 2147483647, NULL, '1967-06-13', 'Bogota', 1, 'Trinidad V. Urbina', 2305596, 2147483647, 'sem.elit.pharetra@milorem.org', 61, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(137, 'Eufemio Horacio', 'Veraste Canon', 1, '61872132', 3753120, 2147483647, NULL, '1992-04-15', 'Bogota', 1, 'Adriana Y. Sokoloff', 6364202, 2147483647, 'facilisis@Inscelerisquescelerisque.co.uk', 65, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(138, 'Macarena Sandra', 'Vaughan Sobelman', 1, '62187989', 8193005, 2147483647, NULL, '1969-09-27', 'Bogota', 2, 'alex L. Bello', 7272817, 2147483647, 'tincidunt.nunc@Aliquamultricesiaculis.org', 43, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(139, 'Velasco Filiberto', 'Galvis Yopasa', 1, '62311585', 9369516, 2147483647, NULL, '1981-07-29', 'Bogota', 1, 'Bernardo M. Velarde', 2008483, 2147483647, 'nibh.dolor@quis.co.uk', 23, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(140, 'Federico Guillermo', 'Rogers Vieda', 1, '62941010', 4009719, 1299496715, NULL, '1978-02-06', 'Bogota', 1, 'Soraya T. Correales', 1665042, 2147483647, 'bibendum@metus.com', 26, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(141, 'Adela Miranda', 'Gandini Saez', 1, '64332611', 9535803, 2147483647, NULL, '1992-09-15', 'Bogota', 2, 'Magdalena C. Pierre', 7325906, 2147483647, 'blandit@tristiqueneque.co.uk', 21, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(142, 'Carolina Sara', 'Jansa Cantor', 1, '64433319', 9521738, 2147483647, NULL, '1985-01-19', 'Bogota', 2, 'Antonio J. Alcazar', 6593784, 1712503052, 'ac.mattis.semper@ultriciesligulaNullam.ca', 40, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(143, 'Gertrudis Adela', 'Salvatierra Alea', 1, '65195496', 9317618, 1041385453, NULL, '1965-03-02', 'Bogota', 2, 'Federico E. Aguirre', 6031972, 2147483647, 'tincidunt.adipiscing@acliberonec.ca', 65, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(144, 'omar Aldo', 'Santis Vigo', 1, '65220673', 6546879, 2147483647, NULL, '1956-11-11', 'Bogota', 1, 'Bianca E. Gitterle', 7948618, 2147483647, 'ante@acmi.com', 43, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(145, 'Emilio Sebastian', 'Leano Maya', 1, '65348847', 9192422, 2147483647, NULL, '1988-02-15', 'Bogota', 1, 'Carina X. Trucco', 6643262, 2147483647, 'et@etlacinia.co.uk', 59, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(146, 'Flora Serena', 'Albo Gamba', 1, '65641815', 4563612, 1945781794, NULL, '1993-09-22', 'Bogota', 2, 'Reinaldo C. Vitto', 4553696, 2147483647, 'vitae.semper@risusa.ca', 61, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(147, 'Cristobal Victor', 'Achiardi Cavaiola', 1, '65774567', 9519409, 2147483647, NULL, '1960-04-02', 'Bogota', 1, 'Tobias U. Lana', 7588314, 1119066902, 'erat.volutpat.Nulla@Cumsociis.ca', 58, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(148, 'Encarnacion Angelica', 'Ocampo Kahn', 1, '66339905', 3431881, 2147483647, NULL, '1958-04-07', 'Bogota', 2, 'Vladimir A. Villacorta', 5703912, 2147483647, 'sem@maurisInteger.edu', 48, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(149, 'Ezequiel Lorenzo', 'Urrea Zapatero', 1, '66495545', 9556152, 2147483647, NULL, '1993-09-13', 'Bogota', 1, 'Ismael Y. Lunnetti', 7848161, 2147483647, 'ornare.In@volutpatNulladignissim.net', 79, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(150, 'Concepcion Sonia', 'Anda Sarachaga', 1, '66532166', 7815256, 1775198281, NULL, '1986-03-04', 'Bogota', 2, 'Clotilde Y. Piqueras', 4290529, 2147483647, 'Nulla.facilisis.Suspendisse@arcuAliquamultrices.edu', 5, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(151, 'Cruz Luciano', 'Seminario Pasos', 1, '66609986', 6822496, 2147483647, NULL, '1983-09-01', 'Bogota', 1, 'Rafael Q. Torioque', 5166747, 2147483647, 'nunc.interdum@lobortisultrices.org', 44, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(152, 'Cristina Amanda', 'Virguez Alandete', 1, '66804535', 6366337, 2147483647, NULL, '1979-03-09', 'Bogota', 2, 'Alberto S. Salinas', 6237740, 2147483647, 'risus.Nulla.eget@cubiliaCurae;.edu', 8, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(153, 'Max Felix', 'Avaria Stockamore', 1, '66948731', 3341966, 2147483647, NULL, '1967-06-23', 'Bogota', 1, 'Manuel Y. Potes', 8977576, 2147483647, 'convallis.in@eunequepellentesque.co.uk', 47, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(154, 'Luciano Fermin', 'Almanzar Alvis', 1, '67005951', 6530088, 2147483647, NULL, '1960-12-03', 'Bogota', 1, 'Romeo P. Syme', 3046191, 1677539605, 'mauris@egestas.edu', 21, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(155, 'Bernardo Aquiles', 'Penillo Standing', 1, '67230255', 6782314, 2147483647, NULL, '1994-10-31', 'Bogota', 1, 'Celia O. Cantero', 6479474, 2147483647, 'tincidunt@miloremvehicula.org', 38, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(156, 'Frida Dina', 'Richard Aganduru', 1, '67273743', 3681027, 2147483647, NULL, '1985-06-08', 'Bogota', 2, 'Maya U. Bandras', 6267866, 1008185814, 'elit@nonjustoProin.edu', 49, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(157, 'Carolina Genoveva', 'Sovalbarro Stiernon', 1, '68182404', 5512102, 2147483647, NULL, '1983-03-21', 'Bogota', 2, 'Ester W. Girardot', 9974456, 2147483647, 'egestas@dignissim.com', 20, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(158, 'Camila Maite', 'Prati Illidge', 1, '68511994', 7242306, 2147483647, NULL, '1963-08-31', 'Bogota', 2, 'Crisanta X. Gartner', 5704693, 1657875045, 'facilisis@dictumeleifendnunc.com', 11, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(159, 'Evaristo Mariano', 'Najera Soucarre', 1, '68651612', 1837891, 2147483647, NULL, '1972-08-03', 'Bogota', 1, 'Efrain A. Alford', 3657631, 2147483647, 'magna.sed.dui@metus.co.uk', 45, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(160, 'Amapola Pilar', 'Turc Prados', 1, '69306214', 4896256, 2147483647, NULL, '1954-07-25', 'Bogota', 2, 'Karina P. Fiorenzano', 4610974, 2147483647, 'enim.non.nisi@erosNam.co.uk', 44, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(161, 'Tobias Paul', 'Sapiain Baracaldo', 1, '69420655', 9173481, 1181340603, NULL, '1966-05-05', 'Bogota', 1, 'Silvio W. Somosa', 3042791, 2147483647, 'lacinia@Sedeunibh.ca', 11, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(162, 'Pedro Cristian', 'Buritica Galleguillo', 1, '69436676', 3602376, 2147483647, NULL, '1956-07-27', 'Bogota', 1, 'Florencia S. Suta', 6251671, 2147483647, 'turpis.In.condimentum@a.com', 54, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(163, 'Estefania Celestina', 'Altamirano Yepes', 1, '69525940', 2659459, 2147483647, NULL, '1986-07-04', 'Bogota', 2, 'Calixto F. Lauriola', 2173394, 2147483647, 'ligula.consectetuer@sapiengravidanon.net', 66, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(164, 'Fernando Diego', 'Sola Cabezas', 1, '69837220', 5709191, 2147483647, NULL, '1982-07-16', 'Bogota', 1, 'Gladis K. Colloredo', 5116537, 2147483647, 'tempus.scelerisque@enimnislelementum.com', 40, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(165, 'Ezequiel Gustavo', 'Pontareno Somosa', 1, '70166809', 7439495, 2147483647, NULL, '1991-05-08', 'Bogota', 1, 'Dora A. Sisniega', 7278178, 2147483647, 'erat.semper.rutrum@eratSed.org', 26, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(166, 'Irene Mariam', 'Pobras Perroni', 1, '70324738', 9604333, 2147483647, NULL, '1960-01-01', 'Bogota', 2, 'Eduardo M. Pinuela', 8705495, 2147483647, 'accumsan.convallis@vestibulumloremsit.co.uk', 76, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(167, 'Paul Demetrio', 'Puche Ortiz', 1, '70874054', 1286839, 2147483647, '', '1982-10-03', 'Bogota', 1, '_', 6617706, 2147483647, 'Nunc@bibendumullamcorper.ca', 7, 0, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(168, 'Hilda Araceli', 'Lechuga Penoit', 1, '70887787', 7476248, 2147483647, NULL, '1969-07-12', 'Bogota', 2, 'Nidia B. Arze', 8703855, 1041083498, 'Proin.nisl@odio.co.uk', 34, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(169, 'Araceli Gertrudis', 'Alduan Tibaquira', 1, '71521790', 4506585, 2147483647, NULL, '1986-07-14', 'Bogota', 2, 'Enrique O. Power', 5157553, 2147483647, 'ac.ipsum@sed.ca', 75, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(170, 'Ramon Hector', 'Rueda Lanz', 1, '71865113', 4525198, 2147483647, NULL, '1969-02-08', 'Bogota', 1, 'Arturo V. Boward', 5980633, 2147483647, 'sagittis.semper.Nam@atarcuVestibulum.ca', 57, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(171, 'Linda Tania', 'Renteria Zarzosa', 1, '72288544', 7791508, 2147483647, NULL, '1976-11-09', 'Bogota', 2, 'Teresa F. Portocarrero', 7068669, 2147483647, 'amet.ornare@cursus.edu', 12, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(172, 'Rodolfo Benjamin', 'Victoria Gartner', 1, '72293122', 9191741, 2147483647, NULL, '1968-01-22', 'Bogota', 1, 'Nicolas F. Iglesias', 2857318, 2147483647, 'ligula.consectetuer.rhoncus@lobortistellus.net', 67, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(173, 'Leticia Estela', 'Nates Yusti', 1, '72851593', 4463413, 1395653149, NULL, '1986-07-13', 'Bogota', 2, 'Eleonor N. Godoy', 1096418, 1769226390, 'dui.nec@magnaNam.net', 37, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(174, 'Emilia Penelope', 'Schatt Goldstuecker', 1, '72963745', 4580081, 2147483647, NULL, '1958-12-21', 'Bogota', 2, 'Adrian B. Puentes', 1176782, 2147483647, 'Vestibulum.ante.ipsum@dapibusrutrumjusto.net', 52, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(175, 'Wilfredo Juan', 'Noriega Rendon', 1, '73034699', 4957512, 2147483647, NULL, '1957-11-15', 'Bogota', 1, 'Carolina L. Santander', 5606934, 2147483647, 'fermentum.arcu.Vestibulum@mauris.ca', 45, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(176, 'Luciana Karina', 'Illera Estrandelo', 1, '73123963', 3005595, 2147483647, NULL, '1968-05-06', 'Bogota', 2, 'Telma J. Ferrucci', 7317034, 1803120445, 'nunc.est@ultricesDuisvolutpat.net', 80, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(177, 'Tamara Macarena', 'Portugues Soler', 1, '73867829', 5021023, 1587807926, NULL, '1955-03-27', 'Bogota', 2, 'Edmundo M. Incera', 1699637, 2147483647, 'posuere.at.velit@metusAliquamerat.edu', 28, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(178, 'Mabel Angelica', 'Villaneda Noguera', 1, '73998291', 4827143, 2147483647, NULL, '1965-12-02', 'Bogota', 2, 'Sara T. Legarda', 2482391, 2147483647, 'condimentum.Donec@senectuset.ca', 42, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(179, 'Alexander Marco', 'Molina Buendia', 1, '74007447', 8616428, 2147483647, NULL, '1981-06-04', 'Bogota', 1, 'Salome E. Lavao', 5560187, 2147483647, 'dolor.dapibus@commodo.net', 18, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(181, 'Aldo Demetrio', 'Salavarrieta Urnieta', 1, '75250275', 5767840, 2147483647, NULL, '1956-04-07', 'Bogota', 1, 'Jacinto T. Dalmau', 3168404, 1065939805, 'neque.Nullam@aliquamarcuAliquam.net', 18, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(182, 'Evaristo Calixto', 'Pfizemaier Requejo', 1, '75314362', 7495662, 2147483647, NULL, '1994-03-19', 'Bogota', 1, 'Isabella Z. Rojo', 5620888, 2147483647, 'eget@cubiliaCurae;.edu', 4, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(183, 'Paulina Amara', 'Abussaid Cuellar', 1, '75671418', 3693784, 2147483647, NULL, '1993-02-03', 'Bogota', 2, 'Adolfo S. Fety', 2015213, 2147483647, 'leo.in@iaculisquis.ca', 70, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(184, 'Adan Anibal', 'Cerruti Scoglio', 1, '76415284', 4700122, 2147483647, NULL, '1969-10-20', 'Bogota', 1, 'Irene B. Kloch', 7467803, 2147483647, 'arcu.vel.quam@vehicula.co.uk', 24, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(185, 'Gladis Vanesa', 'Colot Molleda', 1, '77122529', 7467566, 2147483647, NULL, '1961-05-24', 'Bogota', 2, 'Sandra T. Primo', 1668361, 2147483647, 'semper.cursus@elitelit.ca', 60, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(186, 'Sergio Homero', 'Tenorio Bradock', 1, '77131684', 2357732, 2147483647, NULL, '1960-12-29', 'Bogota', 1, 'Aurelio D. Zelada', 9619710, 2147483647, 'ante@lacinia.ca', 50, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(187, 'Osvaldo Fernando', 'Rota Mambi', 1, '78060944', 9007945, 2147483647, NULL, '1991-04-25', 'Bogota', 1, 'Fidel S. Segura', 6817664, 2147483647, 'quis@euodioPhasellus.edu', 33, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00');
+(3, 'Basilio Jesus', 'Solorzano Potes', 1, '7595092', 7863994, 2147483647, NULL, '1987-03-02', 'Bogota', 1, 'Vilma X. Zabaleta', 6624659, 2147483647, 'Nulla@etmalesuadafames.com', 21, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(4, 'Regina Vilma', 'Tribin Shiffman', 1, '7878906', 6444818, 1554196352, NULL, '1978-05-06', 'Bogota', 2, 'Xochitl B. Willis', 2758289, 2147483647, 'enim@euodiotristique.com', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(5, 'Jairo Gerardo', 'Centura Carre', 1, '7952148', 3061915, 2147483647, NULL, '1988-09-29', 'Bogota', 1, 'Lazaro A. Almeida', 6948247, 2147483647, 'convallis.in.cursus@laoreetposuere.ca', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(6, 'Eliana Rosana', 'Martina Pomp', 1, '8064300', 3188683, 2034669600, NULL, '1971-08-21', 'Bogota', 2, 'Cora U. Valenzuela', 3760942, 2147483647, 'dictum.mi@eratin.edu', 47, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(7, 'Sonia Florinda', 'Tarquino Canola', 1, '8327514', 7839589, 2147483647, NULL, '1959-09-26', 'Bogota', 2, 'Walter A. Sibar', 6426942, 1917620169, 'vestibulum.Mauris.magna@liberodui.edu', 31, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(8, 'Homero Jesus', 'Perfetti Brunal', 1, '8689147', 5438644, 1198364883, NULL, '1956-04-19', 'Bogota', 1, 'Serena V. Pote', 8280621, 2147483647, 'quis@orcilobortis.ca', 28, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(9, 'Martin omar', 'Privatelli Rumazo', 1, '8789855', 5515569, 2147483647, '', '1979-11-20', 'Bogota', 1, 'Andre R. Quiceno_', 6557617, 2147483647, 'leo@commodoauctor.com', 3, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(10, 'Samanta Ximena', 'Fiorenzano Roth', 1, '9259063', 2840259, 2147483647, NULL, '1960-03-31', 'Bogota', 2, 'Dolores Y. Wood', 7771576, 2147483647, 'Maecenas@metusAenean.com', 29, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(11, 'Tomas Federico', 'Ran Rico', 1, '9339172', 6007966, 2147483647, NULL, '1991-04-04', 'Bogota', 1, 'Franco V. Prieur', 4873842, 2147483647, 'egestas@nisl.net', 13, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(12, 'Yadira Gertrudis', 'Gasaro Urquiza', 1, '9650451', 8157718, 2147483647, NULL, '1992-08-01', 'Bogota', 2, 'Adela T. Jara', 4568877, 2147483647, 'vestibulum.lorem@penatibus.com', 34, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(13, 'Araceli Irene', 'Brinkerhoff Pereda', 1, '9847290', 6831226, 2147483647, NULL, '1967-11-20', 'Bogota', 2, 'Antonia O. Anguiano', 5241160, 2147483647, 'odio@infelis.com', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(14, 'Clemente Dario', 'Bruson Lagoeyte', 1, '10529357', 2369408, 2147483647, NULL, '1968-08-28', 'Bogota', 1, 'Zoraida P. Cleves', 6833477, 2147483647, 'urna.et@Donecatarcu.com', 42, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(15, 'Emiliano Felix', 'Ruethlisberger Pineres', 1, '11094696', 5271871, 2147483647, NULL, '1994-11-07', 'Bogota', 1, 'Samara T. Cazar', 4376623, 2147483647, 'ultrices.sit.amet@scelerisquemollis.co.uk', 73, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(16, 'Linda Paloma', 'Riva Ballen', 1, '11410553', 1721766, 2147483647, NULL, '1983-08-25', 'Bogota', 2, 'Cornelio B. Antig?edad', 6676288, 2147483647, 'augue@acmetus.org', 69, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(17, 'Leopoldo Carmelo', 'Pina Tirc', 1, '11916381', 5305459, 2147483647, NULL, '1991-12-01', 'Bogota', 1, 'Yajaira L. Villamor', 4356807, 2147483647, 'augue.malesuada@sollicitudinadipiscingligula.org', 68, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(18, 'Elvira Ruth', 'Angadelo Romay', 1, '12007934', 9602008, 2147483647, NULL, '1991-09-30', 'Bogota', 2, 'Ernesto G. Borray', 5549793, 2147483647, 'elit.pretium.et@congue.edu', 19, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(19, 'Azucena Samanta', 'Townsend Schroeder', 1, '12236816', 3245477, 1376953119, NULL, '1984-12-25', 'Bogota', 2, 'Teresa H. Perfetti', 6740131, 2147483647, 'ultrices.a@Classaptenttaciti.com', 30, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(20, 'Eduardo Walter', 'Valiente Cleves', 1, '12337524', 2332292, 2147483647, NULL, '1966-07-18', 'Bogota', 1, 'Elena Y. Camarasa', 3617032, 2147483647, 'Sed.auctor@liberoatauctor.ca', 25, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(21, 'Daniela Dinora', 'Uriza Villafane', 1, '12628204', 1552926, 2147483647, NULL, '1987-05-04', 'Bogota', 2, 'Paloma D. Sabater', 8553300, 2147483647, 'diam@Proinmi.edu', 68, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(22, 'Fausto Jacinto', 'Oette Bula', 1, '13154632', 9966738, 1594939019, NULL, '1977-03-25', 'Bogota', 1, 'Pablo H. Bandera', 1883742, 2147483647, 'mauris.eu.elit@maurissitamet.co.uk', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(23, 'Alexandra Trinidad', 'Recan Aquilino', 1, '13381225', 6458630, 2147483647, NULL, '1989-04-17', 'Bogota', 2, 'Bruno I. Zuluaga', 4573138, 2147483647, 'ipsum.dolor@placeratorci.edu', 17, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(24, 'Pablo Fidel', 'Yanguas Tena', 1, '13511688', 5164750, 1813636994, NULL, '1974-05-05', 'Bogota', 1, 'Adela F. Schrader', 1440661, 2147483647, 'pede.ultrices.a@Suspendissealiquetmolestie.edu', 47, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(25, 'Javier Rogelio', 'Villarraga Kalckar', 1, '13935119', 8331170, 2147483647, NULL, '1990-04-20', 'Bogota', 1, 'valentina S. Tapicha', 4594271, 2147483647, 'tempor.bibendum@nonenim.net', 36, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(26, 'Sabrina Victoria', 'Prompt Seleno', 1, '14328796', 3898295, 2147483647, NULL, '1984-04-12', 'Bogota', 2, 'Valentino U. Reyes', 4533870, 2147483647, 'porttitor@ipsumleoelementum.edu', 56, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(27, 'Dario Hector', 'Umba Lacoste', 1, '15464050', 2112182, 2147483647, NULL, '1971-07-13', 'Bogota', 1, 'Alonso Y. Peuluey', 2804188, 2147483647, 'non@Ut.net', 36, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(28, 'Sol Carmen', 'Koros Urquiola', 1, '15631134', 8277396, 2147483647, NULL, '1963-02-01', 'Bogota', 2, 'Dario M. Calancha', 4063136, 2147483647, 'Cras.vulputate.velit@velitjusto.org', 6, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(29, 'Melisa Fatima', 'Cerra Tsao', 1, '16851074', 4258133, 2147483647, NULL, '1957-10-24', 'Bogota', 2, 'Marvin H. Narvaez', 1365239, 2147483647, 'Donec@Loremipsumdolor.com', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(30, 'Encarnacion Vivian', 'Cera Aliaga', 1, '17350036', 1192216, 2147483647, NULL, '1992-11-19', 'Bogota', 2, 'Elias Q. Gaillard', 7894569, 2147483647, 'lorem@magnisdis.com', 14, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(31, 'Dulce Paola', 'Urbano Balanta', 1, '17485077', 2398569, 2027228542, NULL, '1955-10-20', 'Bogota', 2, 'Lazaro H. Cabal', 9311575, 2147483647, 'Proin.dolor.Nulla@Donec.net', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(32, 'Elizabeth Miriam', 'Laitano Celemin', 1, '17835266', 9956881, 2147483647, NULL, '1981-02-13', 'Bogota', 2, 'Juliana C. Archer', 7184362, 2147483647, 'Nunc.sollicitudin.commodo@egestas.com', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(33, 'Nicolas Bruno', 'Klinkert Pintor', 1, '18309051', 7661614, 2147483647, NULL, '1988-09-12', 'Bogota', 1, 'Cruz V. Lehman', 6565129, 2147483647, 'lacus@Duisgravida.edu', 13, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(34, 'Greta Yadira', 'Sopo Salido', 1, '18672973', 2410435, 2147483647, NULL, '1989-08-04', 'Bogota', 2, 'Flora U. Carriazo', 9365635, 2147483647, 'elit.fermentum.risus@libero.net', 67, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(35, 'Sol Rocio', 'Subieta Liendo', 1, '19380218', 5267879, 2147483647, NULL, '1969-08-23', 'Bogota', 2, 'Andre S. Schurer', 4416059, 1129428506, 'mauris@mollis.ca', 41, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(36, 'Fatima Zita', 'Vieira Pineiro', 1, '19448883', 8485734, 2147483647, NULL, '1957-06-25', 'Bogota', 2, 'Rene M. Perafan', 9869686, 1104194011, 'posuere.at.velit@duiCras.co.uk', 24, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(37, 'Marisol Veronica', 'Viga Canavera', 1, '20288879', 7198864, 2147483647, NULL, '1989-11-15', 'Bogota', 2, 'Concepcion V. Yaza', 2809695, 2147483647, 'nunc.risus.varius@nuncrisusvarius.ca', 54, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(38, 'Marta Samara', 'Willis Salido', 1, '21046478', 5494601, 2147483647, NULL, '1979-04-10', 'Bogota', 2, 'Gloria K. Rasch', 2419265, 2147483647, 'at@vulputatedui.co.uk', 27, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(39, 'Vilma Jasmin', 'Norena Duran', 1, '21188385', 5230673, 2147483647, NULL, '1971-03-28', 'Bogota', 2, 'Angelica I. Agudelo', 1917585, 2147483647, 'augue.scelerisque.mollis@at.ca', 77, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(40, 'Fernando Adrian', 'Serrate Vitto', 1, '22323639', 4553560, 2147483647, '', '1982-05-31', 'Bogota', 1, '_', 6361203, 1849019823, 'Aliquam@nonummyipsum.net', 10, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(41, 'Osvaldo Romeo', 'Noya Ibarg?en', 1, '22369415', 7602830, 2147483647, NULL, '1974-07-13', 'Bogota', 1, 'Florencia E. Yipula', 4947595, 2119677812, 'tortor.Integer@Nulla.edu', 48, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(42, 'Filiberto Max', 'Cuellar Rico', 1, '22440368', 6070361, 2147483647, NULL, '1980-05-29', 'Bogota', 1, 'Emiliano O. Kemble', 7041785, 2147483647, 'leo.Morbi.neque@dui.net', 26, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(43, 'Karina Alicia', 'Benitez Schwabe', 1, '22870666', 8896480, 2147483647, NULL, '1961-01-11', 'Bogota', 2, 'Amanda D. Licasale', 3755760, 2147483647, 'blandit.viverra@rhoncusidmollis.org', 74, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(44, 'Ema Samanta', 'Poca Quiceno', 1, '23177368', 9546090, 2147483647, NULL, '1966-05-03', 'Bogota', 2, 'Ruben M. Pulido', 5978783, 2147483647, 'egestas.a.scelerisque@metusfacilisis.edu', 8, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(45, 'Ismael angel', 'Subieta Cartagena', 1, '23239166', 5024355, 2147483647, NULL, '1978-05-28', 'Bogota', 1, 'Aldo X. Videla', 1746205, 2147483647, 'eu.placerat@tristiqueac.net', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(46, 'Patricio Fermin', 'Anda Pincha', 1, '23243744', 7424488, 1849504375, NULL, '1985-11-30', 'Bogota', 1, 'Roger R. Heras', 6607236, 2147483647, 'dolor.dolor@sapienCrasdolor.co.uk', 22, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(47, 'Samara Rosana', 'Gallo Tarazona', 1, '23381073', 5860317, 2147483647, NULL, '1991-03-10', 'Bogota', 2, 'Dario V. Manas', 5395817, 2147483647, 'cursus.Integer.mollis@purusaccumsaninterdum.co.uk', 43, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(48, 'Estefania Rebeca', 'Barberena Sarda', 1, '23527557', 7005412, 2147483647, NULL, '1978-10-05', 'Bogota', 2, 'omar F. Villaseca', 5265714, 2147483647, 'feugiat.metus@turpisvitae.com', 23, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(49, 'German Edgardo', 'Pernett Anaya', 1, '23625976', 1942761, 2147483647, NULL, '1980-07-10', 'Bogota', 1, 'valentina Q. Carazas', 2294438, 2147483647, 'ipsum.dolor@dapibusgravida.com', 5, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(50, 'Cintia Ana', 'Zachinson Vinasco', 1, '23932678', 2692370, 2147483647, '', '1984-10-31', 'Bogota', 2, '_', 5768805, 2147483647, 'Nullam@Sednulla.edu', 9, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', '1', '2013-04-07 22:03:03'),
+(51, 'Jose Sebastian', 'Borda Peramato', 1, '25415832', 2335013, 2147483647, NULL, '1984-07-08', 'Bogota', 1, 'Ida P. Manzur', 7086703, 2147483647, 'ornare.libero.at@Proin.ca', 56, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(52, 'Constantino Luciano', 'Silvestre Schimoz', 1, '25525696', 6201114, 1089861436, NULL, '1967-07-26', 'Bogota', 1, 'Monica J. Gardeazabal', 1205848, 2147483647, 'dui.Cum@tempor.ca', 41, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(53, 'Bruno Donato', 'Carrasquilla Salvatierra', 1, '25699646', 2816037, 2147483647, NULL, '1974-10-15', 'Bogota', 1, 'Homero F. Wickman', 9143518, 2147483647, 'viverra.Donec@fringillacursuspurus.edu', 64, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(54, 'Mario Fernando', 'Garaves Power', 1, '26583130', 6518861, 2147483647, NULL, '1983-12-13', 'Bogota', 1, 'Aida T. Coady', 4111685, 2147483647, 'vulputate.eu.odio@nasceturridiculus.co.uk', 46, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(55, 'Higinia Samanta', 'Durango Brauer', 1, '27006561', 9794270, 2147483647, NULL, '1962-05-26', 'Bogota', 2, 'Sonia U. Sarmati', 6087424, 2147483647, 'et@enimMauris.ca', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(56, 'Eleonor Ines', 'Raondo Rosas', 1, '27294952', 2665338, 2147483647, '', '1957-07-17', 'Bogota', 2, '_', 7770258, 2147483647, 'sit@egestashendrerit.com', 12, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(57, 'Julieta Trinidad', 'Mares Ferrucci', 1, '28697998', 8140364, 1048745074, NULL, '1988-03-17', 'Bogota', 2, 'Jacinto C. Canarte', 6937335, 2147483647, 'commodo@orciluctus.com', 18, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(58, 'Blanca Amelia', 'Leano Urretavisque', 1, '29778320', 9526705, 2147483647, NULL, '1982-09-29', 'Bogota', 2, 'Mayerli W. Vicuna', 6673467, 2147483647, 'Morbi.non.sapien@aliquameuaccumsan.com', 49, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(59, 'Constantino Ezequiel', 'Palacio Zubiaurre', 1, '29954559', 2480104, 2147483647, NULL, '1971-03-17', 'Bogota', 1, 'Amara U. Perlaza', 8716628, 2147483647, 'mauris.ut@elita.net', 25, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(60, 'Cruz Marco', 'Piedrahita Lanz', 1, '30188019', 6413716, 2147483647, NULL, '1977-09-17', 'Bogota', 1, 'Julio X. Lee', 5728615, 2147483647, 'cursus.vestibulum@sitamet.org', 57, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(61, 'Hugo Josue', 'Gonzalez Mancini', 1, '30309326', 2439650, 2147483647, NULL, '1956-11-11', 'Bogota', 1, 'Elvira G. Levenson', 3569636, 2147483647, 'Maecenas@rutrumeu.edu', 35, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(62, 'Fermin Julian', 'Cazar Zerda', 1, '30423767', 7705894, 2147483647, NULL, '1977-08-08', 'Bogota', 1, 'angel J. Tumani', 9487016, 1462461495, 'risus@scelerisqueduiSuspendisse.net', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(63, 'Dina Consuelo', 'Raymond Ceron', 1, '30654938', 6598839, 2147483647, NULL, '1954-10-23', 'Bogota', 2, 'Sandra M. Arcaya', 1913394, 1206702593, 'massa.non.ante@Pellentesqueultriciesdignissim.net', 73, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(65, 'Adelmo Joaquin', 'Igarai Zabala', 1, '31174499', 7451931, 2147483647, NULL, '1985-10-16', 'Bogota', 1, 'Donato G. Walschap', 9074414, 1932954745, 'Mauris@sollicitudincommodo.net', 47, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(66, 'Liliana Dulce', 'Ugarriza Sancristobal', 1, '31398804', 7604267, 1895939053, NULL, '1977-05-02', 'Bogota', 2, 'Efrain E. Lecuna', 5343167, 2147483647, 'dignissim.tempor@libero.ca', 76, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(67, 'Antonio Fernando', 'Tibaquira Schea', 1, '31506378', 6331792, 1368657431, NULL, '1985-04-22', 'Bogota', 1, 'Ronaldo O. Paulian', 5731567, 2147483647, 'ac.ipsum.Phasellus@euodiotristique.ca', 76, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(68, 'Florencio Jesus', 'Calderon Fex', 1, '32211334', 3848669, 2147483647, NULL, '1958-09-20', 'Bogota', 1, 'Renato E. Schnepel', 4969298, 2147483647, 'quam@natoquepenatibus.net', 61, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(69, 'Antonio Flavio', 'Afanador Gamio', 1, '32225067', 9128088, 2147483647, NULL, '1994-10-04', 'Bogota', 1, 'Gracia Q. Ronderos', 6742850, 1621149307, 'neque.sed.dictum@lectusantedictum.ca', 21, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(70, 'Estrella Mariana', 'Umbarita Sternberg', 1, '32579834', 9177434, 2147483647, NULL, '1969-01-13', 'Bogota', 2, 'Zita U. Price', 9800014, 2147483647, 'lorem.luctus.ut@vestibulumnec.com', 42, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(71, 'Nicolas Adelmo', 'Quirama Dieck', 1, '33149750', 5488049, 2147483647, NULL, '1970-07-09', 'Bogota', 1, 'Donato F. Roba', 4939092, 2147483647, 'dignissim@at.org', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(72, 'Pedro Alberto', 'Arcesse Cano', 1, '34529907', 9984390, 2147483647, NULL, '1971-04-06', 'Bogota', 1, 'Israel X. Zarate', 3327870, 1434402706, 'amet.lorem@ipsumnon.org', 6, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(73, 'Isadora Macarena', 'Berroeta Bertoita', 1, '34971649', 2740251, 2147483647, NULL, '1967-02-12', 'Bogota', 2, 'Amelia K. Yusti', 2240435, 1522852427, 'dolor.sit.amet@diamvelarcu.edu', 12, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(74, 'Angelica Ruth', 'Garrido Zipaquira', 1, '34983093', 3770094, 2147483647, NULL, '1967-07-23', 'Bogota', 2, 'Cesar I. Liendo', 7525352, 2147483647, 'a.neque.Nullam@Vivamus.org', 62, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(75, 'Rosalia Ada', 'Umba Vidual', 1, '35598785', 1230889, 2147483647, NULL, '1955-07-18', 'Bogota', 2, 'Jaime Q. Alvira', 7060209, 2147483647, 'Cum.sociis@CurabiturdictumPhasellus.edu', 54, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(76, 'Ruben Franco', 'Aulestia Bossa', 1, '35736114', 8686718, 2147483647, NULL, '1988-03-05', 'Bogota', 1, 'Ignacio Y. Russell', 6334007, 2147483647, 'In.faucibus@pedeacurna.ca', 75, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(77, 'Gustavo Leopoldo', 'Estrella Zuluaga', 1, '35747558', 9616550, 2147483647, NULL, '1957-03-26', 'Bogota', 1, 'Dina T. Castaneda', 8683403, 2147483647, 'quis.urna@elitelit.net', 8, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(78, 'Delia Angelina', 'Simo Canavera', 1, '35763580', 2155536, 2147483647, NULL, '1990-03-18', 'Bogota', 2, 'Martin Z. Upegui', 4642720, 2147483647, 'mi.lacinia@eunulla.edu', 79, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(79, 'Domingo Vladimir', 'Prisco Aunque', 1, '35802490', 6654106, 2147483647, NULL, '1968-10-02', 'Bogota', 1, 'Alexis N. Echegoyen', 4061047, 2147483647, 'leo@sapienmolestieorci.org', 29, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(80, 'Ramiro Horacio', 'Salgado Verderamo', 1, '36161835', 8002794, 2147483647, NULL, '1964-04-13', 'Bogota', 1, 'Sonia A. Pisa', 3204241, 2147483647, 'neque.pellentesque.massa@maurissagittis.org', 45, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(81, 'Manuel Guillermo', 'Antonio Toquica', 1, '36683685', 5016363, 1324331211, NULL, '1970-06-11', 'Bogota', 1, 'Rafael L. Liano', 3370212, 2147483647, 'lorem.fringilla.ornare@acfacilisis.net', 14, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(82, 'Alejo Santiago', 'Lafaurie Rosasco', 1, '36788971', 7592321, 2147483647, NULL, '1974-04-18', 'Bogota', 1, 'Julia A. Soberon', 2119162, 2147483647, 'felis@semconsequat.com', 15, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(83, 'Adela Rocio', 'Burgos Turriago', 1, '36885101', 4299014, 2147483647, NULL, '1979-06-04', 'Bogota', 2, 'Higinio L. Pungiluppi', 8255677, 2147483647, 'eget.tincidunt.dui@enimdiamvel.com', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(84, 'Celso Hipolito', 'Prias Wester', 1, '37141449', 1301200, 2147483647, NULL, '1962-08-15', 'Bogota', 1, 'Catalina W. Pungiluppi', 7157336, 2147483647, 'libero.et@lobortisultrices.com', 63, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(85, 'Lilia Vilma', 'Antes Rosano', 1, '38022644', 9763577, 2147483647, NULL, '1960-05-03', 'Bogota', 2, 'Israel B. Perea', 4499285, 1578552680, 'mus.Aenean@luctus.com', 55, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(86, 'America Nuria', 'Sampedro Corral', 1, '39022858', 7981101, 2147483644, '', '1956-12-31', 'Bogota', 2, '_', 9519363, 2147483647, 'ornare.In@vulputatenisi.edu', 7, 0, 2, '2012-12-09', 'NULL', '0000-00-00 00:00:00', '1', '2013-04-14 19:43:21'),
+(87, 'Jeremias Marvin', 'Loor Longas', 1, '39226562', 2205329, 2147483647, NULL, '1956-03-15', 'Bogota', 1, 'Florencio Q. Ablanque', 4071658, 2147483647, 'sed.dictum.eleifend@vitae.com', 14, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(88, 'Diana Norma', 'Borigoff Strasbugh', 1, '39512665', 8036919, 2147483647, NULL, '1962-04-08', 'Bogota', 2, 'Yadira L. Sasson', 6230149, 2147483647, 'velit.dui.semper@musProinvel.ca', 19, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(89, 'Rocio Ximena', 'Villoria Kelly', 1, '39949829', 8492738, 2147483647, NULL, '1958-09-18', 'Bogota', 2, 'Griselda Q. Pemberthy', 6395668, 2147483647, 'posuere@imperdieterat.org', 32, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(90, 'Yamila Leonora', 'Kopp Zipamocha', 1, '40963776', 3809782, 2147483647, NULL, '1978-06-14', 'Bogota', 2, 'Cristian M. Bejarano', 6304550, 2147483647, 'non.arcu@Sedidrisus.edu', 25, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(92, 'Amalia Celina', 'Buenes Alban', 1, '41741974', 6035657, 2147483647, NULL, '1993-03-17', 'Bogota', 2, 'Samuel T. Goenaga', 2578217, 2147483647, 'Nunc.mauris.sapien@egestasblandit.org', 74, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(93, 'Samanta Hilda', 'Corradine Ferreira', 1, '41893036', 1660895, 2147483647, NULL, '1966-04-13', 'Bogota', 2, 'Iris Y. Wright', 4353940, 2147483647, 'malesuada.vel.venenatis@Inatpede.org', 12, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(94, 'Edgar Bartolome', 'Bueno Rothstein', 1, '42581970', 4738777, 2147483647, NULL, '1976-10-27', 'Bogota', 1, 'Nuria F. Aljure', 5908687, 2147483647, 'feugiat.metus.sit@neceuismodin.edu', 21, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(95, 'Jeronimo Aurelio', 'Russi Villota', 1, '43014557', 3704463, 2147483647, NULL, '1955-06-02', 'Bogota', 1, 'Angelica C. Guyau', 2076637, 2147483647, 'ultrices.posuere.cubilia@orciquislectus.ca', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(96, 'Matilde Sofia', 'Yipula Posadas', 1, '43385345', 5182804, 2147483647, NULL, '1982-09-26', 'Bogota', 2, 'Ines V. Otero', 2310298, 2147483647, 'parturient@pharetranibh.com', 49, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(97, 'Gloria Flora', 'Artuz Corrales', 1, '43769867', 4850643, 1381961470, NULL, '1957-07-04', 'Bogota', 2, 'Sigifredo G. Wilches', 4126255, 2147483647, 'vitae@enimconsequatpurus.ca', 35, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(98, 'Blanca Adela', 'Puell Arcaya', 1, '43861420', 9147293, 2147483647, NULL, '1965-10-08', 'Bogota', 2, 'Viviana Y. Ortiz', 9715537, 2147483647, 'lorem.semper@fermentumrisus.edu', 75, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(99, 'Osvaldo Andre', 'Reales Ubaldes', 1, '43911774', 4695605, 2147483647, NULL, '1970-05-12', 'Bogota', 1, 'Magdalena O. Aparicio', 3584760, 2147483647, 'gravida.Praesent.eu@Craseutellus.net', 51, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(100, 'Paul Isaac', 'Toro Henriquez', 1, '44106323', 5129657, 2147483647, NULL, '1959-12-12', 'Bogota', 1, 'Timoteo O. Infantino', 2354839, 2147483647, 'adipiscing@rhoncus.co.uk', 64, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(101, 'Ulises Celso', 'Cepero Manzaneque', 1, '44362671', 2231843, 2147483647, NULL, '1972-08-05', 'Bogota', 1, 'Eleonor B. Torre', 4837754, 2147483647, 'Nullam@eu.co.uk', 6, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(102, 'Maite Victoria', 'Tunon Rockwood', 1, '44472534', 5118944, 2147483647, NULL, '1962-11-07', 'Bogota', 2, 'Vilma F. Stork', 3534948, 2147483647, 'cursus.et.magna@idsapienCras.ca', 62, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(103, 'Julieta Melina', 'Wandurraga Baer', 1, '45014984', 7050632, 2147483647, NULL, '1973-06-16', 'Bogota', 2, 'Felix G. Iannini', 1005182, 2147483647, 'ultrices@tellusSuspendisse.org', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(104, 'Ruben Manuel', 'Palacio Augusto', 1, '45390350', 2938205, 2147483647, NULL, '1958-11-11', 'Bogota', 1, 'Diana W. Dagua', 5404738, 2147483647, 'orci.luctus@scelerisquescelerisquedui.org', 33, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(105, 'Luciano Armando', 'Villada Piral', 1, '45463593', 8546203, 1334561072, NULL, '1990-10-02', 'Bogota', 1, 'Zacarias M. Ochoa', 8521262, 2147483647, 'mauris.id.sapien@vestibulumneque.ca', 59, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(106, 'Camila Greta', 'Carbo Stornaiuolo', 1, '45493347', 8265607, 2147483647, NULL, '1989-02-19', 'Bogota', 2, 'agata A. Piedrahita', 6760894, 2147483647, 'bibendum.sed.est@malesuadautsem.edu', 65, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(107, 'Catalina Amara', 'Navarrete Camarasa', 1, '46678955', 2137907, 2147483647, NULL, '1956-07-11', 'Bogota', 2, 'Marvin B. Rey', 4148312, 2147483647, 'a.purus@nullaDonec.org', 76, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(108, 'Leonel Leopoldo', 'Yucason Borde', 1, '46745331', 9005395, 2147483647, NULL, '1966-06-10', 'Bogota', 1, 'Ruth R. Albis', 9758605, 2147483647, 'elit.pellentesque@imperdiet.com', 56, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(109, 'Monica Fatima', 'Villaman Diaz', 1, '47484619', 8722690, 2147483647, NULL, '1968-01-08', 'Bogota', 2, 'Vicente A. Herazo', 1294515, 2147483647, 'diam.dictum@justofaucibus.net', 12, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(110, 'Salvador Virgilio', 'Buenahora Ferrero', 1, '47779877', 8342467, 2147483647, NULL, '1983-03-31', 'Bogota', 1, 'Salome H. Ubala', 8674041, 2147483647, 'Integer.aliquam@ligulaAliquam.com', 30, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(111, 'agata Nancy', 'Patin Ruiz', 1, '48093445', 8642775, 2147483647, NULL, '1962-08-03', 'Bogota', 2, 'Lucia J. Recuero', 3138758, 2147483647, 'rhoncus.Nullam.velit@musDonec.ca', 41, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(112, 'Imelda Maria', 'Yegama Upegui', 1, '49423248', 8490603, 2147483647, NULL, '1963-05-04', 'Bogota', 2, 'Zoe C. Krohne', 6700403, 2147483647, 'in.consequat@feugiatSed.org', 5, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(113, 'Ezequiel Ramiro', 'Retis Cumplido', 1, '51654846', 2639817, 2147483647, '', '1979-09-30', 'Bogota', 1, '_', 5100285, 2147483647, 'Sed.eu.nibh@commodotinciduntnibh.org', 10, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(114, 'Cecilia Griselda', 'Bustillos Isabella', 1, '52661926', 7407151, 2147483647, NULL, '1962-01-01', 'Bogota', 2, 'Ronald Q. Echandia', 6307371, 2147483647, 'consectetuer.adipiscing.elit@nonleoVivamus.edu', 45, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(115, 'Mateo Ramiro', 'Landron Urigo', 1, '52748901', 1204677, 2147483647, NULL, '1974-09-17', 'Bogota', 1, 'Abel F. Alvis', 6759813, 2147483647, 'suscipit.est@nisiAeneaneget.org', 16, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(116, 'Liliana Laura', 'Yanguas Calancha', 1, '52941162', 5698042, 1528530826, NULL, '1967-10-11', 'Bogota', 2, 'Estela N. Lamprea', 6105625, 2147483647, 'egestas.nunc@ultricesposuere.co.uk', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(117, 'Gracia Jasmin', 'Gonima Bachhuber', 1, '53463013', 2601711, 2147483647, NULL, '1963-04-15', 'Bogota', 2, 'Araceli B. Arbelaez', 5661014, 2147483647, 'Vivamus.nisi@egestasadui.edu', 46, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(118, 'Cesar Antonio', 'Vetro Rosano', 1, '53497345', 4710148, 2147483647, NULL, '1954-09-19', 'Bogota', 1, 'Delia N. Ortiz', 1812777, 2147483647, 'Ut@sedturpisnec.edu', 51, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(119, 'Raimundo Demetrio', 'Prats Vergel', 1, '53916199', 5597425, 2147483647, NULL, '1990-10-18', 'Bogota', 1, 'Ramon Q. Urdanegui', 4996535, 2147483647, 'tellus@arcuSedeu.com', 75, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(120, 'Vilma valentina', 'Notiva Lagoeyte', 1, '54579956', 2355156, 2147483647, NULL, '1985-06-27', 'Bogota', 2, 'Celestina E. Quesada', 1063483, 1076841989, 'Phasellus.in.felis@Morbivehicula.edu', 75, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(121, 'Cora Iris', 'Urzola Varelas', 1, '54760773', 6690789, 2147483647, NULL, '1986-10-17', 'Bogota', 2, 'Adelmo E. Zapatero', 6450958, 1486764084, 'diam@aliquetProinvelit.ca', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(122, 'Maite Amparo', 'Ochodez Salicetti', 1, '55603058', 1553375, 2147483647, NULL, '1994-04-24', 'Bogota', 2, 'Nestor K. Sanin', 5723055, 2147483647, 'rutrum@malesuada.net', 67, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(123, 'Yajaira Juana', 'Souza Tomich', 1, '55765564', 6218456, 2147483647, NULL, '1978-03-06', 'Bogota', 2, 'Fermin C. Manosca', 2570836, 2147483647, 'euismod@fringilla.net', 65, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(124, 'Rolando Roger', 'Reguera Alaix', 1, '56170685', 1715314, 2147483647, NULL, '1991-12-23', 'Bogota', 1, 'Jaime G. Robledo', 8870087, 2147483647, 'pede.et.risus@egetipsumSuspendisse.org', 60, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(125, 'Gustavo Virgilio', 'Isola Ziganek', 1, '56532318', 8303579, 1904232381, NULL, '1990-04-08', 'Bogota', 1, 'Cornelio L. Manrique', 4867400, 2147483647, 'imperdiet.erat.nonummy@odioPhasellus.edu', 63, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(126, 'angela Carmen', 'Trejos Bula', 1, '57205231', 9052485, 2147483647, NULL, '1991-04-25', 'Bogota', 2, 'Adolfo B. Vina', 8638632, 2147483647, 'orci.in.consequat@convallisest.net', 15, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(127, 'Aldo Noe', 'Barazar Amado', 1, '57418091', 9165979, 2147483647, NULL, '1988-10-26', 'Bogota', 1, 'Rafael U. Peraza', 5325013, 2147483647, 'Donec.porttitor@Ut.com', 32, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(128, 'Beatriz Telma', 'Amorocho Asencio', 1, '57633240', 6518938, 2147483647, NULL, '1986-10-20', 'Bogota', 2, 'Rosana K. Nope', 1263930, 2147483647, 'ipsum@pharetraNam.ca', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(129, 'Daniel Carmelo', 'Lecc Pisa', 1, '58470947', 8171592, 2147483647, NULL, '1987-05-06', 'Bogota', 1, 'Marina X. Querubin', 9680795, 2147483647, 'quam.a@consectetueradipiscingelit.org', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(130, 'Fidel Sebastian', 'Sounders Washington', 1, '58784516', 7372801, 2147483647, NULL, '1964-02-21', 'Bogota', 1, 'Leopoldo H. Ramos', 3362790, 2147483647, 'lobortis.augue.scelerisque@sitametante.co.uk', 5, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(131, 'Ines Isadora', 'Bahamonde Astigarreta', 1, '59912903', 8056098, 2147483647, NULL, '1991-05-31', 'Bogota', 2, 'Mariano F. Garantiva', 5577909, 2147483647, 'urna.justo@ametconsectetueradipiscing.org', 33, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(132, 'Florencio Eufemio', 'Kelafor Rios', 1, '60416443', 6499215, 2147483647, NULL, '1988-10-03', 'Bogota', 1, 'Bianca Y. Notiva', 1720701, 1712456835, 'adipiscing@bibendum.com', 18, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(133, 'Gabriela Marisol', 'Leal Amorocho', 1, '60649903', 1522827, 1569570253, NULL, '1967-02-26', 'Bogota', 2, 'Gustavo L. Zornoza', 6927482, 2147483647, 'nec.leo@pedeNuncsed.edu', 52, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(134, 'Ramon Emilio', 'Ablanque Izquierdo', 1, '60734589', 7189667, 2147483647, NULL, '1974-12-02', 'Bogota', 1, 'Rosa H. Utrey', 9043218, 2147483647, 'dui.in@ultrices.org', 57, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(135, 'Rosario Penelope', 'Carballo Vallecilla', 1, '60929138', 8713608, 2147483647, NULL, '1969-11-11', 'Bogota', 2, 'Ada F. Penso', 3434893, 2147483647, 'nibh@atortorNunc.com', 78, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(136, 'Salomon Agustin', 'Otalora Randell', 1, '61824066', 4355374, 2147483647, NULL, '1967-06-13', 'Bogota', 1, 'Trinidad V. Urbina', 2305596, 2147483647, 'sem.elit.pharetra@milorem.org', 61, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(137, 'Eufemio Horacio', 'Veraste Canon', 1, '61872132', 3753120, 2147483647, NULL, '1992-04-15', 'Bogota', 1, 'Adriana Y. Sokoloff', 6364202, 2147483647, 'facilisis@Inscelerisquescelerisque.co.uk', 65, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(138, 'Macarena Sandra', 'Vaughan Sobelman', 1, '62187989', 8193005, 2147483647, NULL, '1969-09-27', 'Bogota', 2, 'alex L. Bello', 7272817, 2147483647, 'tincidunt.nunc@Aliquamultricesiaculis.org', 43, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(139, 'Velasco Filiberto', 'Galvis Yopasa', 1, '62311585', 9369516, 2147483647, NULL, '1981-07-29', 'Bogota', 1, 'Bernardo M. Velarde', 2008483, 2147483647, 'nibh.dolor@quis.co.uk', 23, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(140, 'Federico Guillermo', 'Rogers Vieda', 1, '62941010', 4009719, 1299496715, NULL, '1978-02-06', 'Bogota', 1, 'Soraya T. Correales', 1665042, 2147483647, 'bibendum@metus.com', 26, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(141, 'Adela Miranda', 'Gandini Saez', 1, '64332611', 9535803, 2147483647, NULL, '1992-09-15', 'Bogota', 2, 'Magdalena C. Pierre', 7325906, 2147483647, 'blandit@tristiqueneque.co.uk', 21, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(142, 'Carolina Sara', 'Jansa Cantor', 1, '64433319', 9521738, 2147483647, NULL, '1985-01-19', 'Bogota', 2, 'Antonio J. Alcazar', 6593784, 1712503052, 'ac.mattis.semper@ultriciesligulaNullam.ca', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(143, 'Gertrudis Adela', 'Salvatierra Alea', 1, '65195496', 9317618, 1041385453, NULL, '1965-03-02', 'Bogota', 2, 'Federico E. Aguirre', 6031972, 2147483647, 'tincidunt.adipiscing@acliberonec.ca', 65, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(144, 'omar Aldo', 'Santis Vigo', 1, '65220673', 6546879, 2147483647, NULL, '1956-11-11', 'Bogota', 1, 'Bianca E. Gitterle', 7948618, 2147483647, 'ante@acmi.com', 43, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(145, 'Emilio Sebastian', 'Leano Maya', 1, '65348847', 9192422, 2147483647, NULL, '1988-02-15', 'Bogota', 1, 'Carina X. Trucco', 6643262, 2147483647, 'et@etlacinia.co.uk', 59, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(146, 'Flora Serena', 'Albo Gamba', 1, '65641815', 4563612, 1945781794, NULL, '1993-09-22', 'Bogota', 2, 'Reinaldo C. Vitto', 4553696, 2147483647, 'vitae.semper@risusa.ca', 61, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(147, 'Cristobal Victor', 'Achiardi Cavaiola', 1, '65774567', 9519409, 2147483647, NULL, '1960-04-02', 'Bogota', 1, 'Tobias U. Lana', 7588314, 1119066902, 'erat.volutpat.Nulla@Cumsociis.ca', 58, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(148, 'Encarnacion Angelica', 'Ocampo Kahn', 1, '66339905', 3431881, 2147483647, NULL, '1958-04-07', 'Bogota', 2, 'Vladimir A. Villacorta', 5703912, 2147483647, 'sem@maurisInteger.edu', 48, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(149, 'Ezequiel Lorenzo', 'Urrea Zapatero', 1, '66495545', 9556152, 2147483647, NULL, '1993-09-13', 'Bogota', 1, 'Ismael Y. Lunnetti', 7848161, 2147483647, 'ornare.In@volutpatNulladignissim.net', 79, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(150, 'Concepcion Sonia', 'Anda Sarachaga', 1, '66532166', 7815256, 1775198281, NULL, '1986-03-04', 'Bogota', 2, 'Clotilde Y. Piqueras', 4290529, 2147483647, 'Nulla.facilisis.Suspendisse@arcuAliquamultrices.edu', 5, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(151, 'Cruz Luciano', 'Seminario Pasos', 1, '66609986', 6822496, 2147483647, NULL, '1983-09-01', 'Bogota', 1, 'Rafael Q. Torioque', 5166747, 2147483647, 'nunc.interdum@lobortisultrices.org', 44, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(152, 'Cristina Amanda', 'Virguez Alandete', 1, '66804535', 6366337, 2147483647, NULL, '1979-03-09', 'Bogota', 2, 'Alberto S. Salinas', 6237740, 2147483647, 'risus.Nulla.eget@cubiliaCurae;.edu', 8, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(153, 'Max Felix', 'Avaria Stockamore', 1, '66948731', 3341966, 2147483647, NULL, '1967-06-23', 'Bogota', 1, 'Manuel Y. Potes', 8977576, 2147483647, 'convallis.in@eunequepellentesque.co.uk', 47, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(154, 'Luciano Fermin', 'Almanzar Alvis', 1, '67005951', 6530088, 2147483647, NULL, '1960-12-03', 'Bogota', 1, 'Romeo P. Syme', 3046191, 1677539605, 'mauris@egestas.edu', 21, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(155, 'Bernardo Aquiles', 'Penillo Standing', 1, '67230255', 6782314, 2147483647, NULL, '1994-10-31', 'Bogota', 1, 'Celia O. Cantero', 6479474, 2147483647, 'tincidunt@miloremvehicula.org', 38, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(156, 'Frida Dina', 'Richard Aganduru', 1, '67273743', 3681027, 2147483647, NULL, '1985-06-08', 'Bogota', 2, 'Maya U. Bandras', 6267866, 1008185814, 'elit@nonjustoProin.edu', 49, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(157, 'Carolina Genoveva', 'Sovalbarro Stiernon', 1, '68182404', 5512102, 2147483647, NULL, '1983-03-21', 'Bogota', 2, 'Ester W. Girardot', 9974456, 2147483647, 'egestas@dignissim.com', 20, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(158, 'Camila Maite', 'Prati Illidge', 1, '68511994', 7242306, 2147483647, NULL, '1963-08-31', 'Bogota', 2, 'Crisanta X. Gartner', 5704693, 1657875045, 'facilisis@dictumeleifendnunc.com', 11, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(159, 'Evaristo Mariano', 'Najera Soucarre', 1, '68651612', 1837891, 2147483647, NULL, '1972-08-03', 'Bogota', 1, 'Efrain A. Alford', 3657631, 2147483647, 'magna.sed.dui@metus.co.uk', 45, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(160, 'Amapola Pilar', 'Turc Prados', 1, '69306214', 4896256, 2147483647, NULL, '1954-07-25', 'Bogota', 2, 'Karina P. Fiorenzano', 4610974, 2147483647, 'enim.non.nisi@erosNam.co.uk', 44, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(161, 'Tobias Paul', 'Sapiain Baracaldo', 1, '69420655', 9173481, 1181340603, NULL, '1966-05-05', 'Bogota', 1, 'Silvio W. Somosa', 3042791, 2147483647, 'lacinia@Sedeunibh.ca', 11, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(162, 'Pedro Cristian', 'Buritica Galleguillo', 1, '69436676', 3602376, 2147483647, NULL, '1956-07-27', 'Bogota', 1, 'Florencia S. Suta', 6251671, 2147483647, 'turpis.In.condimentum@a.com', 54, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(163, 'Estefania Celestina', 'Altamirano Yepes', 1, '69525940', 2659459, 2147483647, NULL, '1986-07-04', 'Bogota', 2, 'Calixto F. Lauriola', 2173394, 2147483647, 'ligula.consectetuer@sapiengravidanon.net', 66, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(164, 'Fernando Diego', 'Sola Cabezas', 1, '69837220', 5709191, 2147483647, NULL, '1982-07-16', 'Bogota', 1, 'Gladis K. Colloredo', 5116537, 2147483647, 'tempus.scelerisque@enimnislelementum.com', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(165, 'Ezequiel Gustavo', 'Pontareno Somosa', 1, '70166809', 7439495, 2147483647, NULL, '1991-05-08', 'Bogota', 1, 'Dora A. Sisniega', 7278178, 2147483647, 'erat.semper.rutrum@eratSed.org', 26, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(166, 'Irene Mariam', 'Pobras Perroni', 1, '70324738', 9604333, 2147483647, NULL, '1960-01-01', 'Bogota', 2, 'Eduardo M. Pinuela', 8705495, 2147483647, 'accumsan.convallis@vestibulumloremsit.co.uk', 76, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(167, 'Paul Demetrio', 'Puche Ortiz', 1, '70874054', 1286839, 2147483647, '', '1982-10-03', 'Bogota', 1, '_', 6617706, 2147483647, 'Nunc@bibendumullamcorper.ca', 7, 0, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', '1', '2013-04-14 19:43:47'),
+(168, 'Hilda Araceli', 'Lechuga Penoit', 1, '70887787', 7476248, 2147483647, NULL, '1969-07-12', 'Bogota', 2, 'Nidia B. Arze', 8703855, 1041083498, 'Proin.nisl@odio.co.uk', 34, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(169, 'Araceli Gertrudis', 'Alduan Tibaquira', 1, '71521790', 4506585, 2147483647, NULL, '1986-07-14', 'Bogota', 2, 'Enrique O. Power', 5157553, 2147483647, 'ac.ipsum@sed.ca', 75, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(170, 'Ramon Hector', 'Rueda Lanz', 1, '71865113', 4525198, 2147483647, NULL, '1969-02-08', 'Bogota', 1, 'Arturo V. Boward', 5980633, 2147483647, 'sagittis.semper.Nam@atarcuVestibulum.ca', 57, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(171, 'Linda Tania', 'Renteria Zarzosa', 1, '72288544', 7791508, 2147483647, NULL, '1976-11-09', 'Bogota', 2, 'Teresa F. Portocarrero', 7068669, 2147483647, 'amet.ornare@cursus.edu', 12, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(172, 'Rodolfo Benjamin', 'Victoria Gartner', 1, '72293122', 9191741, 2147483647, NULL, '1968-01-22', 'Bogota', 1, 'Nicolas F. Iglesias', 2857318, 2147483647, 'ligula.consectetuer.rhoncus@lobortistellus.net', 67, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(173, 'Leticia Estela', 'Nates Yusti', 1, '72851593', 4463413, 1395653149, NULL, '1986-07-13', 'Bogota', 2, 'Eleonor N. Godoy', 1096418, 1769226390, 'dui.nec@magnaNam.net', 37, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(174, 'Emilia Penelope', 'Schatt Goldstuecker', 1, '72963745', 4580081, 2147483647, NULL, '1958-12-21', 'Bogota', 2, 'Adrian B. Puentes', 1176782, 2147483647, 'Vestibulum.ante.ipsum@dapibusrutrumjusto.net', 52, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(175, 'Wilfredo Juan', 'Noriega Rendon', 1, '73034699', 4957512, 2147483647, NULL, '1957-11-15', 'Bogota', 1, 'Carolina L. Santander', 5606934, 2147483647, 'fermentum.arcu.Vestibulum@mauris.ca', 45, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(176, 'Luciana Karina', 'Illera Estrandelo', 1, '73123963', 3005595, 2147483647, NULL, '1968-05-06', 'Bogota', 2, 'Telma J. Ferrucci', 7317034, 1803120445, 'nunc.est@ultricesDuisvolutpat.net', 80, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(177, 'Tamara Macarena', 'Portugues Soler', 1, '73867829', 5021023, 1587807926, NULL, '1955-03-27', 'Bogota', 2, 'Edmundo M. Incera', 1699637, 2147483647, 'posuere.at.velit@metusAliquamerat.edu', 28, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(178, 'Mabel Angelica', 'Villaneda Noguera', 1, '73998291', 4827143, 2147483647, NULL, '1965-12-02', 'Bogota', 2, 'Sara T. Legarda', 2482391, 2147483647, 'condimentum.Donec@senectuset.ca', 42, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(179, 'Alexander Marco', 'Molina Buendia', 1, '74007447', 8616428, 2147483647, NULL, '1981-06-04', 'Bogota', 1, 'Salome E. Lavao', 5560187, 2147483647, 'dolor.dapibus@commodo.net', 18, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(181, 'Aldo Demetrio', 'Salavarrieta Urnieta', 1, '75250275', 5767840, 2147483647, NULL, '1956-04-07', 'Bogota', 1, 'Jacinto T. Dalmau', 3168404, 1065939805, 'neque.Nullam@aliquamarcuAliquam.net', 18, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(182, 'Evaristo Calixto', 'Pfizemaier Requejo', 1, '75314362', 7495662, 2147483647, NULL, '1994-03-19', 'Bogota', 1, 'Isabella Z. Rojo', 5620888, 2147483647, 'eget@cubiliaCurae;.edu', 4, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(183, 'Paulina Amara', 'Abussaid Cuellar', 1, '75671418', 3693784, 2147483647, NULL, '1993-02-03', 'Bogota', 2, 'Adolfo S. Fety', 2015213, 2147483647, 'leo.in@iaculisquis.ca', 70, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(184, 'Adan Anibal', 'Cerruti Scoglio', 1, '76415284', 4700122, 2147483647, NULL, '1969-10-20', 'Bogota', 1, 'Irene B. Kloch', 7467803, 2147483647, 'arcu.vel.quam@vehicula.co.uk', 24, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(185, 'Gladis Vanesa', 'Colot Molleda', 1, '77122529', 7467566, 2147483647, NULL, '1961-05-24', 'Bogota', 2, 'Sandra T. Primo', 1668361, 2147483647, 'semper.cursus@elitelit.ca', 60, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(186, 'Sergio Homero', 'Tenorio Bradock', 1, '77131684', 2357732, 2147483647, NULL, '1960-12-29', 'Bogota', 1, 'Aurelio D. Zelada', 9619710, 2147483647, 'ante@lacinia.ca', 50, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(187, 'Osvaldo Fernando', 'Rota Mambi', 1, '78060944', 9007945, 2147483647, NULL, '1991-04-25', 'Bogota', 1, 'Fidel S. Segura', 6817664, 2147483647, 'quis@euodioPhasellus.edu', 33, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00');
 INSERT INTO `residentes` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelefonoContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
-(188, 'Rebeca Lida', 'Pfefferkorn Sorazono ', 1, '78333313', 8659017, 1973372161, '', '1993-07-13', 'Bogota', 2, '_', 7196214, 2147483647, 'hendrerit.Donec@posuerecubiliaCurae;.ca', 39, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(189, 'Leonardo Cristobal', 'Artuz Utrey', 1, '79340394', 4426351, 1775066438, NULL, '1972-05-28', 'Bogota', 1, 'Paulina L. Iannini', 5007517, 2147483647, 'nulla.Cras@velvenenatisvel.co.uk', 43, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(190, 'Cecilia Celia', 'Wiesner Paucar', 1, '79429657', 3474444, 1351765904, NULL, '1977-01-15', 'Bogota', 2, 'Samuel T. Otabla', 1755187, 2147483647, 'posuere.vulputate.lacus@ut.org', 13, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(191, 'Vladimir Heriberto', 'Alfaro Taborda', 1, '79580719', 7009672, 1022586423, NULL, '1960-09-26', 'Bogota', 1, 'Vera U. Sumosa', 2006531, 2147483647, 'enim@maurisa.ca', 2, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(192, 'Sonia Ofelia', 'Clavijo Pastran', 1, '79617341', 5358675, 2147483647, NULL, '1973-11-14', 'Bogota', 2, 'Gladis Z. Piquero', 1781993, 1488105508, 'dolor.Donec.fringilla@diam.com', 71, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(193, 'Antonia Yolanda', 'Palazin Uruena', 1, '79621918', 8757818, 2147483647, NULL, '1991-10-09', 'Bogota', 2, 'Jeronimo V. Tromesta', 4088161, 2147483647, 'pulvinar.arcu.et@commodo.com', 22, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(194, 'Florencia Laura', 'Vasco Heppolette', 1, '79802735', 2002341, 2147483647, NULL, '1977-02-22', 'Bogota', 2, 'Higinia M. Abraham', 4143051, 2147483647, 'dui@cursusetmagna.org', 13, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(188, 'Rebeca Lida', 'Pfefferkorn Sorazono ', 1, '78333313', 8659017, 1973372161, '', '1993-07-13', 'Bogota', 2, '_', 7196214, 2147483647, 'hendrerit.Donec@posuerecubiliaCurae;.ca', 39, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(189, 'Leonardo Cristobal', 'Artuz Utrey', 1, '79340394', 4426351, 1775066438, NULL, '1972-05-28', 'Bogota', 1, 'Paulina L. Iannini', 5007517, 2147483647, 'nulla.Cras@velvenenatisvel.co.uk', 43, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(190, 'Cecilia Celia', 'Wiesner Paucar', 1, '79429657', 3474444, 1351765904, NULL, '1977-01-15', 'Bogota', 2, 'Samuel T. Otabla', 1755187, 2147483647, 'posuere.vulputate.lacus@ut.org', 13, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(191, 'Vladimir Heriberto', 'Alfaro Taborda', 1, '79580719', 7009672, 1022586423, NULL, '1960-09-26', 'Bogota', 1, 'Vera U. Sumosa', 2006531, 2147483647, 'enim@maurisa.ca', 2, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(192, 'Sonia Ofelia', 'Clavijo Pastran', 1, '79617341', 5358675, 2147483647, NULL, '1973-11-14', 'Bogota', 2, 'Gladis Z. Piquero', 1781993, 1488105508, 'dolor.Donec.fringilla@diam.com', 71, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(193, 'Antonia Yolanda', 'Palazin Uruena', 1, '79621918', 8757818, 2147483647, NULL, '1991-10-09', 'Bogota', 2, 'Jeronimo V. Tromesta', 4088161, 2147483647, 'pulvinar.arcu.et@commodo.com', 22, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(194, 'Florencia Laura', 'Vasco Heppolette', 1, '79802735', 2002341, 2147483647, NULL, '1977-02-22', 'Bogota', 2, 'Higinia M. Abraham', 4143051, 2147483647, 'dui@cursusetmagna.org', 13, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (195, 'Leonel Adalberto', 'Yuquem Dacosta', 1, '80136902', 6221778, 2147483647, '', '1985-02-12', 'Bogota', 1, '_', 1265480, 2147483647, 'condimentum@lobortis.org', 1, 0, 2, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(196, 'Emilio Patricio', 'Urbano Susco', 1, '80908234', 2706933, 2147483647, NULL, '1959-09-16', 'Bogota', 1, 'Rosario X. Ostos', 9683784, 2147483647, 'magna.Cras@Crasdolor.org', 13, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(197, 'Daniela Talia', 'Watts Botero', 1, '80926545', 1486485, 1255958752, NULL, '1993-04-13', 'Bogota', 2, 'Ariana U. Sposito', 3012705, 2147483647, 'consequat.dolor@non.co.uk', 27, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(198, 'Jeremias Donato', 'Robinson Villaluz', 1, '81553681', 9986122, 2147483647, NULL, '1955-06-22', 'Bogota', 1, 'Flora O. Peraza', 1423788, 2147483647, 'adipiscing@rutrumnonhendrerit.net', 61, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(199, 'Dario Archibaldo', 'Naffah Walbridge', 1, '81567414', 6165531, 2138377842, NULL, '1977-11-06', 'Bogota', 1, 'Moises D. Isabella', 4245058, 1617517830, 'dui.Fusce@iaculisaliquet.net', 19, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(200, 'Gustavo Tobias', 'Amariles Brasford', 1, '81784852', 8779168, 2147483647, NULL, '1986-06-17', 'Bogota', 1, 'Salvador N. Ferrer', 6245631, 1755672848, 'ac@magna.net', 80, 1, 1, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(196, 'Emilio Patricio', 'Urbano Susco', 1, '80908234', 2706933, 2147483647, NULL, '1959-09-16', 'Bogota', 1, 'Rosario X. Ostos', 9683784, 2147483647, 'magna.Cras@Crasdolor.org', 13, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(197, 'Daniela Talia', 'Watts Botero', 1, '80926545', 1486485, 1255958752, NULL, '1993-04-13', 'Bogota', 2, 'Ariana U. Sposito', 3012705, 2147483647, 'consequat.dolor@non.co.uk', 27, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(198, 'Jeremias Donato', 'Robinson Villaluz', 1, '81553681', 9986122, 2147483647, NULL, '1955-06-22', 'Bogota', 1, 'Flora O. Peraza', 1423788, 2147483647, 'adipiscing@rutrumnonhendrerit.net', 61, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(199, 'Dario Archibaldo', 'Naffah Walbridge', 1, '81567414', 6165531, 2138377842, NULL, '1977-11-06', 'Bogota', 1, 'Moises D. Isabella', 4245058, 1617517830, 'dui.Fusce@iaculisaliquet.net', 19, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
+(200, 'Gustavo Tobias', 'Amariles Brasford', 1, '81784852', 8779168, 2147483647, NULL, '1986-06-17', 'Bogota', 1, 'Salvador N. Ferrer', 6245631, 1755672848, 'ac@magna.net', 80, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (201, 'Federico Ramiro', 'Almanza Ramiqui', 1, '968859459', 0, 0, '', '2012-12-27', '', 1, '_', 0, 0, '', 7, 0, 1, '2012-12-27', 'NULL', '2012-12-27 00:00:00', 'NULL', '2012-12-27 00:00:00'),
-(202, 'Martin omar', 'Puche Ortiz', 1, '70874054', 0, 0, '', '1987-01-30', 'Bogota', 1, '_', 0, 0, '', 82, 1, 1, '2013-01-01', NULL, '2013-01-01 08:38:50', NULL, NULL),
-(206, 'Saulo Andres', 'Paternina', 1, '456546546', 0, 0, '', '2002-01-25', 'Bogota', 1, '_', 0, 0, '', 82, 1, 1, '2013-01-01', 'NULL', '2013-01-01 00:00:00', 'NULL', '2013-01-01 00:00:00'),
-(207, 'Marisol ', 'Diaz Choconta', 1, '563299088', 0, 0, '', '1974-01-11', 'Bogota', 1, '_', 0, 0, '', 83, 1, 1, '2013-01-01', NULL, '2013-01-01 08:45:43', NULL, NULL),
-(209, 'Samuel', 'Buendia', 1, '00001293884', 0, 0, '', '1978-01-06', 'Bogota', 1, '_', 0, 0, '', 83, 1, 1, '2013-01-02', NULL, '2013-01-02 01:45:28', NULL, NULL),
-(213, 'Saulo Andres', 'roma', 1, '06786508664', 0, 0, '', '1994-01-07', 'Bogota', 1, '_', 0, 0, '', 84, 1, 1, '2013-01-02', NULL, '2013-01-02 01:57:16', NULL, NULL),
-(214, 'Samuel', 'Renteria ', 1, '45435945848', 0, 0, '', '1974-01-15', 'Bogota', 1, '_', 0, 0, '', 84, 1, 1, '2013-01-02', 'NULL', '2013-01-02 00:00:00', 'NULL', '2013-01-02 00:00:00'),
+(202, 'Martin omar', 'Puche Ortiz', 1, '70874054', 0, 0, '', '1987-01-30', 'Bogota', 1, '_', 0, 0, '', 82, 1, 0, '2013-01-01', NULL, '2013-01-01 08:38:50', NULL, NULL),
+(206, 'Saulo Andres', 'Paternina', 1, '456546546', 0, 0, '', '2002-01-25', 'Bogota', 1, '_', 0, 0, '', 82, 1, 0, '2013-01-01', 'NULL', '2013-01-01 00:00:00', 'NULL', '2013-01-01 00:00:00'),
+(207, 'Marisol ', 'Diaz Choconta', 1, '563299088', 0, 0, '', '1974-01-11', 'Bogota', 1, '_', 0, 0, '', 83, 1, 0, '2013-01-01', NULL, '2013-01-01 08:45:43', NULL, NULL),
+(209, 'Samuel', 'Buendia', 1, '00001293884', 0, 0, '', '1978-01-06', 'Bogota', 1, '_', 0, 0, '', 83, 1, 0, '2013-01-02', NULL, '2013-01-02 01:45:28', NULL, NULL),
+(213, 'Saulo Andres', 'roma', 1, '06786508664', 0, 0, '', '1994-01-07', 'Bogota', 1, '_', 0, 0, '', 84, 1, 0, '2013-01-02', NULL, '2013-01-02 01:57:16', NULL, NULL),
+(214, 'Samuel', 'Renteria ', 1, '45435945848', 0, 0, '', '1974-01-15', 'Bogota', 1, '_', 0, 0, '', 84, 1, 0, '2013-01-02', 'NULL', '2013-01-02 00:00:00', 'NULL', '2013-01-02 00:00:00'),
 (218, 'Wilton ', 'Garcia', 1, '9', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 7, 0, 1, '2013-03-15', NULL, '2013-03-15 08:32:43', NULL, NULL),
 (226, 'juli', 'castro', 1, '789098', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 73, 0, 1, '2013-03-15', NULL, '2013-03-15 10:12:49', NULL, NULL),
 (227, 'Wilton ', 'Jamaica', 1, '7968958', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 7, 1, 0, '2013-03-16', 'NULL', '2013-03-16 00:00:00', NULL, NULL),
 (236, 'carlos', 'guatierrez', 1, '25567', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 91, 0, 1, '2013-03-17', NULL, '2013-03-17 04:31:56', NULL, NULL),
+(237, 'pepe', 'silva', 1, '67895346', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 91, 0, 1, '2013-03-17', NULL, '2013-03-17 04:32:35', NULL, NULL),
 (238, 'alicia', 'preciado', 1, '145562456', 0, 0, '', '0000-00-00', '', 2, '_', 0, 0, '', 91, 0, 2, '2013-03-17', NULL, '2013-03-17 04:33:01', NULL, NULL),
 (240, 'camilo', 'torres', 1, '09725437', 0, 0, '', '0000-00-00', '', 1, '_', 0, 0, '', 91, 1, 0, '2013-03-17', 'NULL', '2013-03-17 00:00:00', NULL, NULL);
 
@@ -1097,7 +1127,7 @@ INSERT INTO `residentes` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentif
 --
 
 CREATE TABLE IF NOT EXISTS `ringreso` (
-  `idringreso` int(11) NOT NULL,
+  `idringreso` int(11) NOT NULL AUTO_INCREMENT,
   `idvehiculo` int(11) DEFAULT NULL,
   `diaentrada` date DEFAULT NULL,
   `horaentrada` time DEFAULT NULL,
@@ -1109,14 +1139,17 @@ CREATE TABLE IF NOT EXISTS `ringreso` (
   `fecha_modificacion` datetime DEFAULT NULL,
   `novedades` text,
   PRIMARY KEY (`idringreso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `ringreso`
 --
 
 INSERT INTO `ringreso` (`idringreso`, `idvehiculo`, `diaentrada`, `horaentrada`, `diasalida`, `horasalida`, `idusuario_creacion`, `fecha_creacion`, `idusuario_modificacion`, `fecha_modificacion`, `novedades`) VALUES
-(0, 3, '2013-03-28', '19:57:11', '2013-04-01', '22:07:23', NULL, NULL, NULL, NULL, NULL);
+(1, 3, '2013-03-28', '19:57:11', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 2, '2013-04-12', '08:32:40', '0000-00-00', '08:32:40', NULL, NULL, NULL, NULL, NULL),
+(3, 24, '2013-04-13', '11:58:32', '0000-00-00', '11:58:32', NULL, NULL, NULL, NULL, NULL),
+(4, 24, '2013-04-13', '20:37:50', NULL, NULL, 1, '2013-04-13 20:37:50', NULL, NULL, 'rayon puerta derecha');
 
 -- --------------------------------------------------------
 
@@ -1133,18 +1166,47 @@ CREATE TABLE IF NOT EXISTS `terceros` (
   `telefono` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `regimen` int(11) DEFAULT NULL,
+  `Estado` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`idterceros`),
   KEY `idx_terceros` (`tipodocumento`),
   KEY `idx_terceros_0` (`regimen`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- Volcado de datos para la tabla `terceros`
 --
 
-INSERT INTO `terceros` (`idterceros`, `tipodocumento`, `nodocumento`, `nombretercero`, `direccion`, `telefono`, `email`, `regimen`) VALUES
-(1, 1, 1019039622, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1),
-(2, 1, 79689582, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1);
+INSERT INTO `terceros` (`idterceros`, `tipodocumento`, `nodocumento`, `nombretercero`, `direccion`, `telefono`, `email`, `regimen`, `Estado`) VALUES
+(1, 1, 1019039622, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(2, 1, 79689582, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1'),
+(3, 1, 111, 'ss', '123', '4720063', 'jorgedipra@gmail.com', 1, '0'),
+(4, 1, 1112, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(5, 1, 1113, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(6, 1, 1019039626, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(7, 1, 101903962, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(8, 1, 7968952, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1'),
+(9, 1, 11, 'ss', '123', '4720063', 'jorgedipra@gmail.com', 1, '0'),
+(10, 1, 112, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(11, 1, 113, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(12, 1, 1077039626, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(13, 1, 1001757, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(14, 1, 79052, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1'),
+(15, 1, 1081, 'ss', '123', '4720063', 'jorgedipra@gmail.com', 1, '0'),
+(16, 1, 10812, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(17, 1, 11038, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(18, 1, 10707038, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(19, 1, 109057, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(20, 1, 7592, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1'),
+(21, 1, 191, 'ss', '123', '4720063', 'jorgedipra@gmail.com', 1, '0'),
+(22, 1, 1912, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(23, 1, 1198, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(24, 1, 179038, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(25, 1, 1098057, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(26, 1, 78592, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1'),
+(27, 1, 1981, 'ss', '123', '4720063', 'jorgedipra@gmail.com', 1, '0'),
+(28, 1, 19812, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(29, 1, 11898, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1'),
+(30, 1, 1798038, 'JORGE', '123', '4720063', 'jorgedipra@gmail.com', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -1186,7 +1248,7 @@ CREATE TABLE IF NOT EXISTS `unidadv` (
   `IdUsuario_Modificacion` varchar(255) DEFAULT NULL,
   `Fecha_Modificacion` datetime DEFAULT NULL,
   PRIMARY KEY (`IdUnidadV`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
 
 --
 -- Volcado de datos para la tabla `unidadv`
@@ -1281,7 +1343,17 @@ INSERT INTO `unidadv` (`IdUnidadV`, `Apartamento`, `Descripcion`, `Coheficiente`
 (88, '9 318', 'casa ', 21.1, 'qwe123', NULL, '0000-00-00 00:00:00', NULL, '2013-03-15 07:54:34'),
 (89, '9 419', '1 ', 1, '1', NULL, '0000-00-00 00:00:00', NULL, '2013-03-15 07:55:50'),
 (90, '9 418', ' regkjhrdgh', 1.25, 'efhregfhoi', NULL, NULL, NULL, NULL),
-(91, '9 420', ' ', 23, 'uio789', NULL, NULL, NULL, NULL);
+(91, '9 420', ' ', 23, 'uio789', NULL, NULL, NULL, NULL),
+(92, '1 2033', ' duplex', 0, 'm3ee', '', NULL, NULL, NULL),
+(93, '9 2012', ' duplex', 23, '3mw2x', '', NULL, NULL, NULL),
+(94, '9 2014', ' apto', 0, '3m345', '', NULL, NULL, NULL),
+(95, '9 2015', ' sencillo', 23, '34m3cx', '', NULL, NULL, NULL),
+(96, '9 2016', ' duplex', 23, '3m345', '', NULL, NULL, NULL),
+(97, '9 2017', ' duplex', 23, '34m3cx', '', NULL, NULL, NULL),
+(98, '9 2018', ' duplex', 23, '3m345', '', NULL, NULL, NULL),
+(100, '9 2019', ' duplex', 30, '34m3cx', '11', NULL, NULL, NULL),
+(101, '9 2020', ' duplex', 30, '3m345', '11', '2013-04-03 00:00:00', NULL, NULL),
+(102, '9 2021', 'pruebas', 2444, '3m345', '11', '2013-04-03 21:21:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1292,7 +1364,7 @@ INSERT INTO `unidadv` (`IdUnidadV`, `Apartamento`, `Descripcion`, `Coheficiente`
 CREATE TABLE IF NOT EXISTS `usuario` (
   `IdUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
-  `clave` varchar(255) NOT NULL,
+  `clave` mediumtext NOT NULL,
   `tipo` varchar(255) NOT NULL,
   `Nombres` varchar(255) DEFAULT NULL COMMENT 'En esta columna se colocan los Nombres de los Propietarios o los residentes',
   `Apellidos` varchar(255) DEFAULT NULL COMMENT 'En esta columna se colocan los Apellidos de los Propietarios o los residentes',
@@ -1311,16 +1383,18 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `FechaIngreso` date NOT NULL,
   `Fecha_Creacion` date NOT NULL,
   PRIMARY KEY (`IdUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `login`, `clave`, `tipo`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Email`, `FechaNacimiento`, `LugarNacimiento`, `Telefono`, `Celular`, `IdGenero`, `Direccion`, `NombreContacto`, `TelefonoContacto`, `CelularContacto`, `FechaIngreso`, `Fecha_Creacion`) VALUES
-(1, 'root', '123', 'Administrador', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00'),
-(2, 'user', '123', 'Usuario', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00'),
-(3, '', '', '', 'giovanni', 'castro', 1, '80188737', '', '0000-00-00', '', 0, 0, 1, '', '_', 0, 0, '2013-04-01', '2013-04-01');
+(1, 'root', '202cb962ac59075b964b07152d234b70', '1', 'Cesar Augus', 'Gomez', 1, '123', '', '0000-00-00', '', 0, 0, 0, '', '_', 0, 0, '0000-00-00', '0000-00-00'),
+(8, 'andlop', '', '6', 'andres mauricio', 'lopez carrasco', 1, '2341', 'condimentum@lobortis.org', '2013-03-01', 'chia', 234, 12343444, 1, 'cr 244', 'uno_dos', 0, 0, '2013-03-31', '2013-03-31'),
+(10, 'nomaped', '56cfe2907f1c9a45d94b996b8de5be47', '4', 'nombre uno', 'apellido uno', 1, '23412344', 'cesargomez853@gmail.com', '2013-03-01', 'Bogota', 123, 456, 1, 'cr 234', 'nombre dos_apellidos dos', 9876, 12334, '2013-03-31', '2013-03-31'),
+(11, 'hoyaye', '81dc9bdb52d04dc20036dbd8313ed055', '2', 'hoyuuuuu', 'ayer', 1, '1235', 'condimentum@lobortis.org', '0000-00-00', '', 0, 0, 1, '', '_', 0, 0, '2013-03-31', '2013-03-31'),
+(12, 'nomape', '56cfe2907f1c9a45d94b996b8de5be47', '6', 'nombre uno', 'apellido uno', 1, '23412', 'cesargomez853@gmail.com', '2013-03-01', 'Bogota', 123, 456, 1, 'cr 234', 'nombre dos_apellidos dos', 9876, 12334, '2013-03-31', '2013-03-31');
 
 -- --------------------------------------------------------
 
@@ -1338,7 +1412,7 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   PRIMARY KEY (`idvehiculo`),
   KEY `idx_vehiculos` (`idmarca`),
   KEY `idx_vehiculos_0` (`idcolor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Volcado de datos para la tabla `vehiculos`
@@ -1361,13 +1435,14 @@ INSERT INTO `vehiculos` (`idvehiculo`, `placa`, `idcolor`, `idmarca`, `modelo`, 
 (15, 'wer2341', 1, 2, '', 112),
 (16, '', 0, 0, '', 73),
 (17, 'tyu589', 1, 1, '', 123),
-(18, 'sed335', 1, 1, '2009', 167),
+(18, 'sed335', 1, 1, '2009', 86),
 (19, '', 0, 0, '', 0),
 (20, '', 0, 0, '', 0),
 (21, '', 0, 0, '', 121),
 (22, '', 0, 0, '', 120),
 (23, '', 0, 0, '', 12),
-(24, 'dcv567', 2, 1, '2007', 48);
+(24, 'kmk676', 1, 1, '2009', 236),
+(25, 'nmb989', 2, 1, '2008', 9);
 
 -- --------------------------------------------------------
 
@@ -1382,7 +1457,7 @@ CREATE TABLE IF NOT EXISTS `vehparq` (
   PRIMARY KEY (`idvehparq`),
   KEY `idx_vehparq` (`idparqueadero`),
   KEY `idx_vehparq_0` (`idvehiculo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Volcado de datos para la tabla `vehparq`
@@ -1394,15 +1469,20 @@ INSERT INTO `vehparq` (`idvehparq`, `idvehiculo`, `idparqueadero`) VALUES
 (3, 3, 3),
 (10, 10, 13),
 (11, 11, 0),
+(12, 12, 14),
 (13, 13, 0),
+(14, 14, 15),
+(15, 15, 14),
 (16, 16, 0),
+(17, 17, 15),
 (18, 18, 16),
 (19, 19, 17),
 (20, 20, 18),
 (21, 21, 0),
 (22, 22, 0),
 (23, 23, 0),
-(24, 24, 21);
+(24, 24, 22),
+(25, 25, 23);
 
 -- --------------------------------------------------------
 
@@ -1431,7 +1511,7 @@ CREATE TABLE IF NOT EXISTS `visitantes` (
   PRIMARY KEY (`IdVisitantes`),
   KEY `IdTipoidentificacion` (`IdTipoidentificacion`),
   KEY `IdGenero` (`IdGenero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Volcado de datos para la tabla `visitantes`
@@ -1452,10 +1532,25 @@ INSERT INTO `visitantes` (`IdVisitantes`, `Nombres`, `Apellidos`, `IdTipoidentif
 (14, 'Joaquin ', 'zanabria', 1, '20957849', 1, NULL, '2013-03-16 00:00:00', NULL, '2013-03-16 00:00:00', '', '', '', '', '', 'sefredg', 45),
 (15, 'Laura', 'Sinisterra', 1, '7458643', 2, NULL, '2013-03-16 00:00:00', NULL, '2013-03-16 00:00:00', '', '', '', '', '', '', 23),
 (16, 'Pasrani', 'hassem', 1, '45748579', 1, NULL, '2013-03-16 00:00:00', NULL, '2013-03-16 00:00:00', '', '', '', '', '', '', 27),
-(17, 'antonio', 'merchan', 1, '43456667', 1, NULL, '2013-04-01 00:00:00', NULL, '2013-04-01 00:00:00', '', '', '', '', '0', 'domicilio pollo', 32),
-(18, 'juan camilo', 'gutierrez', 1, '23455566', 1, NULL, '2013-04-01 00:00:00', NULL, '2013-04-01 00:00:00', 'X', 'lok999', '1', '2', '19', 'cumpleaÃ±os salon comunal', 45),
-(19, 'camila', 'castro', 1, '0987890', 2, NULL, '2013-04-01 00:00:00', NULL, '2013-04-01 00:00:00', 'X', 'wer456', '1', '1', '20', '', 32),
-(20, 'giovanni ', 'gallego', 1, '234545645', 1, NULL, '2013-04-01 00:00:00', NULL, '2013-04-01 00:00:00', 'X', 'ert345', '1', '1', '19', 'sospechoso', 45);
+(17, 'agust', 'gomez', 1, '2342', 1, NULL, '2013-04-02 00:00:00', NULL, '2013-04-02 00:00:00', 'X', 'uyr567', '1', '3', '19', 'asfdasfafasfs', 24),
+(18, 'hoyyyy', 'sssss', 1, '234513', 1, NULL, '2013-04-02 00:00:00', NULL, '2013-04-02 00:00:00', 'X', 'JOL345', '1', '1', '20', 'seguimiento', 24),
+(19, 'Augusto', 'Gomez', 1, '23567', 1, NULL, '2013-04-02 00:00:00', NULL, '2013-04-02 00:00:00', 'X', 'BSL825', '1', '2', '20', 'SE HACEN PRUEBAS DEL CARGUE', 27),
+(20, 'asdfafs', 'asdasfs', 1, '987', 1, '', '0000-00-00 00:00:00', NULL, '2013-04-03 00:00:00', '', '', '', '', '0', '', 23),
+(21, 'asdfas', 'adsasfasf', 1, '98723', 1, '', '0000-00-00 00:00:00', NULL, '2013-04-03 00:00:00', '', '', '', '', '0', '', 23),
+(22, 'xzvfadsf', 'asdfgadsfads', 1, '9866', 1, '11', '0000-00-00 00:00:00', NULL, '2013-04-04 00:00:00', 'X', 'po323', '1', '1', '20', '', 3),
+(23, 'wwwww', 'EEEEE23', 1, '234567', 1, '11', '0000-00-00 00:00:00', NULL, '2013-04-04 00:00:00', '', '', '', '', '0', '', 0),
+(24, 'arrrrrr', 'eeeeeeeee32222', 1, '23412', 1, '8', '2013-04-05 23:16:49', '8', '2013-04-05 23:36:09', '', '', '', '', '', '', 23),
+(25, 'asdaffas', 'asdfasfasf', 1, '334444', 1, '8', '2013-04-05 23:55:44', '8', '2013-04-06 00:03:17', '', '', '', '', '', 'asfasd', 23),
+(26, 'asdfas', 'asfaf', 1, '4566', 1, '8', '2013-04-07 09:07:27', NULL, '2013-04-07 00:00:00', '', 'ASD123', '1', '2', '0', '', 34),
+(27, 'carlos', 'gomez', 1, '123345564', 1, '1', '2013-04-12 08:26:59', NULL, '2013-04-12 00:00:00', '', '', '', '', '', '', 32),
+(28, 'ramiro', 'torres', 1, '67867867', 1, '1', '2013-04-12 08:27:27', NULL, '2013-04-12 00:00:00', '', '', '', '', '0', '', 45),
+(29, 'camilo', 'aldana', 1, '768887', 1, '1', '2013-04-12 21:05:14', NULL, '2013-04-12 00:00:00', 'X', 'uyu989', '1', '1', '14', '', 45),
+(30, 'carlos', 'zuluaga', 1, '3456345', 1, '1', '2013-04-13 20:48:21', NULL, '2013-04-13 00:00:00', '', '', '', '', '', '', 34),
+(31, 'juli', 'camacho', 1, '6786786', 1, '1', '2013-04-13 20:49:29', NULL, '2013-04-13 00:00:00', 'X', 'qwe111', '1', '1', '14', '', 43),
+(32, 'carla', 'girqaldo', 1, '3434343', 2, '1', '2013-04-13 20:55:08', '1', '2013-04-13 20:55:44', '', '', '', '', '', 'acueducto', 23),
+(33, 'camila', 'pataquiva', 1, '987987', 2, '1', '2013-04-13 20:56:20', NULL, '2013-04-13 00:00:00', 'X', 'mlp098', '1', '1', '20', 'energia', 45),
+(34, 'lorena', 'toro', 1, '78786767', 2, '1', '2013-04-13 20:58:24', NULL, '2013-04-13 00:00:00', '', '', '', '', '', 'energia', 32),
+(35, 'camilo', 'castro', 1, '6789789', 1, '1', '2013-04-13 20:59:45', NULL, '2013-04-13 00:00:00', 'X', 'oio909', '1', '1', '14', 'acueducto', 45);
 
 -- --------------------------------------------------------
 
@@ -1480,7 +1575,7 @@ CREATE TABLE IF NOT EXISTS `visitas` (
   KEY `IdVisitantes` (`IdVisitantes`),
   KEY `IdUnidadV` (`IdUnidadV`),
   KEY `IdResidentes` (`IdResidentes`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `visitas`
@@ -1494,20 +1589,36 @@ INSERT INTO `visitas` (`IdVisitas`, `IdVisitantes`, `IdUnidadV`, `IdResidentes`,
 (7, 8, 84, 213, '2013-03-14', '14:58:13', '2013-03-14', '15:17:23', NULL, NULL, NULL, NULL),
 (8, 9, 71, 71, '2013-03-14', '15:00:03', '2013-03-14', '15:17:17', NULL, NULL, NULL, NULL),
 (9, 10, 82, 206, '2013-03-14', '15:07:45', '2013-03-14', '15:14:44', NULL, NULL, NULL, NULL),
-(10, 11, 5, 112, '2013-03-14', '15:18:41', '2013-04-01', '21:41:15', NULL, NULL, NULL, NULL),
+(10, 11, 5, 112, '2013-03-14', '15:18:41', '2013-04-05', '23:37:22', NULL, NULL, NULL, NULL),
 (11, 12, 12, 73, '2013-03-14', '15:19:42', '2013-03-16', '06:41:56', NULL, NULL, NULL, NULL),
 (12, 13, 65, 123, '2013-03-14', '15:21:59', '2013-03-14', '15:23:47', NULL, NULL, NULL, NULL),
 (13, 14, 40, 121, '2013-03-16', '06:46:47', '2013-03-16', '07:02:02', NULL, NULL, NULL, NULL),
-(14, 15, 75, 120, '2013-03-16', '07:02:57', '2013-04-01', '21:41:11', NULL, NULL, NULL, NULL),
+(14, 15, 75, 120, '2013-03-16', '07:02:57', NULL, NULL, NULL, NULL, NULL, NULL),
 (15, 16, 34, 12, '2013-03-16', '07:11:18', '2013-03-16', '07:18:18', NULL, NULL, NULL, NULL),
-(16, 17, 91, 240, '2013-04-01', '21:46:52', NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 17, 91, 240, '2013-04-01', '21:47:10', NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 18, 13, 194, '2013-04-01', '21:47:53', '2013-04-01', '21:51:03', NULL, NULL, NULL, NULL),
-(19, 18, 13, 194, '2013-04-01', '21:48:22', '2013-04-01', '21:54:06', NULL, NULL, NULL, NULL),
-(20, 19, 18, 132, '2013-04-01', '21:49:25', NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 19, 18, 132, '2013-04-01', '21:49:50', NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 20, 17, 1, '2013-04-01', '21:54:34', '2013-04-01', '21:56:04', NULL, NULL, NULL, NULL),
-(23, 20, 17, 1, '2013-04-01', '21:54:59', '2013-04-01', '21:56:11', NULL, NULL, NULL, NULL);
+(16, 17, 13, 190, '2013-04-02', '21:39:46', '2013-04-02', '21:43:36', NULL, NULL, NULL, NULL),
+(17, 17, 13, 190, '2013-04-02', '21:42:55', '2013-04-02', '21:44:12', NULL, NULL, NULL, NULL),
+(18, 18, 47, 24, '2013-04-02', '21:51:00', '2013-04-02', '21:52:26', NULL, NULL, NULL, NULL),
+(19, 18, 15, 126, '2013-04-02', '21:57:51', '2013-04-02', '22:09:22', NULL, NULL, NULL, NULL),
+(20, 18, 12, 73, '2013-04-02', '23:08:52', '2013-04-02', '23:11:07', NULL, NULL, NULL, NULL),
+(21, 18, 10, 40, '2013-04-02', '23:11:34', '2013-04-02', '23:12:36', NULL, NULL, NULL, NULL),
+(22, 19, 45, 80, '2013-04-02', '23:16:56', '2013-04-04', '14:52:28', NULL, NULL, NULL, NULL),
+(24, 20, 74, 43, '2013-04-03', '22:30:31', NULL, NULL, '', NULL, NULL, NULL),
+(25, 21, 74, 43, '2013-04-03', '22:35:28', '2013-04-04', '14:51:57', '', NULL, NULL, NULL),
+(26, 22, 47, 24, '2013-04-04', '14:41:40', '2013-04-04', '14:51:18', '11', NULL, NULL, NULL),
+(27, 22, 47, 24, '2013-04-04', '14:52:56', '2013-04-05', '23:38:20', '11', NULL, NULL, NULL),
+(28, 23, 8, 152, '2013-04-04', '14:57:35', NULL, NULL, '11', NULL, NULL, NULL),
+(29, 24, 12, 56, '2013-04-05', '23:16:49', NULL, NULL, '8', NULL, NULL, NULL),
+(30, 25, 7, 86, '2013-04-05', '23:55:44', NULL, NULL, '8', NULL, NULL, NULL),
+(31, 26, 69, 16, '2013-04-07', '09:07:27', '2013-04-07', '09:08:28', '8', NULL, NULL, NULL),
+(32, 26, 8, 77, '2013-04-07', '09:08:47', NULL, NULL, '8', NULL, NULL, NULL),
+(34, 28, 13, 194, '2013-04-12', '08:27:27', NULL, NULL, '1', NULL, NULL, NULL),
+(35, 29, 19, 18, '2013-04-12', '21:05:14', '2013-04-12', '21:06:24', '1', NULL, NULL, NULL),
+(36, 30, 10, 113, '2013-04-13', '20:48:21', '2013-04-13', '20:50:54', '1', NULL, NULL, NULL),
+(37, 31, 18, 57, '2013-04-13', '20:49:29', '2013-04-13', '20:50:52', '1', NULL, NULL, NULL),
+(38, 32, 4, 182, '2013-04-13', '20:55:08', '2013-04-13', '20:58:10', '1', NULL, NULL, NULL),
+(39, 33, 6, 101, '2013-04-13', '20:56:20', '2013-04-13', '20:58:08', '1', NULL, NULL, NULL),
+(40, 34, 29, 79, '2013-04-13', '20:58:24', NULL, NULL, '1', NULL, NULL, NULL),
+(41, 35, 6, 28, '2013-04-13', '20:59:45', NULL, NULL, '1', NULL, NULL, NULL);
 
 --
 -- Restricciones para tablas volcadas
