@@ -1,5 +1,8 @@
 <?php
- include "php/include_dao.php";
+include "../php/dao/daoConnection.php";
+include "../php/dao/TercerosDAO.php";
+include "../php/entities/terceros.php";
+
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
 

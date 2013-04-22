@@ -123,7 +123,7 @@ function eliminar_cuenta(id){
 }
 ////////////////////////////////////////////////	
 function agregar_Tercero(){
-	MM_openBrWindow('../agregar_tercero.php?s=1&OK=1&nombre='+document.getElementById('tercero').value,'AgregarTercero','scrollbars=yes,width=1060px,height=510px')
+	MM_openBrWindow('../recursos/agregar_tercero.php?s=1&OK=1&nombre='+document.getElementById('tercero').value,'AgregarTercero','scrollbars=yes,width=1060px,height=510px')
 }
 //////////////////////////////////////////////////
 function cerrarVentana(){ 

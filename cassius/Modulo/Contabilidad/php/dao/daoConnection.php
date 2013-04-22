@@ -1,5 +1,4 @@
 <?php
-
 class DAO {
 
     /* variables de conexion */

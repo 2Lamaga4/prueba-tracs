@@ -1,25 +1,25 @@
 <?php session_start();?>
 <?php
 
-
-require_once('../dao/daoConnection.php');
-require_once('../dao/CuentaDAO.php');
-require_once('../entities/cuentas.php');
+//se llama la conexion,las funciones, y la entidades
+require_once('../../../php/dao/daoConnection.php');
+require_once('../../../php/dao/CuentaDAO.php');
+require_once('../../../php/entities/cuentas.php');
 
 
 $id = $_GET['id'];
 
-$location = "location: ./../../Parametrizacion/index.php?OK_de=1";
+//se direcciona nuevamente a la pagina parametrizacion
+$location = "location: ../../parametrizacion_cuentas.php?OK_de=1";
 
 
 $CuentaDAO = new CuentaDAO();
 $cuentas = new cuentas();
 $cuentas = $CuentaDAO->get($id);
 
-
+//se envia el dato a eliminar
 $CuentaDAO->delete($id);
 
-//everything fine!
 header($location);
 exit;
 ?>

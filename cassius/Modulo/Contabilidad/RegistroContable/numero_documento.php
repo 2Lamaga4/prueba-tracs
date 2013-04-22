@@ -1,4 +1,13 @@
-<?php include "../php/include_dao.php";
+<?php
+ require_once('../php/dao/daoConnection.php');
+require_once('../php/dao/MovimientosDAO.php');
+require_once('../php/entities/movimientos.php');
+require_once('../php/dao/TercerosDAO.php');
+require_once('../php/entities/terceros.php');
+require_once('../php/dao/DocumentoDAO.php');
+require_once('../php/entities/documentos.php');
+require_once('../php/dao/CuentaDAO.php');
+require_once('../php/entities/cuentas.php');
 
 $id_documento = 0;
 if($_REQUEST['documento'] != ""){

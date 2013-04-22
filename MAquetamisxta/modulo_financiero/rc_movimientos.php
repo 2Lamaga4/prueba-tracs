@@ -14,9 +14,9 @@
 <meta property="og:site_name" content="Cassius" />
 <title>Cassius - software de propiedad horizontal</title>
 <link href="config/estilos_cassius.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1.css" type="text/css" />
-<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1-adobe_cs3.css" type="text/css" />
-<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1-apple_widget.css" type="text/css" />
+<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1.css" />
+<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1-adobe_cs3.css"/>
+<link rel="stylesheet" media="screen" href="styles/vlaCal-v2.1-apple_widget.css"/>
 <link href="contabilidad/css/stylemovimiento.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jslib/mootools-1.2-core-compressed.js"></script>
 <script type="text/javascript" src="jslib/vlaCal-v2.1-compressed.js"></script>

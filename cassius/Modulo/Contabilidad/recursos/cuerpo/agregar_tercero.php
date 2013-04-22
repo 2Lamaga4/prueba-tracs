@@ -1,15 +1,15 @@
 <?php
   if(isset($_GET['s'])==1){ }else{ ?>
 <div id="salir2">
-  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='contabilidad/terceros.php'"/>
+  <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../Parametrizacion/terceros.php'"/>
 </div>
   <?php } ?> 
 
-<div id="logo_small3"><img src="images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
-<div id="modulos"><img src="images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
+<div id="logo_small3"><img src="../images/logo_small2.png" name="logo_small" width="317" height="62" id="logo_small" /></div>
+<div id="modulos"><img src="../images/modulo_administrativo.png" name="mod_registro" width="300" height="55" id="mod_registro" /></div>
 <div id="fondo_home_contabilidad"></div>
 <div id="contenido_tabla">
-<form id="form1" name="form1" method="post" action="php/action/addTerceros.php" onsubmit="return validar();">
+<form id="form1" name="form1" method="post" action="../php/action/addTerceros.php" onsubmit="return validar();">
   <table width="850" border="0" align="center" cellpadding="0" cellspacing="1">
     <tr>
       <td width="435" height="30">&nbsp;</td>
@@ -78,7 +78,7 @@
       </table></td>
     </tr>
     <tr>
-      <td height="40" colspan="2" align="center"><img src="images/line2.gif" width="850" height="1" /></td>
+      <td height="40" colspan="2" align="center"><img src="../images/line2.gif" width="850" height="1" /></td>
     </tr>
     <tr>
       <td height="40" colspan="2" align="center">

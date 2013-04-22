@@ -1,4 +1,8 @@
-<?php include "php/include_dao.php";
+<?php 
+
+include "../php/dao/daoConnection.php";
+include "../php/dao/TercerosDAO.php";
+include "../php/entities/terceros.php";
 
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
@@ -11,9 +15,6 @@ if(isset($_REQUEST['numero']) != ""){
 if($numero != ""){
 	$tercero = $TercerosDAO->Validar_tercero($numero);    
  }
-
-
-//print_r($_GET);
 ?>
 
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="0">

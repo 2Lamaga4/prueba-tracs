@@ -3,13 +3,13 @@ include "cuerpo/agregar_comprobante_diario.php";
 include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet" />
+<link href="../js/jquery.autocomplete.css" rel="stylesheet" />
+<link href="../css/datepicker.css"rel="stylesheet" />
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/codigo.js"></script>
 <script src="../js/jquery.js"></script>
 <script src='../js/jquery.bgiframe.min.js'></script>
 <script src='../js/jquery.autocomplete.js'></script>
-<link rel="stylesheet" href="../js/jquery.autocomplete.css" />
-<link rel="stylesheet" href="../css/datepicker.css" />
 <script src="../js/datepicker.js"></script>
 <script src="../js/eye.js"></script>
 <script src="../js/utils.js"></script>

@@ -13,9 +13,11 @@
         <tr>
           <td width="82" class="texto_azul" align="right"><strong>Fecha:&nbsp;&nbsp;</strong></td>
           <td width="48" height="30">Desde</td>
-          <td width="89"><input name="fecha1" type="text" class="textarea_redondo2" id="exampleI" style="width:65px;"/></td>
+          <td width="89">
+            <input name="fecha1" type="date"  class="textarea_redondo2" id="exampleI" style="width:105px;"/></td>
           <td width="50">Hasta</td>
-          <td width="126"><input name="fecha2" type="text" class="textarea_redondo2" id="exampleII" style="width:65px;"/></td>
+          <td width="126">
+             <input name="fecha1" type="date"  class="textarea_redondo2" id="exampleII" style="width:105px;"/></td></td>
           <td width="90"><span class="texto_azul"><strong>Movimiento:</strong></span></td>
           <td width="84"><input name="movi" type="text" class="textarea_redondo2" id="movi" style="width:50px;"  /></td>
           <td width="140"><input name="buscar" type="submit" class="boton_buscar" id="buscar" value="Buscar" onclick="location.href='#'"/></td>
@@ -99,4 +101,4 @@
          <?php } ?>  
   </table>
 </div>
-<div class="titulos" id="subtitulo">&gt; Registro contable - Movimientos</div>
+<div class="titulos" id="subtitulo3">&gt; Registro contable - Movimientos</div>

@@ -1,6 +1,15 @@
 <?php
 session_start();
-include "../php/include_dao.php";
+require_once('../php/dao/daoConnection.php');
+require_once('../php/dao/MovimientosDAO.php');
+require_once('../php/entities/movimientos.php');
+require_once('../php/dao/TercerosDAO.php');
+require_once('../php/entities/terceros.php');
+require_once('../php/dao/DocumentoDAO.php');
+require_once('../php/entities/documentos.php');
+require_once('../php/dao/CuentaDAO.php');
+require_once('../php/entities/cuentas.php');
+
 
 $MovimientosDAO = new MovimientosDAO();
 $movimientos = new movimientos();

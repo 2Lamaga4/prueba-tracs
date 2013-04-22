@@ -8,7 +8,7 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
   
-        <td width="97%" align="right"><input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='../agregar_tercero.php?OK=1'"/>
+        <td width="97%" align="right"><input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='../recursos/agregar_tercero.php?OK=1'"/>
           &nbsp;</td>
         <td width="3%">&nbsp;</td>
       </tr>
@@ -24,7 +24,7 @@
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
+                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../recursos/modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
                 <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
           </li>
 
