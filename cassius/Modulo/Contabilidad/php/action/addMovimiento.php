@@ -21,7 +21,7 @@ $ter_id = $_REQUEST['ter_id'];
 $location = "location: ./../../agregar_comprobante_diario.php?OK=1";
 
 
-$MovimientosDAO = new MovimientosDAO();
+$MovimientosDAO = new MovimientosDAO(); 
 $movimientos = new movimientos();
 $movimientos2 = new movimientos();
 
@@ -38,10 +38,9 @@ $movimientos->setNumdoc($num_docu);
 $movimientos->setConcepto($concepto);
 $movimientos->setEstado($estado);
 $movimientos->setTercero($ter_id);
-
 $MovimientosDAO->save($movimientos);
-$id = $MovimientosDAO->max_id();
 
+$id = $MovimientosDAO->max_id();
 
 
 if($_SESSION['numero'] == ""){
@@ -66,13 +65,12 @@ if($_SESSION['numero'] == ""){
 				$movimientos2->setIdmovimiento($id);
 				$movimientos2->setCredito($credito);
 				$movimientos2->setDebito($debito);
-				$movimientos2->setCodcuenta($item->getId());
-			
+				$movimientos2->setCodcuenta($item->getIdpuc());
 				$MovimientosDAO->save_movimiento_cueta($movimientos2);
 			}
 		}
  
-}else{
+       }else{
 
 	
 	for($a = 1; $a <= $_SESSION['numero']; $a++){
@@ -109,19 +107,19 @@ exit;
 
 
 function accents2HTML($mensaje){
-    $mensaje = str_replace("á","&aacute;",$mensaje);
-    $mensaje = str_replace("é","&eacute;",$mensaje);
-    $mensaje = str_replace("í","&iacute;",$mensaje);
-    $mensaje = str_replace("ó","&oacute;",$mensaje);
-    $mensaje = str_replace("ú","&uacute;",$mensaje);
-    $mensaje = str_replace("ñ","&ntilde;",$mensaje);
+    $mensaje = str_replace("Ã¡","&aacute;",$mensaje);
+    $mensaje = str_replace("Ã©","&eacute;",$mensaje);
+    $mensaje = str_replace("Ã­","&iacute;",$mensaje);
+    $mensaje = str_replace("Ã³","&oacute;",$mensaje);
+    $mensaje = str_replace("Ãº","&uacute;",$mensaje);
+    $mensaje = str_replace("Ã±","&ntilde;",$mensaje);
     
-	$mensaje = str_replace("Á","&Aacute;",$mensaje);
-    $mensaje = str_replace("É","&Eacute;",$mensaje);
-    $mensaje = str_replace("Í","&Iacute;",$mensaje);
-    $mensaje = str_replace("Ó","&Oacute;",$mensaje);
-    $mensaje = str_replace("Ú","&Uacute;",$mensaje);
-    $mensaje = str_replace("Ñ","&Ntilde;",$mensaje);
+	$mensaje = str_replace("Ã","&Aacute;",$mensaje);
+    $mensaje = str_replace("Ã‰","&Eacute;",$mensaje);
+    $mensaje = str_replace("Ã","&Iacute;",$mensaje);
+    $mensaje = str_replace("Ã“","&Oacute;",$mensaje);
+    $mensaje = str_replace("Ãš","&Uacute;",$mensaje);
+    $mensaje = str_replace("Ã‘","&Ntilde;",$mensaje);
     return $mensaje;
 }
 
