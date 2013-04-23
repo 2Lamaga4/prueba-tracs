@@ -6,17 +6,18 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   yposi=(alto-540)/2;
   xposi=(ancho-970)/2;
   ventana.moveTo(xposi,yposi);
-} 
+}
 function dato_tercero(){
 	var tercero = document.getElementById('tercero').value;
 	llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
-	
+	llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');
 }
 function dato_tercero2(){
 	llamarasincrono('tercero_campo.php', 'ter');
 	llamarasincrono('tercero_campo2.php', 'ter2');
 }
 function numero_documento(){
+	
 	var documento = document.getElementById('documento').value;
 	var tercero = document.getElementById('tercero').value;
 	

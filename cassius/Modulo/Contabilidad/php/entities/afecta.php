@@ -12,7 +12,7 @@
 			 return $this->idafecta;
 		 } 
 		 public function setId($id){
-			echo $this->idafecta = $id;
+			 $this->idafecta = $id;
 		 } 
 		 public function getIddocumentos(){
 			 return $this->iddocumentos;
@@ -29,7 +29,7 @@
 		 public function getTipo(){
 			 return $this->tipo;
 		 } 
-		 public function setTipo($tipo){ 
+		 public function setTipo($tipo){
 			 $this->tipo = $tipo;
 		 }
 
