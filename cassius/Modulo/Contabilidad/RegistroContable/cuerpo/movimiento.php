@@ -27,7 +27,13 @@
      </td>
     </tr>
     <tr>
-      <td height="45" bgcolor="#E4EEF9" align="center"><input name="agregar_residente2" style="width:220px" type="button" class="boton_agregar" id="agregar_residente2" value="Agregar Comprobante de diario" onclick="MM_openBrWindow('agregar_comprobante_diario.php','AgregarComprobante','scrollbars=yes,width=970px,height=540px')"/></td>
+      <td height="45" bgcolor="#E4EEF9" align="center">
+        <input name="agregar_residente2" 
+        style="width:220px" type="button"
+         class="boton_agregar" id="agregar_residente2"
+          value="Agregar Comprobante de diario" 
+          onclick="MM_openBrWindow('agregar_comprobante_diario.php','AgregarComprobante','scrollbars=yes,width=970px,height=540px')"/>
+        </td>
     </tr>
     <tr>
       <td height="20"><img src="../images/line2.gif" width="950" height="1" /></td>
