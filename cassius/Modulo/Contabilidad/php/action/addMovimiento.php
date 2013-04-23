@@ -55,7 +55,9 @@ if($_SESSION['numero'] == ""){
 			}
 			
 			$credito = 0;
-			if($_REQUEST['credito'.$item->getId()] != ""){
+			
+			if($_REQUEST['credito'.$item->getId()] != "")
+			{
 				$credito = $_REQUEST['credito'.$item->getId()]; 
 			}
 		

@@ -24,7 +24,7 @@ if($_REQUEST['tercero'] != ""){
 	$nombre = $_REQUEST['tercero'];
 }
 
-$TercerosDAO = new TercerosDAO();
+$TercerosDAO = new TercerosDAO(); 
 $terceros = new terceros();
 
 if($nombre != ""){
@@ -42,7 +42,7 @@ if($nombre != ""){
 
 <table width="152" border="0">
   <tr>
-    <td width="42" valign="middle"><strong>Nit:</strong></td>
+    <td width="42" valign="middle"><strong>Null:</strong></td>
     <td width="145" valign="middle"><input name="identifica" type="text" class="textarea_redondo2" id="identifica" style="width:80px;" readonly="readonly" value="<?php echo $nit; ?>" />
     <input name="ter_id" id="ter_id" type="hidden" value="<?php echo $id_t; ?>"></td>
   </tr>
