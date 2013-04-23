@@ -5,7 +5,11 @@ require_once('../dao/daoConnection.php');
 require_once('../dao/TercerosDAO.php');
 require_once('../entities/terceros.php');
 
-$id = $_REQUEST['id']; 
+
+
+
+$id = $_REQUEST['id'];
+$con = isset($_REQUEST['con']); 
 
 
 $location = "location: ./../../Parametrizacion/terceros.php?OK=3";
@@ -14,7 +18,14 @@ $location = "location: ./../../Parametrizacion/terceros.php?OK=3";
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
 
-$TercerosDAO->delete($id);
+if($con == 1){
+$TercerosDAO->activar($id);
+}else{
+$TercerosDAO->delete($id);  
+}
+
+
+
 
 header($location);
 exit;

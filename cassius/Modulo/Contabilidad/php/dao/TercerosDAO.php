@@ -215,6 +215,13 @@ class TercerosDAO{
 
 			$this->daoConnection->consulta($sql);
 	}
+    function activar($id){
+             //$id -> numero de documento
+
+            $sql = 'update terceros  set  Estado = 1 where  nodocumento ='.$id;
+
+            $this->daoConnection->consulta($sql);
+    }
 
      function total($opt = 0, $campo = 0, $valor = 0){
 
@@ -227,6 +234,9 @@ class TercerosDAO{
 		return $this->daoConnection->ObjetoConsulta2[0][0];
 
 	}	
+
+   
+
 
 }
 

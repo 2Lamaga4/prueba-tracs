@@ -14,7 +14,7 @@ $direccion = $_REQUEST['direccion'];
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
 /////////////
-$location = "location: ../../contabilidad/terceros.php?OK=2";
+$location = "location: ../../Parametrizacion/terceros.php?OK=2";
 ////////////
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();

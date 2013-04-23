@@ -15,9 +15,6 @@
 
 *cambiar el cc y cc extrangero por codigo html ---> a php consulta
 
-
-5)solicitar balance  inicial maqueta	
-
 6)modulo_financiero/registro_documentos.html
 tablas q maneja el aplicativo
 
