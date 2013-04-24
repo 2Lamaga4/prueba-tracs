@@ -1,4 +1,5 @@
-<?php include "../php/include_dao.php";
+<?php
+ include "../php/include_dao.php";
 
 $CuentaDAO = new CuentaDAO();
 $cuenta = new cuentas();

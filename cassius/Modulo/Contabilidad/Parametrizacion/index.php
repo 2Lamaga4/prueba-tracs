@@ -1,9 +1,9 @@
 <?php
  include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
-<script src="../Scripts/scriptcuentas.js" ></script>
 <link href="../config/estilos_cassius.css" rel="stylesheet" />
 <link href="../css/stylecuenta.css" rel="stylesheet" />
+<script src="../Scripts/scriptcuentas.js" ></script>
 <script src="../Scripts/globos_ayuda.js" ></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/transicion.js" ></script>

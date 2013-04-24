@@ -1,5 +1,5 @@
 <?php session_start();
-include "php/include_dao.php";
+include "../php/include_dao.php";
 
 $CuentaDAO = new CuentaDAO();
 $cuenta = new cuentas();
@@ -15,23 +15,16 @@ $_SESSION['sigla_d'] = $_REQUEST['sigla'];
 $_SESSION['nombre_d'] = $_REQUEST['nombre'];
 $_SESSION['descripcion_d'] = $_REQUEST['descripcion'];
 
-
+include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Page-Enter" content="blendtrans(duration=1)">
-<title>Cassius - software de propiedad horizontal</title>
-
-<link href="config/estilos_cassius.css" rel="stylesheet"/>
-<link href="stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
+<link href="../config/estilos_cassius.css" rel="stylesheet"/>
+<link href="../stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
 <!--[if lt IE 7]>
-<link href="stylesheets/screen-ie6.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="../stylesheets/screen-ie6.css" type="text/css" rel="stylesheet" media="screen,projection" />
 <![endif]-->
-<script src="scripts/jquery.js"></script>
-<script src="scripts/jquery-scrollTo.js"></script>
-<script src="scripts/accordion.js"></script>
+<script src="../scripts/jquery.js"></script>
+<script src="../scripts/jquery-scrollTo.js"></script>
+<script src="../scripts/accordion.js"></script>
 <script>
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
@@ -92,12 +85,12 @@ function validar(id,valor){
 
 </script>
 </head>
-<script src="Scripts/globos_ayuda.js" ></script>
-<script src="Scripts/bloqueo_clic_derecho.js" ></script>
-<script src="Scripts/transicion.js" ></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>
 </head>
 
-<body class="popup" onload="MM_preloadImages('images/btn_menos_roll.jpg','images/btn_mas_roll.jpg')" OnContextMenu="return false">
+<body class="popup" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
 
 
 <form name="form1" id="form1" action="agregar_documento2.php" method="post">
@@ -149,7 +142,8 @@ foreach($cuentas as $item){
       <td height="25" class="td_nivel2"><table width="770" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td><strong><?php echo $item2->getCuenta()." ".$item2->getDenominacion(); ?></strong></td>
-          <td width="20"><a href="#"><img src="images/btn_mas.jpg" name="btn_mas" width="25" height="17" border="1" id="btn_mas" onmouseover="MM_swapImage('btn_mas','','images/btn_mas_roll.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+          <td width="20"><a href="#">
+            <img src="../images/btn_mas.jpg" name="btn_mas" width="25" height="17" border="1" id="btn_mas" onmouseover="MM_swapImage('btn_mas','','../images/btn_mas_roll.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
         </tr>
       </table></td>
     </tr>
@@ -251,7 +245,7 @@ foreach($cuentas as $item){
     </td>
   </tr>
   <tr>
-    <td height="18" valign="middle" align="center"><img src="images/line2.gif" width="800" height="1" /></td>
+    <td height="18" valign="middle" align="center"><img src="../images/line2.gif" width="800" height="1" /></td>
   </tr>
   <tr>
     <td height="70" valign="middle" align="center"><input style="width:90px;" name="Entrar" type="submit" class="boton_redondo" id="Entrar" value="::: Aceptar :::" /></td>

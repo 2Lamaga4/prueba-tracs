@@ -1,5 +1,5 @@
 <?php session_start();
-include "php/include_dao.php";
+include "../php/include_dao.php";
 
 //session_unset($_SESSION['datos']);
 $CuentaDAO = new CuentaDAO();

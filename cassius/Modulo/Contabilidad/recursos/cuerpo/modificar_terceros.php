@@ -86,4 +86,4 @@
   </form>
 
 </div>
-<div class="titulos" id="subtitulo">&gt; Modificar Tercero</div>
+<div class="titulos" id="subtitulo1">&gt; Modificar Tercero</div>

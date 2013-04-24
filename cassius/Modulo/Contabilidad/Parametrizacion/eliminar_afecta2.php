@@ -1,5 +1,5 @@
 <?php session_start();
-include "php/include_dao.php";
+include "../php/include_dao.php";
 
 $id = "";
 if($_REQUEST['id'] != ""){

@@ -11,7 +11,7 @@ $tercero = $TercerosDAO->get($_REQUEST['id']);
 include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet"/>
-<link href="../contabilidad/css/stylesgregar_tercero.css" rel="stylesheet"/>
+<link href="../css/stylesgregar_tercero.css" rel="stylesheet"/>
 <script src="../Scripts/codigo.js"></script>
 <script src="../Scripts/globos_ayuda.js" ></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>

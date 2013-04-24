@@ -18,7 +18,7 @@ $estado = 1;
 $ter_id = $_REQUEST['ter_id']; 
 
 
-$location = "location: ./../../agregar_comprobante_diario.php?OK=1";
+$location = "location: ./../../RegistroContable/agregar_comprobante_diario.php?OK=1";
 
 
 $MovimientosDAO = new MovimientosDAO(); 

@@ -1,5 +1,5 @@
 <?php session_start();
-include "php/include_dao.php";
+include "../php/include_dao.php";
 
 $CuentaDAO = new CuentaDAO();
 $cuenta = new cuentas();
@@ -10,10 +10,10 @@ $_SESSION['sigla_d'] = $_REQUEST['sigla'];
 $_SESSION['nombre_d'] = $_REQUEST['nombre'];
 $_SESSION['descripcion_d'] = $_REQUEST['descripcion'];
 
- include_once ('../../info.php');//se llama la informacion de la pagina
+include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
-<link href="config/estilos_cassius.css" rel="stylesheet" />
-<link href="stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
+<link href="../config/estilos_cassius.css" rel="stylesheet" />
+<link href="../stylesheets/screen.css" rel="stylesheet" media="screen,projection" />
 <script>
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
@@ -108,7 +108,7 @@ $(document).ready(function(){
   }
 
   #accordion h3 span { /* una imagen que permuta segñun el estado del contenido */
-    background: transparent url(images/masmenos.png) no-repeat right top;
+    background: transparent url(../images/masmenos.png) no-repeat right top;
     display: block;
     height: 16px;
     position: absolute;
@@ -130,12 +130,12 @@ $(document).ready(function(){
     padding: 0px 0px 0px 50px;
   }
 </style>
-<script src="Scripts/globos_ayuda.js" ></script>
-<script src="Scripts/bloqueo_clic_derecho.js" ></script>
-<script src="Scripts/transicion.js" ></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>
 </head>
 
-<body class="popup" onload="MM_preloadImages('images/btn_menos_roll.jpg','images/btn_mas_roll.jpg')" OnContextMenu="return false">
+<body class="popup" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
 
 
 <form name="form1" id="form1" action="agregar_documento2.php" method="post">

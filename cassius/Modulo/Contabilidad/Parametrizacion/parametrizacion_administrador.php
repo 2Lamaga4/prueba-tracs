@@ -1,6 +1,7 @@
 <?php
  include_once ('../../../info.php');//se llama la informacion de la pagina
-?><link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
+?>
+<link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="../css/stylesgregar_tercero.css" rel="stylesheet" type="text/css"/>
 <script src="../Scripts/img.js"></script>
 <script src="../Scripts/globos_ayuda.js" ></script>

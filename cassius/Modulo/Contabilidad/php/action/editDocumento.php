@@ -15,7 +15,7 @@ $nombre = $_REQUEST['nombre'];
 $descripcion = accents2HTML($_REQUEST['descripcion']); 
 
 
-$location = "location: ./../../parametrizacion_documentos.php?OK_de=2";
+$location = "location: ./../../Parametrizacion/parametrizacion_documentos.php?OK_de=2";
 
 
 $DocumentoDAO = new DocumentoDAO();
