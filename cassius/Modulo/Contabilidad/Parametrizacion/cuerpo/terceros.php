@@ -7,19 +7,27 @@
   <div id="utilidades">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-  
-        <td width="97%" align="right">
-<!--cambiar boton -->
-          <input name="agregar" type="button" class="boton_agregar" id="agregar" value="Activar Tercero" onclick="location.href='activarterceros.php'"/>
-         
+        <td width="97%" align="right">         
           <input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='../recursos/agregar_tercero.php?OK=1'"/>
           &nbsp;</td>
         <td width="3%">&nbsp;</td>
       </tr>
+
     </table>
+ <article id="menuactides"> 
+<table  cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="481" height="70" valign="top">
+            <a href="activarterceros.php">
+            <img src="../images/btn_inactivos_down.jpg" name="btn_inactivo" width="481" height="46" border="0" id="btn_inactivo" onmouseover="MM_swapImage('btn_inactivo','','../images/btn_inactivos.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+          <td width="419" valign="top">
+            <img src="../images/btn_activos_roll.jpg" width="477" height="46" /></td>          
+        </tr>
+ </table>
+ </article>  
   </div>
 </div>
-<div id="contenido_tabla">
+<div id="contenido_tablat">
   <section class="tr_tabla">
    <ul class="pagination1">
     <?php
@@ -39,4 +47,3 @@
 
 </div>
 	<div class="titulos" id="subtitulo">&gt; Parametrización Terceros</div>
-  

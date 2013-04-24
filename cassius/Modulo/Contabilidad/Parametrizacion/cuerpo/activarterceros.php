@@ -12,9 +12,19 @@
         <td width="3%">&nbsp;</td>
       </tr>
     </table>
+ <article id="menuactides"> 
+<table  cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="481" height="70" valign="top">
+            <img src="../images/btn_inactivos_roll.jpg" name="btn_inactivo" width="481" height="46" border="0" id="btn_inactivo" /></td>
+          <td width="419" valign="top"><a href="terceros.php">
+            <img src="../images/btn_activos_down.jpg" name="btn_activos" width="477" height="46" border="0" id="btn_activos" onmouseover="MM_swapImage('btn_activos','','images/btn_activos.jpg',1)" onmouseout="MM_swapImgRestore()" /></a></td>
+        </tr>
+ </table>
+ </article>     
   </div>
 </div>
-<div id="contenido_tabla">
+<div id="contenido_tablat">
   <section class="tr_tabla">
    <ul class="pagination1">
     <?php
@@ -23,7 +33,7 @@
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="eliminar_int" type="button" class="boton_modificar_int" id="eliminar_int" value="Activar" onclick="activar(<?php echo $item->getNodocumento(); ?>)" />
+                <input name="boton_aceptar_int" type="button" class="boton_aceptar_int" id="modificar_t" value="Habilitar" onclick="activar(<?php echo $item->getNodocumento(); ?>)" />
           </li>
 
   <?php } ?>  

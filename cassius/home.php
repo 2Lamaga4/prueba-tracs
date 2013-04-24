@@ -40,8 +40,5 @@
   </table>
 </div>
 </form>
-<script>
-swfobject.registerObject("FlashID");
-</script>
 </body>
 </html>

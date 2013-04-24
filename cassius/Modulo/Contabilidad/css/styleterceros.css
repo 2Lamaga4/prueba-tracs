@@ -4,14 +4,23 @@
 /*-----------------------*/
 /*		TABLA: 		*/
 /*----------------------*/
-#subtitulo {
+#contenido_tablat {
 	position:absolute;
 	left:50%;
-	top:95px;
-	width:431px;
-	height:35px;
-	z-index:8;
-	margin-left:-190px;
+	top:223px;
+	width:951px;
+	height:450px;
+	z-index:7;
+	margin-left:-475px;
+	text-align: center;
+}
+#modificar_t{
+	margin-top: 0;
+	margin-right: 0px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-left: 2px solid #fff;	
 }
 #eliminar_int{
 	margin-top: 0;
@@ -20,12 +29,22 @@
 	top: 0;
 	right: 0;
 }
+#menuactides{
+	height: 48px;
+	left: 0;
+	margin-left: -535px;
+	margin-top: 55px;
+	padding: 0;
+	position: absolute;
+	top: 0;
+}
 #modificar_int{
 	margin-top: 0;
 	margin-right: 90px;
 	position: absolute;
 	right: 0;
 	top: 0;
+	border-left: 2px solid #fff;	
 }
 #NN{
 	position: relative;
@@ -53,6 +72,15 @@
 	margin-top: 0;
 	top: 0;
 }
+#subtitulo {
+	position:absolute;
+	left:50%;
+	top:95px;
+	width:431px;
+	height:35px;
+	z-index:8;
+	margin-left:-190px;
+}
 .td_tabla_interna{
 	left: 15px;
 	position: relative;
@@ -61,7 +89,7 @@
 .tr_tabla_interna{
 	margin: 0 auto;
 	position: relative;
-	width: 780px;
+	width: 760px;
 }
 .tr_tabla{
 	left: 0px;
@@ -74,7 +102,7 @@
 	padding:0;
 	width: 780px;
 }
-.tr_tabla_interna{/**/
+.tr_tabla_interna{
 	display: inline-block;
 	height:17px;
 	padding:0;
