@@ -1,7 +1,8 @@
 <?php
-class DAO {
 
-    /* variables de conexion */
+ class Conexion {
+
+ /* variables de conexion */
     var $BaseDatos;
     var $Servidor;
     var $Usuario;
@@ -18,10 +19,12 @@ class DAO {
     var $Error = "";
 
     /*Conexion a la base de datos*/
+   function conectar(){
 
-     function conectar(){
-
-        include("../../../infoconexion.php");//llama los datos de conexion de la base de datos
+        $this->BaseDatos = "dbconjun";
+        $this->Servidor = "localhost";
+        $this->Usuario = "root";
+        $this->Clave = "123";
 
         // Conectamos al servidor
         $this->Conexion_ID = mysql_connect($this->Servidor, $this->Usuario, $this->Clave);
@@ -42,8 +45,9 @@ class DAO {
         return $this->Conexion_ID;
     } 
 
- 
 
+}
+class DAO extends Conexion{   
 	
 	/* Ejecuta un consulta */
 	function consulta($sql = ""){
