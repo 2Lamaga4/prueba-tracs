@@ -12,15 +12,30 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <div width="400" height="40">
+     
+  <script type="text/javascript">
+        function OnSelectionChange (select) {
+            var selectedOption = select.options[select.selectedIndex];
+            location.href="ParametrizacionFuncionario.php?cargo="+selectedOption.value;
+        
+        }
+  
+      </script>
         <strong>Cargo:</strong>
-          <select  class="tr_tabla_interna2">
-            <option value="volvo"> <?php echo $funcionario->getCargoFun(); ?></option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-          <a href="ParametrizacionFuncionario.php?cargo=1">aqui</a>
+        <div width="400" height="40">
+    <select  class="tr_tabla_interna2" onchange = "OnSelectionChange (this)">
+
+        <?php
+        foreach($FUNC as $item){ 
+         ?>
+           <option value="<?php echo  $item->getIdFunCargo(); ?>"> <?php echo  $item->getCargoFun(); ?></option>
+          <?php
+        }
+        ?>
+
+  </select>
+        
+          <a href="ParametrizacionFuncionario.php?cargo=2">aqui</a>
       </div>
       <td width="400" height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>

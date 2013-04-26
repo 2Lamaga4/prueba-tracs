@@ -14,7 +14,8 @@
 		 private $direccion;
 		 private $cargo;
 		 private $IdFunCargo;
-		 private $CargoFun;										
+		 private $CargoFun;	
+		 private $CargoDes;									
 			
 		
 		 public function getId(){
@@ -80,14 +81,21 @@
 		public function getIdFunCargo(){
 			 return $this->IdFunCargo;
 		 } 
-		 public function setIdFunCargo($IdFunCargoios){
+		 
+		 public function setIdFunCargo($IdFunCargo){
 			 $this->IdFunCargo = $IdFunCargo;
 		 } 
-		    public function getCargoFun(){
+		 public function getCargoFun(){
 			 return $this->CargoFun;
 		 } 
 		 public function setCargoFun($CargoFun){
 			 $this->CargoFun = $CargoFun;
+		 } 
+		 public function getCargoDEs(){
+			 return $this->CargoFun;
+		 } 
+		 public function setCargoDEs($CargoDes){
+			 $this->CargoDes = $CargoDes;
 		 } 
 
 	}

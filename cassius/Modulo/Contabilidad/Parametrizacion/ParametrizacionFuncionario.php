@@ -16,14 +16,12 @@
     include "../php/entities/funcionarios.php";
     include "../php/dao/FuncionariosDAO.php";
 
-    $cargo=isset($_GET['cargo']);
     $FuncionariosDAO = new FuncionariosDAO();
     $funcionarios = new funcionarios();
-    if ($cargo) {
-        $funcionario = $FuncionariosDAO->get($cargo);
-    }else{
-         $funcionario = $FuncionariosDAO->get(1);
-    }
+     $cargoF=$_GET['cargo'];
+    $funcionario = $FuncionariosDAO->get($cargoF);
+    $FUNC=$FuncionariosDAO->getCargoFun();
+ 
     $view= new stdClass(); 
     $view->disableLayout=false;
      /**

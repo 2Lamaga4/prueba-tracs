@@ -13,7 +13,38 @@ class FuncionariosDAO{
 	function getLastId(){
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }
-	
+
+/*
+Notice: Undefined variable: IdFunCargo in C:\xampp\htdocs\www\prueba-tracs\cassius\Modulo\Contabilidad\php\entities\funcionarios.php on line 86
+ */
+	function getCargoFun(){  
+
+		
+
+       $sql = 'SELECT idcargo,nombrecargo,descripcion from  cargos';
+        $this->daoConnection->consulta($sql);
+
+        $this->daoConnection->leerVarios();
+        $numregistros = $this->daoConnection->numregistros();
+
+        if($numregistros == 0){
+            return null;
+        }
+		
+		$i=0;
+         for($i = 0; $i < $numregistros ; $i++){
+         $newFuncionarios = new funcionarios();
+		 $newFuncionarios->setIdFunCargo($this->daoConnection->ObjetoConsulta2[$i][0]);
+		 $newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][1]);
+		 $newFuncionarios->setCargoDes($this->daoConnection->ObjetoConsulta2[$i][2]);
+		 
+		 $lista[$i] = $newFuncionarios;
+		
+         }
+        return $lista;
+	}
+
+
 	  		 
 	function get($cargo){        	
         
@@ -45,7 +76,7 @@ class FuncionariosDAO{
 			$newFuncionarios->setCelular($this->daoConnection->ObjetoConsulta2[$i][7]);
 			$newFuncionarios->setDireccion($this->daoConnection->ObjetoConsulta2[$i][8]);
 			$newFuncionarios->setCargo($this->daoConnection->ObjetoConsulta2[$i][9]);
-			$newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][10]);
+			//$newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][10]);
 
 
 
