@@ -8,6 +8,7 @@
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/transicion.js" ></script>
 <script src="../script/funcionarios.js" ></script>
+<script src="../Scripts/ParametrizacionFuncionario.js"></script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 2){?>onload="OK2()"<?php } ?>>
 <?php

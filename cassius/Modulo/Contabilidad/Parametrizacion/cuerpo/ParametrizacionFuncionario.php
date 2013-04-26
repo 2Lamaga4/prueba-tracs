@@ -12,19 +12,9 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-     
-  <script type="text/javascript">
-        function OnSelectionChange (select) {
-            var selectedOption = select.options[select.selectedIndex];
-            location.href="ParametrizacionFuncionario.php?cargo="+selectedOption.value;
-        
-        }
-  
-      </script>
         <strong>Cargo:</strong>
         <div width="400" height="40">
-    <select  class="tr_tabla_interna2" onchange = "OnSelectionChange (this)">
-
+        <select  class="tr_tabla_interna2" onchange = "OnSelectionChange (this)">
         <?php
         foreach($FUNC as $item){ 
          ?>
@@ -32,10 +22,7 @@
           <?php
         }
         ?>
-
-  </select>
-        
-          <a href="ParametrizacionFuncionario.php?cargo=2">aqui</a>
+        </select>
       </div>
       <td width="400" height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>

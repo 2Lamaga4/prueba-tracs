@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.7
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 17-04-2013 a las 06:08:01
--- Versión del servidor: 6.0.10-alpha-community
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 26-04-2013 a las 00:24:03
+-- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `dbconjun`
+-- Base de datos: `prueba`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `afecta` (
   PRIMARY KEY (`idafecta`),
   KEY `iddocumentos` (`iddocumentos`),
   KEY `idpuc` (`idpuc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `afecta`
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `documentos` (
   `descripcion` longtext,
   `ctasafecta` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`iddocumentos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `documentos`
@@ -188,7 +188,9 @@ CREATE TABLE IF NOT EXISTS `documentos` (
 
 INSERT INTO `documentos` (`iddocumentos`, `sigla`, `nombredoc`, `descripcion`, `ctasafecta`) VALUES
 (1, 'CXC', 'Cuentas por cobrar', '', NULL),
-(2, 'CD', 'Comprobante de Diario', '', NULL);
+(2, 'CD', 'Comprobante de Diario', '', NULL),
+(3, 'SI', 'Saldos Iniciales', 'Este comprobante ingresa la informacion inicial de la Contabilidad', NULL),
+(4, 'ND', 'Nota Debito', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -303,40 +305,40 @@ CREATE TABLE IF NOT EXISTS `historico` (
 --
 
 INSERT INTO `historico` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelularContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
-(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
-(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
-(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
-(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
-(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
-(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
-(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, b'1', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
-(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, b'1', b'1', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
-(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL);
+(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
+(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
+(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
+(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, '1', '1', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, '1', '1', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
+(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
+(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
+(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, '1', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
+(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, '1', '1', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
+(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -423,7 +425,7 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
   PRIMARY KEY (`idmovcuentas`),
   KEY `idx_movcuentas` (`idmovimiento`),
   KEY `idx_movcuentas_0` (`codcuenta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `movcuentas`
@@ -431,7 +433,9 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
 
 INSERT INTO `movcuentas` (`idmovcuentas`, `codcuenta`, `debito`, `credito`, `idmovimiento`) VALUES
 (1, 1, 34566, 0, 1),
-(2, 2, 0, 34566, 1);
+(2, 2, 0, 34566, 1),
+(3, 8, 21233, 0, 3),
+(4, 18, 0, 21233, 3);
 
 -- --------------------------------------------------------
 
@@ -452,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
   KEY `idx_movimiento` (`tipodoc`),
   KEY `idx_movimiento_0` (`estado`),
   KEY `idx_movimiento_1` (`tercero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Volcado de datos para la tabla `movimiento`
@@ -460,7 +464,8 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
 
 INSERT INTO `movimiento` (`id`, `numero`, `fecha`, `tipodoc`, `numdoc`, `concepto`, `estado`, `tercero`) VALUES
 (1, 1, '2013-03-29 00:00:00', 1, 1, 'awsedrftgyhu', 1, 2),
-(2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2);
+(2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2),
+(3, 3, '2013-04-25 00:00:00', 1, 2, 'pago de Administracion', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -547,7 +552,7 @@ CREATE TABLE IF NOT EXISTS `puc` (
   `nivel` int(11) DEFAULT NULL,
   PRIMARY KEY (`idpuc`),
   KEY `nivel` (`nivel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=264 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=271 ;
 
 --
 -- Volcado de datos para la tabla `puc`
@@ -816,7 +821,14 @@ INSERT INTO `puc` (`idpuc`, `cuenta`, `denominacion`, `descripcion`, `estado`, `
 (260, 540505, 'IMPUESTO DE RENTA Y', NULL, 'Activo', 4),
 (261, 59, 'GANANCIAS Y PERDIDAS', 'Agrupa las cuentas de resultados al cierre del ejercicio economico con el fin de establecer la utilidad o perdida del ente economico. Su saldo podra ser debito o credito segun el resultado obtenido.\r\n\r\nCuenta: 5905 -Ganancias y perdidas-.', 'Activo', 2),
 (262, 5905, 'GANANCIAS Y PERDIDAS', NULL, 'Activo', 3),
-(263, 590505, 'GANANCIAS Y PERDIDAS', NULL, 'Activo', 4);
+(263, 590505, 'GANANCIAS Y PERDIDAS', NULL, 'Activo', 4),
+(264, 11, '1', '1', 'Activo', 2),
+(265, 111, '1', '1', 'Activo', 3),
+(266, 1111, '1', '1', 'Activo', 4),
+(267, 11111, '1', '1', 'Activo', 5),
+(268, 1111111111, '1111111', '111111', 'Activo', 2),
+(269, 2147483647, '11111111', '11111111', 'Activo', 3),
+(270, 2147483647, '11111', '11111', 'Activo', 3);
 
 -- --------------------------------------------------------
 
@@ -983,7 +995,7 @@ INSERT INTO `residentes` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentif
 (83, 'Adela Rocio', 'Burgos Turriago', 1, '36885101', 4299014, 2147483647, NULL, '1979-06-04', 'Bogota', 2, 'Higinio L. Pungiluppi', 8255677, 2147483647, 'eget.tincidunt.dui@enimdiamvel.com', 40, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (84, 'Celso Hipolito', 'Prias Wester', 1, '37141449', 1301200, 2147483647, NULL, '1962-08-15', 'Bogota', 1, 'Catalina W. Pungiluppi', 7157336, 2147483647, 'libero.et@lobortisultrices.com', 63, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (85, 'Lilia Vilma', 'Antes Rosano', 1, '38022644', 9763577, 2147483647, NULL, '1960-05-03', 'Bogota', 2, 'Israel B. Perea', 4499285, 1578552680, 'mus.Aenean@luctus.com', 55, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
-(86, 'America Nuria', 'Sampedro Corral', 1, '39022858', 7981101, 2147483644, '', '1956-12-31', 'Bogota', 2, '_', 9519363, 2147483647, 'ornare.In@vulputatenisi.edu', 7, 0, 2, '2012-12-09', 'NULL', '0000-00-00 00:00:00', '1', '2013-04-14 19:43:21'),
+(86, 'America Nuria', 'Sampedro Corral', 1, '39022858', 7981101, 2147483644, '', '1956-12-31', 'Bogota', 2, '_', 9519363, 2147483647, 'ornare.In@vulputatenisi.edu', 7, 0, 2, '2012-12-09', 'NULL', '0000-00-00 00:00:00', '1', '2013-04-25 23:20:23'),
 (87, 'Jeremias Marvin', 'Loor Longas', 1, '39226562', 2205329, 2147483647, NULL, '1956-03-15', 'Bogota', 1, 'Florencio Q. Ablanque', 4071658, 2147483647, 'sed.dictum.eleifend@vitae.com', 14, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (88, 'Diana Norma', 'Borigoff Strasbugh', 1, '39512665', 8036919, 2147483647, NULL, '1962-04-08', 'Bogota', 2, 'Yadira L. Sasson', 6230149, 2147483647, 'velit.dui.semper@musProinvel.ca', 19, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
 (89, 'Rocio Ximena', 'Villoria Kelly', 1, '39949829', 8492738, 2147483647, NULL, '1958-09-18', 'Bogota', 2, 'Griselda Q. Pemberthy', 6395668, 2147483647, 'posuere@imperdieterat.org', 32, 1, 0, '2012-12-09', 'NULL', '0000-00-00 00:00:00', 'NULL', '0000-00-00 00:00:00'),
@@ -1159,18 +1171,21 @@ CREATE TABLE IF NOT EXISTS `terceros` (
   `email` varchar(255) DEFAULT NULL,
   `regimen` int(11) DEFAULT NULL,
   `Estado` varchar(5) DEFAULT NULL,
+  `tipotercero` int(11) DEFAULT NULL,
+  `idunidadv` int(11) DEFAULT NULL,
   PRIMARY KEY (`idterceros`),
   KEY `idx_terceros` (`tipodocumento`),
-  KEY `idx_terceros_0` (`regimen`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  KEY `idx_terceros_0` (`regimen`),
+  KEY `idx_terceros_1` (`tipotercero`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcado de datos para la tabla `terceros`
 --
 
-INSERT INTO `terceros` (`idterceros`, `tipodocumento`, `nodocumento`, `nombretercero`, `direccion`, `telefono`, `email`, `regimen`, `Estado`) VALUES
-(1, 1, 1019039622, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '1'),
-(2, 1, 79689582, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1');
+INSERT INTO `terceros` (`idterceros`, `tipodocumento`, `nodocumento`, `nombretercero`, `direccion`, `telefono`, `email`, `regimen`, `Estado`, `tipotercero`, `idunidadv`) VALUES
+(1, 1, 1019039622, 'JORGE', 'calle 168a 93 20', '4720063', 'jorgedipra@gmail.com', 1, '0', NULL, NULL),
+(2, 1, 79689582, 'william Bueno Hernandez', 'calle', '5657657', '@.com', 1, '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1194,6 +1209,18 @@ INSERT INTO `tipopq` (`idtipopq`, `nombretipopq`, `descripcion`) VALUES
 (1, 'Privado', NULL),
 (2, 'Comunal', NULL),
 (3, 'Visitante', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipotercero`
+--
+
+CREATE TABLE IF NOT EXISTS `tipotercero` (
+  `idtipotercero` int(11) NOT NULL AUTO_INCREMENT,
+  `ntipotercero` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`idtipotercero`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1669,6 +1696,7 @@ ALTER TABLE `residentes`
 -- Filtros para la tabla `terceros`
 --
 ALTER TABLE `terceros`
+  ADD CONSTRAINT `fk_terceros_tipotercero` FOREIGN KEY (`tipotercero`) REFERENCES `tipotercero` (`idtipotercero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_terceros_identificacion` FOREIGN KEY (`tipodocumento`) REFERENCES `identificacion` (`IdTipoidentificacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_terceros_regimen` FOREIGN KEY (`regimen`) REFERENCES `regimen` (`idregimen`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
