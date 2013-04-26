@@ -21,10 +21,7 @@ class DAO {
 
      function conectar(){
 
-        $this->BaseDatos = "dbconjun";
-        $this->Servidor = "localhost";
-        $this->Usuario = "root";
-        $this->Clave = "123";
+        include("../../../infoconexion.php");//llama los datos de conexion de la base de datos
 
         // Conectamos al servidor
         $this->Conexion_ID = mysql_connect($this->Servidor, $this->Usuario, $this->Clave);

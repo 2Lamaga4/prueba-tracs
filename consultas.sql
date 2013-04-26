@@ -29,3 +29,6 @@ INSERT INTO funcionarios (idfuncionarios, tipodocumento, nodocumento, nombres, a
 
 *tarea --> codificacion utf8 para tildez
 
+
+SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo from funcionarios  inner join cargos where cargo = idcargo && cargo =2
+

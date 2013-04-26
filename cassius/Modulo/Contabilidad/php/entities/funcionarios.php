@@ -12,10 +12,11 @@
 		 private $telefono;
 		 private $celular;
 		 private $direccion;
-		 private $cargo;										
+		 private $cargo;
+		 private $IdFunCargo;
+		 private $CargoFun;										
 			
-			
-					
+		
 		 public function getId(){
 			 return $this->idfuncionarios;
 		 } 
@@ -76,7 +77,18 @@
 		 public function setCargo($cargo){
 			 $this->cargo = $cargo;
 		 } 
-	
+		public function getIdFunCargo(){
+			 return $this->IdFunCargo;
+		 } 
+		 public function setIdFunCargo($IdFunCargoios){
+			 $this->IdFunCargo = $IdFunCargo;
+		 } 
+		    public function getCargoFun(){
+			 return $this->CargoFun;
+		 } 
+		 public function setCargoFun($CargoFun){
+			 $this->CargoFun = $CargoFun;
+		 } 
 
 	}
 ?>

@@ -14,13 +14,18 @@ class FuncionariosDAO{
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }
 	
-	function get($cargo){
-
+	  		 
+	function get($cargo){        	
+        
         $newFuncionarios = new funcionarios();
 
-        $sql = 'SELECT * from funcionarios where cargo = "'.mysql_real_escape_string($cargo).'"';
+
+        $sql = 'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
+                from funcionarios  inner join cargos 
+                where cargo = idcargo && cargo ="'.mysql_real_escape_string($cargo).'"';
 
 		$this->daoConnection->consulta($sql);
+
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
 
@@ -40,10 +45,12 @@ class FuncionariosDAO{
 			$newFuncionarios->setCelular($this->daoConnection->ObjetoConsulta2[$i][7]);
 			$newFuncionarios->setDireccion($this->daoConnection->ObjetoConsulta2[$i][8]);
 			$newFuncionarios->setCargo($this->daoConnection->ObjetoConsulta2[$i][9]);
+			$newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][10]);
 
-        //$noticiaToPoblate = $newnoticia;
+
 
         return $newFuncionarios;
+
 
     }
 	
