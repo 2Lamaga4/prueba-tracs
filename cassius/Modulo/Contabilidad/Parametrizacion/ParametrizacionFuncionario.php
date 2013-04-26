@@ -19,7 +19,13 @@
 
     $FuncionariosDAO = new FuncionariosDAO();
     $funcionarios = new funcionarios();
-     $cargoF=$_GET['cargo'];
+    if (isset($_GET['cargo'])) {
+        $cargoF=$_GET['cargo'];
+    }
+    else{
+        $cargoF=0;
+    }
+   
     $funcionario = $FuncionariosDAO->get($cargoF);
     $FUNC=$FuncionariosDAO->getCargoFun();
  

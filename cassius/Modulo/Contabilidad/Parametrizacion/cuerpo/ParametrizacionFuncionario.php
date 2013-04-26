@@ -15,6 +15,7 @@
         <strong>Cargo:</strong>
         <div width="400" height="40">
         <select  class="tr_tabla_interna2" onchange = "OnSelectionChange (this)">
+          <option value="0"> -- -- -- -- -- </option>
         <?php
         foreach($FUNC as $item){ 
          ?>
