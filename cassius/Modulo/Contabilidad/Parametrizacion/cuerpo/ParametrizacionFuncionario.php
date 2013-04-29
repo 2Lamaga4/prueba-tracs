@@ -12,10 +12,10 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-        <div id="carN"><strong>Cargo:</strong></div>
-        <div width="400" height="40">
-          
-       <select name="cargo" class="textarea_redondo2" id="cargo"  style="width:212px; height:27px;" onchange = "OnSelectionChange (this)">
+       
+           <div id="carN"><strong>Cargo:</strong></div>
+           <div width="400" height="40"> 
+ <select name="cargo" class="textarea_redondo2" id="cargo"  style="width:212px; height:27px;" >
          <option value="0">--</option>
         <option>::::: Agregar cargo :::::</option>
         <?php
@@ -25,7 +25,7 @@
           <?php
         }
         ?>
-        </select>
+        </select> 
       </div>
       <td width="400" height="40"><table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -104,13 +104,14 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
+      
       <td height="20" colspan="2"><img src="../images/line2.gif" width="850" height="1" /></td>
     </tr>
     <tr>
       <td height="40" colspan="2" align="center"><input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Guardar :::" />
         <input type="hidden" name="id" id="id" value="<?php echo $funcionario->getId(); ?>" />
         <input type="hidden" name="cargo" id="cargo" value="<?php echo $funcionario->getCargo(); ?>" />
-        <input type="hidden" name="url" id="url" value="parametrizacion_contador" />
+        <input type="hidden" name="url" id="url" value="funcionarios.php" />
         </td>
         
         

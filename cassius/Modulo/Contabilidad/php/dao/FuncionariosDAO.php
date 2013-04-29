@@ -17,11 +17,11 @@ class FuncionariosDAO{
     function Fun(){  
 
        $sql = 'SELECT cargos.nombrecargo, identificacion.Sigla, 
-                     funcionarios.nodocumento,funcionarios.nombres,
-                      funcionarios.apellidos  
-                      FROM funcionarios,cargos,identificacion';
+     			 funcionarios.nodocumento,funcionarios.nombres,
+      				funcionarios.apellidos  
+      				  FROM funcionarios inner join cargos inner join identificacion
+        						 where tipodocumento = IdTipoidentificacion';
         $this->daoConnection->consulta($sql);
-
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
 
@@ -77,11 +77,12 @@ class FuncionariosDAO{
         
         $newFuncionarios = new funcionarios();
 
-
-        $sql = 'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
+/*por id del funcionario*/
+        $sql =  'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
                 from funcionarios  inner join cargos 
-                where cargo = idcargo && cargo ="'.mysql_real_escape_string($cargo).'"';
-
+                where nodocumento="'.mysql_real_escape_string($cargo).'"';
+                
+               
 		$this->daoConnection->consulta($sql);
 
         $this->daoConnection->leerVarios();

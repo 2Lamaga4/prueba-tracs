@@ -20,8 +20,8 @@
 
     $FuncionariosDAO = new FuncionariosDAO();
     $funcionarios = new funcionarios();
-    if (isset($_GET['cargo'])) {
-        $cargoF=$_GET['cargo'];
+    if (isset($_GET['id'])) {
+        $cargoF=$_GET['id'];
     }
     else{
         $cargoF=0;

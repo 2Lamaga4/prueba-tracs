@@ -8,7 +8,7 @@
 <form id="form1" name="form1" method="post" action="../php/action/actualizarFuncionario.php" onsubmit="return validar();">
 
   <section class="tr_tabla">
-   <ul class="pagination1">
+   <ul class="pagination1"> 
     <?php
        foreach($FUNC as $item){ 
     ?>

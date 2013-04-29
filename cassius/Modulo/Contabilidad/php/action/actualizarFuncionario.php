@@ -4,7 +4,6 @@
 require_once('../dao/daoConnection.php');
 require_once('../dao/FuncionariosDAO.php');
 require_once('../entities/funcionarios.php');
-
 $id = $_REQUEST['id']; 
 $nombre = $_REQUEST['nombre']; 
 $apellido = $_REQUEST['apellido']; 
@@ -17,7 +16,7 @@ $direccion = $_REQUEST['direccion'];
 $cargo = $_REQUEST['cargo']; 
 $url = $_REQUEST['url']; 
 
-$location = "location: ./../../Parametrizacion/".$url.".php?OK=2";
+$location = "location: ../../Parametrizacion/".$url."?OK=2";
 
 
 $FuncionariosDAO = new FuncionariosDAO();

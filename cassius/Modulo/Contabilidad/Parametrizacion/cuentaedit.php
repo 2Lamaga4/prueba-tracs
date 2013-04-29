@@ -17,7 +17,6 @@ if( isset($_GET['nc']) && isset($_GET['de']) && isset($_GET['des']) && isset($_G
          			alert('modificado correctamente');
          		</script>
          	";
-         	header()
          }
    }else{
     
