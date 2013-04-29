@@ -1,3 +1,13 @@
+<?php
+ include_once ('../../../info.php');//se llama la informacion de la pagina
+?>
+<link href="../config/estilos_cassius.css" rel="stylesheet" />
+<link href="../css/stylecuenta.css" rel="stylesheet" />
+<script src="../Scripts/img.js"></script>
+<script src="../Scripts/globos_ayuda.js" ></script>
+<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<script src="../Scripts/transicion.js" ></script>
+
 <script text="text/javascript">
 function enviarModificar(){
   //var d = new document();
@@ -20,5 +30,5 @@ function enviarModificar(){
     $enticuentas = new cuentas();		
     $enticuentas =  $objcuentas->get($_GET['id']);
    
-    include_once ('cuerpo/modificar.php');
+    include_once ('cuerpo/modificar.php');//llama al cuerpo de modifica
 ?>
