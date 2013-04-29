@@ -1,0 +1,19 @@
+#cargo{
+	left       : 0;
+	margin-left: 230px;
+	margin-top : 48px;
+	position   : relative;
+	top        : 0;
+
+}
+#carN{
+	left       : 0;
+	margin-left: 70px;
+	margin-top : 48px;
+	position   : relative;
+	top        : 0;
+}
+#tablafun{
+	position: relative;
+	top: 0px;
+}

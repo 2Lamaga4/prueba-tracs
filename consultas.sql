@@ -32,3 +32,7 @@ INSERT INTO funcionarios (idfuncionarios, tipodocumento, nodocumento, nombres, a
 
 SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo from funcionarios  inner join cargos where cargo = idcargo && cargo =2
 
+
+SELECT cargos.nombrecargo, identificacion.Sigla ,funcionarios.nodocumento,funcionarios.nombres,
+funcionarios.apellidos  FROM funcionarios,cargos,identificacion
+

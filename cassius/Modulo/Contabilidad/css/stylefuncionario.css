@@ -1,0 +1,38 @@
+/*
+#Parametrizacion
+@funcionarios.php
+ */
+#fun{
+	border-right:2px solid #fff;
+	height      : 17px;
+	margin-left :-25px;
+	padding-left:8px;
+	width       : 148px;
+}
+#funCe{
+	height      : 17px;
+	margin-left :80px;
+	text-align  :left;
+}
+#funCe #cc{
+	text-align:left;
+	width:30px;
+}
+#funCe #tid{
+	border-right:2px solid #fff;
+	height      : 17px;
+	left:50px;
+	margin-left:65px;
+	margin-top:0px;
+	position:absolute;
+	text-align:left;
+	top:0;
+	width:100px;
+}
+#funNA{
+	height      : 17px;
+	padding-left:220px;
+	margin-top:0;
+	position:absolute;
+	top:0;
+}

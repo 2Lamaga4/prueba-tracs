@@ -23,7 +23,7 @@
       <li><input name="documentos" type="button" class="boton_general" id="documentos" value="Documentos" onclick="location.href='Parametrizacion/parametrizacion_documentos.php'"/></li>
       <li><input name="terceros" type="button" class="boton_general" id="terceros" value="Terceros" onclick="location.href='Parametrizacion/terceros.php'"/></li>
       <li>------------------------------------------------</li>
-      <li><input name="contador" type="button" class="boton_general" id="contador" value="Funcionarios" onclick="location.href='Parametrizacion/ParametrizacionFuncionario.php'"/></li>
+      <li><input name="contador" type="button" class="boton_general" id="contador" value="Funcionarios" onclick="location.href='Parametrizacion/funcionarios.php'"/></li>
     </ul>
   </article>
   <img src="images/linea_vertical.gif" all="line divisola"/>

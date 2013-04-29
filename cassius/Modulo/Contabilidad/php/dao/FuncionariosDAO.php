@@ -14,9 +14,36 @@ class FuncionariosDAO{
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }
 
-/*
-Notice: Undefined variable: IdFunCargo in C:\xampp\htdocs\www\prueba-tracs\cassius\Modulo\Contabilidad\php\entities\funcionarios.php on line 86
- */
+    function Fun(){  
+
+       $sql = 'SELECT cargos.nombrecargo, identificacion.Sigla, 
+                     funcionarios.nodocumento,funcionarios.nombres,
+                      funcionarios.apellidos  
+                      FROM funcionarios,cargos,identificacion';
+        $this->daoConnection->consulta($sql);
+
+        $this->daoConnection->leerVarios();
+        $numregistros = $this->daoConnection->numregistros();
+
+        if($numregistros == 0){
+            return null;
+        }
+		
+        for($i = 0; $i < $numregistros ; $i++){
+           $newFuncionarios = new funcionarios();
+			
+            $newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][0]);
+            $newFuncionarios->setTipodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
+            $newFuncionarios->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][2]);
+			$newFuncionarios->setNombres($this->daoConnection->ObjetoConsulta2[$i][3]);
+			$newFuncionarios->setApellidos($this->daoConnection->ObjetoConsulta2[$i][4]);	
+
+            $lista[$i] = $newFuncionarios;
+        }
+        return $lista;
+	}
+
+
 	function getCargoFun(){  
 
 		
