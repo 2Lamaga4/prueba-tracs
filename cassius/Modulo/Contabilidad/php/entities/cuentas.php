@@ -22,7 +22,7 @@
 		 public function setCuenta($cuenta){
 			 $this->cuenta = $cuenta;
 		 } 
-		 public function getDenominacion(){
+		 public function getDenominacion(){ 
 			 return $this->denominacion;
 		 } 
 		 public function setDenominacion($denominacion){

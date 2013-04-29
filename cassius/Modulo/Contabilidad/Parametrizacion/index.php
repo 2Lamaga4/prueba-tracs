@@ -10,7 +10,7 @@
 <script src="../Scripts/img.js"></script>
 <script src='../Scripts/jquery.js'/></script>
 </head>
-<body class="interna2" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
+<body reload="refrescar();" class="interna2" onload="MM_preloadImages('../images/btn_menos_roll.jpg','../images/btn_mas_roll.jpg')" OnContextMenu="return false">
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../'"/>
 </div>

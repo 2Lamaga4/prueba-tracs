@@ -23,7 +23,7 @@ class CuentaDAO{
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
 
-        $lista=array();
+        $lista=array(); 
 
         if($numregistros == 0){
             return $lista;
@@ -81,9 +81,9 @@ class CuentaDAO{
 	function get($id){
 
         $newCuenta = new cuentas();
-
+     
         $sql = 'SELECT * from puc where idpuc = "'.mysql_real_escape_string($id).'"';
-
+     
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
@@ -168,6 +168,8 @@ class CuentaDAO{
 		
         $querty =   "UPDATE puc SET ".implode(",",$update_fields)." WHERE idpuc = '".$newcuentas->getId()."' ";
         //echo $querty.'<br />';
+        //
+      
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
 		if (!$result){
             echo 'Ooops (saveCuenta): '.mysql_error();

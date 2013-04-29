@@ -66,6 +66,10 @@ function borrar(id){
 /**
  * [OK ->funcion de confirmacion]
  */
+function refrescar(){  
+       var int=self.setInterval("refresh()",10);
+       location.reload(true);
+}
 function OK(){
   alert('Cuenta borrada con exito.');
   }
