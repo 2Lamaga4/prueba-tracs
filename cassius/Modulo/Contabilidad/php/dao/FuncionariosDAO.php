@@ -147,7 +147,7 @@ class FuncionariosDAO{
     function eliminar($obj){
        $newFuncionarios = new funcionarios();
        $newFuncionarios = $obj;
-	   $sql =  '';
+	   $sql =  "Delete from funcionarios where nodocumento='".mysql_real_escape_string($obj->getNodocumento())."'";
        $this->daoConnection->consulta($sql);
     }
 

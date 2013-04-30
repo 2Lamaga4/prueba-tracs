@@ -13,10 +13,9 @@ $location = "location: ../../Parametrizacion/funcionarios.php?OK=2";
 $FuncionariosDAO = new FuncionariosDAO();
 $funcionarios = new funcionarios();
 
-$funcionarios->setId($id);
+$funcionarios->setNodocumento($id);
 
-$FuncionariosDAO->inset($funcionarios);
-
+$FuncionariosDAO->eliminar($funcionarios);
 header($location);
 exit;
 
