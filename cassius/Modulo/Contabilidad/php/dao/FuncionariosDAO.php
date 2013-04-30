@@ -17,10 +17,8 @@ class FuncionariosDAO{
     function Fun(){  
 
        $sql = 'SELECT cargos.nombrecargo, identificacion.Sigla, 
-     			 funcionarios.nodocumento,funcionarios.nombres,
-      				funcionarios.apellidos  
-      				  FROM funcionarios inner join cargos inner join identificacion
-        						 where tipodocumento = IdTipoidentificacion';
+				funcionarios.nodocumento,funcionarios.nombres,
+				funcionarios.apellidos   FROM funcionarios inner join cargos inner join identificacion where tipodocumento = IdTipoidentificacion && cargo=idcargo';
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
@@ -161,6 +159,14 @@ class FuncionariosDAO{
 		return $this->daoConnection->ObjetoConsulta2[0][0];
 
 	}
+    function tipoDeDocumento(){
+    	$sql="select idcargo,nombrecargo from cargos";
+        $this->daoConnection->consulta($sql);
+        $this->daoConnection->leerVarios();
+        $i=0;
+        $objcedu = new cedula();
+
+    }
 	
 	
 
