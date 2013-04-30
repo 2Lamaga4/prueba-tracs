@@ -37,3 +37,14 @@
 </div>
 
 <div class="titulos" id="subtitulo1">&gt; Funcionarios</div>
+<div id="utilidades">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="97%" align="right"><input name="agregar" type="button" class="boton_agregar" id="agregar" value="Agregar" onclick="location.href='agregarFuncionario.php'"/>
+        &nbsp;</td>
+      <td width="3%">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+
+

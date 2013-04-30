@@ -144,6 +144,40 @@ class FuncionariosDAO{
         return true;
     }
 
+    function inset($obj){
+       $newFuncionarios = new funcionarios();
+       $newFuncionarios = $obj;
+		
+		$update_fields=array();
+		if($newFuncionarios->getTipodocumento())  
+			 $update_fields[1]="tipodocumento = '".mysql_real_escape_string($newFuncionarios->getTipodocumento())."'"; 
+		if($newFuncionarios->getNodocumento())  
+			 $update_fields[2]="nodocumento = '".mysql_real_escape_string($newFuncionarios->getNodocumento())."'"; 
+		if($newFuncionarios->getNombres())  
+			 $update_fields[3]="nombres = '".mysql_real_escape_string($newFuncionarios->getNombres())."'"; 
+		if($newFuncionarios->getDireccion())  
+			 $update_fields[4]="apellidos = '".mysql_real_escape_string($newFuncionarios->getApellidos())."'";
+		if($newFuncionarios->getTelefono())  
+			 $update_fields[5]="rutnit = '".mysql_real_escape_string($newFuncionarios->getRutnit())."'";
+		if($newFuncionarios->getTelefono())  
+			 $update_fields[6]="telefono = '".mysql_real_escape_string($newFuncionarios->getTelefono())."'";
+		if($newFuncionarios->getCelular())  
+			 $update_fields[7]="celular = '".mysql_real_escape_string($newFuncionarios->getCelular())."'";	 	 
+		if($newFuncionarios->getDireccion())  
+			 $update_fields[8]="direccion = '".mysql_real_escape_string($newFuncionarios->getDireccion())."'";		 	 
+			 
+        $querty =   "INSERT INTO  funcionarios SET ".implode(",",$update_fields)." WHERE cargo = '".$newFuncionarios->getCargo()."' ";
+        //echo $querty.'<br />';
+        $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
+		if (!$result){
+            echo 'Ooops (saveFuncionarios): '.mysql_error();
+            return false;
+        }
+
+        return true;
+    }
+
+
 
 	
 
