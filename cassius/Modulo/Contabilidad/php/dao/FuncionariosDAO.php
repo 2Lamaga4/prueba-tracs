@@ -76,7 +76,8 @@ class FuncionariosDAO{
         $newFuncionarios = new funcionarios();
 
 /*por id del funcionario*/
-        $sql =  'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
+        $sql =  'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,
+                        apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
                 from funcionarios  inner join cargos 
                 where nodocumento="'.mysql_real_escape_string($cargo).'"';
                 
@@ -102,7 +103,7 @@ class FuncionariosDAO{
 			$newFuncionarios->setCelular($this->daoConnection->ObjetoConsulta2[$i][7]);
 			$newFuncionarios->setDireccion($this->daoConnection->ObjetoConsulta2[$i][8]);
 			$newFuncionarios->setCargo($this->daoConnection->ObjetoConsulta2[$i][9]);
-			//$newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][10]);
+			$newFuncionarios->setCargoFun($this->daoConnection->ObjetoConsulta2[$i][10]);
 
 
 
