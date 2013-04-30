@@ -79,9 +79,8 @@ class FuncionariosDAO{
         $sql =  'SELECT idfuncionarios,tipodocumento,nodocumento,nombres,
                         apellidos,rutnit,telefono,celular,direccion,cargo,cargos.nombrecargo 
                 from funcionarios  inner join cargos 
-                where nodocumento="'.mysql_real_escape_string($cargo).'"';
-                
-               
+                where nodocumento="'.mysql_real_escape_string($cargo).'"&& cargo = idcargo ';
+        
 		$this->daoConnection->consulta($sql);
 
         $this->daoConnection->leerVarios();
