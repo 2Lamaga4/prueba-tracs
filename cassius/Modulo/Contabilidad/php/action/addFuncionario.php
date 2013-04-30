@@ -4,7 +4,6 @@
 require_once('../dao/daoConnection.php');
 require_once('../dao/FuncionariosDAO.php');
 require_once('../entities/funcionarios.php');
-$id = $_REQUEST['id']; 
 $nombre = $_REQUEST['nombre']; 
 $apellido = $_REQUEST['apellido']; 
 $documento = $_REQUEST['documento']; 
@@ -14,7 +13,7 @@ $telefono = $_REQUEST['telefono'];
 $celular = $_REQUEST['celular']; 
 $direccion = $_REQUEST['direccion']; 
 $cargo = $_REQUEST['cargo']; 
-$url = $_REQUEST['url']; 
+
 
 $location = "location: ../../Parametrizacion/funcionarios.php?OK=2";
 
@@ -22,7 +21,6 @@ $location = "location: ../../Parametrizacion/funcionarios.php?OK=2";
 $FuncionariosDAO = new FuncionariosDAO();
 $funcionarios = new funcionarios();
 
-$funcionarios->setId($id);
 $funcionarios->setTipodocumento($documento);
 $funcionarios->setNodocumento($cedula);
 $funcionarios->setNombres($nombre);
@@ -34,7 +32,6 @@ $funcionarios->setDireccion($direccion);
 $funcionarios->setCargo($cargo);
 
 $FuncionariosDAO->inset($funcionarios);
-
 header($location);
 exit;
 

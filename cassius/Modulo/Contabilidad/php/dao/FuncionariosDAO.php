@@ -165,8 +165,10 @@ class FuncionariosDAO{
 			 $update_fields[7]="celular = '".mysql_real_escape_string($newFuncionarios->getCelular())."'";	 	 
 		if($newFuncionarios->getDireccion())  
 			 $update_fields[8]="direccion = '".mysql_real_escape_string($newFuncionarios->getDireccion())."'";		 	 
-			 
-        $querty =   "INSERT INTO  funcionarios SET ".implode(",",$update_fields)." WHERE cargo = '".$newFuncionarios->getCargo()."' ";
+			if($newFuncionarios->getDireccion())  
+			 $update_fields[9]="cargo = '".mysql_real_escape_string($newFuncionarios->getCargo())."'";		 	 
+			  
+        $querty =   "INSERT INTO  funcionarios SET ".implode(",",$update_fields)." ";
         //echo $querty.'<br />';
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
 		if (!$result){
