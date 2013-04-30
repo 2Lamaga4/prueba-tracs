@@ -121,4 +121,4 @@
   </form>
 </div>
 
-<div class="titulos" id="subtitulo1">&gt; Parametrización Contador</div>
+<div class="titulos" id="subtitulo1">&gt; Agregar Funcionario</div>

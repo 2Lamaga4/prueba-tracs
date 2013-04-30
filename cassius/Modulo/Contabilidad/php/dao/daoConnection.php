@@ -21,10 +21,7 @@
     /*Conexion a la base de datos*/
    function conectar(){
 
-        $this->BaseDatos = "dbconjun";
-        $this->Servidor = "localhost";
-        $this->Usuario = "root";
-        $this->Clave = "123";
+       include("info.php");
 
         // Conectamos al servidor
         $this->Conexion_ID = mysql_connect($this->Servidor, $this->Usuario, $this->Clave);
