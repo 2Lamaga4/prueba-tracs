@@ -27,7 +27,7 @@
                   </div>
                 </article>
                 <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='ParametrizacionFuncionario.php?id=<?php echo $item->getNodocumento(); ?>'"/>
-                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
+                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="Eliminar" onclick="borrarF(<?php echo $item->getNodocumento(); ?>)" />
           </li>
   <?php } ?>  
    </ul>

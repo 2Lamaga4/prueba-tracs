@@ -14,6 +14,12 @@ function borrar(id){
      location.href = "../php/action/deleteTerceros.php?id="+id;
     } 
 }
+function borrarF(id){
+  if (confirm('¿Estas seguro que desea borrar este Funcionario?')){ 
+     location.href = "../php/action/deletfuncionario.php?id="+id;
+    } 
+}
+
 function activar(id){
   if (confirm('¿Estas seguro que desea activar este Tercero?')){ 
      location.href = "../php/action/deleteTerceros.php?con=1&id="+id;

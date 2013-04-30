@@ -144,6 +144,14 @@ class FuncionariosDAO{
         return true;
     }
 
+    function eliminar($obj){
+       $newFuncionarios = new funcionarios();
+       $newFuncionarios = $obj;
+	   $sql =  '';
+       $this->daoConnection->consulta($sql);
+    }
+
+
     function inset($obj){
        $newFuncionarios = new funcionarios();
        $newFuncionarios = $obj;
