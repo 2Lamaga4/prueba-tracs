@@ -19,10 +19,12 @@
               <tr class="tr_tabla_interna">
                 <td width="70" height="40" class="td_tabla_interna"><strong>Cuenta:</strong></td>
                 <td width="71" class="td_tabla_interna">
-                	<input type="text" value='<?php echo  $enticuentas-> getCuenta(); ?>' name="auxiliar" class="textarea_redondo2" id="auxiliar" style="width:80px;"/>
+
+                	<input id="nmrcuenta" type="text" value='<?php echo  $enticuentas-> getCuenta(); ?>' name="auxiliar" class="textarea_redondo2" id="auxiliar" style="width:80px;"/>
                 	<span class="hint4">Número de cuenta auxiliar<span class="hint-pointer4">&nbsp;</span></span></td>
                 <td width="201"><span class="td_tabla_interna">
-                  <input name="auxiliar2" value="<?php echo   $enticuentas-> getDenominacion(); ?>" type="text" class="textarea_redondo2" id="auxiliar2" style="width:150px;"/>
+
+                  <input name="auxiliar2" id="Denominacion" value="<?php echo   $enticuentas-> getDenominacion(); ?>" type="text" class="textarea_redondo2" id="auxiliar2" style="width:150px;"/>
                 </span></td>
                 </tr>
               <tr class="tr_tabla_interna">
@@ -32,9 +34,8 @@
               <tr class="tr_tabla_interna">
                 <td height="80" colspan="4" class="td_tabla_interna" align="center" >
                 	<div class="txt">
-                	<input  type="text" value="<?php echo  $enticuentas-> getDescripcion(); ?>" id="Descripcion">
-                    <textarea value="s"></textarea>
 
+                	<input  type="text" id="Descripcion" value="<?php echo  $enticuentas-> getDescripcion(); ?>" id="Descripcion">
                     </div>
                 </td>
                 </tr>
@@ -50,15 +51,13 @@
   </tr>
   <tr>
     <td height="35" valign="top" align="center">
-      <center>
-      <input style="width:90px;"name="Entrar" type="button" class="boton_redondo" id="Entrar" value="::: Aceptar :::" onclick="enviarModificar();"/>
-
-
-    </center>
     </td>
   </tr>
 </table>
  <?php 
      }
  ?>
+ <center>
+      <input style="width:90px;"name="Entrar" type="button" class="boton_redondo" id="Entrar" value="::: Aceptar :::" onclick="Modicuenta();"/>
+    </center>
 </body>

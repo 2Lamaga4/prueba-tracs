@@ -9,8 +9,7 @@
 <script src="../Scripts/transicion.js" ></script>
 
 <script text="text/javascript">
-function enviarModificar(){
-  //var d = new document();
+function Modicuenta(){
   var numcuenta;
   var Denomi;
   var Descri;
@@ -19,7 +18,7 @@ function enviarModificar(){
   Denomi = document.getElementById('Denominacion').value;
   Descri = document.getElementById('Descripcion').value;
   id = '<?php echo $_GET["id"]?>';
-   location.href='cuentaedit.php?nc='+numcuenta+'&de='+Denomi+'&des='+Descri+'&id='+id+'';
+  location.href='cuentaedit.php?nc='+numcuenta+'&de='+Denomi+'&des='+Descri+'&id='+id+'';
 }
 </script>
 <?php 
