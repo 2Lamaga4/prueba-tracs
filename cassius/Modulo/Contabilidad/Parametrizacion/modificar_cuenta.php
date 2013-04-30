@@ -20,6 +20,17 @@ function Modicuenta(){
   id = '<?php echo $_GET["id"]?>';
   location.href='cuentaedit.php?nc='+numcuenta+'&de='+Denomi+'&des='+Descri+'&id='+id+'';
 }
+function cerrarVentana(){ 
+    alert('Nueva Cuenta creada con exito.');
+     window.opener.location.href = window.opener.location.href; 
+
+  if (window.opener.progressWindow) 
+        
+ { 
+    window.opener.progressWindow.close()
+  } 
+  window.close(); 
+}
 </script>
 <?php 
     include "../php/dao/daoConnection.php";

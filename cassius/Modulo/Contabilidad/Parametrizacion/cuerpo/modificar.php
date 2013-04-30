@@ -2,7 +2,7 @@
  foreach ($enticuentas as $key)
      {
      	?>	        
-<body class="popup" OnContextMenu="return false">
+<body class="popup" OnContextMenu="return false" onUnload='cerrarVentana()'>
 <table width="550" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="422" height="50" align="center" valign="middle" bgcolor="#ADB1CB">
