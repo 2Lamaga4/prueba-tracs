@@ -1,3 +1,8 @@
+   /*
+#Parametrizacion
+@agregar_cuenta.php
+*/
+
    function grupo(){
     var clase = document.getElementById('clase').value;
     llamarasincrono('combo_grupo.php?clase='+clase, 'grupo_combo'); 

@@ -1,3 +1,9 @@
+/*
+#Parametrizacion
+@activarterceros.php
+@terceros.php
+*/
+
 $(document).ready(function() {
   $("ul.pagination1").quickPagination();
   $("ul.pagination2").quickPagination({pagerLocation:"both"});

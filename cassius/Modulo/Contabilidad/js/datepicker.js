@@ -1,11 +1,8 @@
-/**
- *
- * Date picker
- * Author: Stefan Petre www.eyecon.ro
- * 
- * Dual licensed under the MIT and GPL licenses
- * 
+/*
+#ResgitroContable
+@agregar_comprobante_diario.php
  */
+
 (function ($) {
 	var DatePicker = function () {
 		var	ids = {},

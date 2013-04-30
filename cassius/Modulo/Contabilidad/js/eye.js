@@ -1,9 +1,8 @@
-/**
- *
- * Zoomimage
- * Author: Stefan Petre www.eyecon.ro
- * 
+/*
+#ResgitroContable
+@agregar_comprobante_diario.php
  */
+
 (function($){
 	var EYE = window.EYE = function() {
 		var _registered = {

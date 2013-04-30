@@ -1,3 +1,8 @@
+/*
+#ResgitroContable
+@agregar_comprobante_diario.php
+ */
+
 (function($){
 	var initLayout = function() {
 		var hash = window.location.hash.replace('#', '');

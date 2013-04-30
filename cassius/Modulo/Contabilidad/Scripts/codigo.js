@@ -1,3 +1,18 @@
+/*
+#script
+@agrgar_cuenta.php
+
+#Parametrizacion
+@agregar_cuenta.php
+@agregar_grupo2.php
+@agregar_subcuenta.php
+@agregar_subcuenta2.php
+@modificar_cuenta.php
+
+#ResgitroContable
+@agregar_comprobante_diario.php
+ */
+
 // Documento JavaScript
 // Esta función cargará las paginas
 function llamarasincrono(url, id_contenedor){

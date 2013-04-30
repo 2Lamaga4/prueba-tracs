@@ -1,5 +1,22 @@
 /*
-@(home.php)
+#cassisus
+@home.php
+
+#contabilidad
+@contabilidad/index.php
+
+#Parametrizacion
+@activarterceros.php
+@agregar_cuenta.php
+@Parametrizacion/index.php
+@modificar_cuenta.php
+@parametrizacion_documentos.php
+@ParametrizacionFuncionario.php
+@terceros.php
+
+#ResgitroContable
+@rc_movimientos.php
+@rc_movimientos_excel.ph
  */
 
 function addLoadEvent(func) {

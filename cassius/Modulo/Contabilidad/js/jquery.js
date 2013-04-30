@@ -1,14 +1,9 @@
-(function(){
 /*
- * jQuery 1.2.6 - New Wave Javascript
- *
- * Copyright (c) 2008 John Resig (jquery.com)
- * Dual licensed under the MIT (MIT-LICENSE.txt)
- * and GPL (GPL-LICENSE.txt) licenses.
- *
- * $Date: 2008-05-27 21:17:26 +0200 (Di, 27 Mai 2008) $
- * $Rev: 5700 $
+#ResgitroContable
+@agregar_comprobante_diario.php
  */
+
+(function(){
 
 // Map over jQuery in case of overwrite
 var _jQuery = window.jQuery,

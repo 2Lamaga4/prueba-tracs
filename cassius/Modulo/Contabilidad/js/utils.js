@@ -1,8 +1,6 @@
-/**
- *
- * Utilities
- * Author: Stefan Petre www.eyecon.ro
- * 
+/*
+#ResgitroContable
+@agregar_comprobante_diario.php
  */
 (function($) {
 EYE.extend({

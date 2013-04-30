@@ -1,3 +1,21 @@
+/*
+#contabilidad
+@contabilidad/index.php
+
+#Parametrizacion
+@activarterceros.php
+@agregar_cuenta.php
+@Parametrizacion/index.php
+@modificar_cuenta.php
+@parametrizacion_documentos.php
+@ParametrizacionFuncionario.php
+@terceros.php
+
+#ResgitroContable
+@agregar_comprobante_diario.php
+@rc_movimientos.php
+ */
+
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)

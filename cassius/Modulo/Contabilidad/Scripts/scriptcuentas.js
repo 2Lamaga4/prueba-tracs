@@ -1,4 +1,7 @@
-/*scrtip de parametrizacion_cuenta.php(cuentas.php)*/
+/*
+#Parametrizacion
+@Parametrizacion/index.php
+*/
 /**
  * [MM_preloadImages ->carga de imagen]
  */ 

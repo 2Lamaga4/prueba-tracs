@@ -1,3 +1,19 @@
+/*
+#contabilidad
+@contabilidad/index.php
+
+#Parametrizacion
+@activarterceros.php
+@Parametrizacion/index.php
+@parametrizacion_documentos.php
+@ParametrizacionFuncionario.php
+@terceros.php
+
+#ResgitroContable
+@rc_movimientos.php
+@rc_movimientos_excel.ph
+ */
+
 window.onload = function() {MakeFluffHappen()} 
 function MakeFluffHappen() { 
 FluffyKittenMaker(0); 
