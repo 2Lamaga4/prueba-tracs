@@ -36,3 +36,24 @@ SELECT idfuncionarios,tipodocumento,nodocumento,nombres,apellidos,rutnit,telefon
 SELECT cargos.nombrecargo, identificacion.Sigla ,funcionarios.nodocumento,funcionarios.nombres,
 funcionarios.apellidos  FROM funcionarios,cargos,identificacion
 
+
+
+INSERT INTO terceros(tipodocumento,nodocumento,nombretercero,
+					direccion,telefono,email,regimen)
+					SELECT SUBSTRING(
+					IdTipoidentificacion,NoDocumento,concat(Nombres," ",Apellidos),
+					Direccion,Telefono,Email),1
+					) FROM residentes;
+
+
+INSERT INTO terceros(tipodocumento,nodocumento,nombretercero,direccion,telefono,email,regimen,Estado) 
+SELECT(IdTipoidentificacion),NoDocumento,concat(Nombres," ",Apellidos),(Direccion),(Telefono),(Email),1,1 FROM residentes
+WHERE residentes.Direccion != ""
+
+DELETE FROM `dbconjun`.`terceros` WHERE `terceros`.`idterceros` >3;
+DELETE FROM `dbconjun`.`residentes` WHERE `residentes`.`IdResidentes` >10;
+
+
+/*tercerossss*/
+insert into tipotercero  (ntipotercero)values("Cliente")
+insert into tipotercero  (ntipotercero)values("Provedor")

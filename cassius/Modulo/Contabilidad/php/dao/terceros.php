@@ -18,7 +18,9 @@ class TerceroDAO{
     
     function getList(){
 
-        $sql = 'SELECT Sigla,nodocumento,nombretercero,idterceros FROM terceros INNER JOIN identificacion WHERE tipodocumento = IdTipoidentificacion && estado = 1 ORDER BY(nombretercero);';
+        $sql = 'SELECT Sigla,nodocumento,nombretercero,idterceros
+        FROM terceros INNER JOIN identificacion 
+        WHERE tipodocumento = IdTipoidentificacion && estado = 1 ORDER BY(nombretercero) && tipotercero = 1;';
 
 
         $this->daoConnection->consulta($sql);
@@ -46,9 +48,50 @@ class TerceroDAO{
         }
         return $lista;
     } 
+    function getListC(){
+
+        $sql = 'SELECT Sigla,nodocumento,nombretercero,idterceros
+        FROM terceros INNER JOIN identificacion 
+        WHERE tipodocumento = IdTipoidentificacion && estado = 1 ORDER BY(nombretercero) && tipotercero = 2;';
+
+
+        $this->daoConnection->consulta($sql);
+        $this->daoConnection->leerVarios();
+        $numregistros = $this->daoConnection->numregistros();
+
+        $lista=array();
+
+        if($numregistros == 0){
+            return $lista;
+        }
+
+
+        for($i = 0; $i < $numregistros ; $i++){
+
+            $newTerceros = new terceros();
+
+            $newTerceros->setId($this->daoConnection->ObjetoConsulta2[$i][0]);
+            $newTerceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
+            $newTerceros->setnombretercero($this->daoConnection->ObjetoConsulta2[$i][2]);  
+            $newTerceros->setTipodocumento($this->daoConnection->ObjetoConsulta2[$i][3]); 
+
+
+            $lista[$i] = $newTerceros;
+        }
+        return $lista;
+    } 
+
+
+
+
+
+
     function getList2(){
 
-        $sql = 'SELECT Sigla,nodocumento,nombretercero,idterceros FROM terceros INNER JOIN identificacion WHERE tipodocumento = IdTipoidentificacion && estado = 0 ORDER BY(nombretercero);';
+        $sql = 'SELECT Sigla,nodocumento,nombretercero,idterceros 
+                 FROM terceros INNER JOIN identificacion
+                  WHERE tipodocumento = IdTipoidentificacion && estado = 0 
+                  ORDER BY(nombretercero);';
 
 
         $this->daoConnection->consulta($sql);
