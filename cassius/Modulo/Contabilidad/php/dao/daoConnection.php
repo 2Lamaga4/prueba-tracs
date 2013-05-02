@@ -21,7 +21,7 @@
     /*Conexion a la base de datos*/
    function conectar(){
 
-       include("info.php");
+       include("info.php"); 
 
         // Conectamos al servidor
         $this->Conexion_ID = mysql_connect($this->Servidor, $this->Usuario, $this->Clave);

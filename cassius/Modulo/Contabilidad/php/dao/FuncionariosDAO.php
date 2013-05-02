@@ -203,14 +203,7 @@ class FuncionariosDAO{
 		return $this->daoConnection->ObjetoConsulta2[0][0];
 
 	}
-    function tipoDeDocumento(){
-    	$sql="select idcargo,nombrecargo from cargos";
-        $this->daoConnection->consulta($sql);
-        $this->daoConnection->leerVarios();
-        $i=0;
-        $objcedu = new cedula();
-
-    }
+ 
 	
 	
 

@@ -1,16 +1,22 @@
 <?php
    class cedula(){
-   	    public $idcargo;
-   	    public $nombrecargo;
-   	    public function setIdCargo($cargos)
+   	    public $idtipoc;
+   	    public $nombresigla;
+
+   	    public function setIdTipo($id)
    	    {$this->idcargo=$cargos;}
-   	    public function setNombreCargo($nombrecar){$this->nombrecargo=$nombrecar;
-   	    }
-   	    public function getIdCargo(){
+
+   	    public function getIdTipo(){
    	    		return $this->idcargo;
    	    }
-   	    public function getNombreCargo(){
-   	    		return $this->nombrecargo;
+
+          public function setSigla($sigla)
+          {
+            $this->nombresigla=$sigla;
+          }
+          
+   	    public function getSigla(){
+   	    		return $this->nombresigla;
    	    }
    }
  ?>

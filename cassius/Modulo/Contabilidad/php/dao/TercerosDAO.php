@@ -7,7 +7,7 @@ class TercerosDAO{
 		$this->daoConnection = new DAO;
         $this->daoConnection->conectar();
 	}
-
+ 
 	function getLastId(){
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }

@@ -70,6 +70,7 @@ function validar(){
 function validar_tercero(){
 	llamarasincrono('validar_tercero.php', 'nom_tercero');
 }
+
 function validar_existe(){
 	var numero = document.getElementById('numero').value;
 	llamarasincrono('validar_tercero.php?numero='+numero, 'nom_tercero');
@@ -79,13 +80,18 @@ function validar_existe(){
 </head>
 <body class="interna2" OnContextMenu="return false" onload="validar_tercero();">
 <?php
-    
+    include "../php/dao/identifiDao.php";
+    include "../php/entities/enticedula";
     $view= new stdClass(); 
     $view->disableLayout=false;
+    $objdaoid = new TipoIDentifiDao;
+    $objce = new  cedula;
+    $objce = $objdaoid->tipoDeDocumento();
      /**
      * [$view->objeto de validación]
      * @var boolean
      */
+    
     if ($view->disableLayout==false)
     {
       include_once ('cuerpo/agregar_tercero.php');//se llama el cuerpo de modificar

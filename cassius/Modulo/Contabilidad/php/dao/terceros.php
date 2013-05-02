@@ -22,7 +22,7 @@ class TerceroDAO{
                 FROM terceros INNER JOIN identificacion WHERE 
                 tipodocumento = IdTipoidentificacion && estado = 1 
                  && tipotercero = 1 ORDER BY(nombretercero)';
-
+ 
 
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();

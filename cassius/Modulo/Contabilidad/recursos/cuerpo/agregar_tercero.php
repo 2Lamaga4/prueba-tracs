@@ -34,9 +34,17 @@
             <strong>Tipo de documento:</strong></td>
           <td width="163">
           <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
-            <option value="0">--</option>
-            <option value="1">CC</option>
-            <option value="2">IT</option>
+             <option value="0">--</option>
+            <?php
+              foreach ($objce as $item)
+              {?>
+             <option value="<?php echo $objce->getIdTipo()?>"><?php echo$objce->getSigla()?></option>
+               <?php
+                  
+              }
+
+
+             ?>
           </select>
            </td>
         </tr>

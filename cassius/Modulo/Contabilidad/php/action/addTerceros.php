@@ -32,7 +32,6 @@ switch ($_REQUEST['des'])
 
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
-
 $terceros->setTipodocumento($documento);
 $terceros->setNodocumento($numero);
 $terceros->setNombretercero($nombre);
@@ -42,9 +41,7 @@ $terceros->setEmail($correo);
 $terceros->setRegimen($regimen);
 $terceros->setTipoter($tipoter);
 
-
 $TercerosDAO->save($terceros);
-
 header($location);
 exit;
 
