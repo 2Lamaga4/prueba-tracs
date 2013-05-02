@@ -25,21 +25,57 @@
   </div>
 </div>
 <div id="contenido_tablat">
-  <section class="tr_tabla">
-   <ul class="pagination1">
-    <?php
+  
+ <div id="tic">
+          <strong>Clientes</strong>
+</div>
+  <section id="paging_container7" class="tr_tabla">
+   <ul class="content">
+     <?php
        foreach($Terceros as $item){ 
     ?>
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="boton_aceptar_int" type="button" class="boton_aceptar_int" id="modificar_t" value="Habilitar" onclick="activar(<?php echo $item->getNodocumento(); ?>)" />
+                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../recursos/modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
+                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="inhabilitar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
           </li>
 
-  <?php } ?>  
-   </ul>
-      <div id="linea"><img src="../images/line.gif" width="945" height="1" /></div>
-   </section>
+  <?php } ?>     
 
+   </ul>
+      <div id="linea"><img src="../images/line.gif" width="472" height="1" /></div>
+       <div class="page_navigation"></div>
+   </section>   
 </div>
+
+
+<div id="contenido_tablat2">
+ <div id="tic">
+          <strong>Proovedores</strong>
+</div>
+<section id="paging_container8" class="tr_tabla">       
+        <ul class="content">
+            <?php
+       foreach($TercerosC as $item){ 
+    ?>
+          <li class="tr_tabla_interna"> 
+                <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
+                <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
+                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../recursos/modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
+                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="inhabilitar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
+          </li>
+
+  <?php } ?>     
+          
+        </ul> 
+        
+   <div id="linea"><img src="../images/line.gif" width="472" height="1" /></div>
+       <div class="page_navigation"></div>
+   </section>   
+</div>
+
+
+
+
   <div class="titulos" id="subtitulo">&gt; Parametrización Terceros</div>

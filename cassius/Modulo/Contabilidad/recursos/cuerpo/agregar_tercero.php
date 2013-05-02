@@ -16,6 +16,18 @@
       <td width="414">&nbsp;</td>
     </tr>
     <tr>
+      <tr width="337" style="border:solid 2px;">
+         <center>
+          <td class="texto_azul" align="left"></td>
+           <div class="texto_azul"> <strong>Tipo de Tercero:</strong>
+          <select name="tipoter" class="textarea_redondo2" id="tipoter" style="width:122px; height:27px;">
+            <option value="0">--</option>
+            <option value="1">Cliente</option>
+            <option value="2">Proveedor</option>
+          </select></div>
+           </td>
+           </center>
+        </tr>
       <td height="40" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="137" class="texto_azul" align="left">
@@ -24,7 +36,7 @@
           <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
             <option value="0">--</option>
             <option value="1">CC</option>
-            <option value="2">CC Extranjero</option>
+            <option value="2">IT</option>
           </select>
            </td>
         </tr>

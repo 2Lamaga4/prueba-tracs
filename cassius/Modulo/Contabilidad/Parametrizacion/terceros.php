@@ -7,7 +7,7 @@
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.pajinate.js"></script>
 <script src="../Scripts/terceros2.js"></script>
-<script src="../Scripts/transicion.js" ></script>
+<script src="./Scripts/transicion.js" ></script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 3){ ?> onload="cerrarVentana()"<?php } ?>>
 <?php

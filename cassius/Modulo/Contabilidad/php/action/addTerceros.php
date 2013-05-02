@@ -15,6 +15,8 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion']; 
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
+$tipoter = $_REQUEST['tipoter'];
+
 
 switch ($_REQUEST['des'])
  {
@@ -38,6 +40,8 @@ $terceros->setDireccion($direccion);
 $terceros->setTelefono($telefono);
 $terceros->setEmail($correo);
 $terceros->setRegimen($regimen);
+$terceros->setTipoter($tipoter);
+
 
 $TercerosDAO->save($terceros);
 

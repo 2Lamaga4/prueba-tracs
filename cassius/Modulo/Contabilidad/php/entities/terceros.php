@@ -11,6 +11,7 @@
 		 private $telefono;
 		 private $email;
 		 private $regimen;
+		 private $tipoter;
 					
 		 public function getId(){
 			 return $this->idterceros;
@@ -65,5 +66,12 @@
 		 public function setRegimen($regimen){
 			 $this->regimen = $regimen;
 		 } 
+		 public function getTipoter(){
+		 	return $this->$tipoter;
+		 }
+		 public function setTipoter($tipoter){
+		 	$this->tipoter=$tipoter;
+		 	
+		 }
 	}
 ?>
