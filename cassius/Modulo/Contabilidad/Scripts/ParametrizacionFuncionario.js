@@ -5,9 +5,11 @@
 
  function OnSelectionChange (select) {
             var selectedOption = select.options[select.selectedIndex];
+     
+              if(selectedOption.value==0){
 
-           // location.href="ParametrizacionFuncionario.php?cargo="+selectedOption.value;
-              alert();
+				window.open('agregraCargo.php','Agregar Cargo','width=300,height=400');
+              }
 
         
         }
