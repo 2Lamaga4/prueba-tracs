@@ -15,7 +15,7 @@
        
            <div id="carN"><strong>Cargo:</strong></div>
            <div width="400" height="40"> 
- <select name="cargo" class="textarea_redondo2" id="cargo"  style="width:212px; height:27px;" >
+ <select name="cargo" class="textarea_redondo2" id="cargo"  style="width:212px; height:27px;" onchange = "OnSelectionChange (this)">
          <option value="0">--</option>
         <option>::::: Agregar cargo :::::</option>
         <?php
