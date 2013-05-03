@@ -46,7 +46,9 @@
            </td>
         </tr>
       </table></td>
+
       <td bgcolor="#CCCCCC" class="tr_tabla_interna2"><div id="nom_tercero"></div></td>
+      
     </tr>
     <tr>
       <td height="40" colspan="2" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="715" border="0" align="center" cellpadding="0" cellspacing="0">

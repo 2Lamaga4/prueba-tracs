@@ -40,9 +40,13 @@
              <input type="text" name="fecha" class="inputDate textarea_redondo2" id="inputDate" style="width:65px;" value="<?php echo date('d/m/Y'); ?>" readonly="readonly" />
 
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
+
               <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
-               style="width:180px;" onblur="javascript:dato_tercero()" value=""/>               
-              <td valign="middle"><div id="ter2"></div></td>
+                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()"/> 
+             <span id="status"></span>
+              <td valign="middle"><div id="ter2">
+                
+              </div></td>
               <center><div id="ter"></div></center>
             </td>
           </tr>
