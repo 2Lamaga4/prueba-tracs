@@ -33,17 +33,14 @@
           <td width="137" class="texto_azul" align="left">
             <strong>Tipo de documento:</strong></td>
           <td width="163">
-          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
+          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" required>
              <option value="0">--</option>
             <?php
-              foreach ($objce as $item)
+              foreach ($obj as $item)
               {?>
-             <option value="<?php echo $objce->getIdTipo()?>"><?php echo$objce->getSigla()?></option>
-               <?php
-                  
+             <option value="<?php echo $item->getIdTipo() ?>"><?php echo $item->getSigla() ?></option>
+               <?php        
               }
-
-
              ?>
           </select>
            </td>

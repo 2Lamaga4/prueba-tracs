@@ -12,14 +12,36 @@
       <td width="414">&nbsp;</td>
     </tr>
     <tr>
+      <tr width="337" style="border:solid 2px;">
+         <center>
+          <td class="texto_azul" align="left"></td>
+           <div class="texto_azul"> <strong>Tipo de Tercero:</strong>
+          <select name="tipoter" class="textarea_redondo2" id="tipoter" style="width:122px; height:27px;">
+            <option value="0">--</option>
+            <option value="1"<?php if($tercero->getTipoter() == 1){ ?>selected="selected"<?php } ?> >Cliente</option>
+            <option value="2"<?php if($tercero->getTipoter() == 2){ ?>selected="selected"<?php } ?> >Proveedor</option>
+          </select></div>
+           </td>
+           </center>
+        </tr>
       <td height="40" bgcolor="#CCCCCC" class="tr_tabla_interna2"><table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="137" class="texto_azul" align="left"><strong>Tipo de documento:</strong></td>
-          <td width="163"><select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;">
-            <option value="0">--</option>
-            <option value="1" <?php if($tercero->getTipodocumento() == 1){ ?>selected="selected"<?php } ?> >CC</option>
-            <option value="2" <?php if($tercero->getTipodocumento() == 2){ ?>selected="selected"<?php } ?> >CC Extranjero</option>
+          <td width="163">
+        <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" required>
+             
+            <?php
+              foreach ($obj as $item)
+              {?>    
+             <option <?php if($tercero->getTipodocumento() == $item->getSigla()){ ?>selected="selected"<?php } ?> value="<?php echo $item->getIdTipo() ?>">
+              <?php echo $item->getSigla() ?>
+            </option>       
+            <?php        
+              }
+             ?>
           </select>
+
+
            </td>
         </tr>
       </table></td>

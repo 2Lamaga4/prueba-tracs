@@ -13,6 +13,7 @@ $telefono = $_REQUEST['telefono'];
 $direccion = $_REQUEST['direccion']; 
 $correo = $_REQUEST['correo']; 
 $regimen = $_REQUEST['regimen']; 
+$tipoter = $_REQUEST['tipoter'];
 /////////////
 $location = "location: ../../Parametrizacion/terceros.php?OK=2";
 ////////////
@@ -26,6 +27,7 @@ $terceros->setDireccion($direccion);
 $terceros->setTelefono($telefono);
 $terceros->setEmail($correo);
 $terceros->setRegimen($regimen);
+$terceros->setTipoter($tipoter);
 
 $TercerosDAO->update($terceros);
 

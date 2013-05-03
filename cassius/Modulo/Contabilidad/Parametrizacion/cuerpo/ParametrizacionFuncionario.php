@@ -50,10 +50,17 @@
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Tipo Cédula:</strong></td>
           <td width="241" align="left">&nbsp;&nbsp;&nbsp;&nbsp;
-          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" >
-            <option value="0">--</option>
-            <option value="1" <?php if($funcionario->getTipodocumento() == 1){ ?>selected="selected"<?php } ?>>CC</option>
-            <option value="2" <?php if($funcionario->getTipodocumento() == 2){ ?>selected="selected"<?php } ?>>CC Extranjero</option>
+          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" required>
+             
+            <?php
+              foreach ($obj as $item)
+              {?>    
+             <option <?php if($funcionario->getTipodocumento() == $item->getSigla()){ ?>selected="selected"<?php } ?> value="<?php echo $item->getIdTipo() ?>">
+              <?php echo $item->getSigla() ?>
+            </option>       
+            <?php        
+              }
+             ?>
           </select>
             </td>
         </tr>
@@ -113,8 +120,7 @@
         <input type="hidden" name="id" id="id" value="<?php echo $funcionario->getId(); ?>" />
         <input type="hidden" name="cargo" id="cargo" value="<?php echo $funcionario->getCargo(); ?>" />
         <input type="hidden" name="url" id="url" value="funcionarios.php" />
-        </td>
-        
+        </td>        
         
     </tr>
   </table>

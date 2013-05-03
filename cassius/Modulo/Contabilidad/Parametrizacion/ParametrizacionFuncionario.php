@@ -17,6 +17,11 @@
     include "../php/dao/daoConnection.php";
     include "../php/entities/funcionarios.php";
     include "../php/dao/FuncionariosDAO.php";
+    include "../php/dao/identifiDao.php";
+    include "../php/entities/enticedula.php";
+    
+    $cedula = new  TipoIDentifiDao();
+    $obj = $cedula ->tipoDeDocumento();
 
     $FuncionariosDAO = new FuncionariosDAO();
     $funcionarios = new funcionarios();

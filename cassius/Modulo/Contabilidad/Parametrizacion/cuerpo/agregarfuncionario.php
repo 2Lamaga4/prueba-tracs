@@ -50,10 +50,15 @@
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Tipo Cédula:</strong></td>
           <td width="241" align="left">&nbsp;&nbsp;&nbsp;&nbsp;
-          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" >
-            <option value="0">--</option>
-            <option value="1" >CC</option>
-            <option value="2" >CC Extranjero</option>
+          <select name="documento" class="textarea_redondo2" id="documento" style="width:122px; height:27px;" required>
+             <option value="0">--</option>
+            <?php
+              foreach ($obj as $item)
+              {?>
+             <option value="<?php echo $item->getIdTipo() ?>"><?php echo $item->getSigla() ?></option>
+               <?php        
+              }
+             ?>
           </select>
             </td>
         </tr>

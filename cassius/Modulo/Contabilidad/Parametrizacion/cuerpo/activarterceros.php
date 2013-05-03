@@ -37,8 +37,7 @@
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../recursos/modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
-                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="inhabilitar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
+                <input name="boton_aceptar_int" type="button" class="boton_aceptar_int" id="modificar_t" value="Habilitar" onclick="activar(<?php echo $item->getNodocumento(); ?>)" />        
           </li>
 
   <?php } ?>     
@@ -62,8 +61,7 @@
           <li class="tr_tabla_interna"> 
                 <article id="N0" class="td_tabla_interna"><?php echo $item->getId(); ?><span><?php echo $item->getNodocumento(); ?></span></article>
                 <article class="td_tabla_interna" id="NN"><?php echo $item->getnombretercero(); ?></article>
-                <input name="modificar_int" type="button" class="boton_modificar_int" id="modificar_int" value="Modificar" onclick="location.href='../recursos/modificar_tercero.php?id2=<?php echo $item->getNodocumento();?>&id=<?php echo $item->getTipodocumento();?>'"/>
-                <input name="eliminar_int" type="button" class="boton_eliminar_int" id="eliminar_int" value="inhabilitar" onclick="borrar(<?php echo $item->getNodocumento(); ?>)" />
+                <input name="boton_aceptar_int" type="button" class="boton_aceptar_int" id="modificar_t" value="Habilitar" onclick="activar(<?php echo $item->getNodocumento(); ?>)" />          
           </li>
 
   <?php } ?>     

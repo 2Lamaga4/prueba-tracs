@@ -3,10 +3,15 @@
 include "../php/dao/daoConnection.php";
 include "../php/dao/TercerosDAO.php";
 include "../php/entities/terceros.php";
+include "../php/dao/identifiDao.php";
+include "../php/entities/enticedula.php";
 
 $TercerosDAO = new TercerosDAO();
 $terceros = new terceros();
 $tercero = $TercerosDAO->get($_REQUEST['id']);
+
+$cedula = new  TipoIDentifiDao();
+$obj = $cedula ->tipoDeDocumento();
 
 include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>

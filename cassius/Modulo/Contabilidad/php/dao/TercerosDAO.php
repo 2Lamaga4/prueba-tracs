@@ -44,12 +44,17 @@ class TercerosDAO{
         return $lista;
     }
 
-	function get($id){
+    function get($id){
            
         $newTerceros = new terceros();
 
-      $sql = 'SELECT * from terceros where idterceros  = "'.mysql_real_escape_string($id).'"';
-
+        $sql= 'SELECT idterceros,Sigla, nodocumento, nombretercero, 
+        direccion, telefono,email,regimen, 
+        tipotercero, idunidadv 
+        FROM terceros INNER JOIN identificacion 
+        WHERE idterceros="'.mysql_real_escape_string($id).'"
+        && IdTipoidentificacion = tipodocumento
+';
 
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
@@ -69,6 +74,7 @@ class TercerosDAO{
 			$newTerceros->setTelefono($this->daoConnection->ObjetoConsulta2[$i][5]);
 			$newTerceros->setEmail($this->daoConnection->ObjetoConsulta2[$i][6]);
 			$newTerceros->setRegimen($this->daoConnection->ObjetoConsulta2[$i][7]);
+            $newTerceros->setTipoter($this->daoConnection->ObjetoConsulta2[$i][8]);
 
         return $newTerceros;
     }
@@ -194,9 +200,13 @@ class TercerosDAO{
 			 $update_fields[5]="telefono = '".mysql_real_escape_string($newTerceros->getTelefono())."'";
 		if($newTerceros->getEmail())  
 			 $update_fields[6]="email = '".mysql_real_escape_string($newTerceros->getEmail())."'";
-		if($newTerceros->getRegimen())  
+		
+        if($newTerceros->getRegimen())  
 			 $update_fields[7]="regimen = '".mysql_real_escape_string($newTerceros->getRegimen())."'";	 	 
-			 	 	
+		if($newTerceros->getTipoter())  
+             $update_fields[8]="tipotercero = '".mysql_real_escape_string($newTerceros->getTipoter())."'";       
+        	 	 	
+        
         $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE idterceros= '".$newTerceros->getId()."' ";
         //echo $querty.'<br />';
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);

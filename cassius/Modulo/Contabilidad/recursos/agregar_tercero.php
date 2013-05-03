@@ -80,13 +80,16 @@ function validar_existe(){
 </head>
 <body class="interna2" OnContextMenu="return false" onload="validar_tercero();">
 <?php
+    include "../php/dao/daoConnection.php";
     include "../php/dao/identifiDao.php";
-    include "../php/entities/enticedula";
+    include "../php/entities/enticedula.php";
+
+   
+    $cedula = new  TipoIDentifiDao();
+    $obj = $cedula ->tipoDeDocumento();
+
     $view= new stdClass(); 
     $view->disableLayout=false;
-    $objdaoid = new TipoIDentifiDao;
-    $objce = new  cedula;
-    $objce = $objdaoid->tipoDeDocumento();
      /**
      * [$view->objeto de validación]
      * @var boolean

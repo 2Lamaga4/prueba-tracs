@@ -24,6 +24,7 @@
 
     $FuncionariosDAO = new FuncionariosDAO();   
     $FUNC=$FuncionariosDAO->Fun();
+    
  
     $view= new stdClass(); 
     $view->disableLayout=false;
