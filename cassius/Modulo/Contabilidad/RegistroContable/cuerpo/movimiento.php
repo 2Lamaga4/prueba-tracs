@@ -56,14 +56,25 @@
             <tr>
               <td><span class="texto_azul2"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php echo $item->getNumero(); ?></strong></span><strong> - </strong>
               <?php echo substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4); ?></td>
+              <td>
+                        <?php 
+                             $num = $item->getId();
+                          //   echo var_export($num);
+                              if(!$MovimientosDAO->suma($item->getId())){
+                              echo "!Error diferencia entre valores";
+                           }  
+                        ?>
+                 
+                </td>
             </tr>
             <tr>
               <td><img src="../images/line2.gif" width="760" height="1" /></td>
             </tr>
             <tr>
+                
               <td><strong>&nbsp;Nombre de tercero:</strong> 
-               <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
-                <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
+             <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
+                <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
                 <?php echo $item->getConcepto(); ?></td>
             </tr>
           </table></td>
@@ -92,17 +103,6 @@
                   </td>
                 </tr>
           <?php } ?>   
-             <tr>
-                  <div>
-                        <?php 
-                             $num = $item->getId();
-                          //   echo var_export($num);
-                              if(!$MovimientosDAO->suma($item->getId())){
-                              echo "los valores no considen";
-                           }  
-                        ?>
-                  </div>
-                </tr>
           </table></td>
           </tr>
            <?php } ?>  
