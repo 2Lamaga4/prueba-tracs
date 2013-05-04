@@ -19,7 +19,7 @@
           <table width="220" border="0">
           <tr>
             <td width="166">&nbsp;<span class="texto_azul_peque">Documento</span>:
-             <select name="documento" class="textarea_redondo2" id="documento" style="width:80px; height:27px;" onchange="numero_documento();">
+             <select name="documento" class="textarea_redondo2" id="documento" style="width:80px; height:27px;" onchange="numero_documento();" required>
             <option value="0">--</option>
             <?php foreach($documento as $item){ ?>
               <option value="<?php echo $item->getId(); ?>">
@@ -37,12 +37,12 @@
             <td>
               <span class="texto_azul2"><strong>&nbsp;Movimiento 
               <input name="num_movi" id="num_movi" type="hidden" value="<?php if(count($movimiento) == 0){ echo count($movimiento) + 1; }else{ echo count($movimiento) + 1; }  ?>" /> <?php if(count($movimiento) == 0){ echo count($movimiento) + 1; }else{ echo count($movimiento) + 1; }  ?></strong></span><strong> - </strong>
-             <input type="text" name="fecha" class="inputDate textarea_redondo2" id="inputDate" style="width:65px;" value="<?php echo date('d/m/Y'); ?>" readonly="readonly" />
+              <input type="text" name="fecha" class="inputDate textarea_redondo2" id="inputDate" style="width:65px;" value="<?php echo date('d/m/Y'); ?>" readonly="readonly" />
 
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
 
               <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
-                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()"/> 
+                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()" required/> 
              <span id="status"></span>
               <td valign="middle"><div id="ter2">
                 
@@ -57,7 +57,7 @@
             <td colspan="3">
               <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concepto:</strong>
               <span class="td_tabla_interna">
-              <input name="concepto" type="text" class="textarea_redondo2" id="concepto" style="width:422px;"/>
+              <input name="concepto" type="text" class="textarea_redondo2" id="concepto" style="width:422px;" required/>
               </span>
             </td>
           </tr>

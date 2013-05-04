@@ -55,23 +55,23 @@
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
             <tr>
               <td><span class="texto_azul2"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php echo $item->getNumero(); ?></strong></span><strong> - </strong>
-              <?php echo substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4); ?></td>
-              <td>
-                        <?php 
-                             $num = $item->getId();
-                          //   echo var_export($num);
-                              if(!$MovimientosDAO->suma($item->getId())){
-                              echo "!Error diferencia entre valores";
+              <?php echo substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4); ?>
+          
+                        <?php $num = $item->getId();
+                          if(!$MovimientosDAO->suma($item->getId())){
+                              echo "<pre> !Error diferencia entre valores </pre>";
                            }  
                         ?>
+            </td>
+             
                  
-                </td>
+                
             </tr>
             <tr>
               <td><img src="../images/line2.gif" width="760" height="1" /></td>
             </tr>
             <tr>
-                
+
               <td><strong>&nbsp;Nombre de tercero:</strong> 
              <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
                 <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
