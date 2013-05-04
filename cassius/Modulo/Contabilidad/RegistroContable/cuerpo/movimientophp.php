@@ -34,8 +34,8 @@ if(isset($_REQUEST['movi'])){
   }
 }
 
-$MovimientosDAO = new MovimientosDAO();
-$movimientos = new movimientos();
+$MovimientosDAO = new MovimientosDAO();//cracion de instancia a la clace MovimientosDAO
+$movimientos = new movimientos();//
 
 if($fecha1 != "" && $fecha2 != ""){
   $movimiento = $MovimientosDAO->getList_fecha($fecha1,$fecha2);

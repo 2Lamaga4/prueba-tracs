@@ -21,7 +21,7 @@
           <td width="90"><span class="texto_azul"><strong>Movimiento:</strong></span></td>
           <td width="84"><input name="movi" type="text" class="textarea_redondo2" id="movi" style="width:50px;"  /></td>
           <td width="140"><input name="buscar" type="submit" class="boton_buscar" id="buscar" value="Buscar" onclick="location.href='#'"/></td>
-          </tr>
+          </tr> 
       </table>
       </form> 
      </td>
@@ -62,7 +62,7 @@
             </tr>
             <tr>
               <td><strong>&nbsp;Nombre de tercero:</strong> 
-                <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
+               <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
                 <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
                 <?php echo $item->getConcepto(); ?></td>
             </tr>
@@ -85,15 +85,24 @@
                   <td width="74" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
                   <td class="td_tabla_interna"><?php echo $cuenta->getDenominacion(); ?></td>
                   <td width="108" align="center" class="td_tabla_interna">
-                    <?php echo $item2->getDebito(); ?>
+                    <?php echo $item2->getDebito();?>
                   </td>
                   <td width="113" align="center" class="td_tabla_interna">
-                    <?php echo $item2->getCredito(); ?>
+                    <?php echo $item2->getCredito();?>
                   </td>
                 </tr>
           <?php } ?>   
-          
-          
+             <tr>
+                  <div>
+                        <?php 
+                             $num = $item->getId();
+                          //   echo var_export($num);
+                              if(!$MovimientosDAO->suma($item->getId())){
+                              echo "los valores no considen";
+                           }  
+                        ?>
+                  </div>
+                </tr>
           </table></td>
           </tr>
            <?php } ?>  

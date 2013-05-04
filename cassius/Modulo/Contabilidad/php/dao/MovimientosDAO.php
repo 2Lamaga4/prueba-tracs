@@ -2,21 +2,21 @@
 class MovimientosDAO{
 
     public $daoConnection;
-
+    public $iden;
 	function __construct(){
 		$this->daoConnection = new DAO;
         $this->daoConnection->conectar();
 	}
 
 	
-	
+
 	function getLastId(){
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }
 	
 	function getList(){
 
-        $sql = 'SELECT * from movimiento ORDER BY id desc';
+        $sql = 'SELECT * FROM movimiento GROUP BY fecha ORDER BY fecha desc';
 
 
 		$this->daoConnection->consulta($sql);
@@ -270,10 +270,30 @@ class MovimientosDAO{
 		 $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
 
-		return $this->daoConnection->ObjetoConsulta2[0][0];
-			
-
+		return $this->daoConnection->ObjetoConsulta2[0][0];	
 	}
+
+    function suma($is){
+        //var_dump($is);
+        $this->iden=$is;
+        $sql = "SELECT SUM(debito) ,SUM(credito) FROM  movcuentas WHERE idmovimiento =".$this->iden;
+        $this->daoConnection->consulta($sql);
+        $this->daoConnection->leerVarios();
+        $numregistros = $this->daoConnection->numregistros();
+
+        $lista=array();
+        $i=0;
+        if($numregistros == 0){
+            return $lista;
+        }
+       $a = $this->daoConnection->ObjetoConsulta2[$i][0];
+       $b = $this->daoConnection->ObjetoConsulta2[$i][1];
+       if($a!=$b){
+          return false;
+       }
+
+       return true;
+    }
 	
 	
 

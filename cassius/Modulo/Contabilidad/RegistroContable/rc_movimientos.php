@@ -19,10 +19,10 @@
 
     if ($view->disableLayout==false)
     {
-      
       include_once ('cuerpo/movimientophp.php');
       include_once ('cuerpo/movimiento.php');
     }
 ?>
 </body>
 </html>
+  
