@@ -2,6 +2,7 @@
 $n = 0;
 if(isset($_REQUEST['n']) != ""){
 	$n = $_REQUEST['n'];
+    echo $n;
 }
 
 
@@ -20,7 +21,7 @@ for($a = 0; $a < $_SESSION['numero']; $a++){
 }
 
 
-
+ 
 ?>
 <?php if(isset($_REQUEST['n']) > 0){ ?>
 <table width="725" border="0" align="center" cellpadding="0" cellspacing="2">

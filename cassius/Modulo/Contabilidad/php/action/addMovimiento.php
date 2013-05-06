@@ -1,6 +1,6 @@
 <?php session_start();?>
 <?php
-
+print_r($_REQUEST);
 require_once('../dao/daoConnection.php');
 require_once('../dao/MovimientosDAO.php');
 require_once('../entities/movimientos.php');
@@ -17,7 +17,7 @@ $concepto = accents2HTML($_REQUEST['concepto']);
 $estado = 1;
 $ter_id = $_REQUEST['ter_id']; 
 
-
+ 
 $location = "location: ./../../RegistroContable/agregar_comprobante_diario.php?OK=1";
 
 

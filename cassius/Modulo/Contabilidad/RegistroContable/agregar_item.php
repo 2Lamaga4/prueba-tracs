@@ -1,5 +1,6 @@
 <?php session_start();
 $n = 1;
+
 if(isset($_REQUEST['n']) != ""){
 	$n = $_REQUEST['n'];
 }
@@ -11,3 +12,4 @@ if(isset($_REQUEST['n']) != ""){
 </tr>
 </table>
 
+ 
