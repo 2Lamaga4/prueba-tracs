@@ -1,8 +1,13 @@
+<script type="text/javascript">
+  function texto (){
+                document.getElementById ("Descripcion").value = "<?php echo  $enticuentas-> getDescripcion(); ?>";
+            }
+</script>
 <?php 
  foreach ($enticuentas as $key)
      {
-     	?>	        
-<body class="popup" OnContextMenu="return false" onUnload='cerrarVentana()'>
+?>	        
+<body class="popup" OnContextMenu="return false" onUnload='cerrarVentana()' onload="texto ();">
 <table width="550" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="422" height="50" align="center" valign="middle" bgcolor="#ADB1CB">
@@ -33,10 +38,9 @@
                 </tr>
               <tr class="tr_tabla_interna">
                 <td height="80" colspan="4" class="td_tabla_interna" align="center" >
-                	<div class="txt">
-
-                	<input  type="text" id="Descripcion" value="<?php echo  $enticuentas-> getDescripcion(); ?>" id="Descripcion">
-                    </div>
+                	<div class="txt">    
+                    <textarea  id="Descripcion" class="Descri" ></textarea>                                                        
+                  </div> 
                 </td>
                 </tr>
               </table></td>

@@ -7,7 +7,6 @@
 <script src="../Scripts/globos_ayuda.js" ></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/transicion.js" ></script>
-
 <script text="text/javascript">
 function Modicuenta(){
   var numcuenta;
