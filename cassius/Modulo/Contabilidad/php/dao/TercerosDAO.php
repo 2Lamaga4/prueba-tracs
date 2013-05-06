@@ -53,8 +53,8 @@ class TercerosDAO{
         tipotercero, idunidadv 
         FROM terceros INNER JOIN identificacion 
         WHERE idterceros="'.mysql_real_escape_string($id).'"
-        && IdTipoidentificacion = tipodocumento
-';
+        && IdTipoidentificacion = tipodocumento';
+        
 
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();

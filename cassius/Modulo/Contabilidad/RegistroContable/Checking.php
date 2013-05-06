@@ -16,11 +16,13 @@ if (isset($_POST['tercero'])) {
  
   $num_rows=mysql_num_rows($rs_User);
  
-  $checking=false;
-  $msg="";
+  
   if($num_rows==0){
     $checking=true;
-    $msg="Disponible";
+    $msg="ok";
+  }else{
+   $checking=false;
+   $msg="X"; 
   }
  
   $json=array("valid"=>$checking, "msg" => $msg);
