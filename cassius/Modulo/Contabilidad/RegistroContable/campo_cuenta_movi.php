@@ -2,7 +2,7 @@
 $n = 0;
 if(isset($_REQUEST['n']) != ""){
 	$n = $_REQUEST['n'];
-    echo $n;
+    
 }
 
 

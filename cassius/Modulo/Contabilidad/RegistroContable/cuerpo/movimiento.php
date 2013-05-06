@@ -52,7 +52,7 @@
             $doc = $DocumentoDAO->get($item->getTipodoc());            
             $mvCuentas = $MovimientosDAO->getList_cuentas($item->getId());
        ?>
-        <tr>2
+        <tr>
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
              <?php    
 
@@ -62,6 +62,7 @@
                       }else{
 
                       }
+
                       $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
               ?>
 
