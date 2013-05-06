@@ -16,7 +16,7 @@ class MovimientosDAO{
 	
 	function getList(){
 
-        $sql = 'SELECT * FROM movimiento GROUP BY fecha ORDER BY fecha desc';
+        $sql = 'SELECT * FROM movimiento GROUP BY(numero) ORDER BY fecha desc ';
 
 
 		$this->daoConnection->consulta($sql);

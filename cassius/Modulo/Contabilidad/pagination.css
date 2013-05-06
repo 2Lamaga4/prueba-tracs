@@ -1,0 +1,70 @@
+/*
+Plugin Name: WP-Digg Style Paginator
+Plugin URI: http://www.mis-algoritmos.com/2007/09/09/wp-digg-style-pagination-plugin-v-10/
+Author: Victor De la Rocha
+Author URI: http://www.mis-algoritmos.com
+*/
+/*CSS Flickr style pagination*/
+	div.pagination {
+		padding: 3px;
+		margin: 3px;
+		text-align:right;
+	}
+	
+	div.pagination a {
+		/*border: 1px solid #dedfde;
+		margin-right:3px;
+		
+		background-position:bottom;
+		text-decoration: none;
+		color: #0061de;	*/
+	cursor:pointer;
+	background-image:url(images/fondo_btn.jpg);
+	font: 14px Verdana, Geneva, sans-serif;
+	padding:2px 6px;
+	color:#FFFFFF;
+	text-align:center;
+	font-weight:bold;
+	}
+	div.pagination a:hover, div.meneame a:active {
+		/*border: 1px solid #000;
+		background-image:none;
+		background-color:#0061de;
+		color: #fff;*/
+	cursor:pointer;
+	background-image:url(images/fondo_btn_roll.jpg);
+	font: 14px Verdana, Geneva, sans-serif;
+	color:#FFFFFF;
+	text-align:center;
+	font-weight:bold;
+
+
+	}
+	div.pagination span.current {
+	/*
+			margin-right:0px;
+		background-color:#9CF;
+		padding:0px 6px;
+		font: 14px Verdana, Geneva, sans-serif;
+		font-weight: bold;
+		color: #ff0084;
+
+cursor:pointer;
+	*/
+	
+	background-image:url(images/fondo_btn_roll.jpg);
+	font: 14px Verdana, Geneva, sans-serif;
+	padding:2px 6px;
+	color:#9F0000;
+	text-align:center;
+	font-weight:bold;
+	
+	}
+	div.pagination span.disabled {
+		margin-right:0px;
+		background-color:#33FF33;
+		padding:2px 6px;	
+		font: 14px Verdana, Geneva, sans-serif;
+		color: #FFFFFF;
+		font-weight:bold;
+	}
