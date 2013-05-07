@@ -83,6 +83,26 @@ class TerceroDAO{
     } 
 
 
+function chequiarTER($ter){
+       $newChe = new terceros();
+
+        $sql="SELECT idterceros FROM terceros WHERE nombretercero ='".$ter."'";
+
+        
+            $rs_User = $this->daoConnection->consulta($sql);
+            $this->daoConnection->leerVarios();
+ 
+            $num_rows=mysql_num_rows($rs_User);
+
+
+            $newChe->setId($this->daoConnection->ObjetoConsulta2);
+
+
+            $GLOBALS['ter1']=$num_rows;
+             return null;       
+
+      }
+
 
 
 

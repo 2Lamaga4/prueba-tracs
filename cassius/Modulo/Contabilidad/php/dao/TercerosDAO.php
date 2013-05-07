@@ -217,7 +217,6 @@ class TercerosDAO{
         return true;
     }
 
-
 	 function delete($id){
              //$id -> numero de documento
 

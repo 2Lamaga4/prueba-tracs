@@ -9,6 +9,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 }
 function dato_tercero(){
 	var tercero = document.getElementById('tercero').value;
+	
 	llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
 	llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');
 }

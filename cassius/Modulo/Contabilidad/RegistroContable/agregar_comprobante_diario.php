@@ -18,7 +18,7 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <?php
    include('cuerpo/agregar_comprobante_diariojs.php');
  ?>  
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
     <script type="text/javascript">
       $(function(){
  
@@ -29,44 +29,32 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
           status.removeClass("checked").removeClass("error")
           if(tercero.length > 0){
             $.ajax({
-              type:"POST",
+              type:"GET",
               url:"checking.php",
               data:"tercero="+tercero,
               dataType:"json",
               beforeSend:function(){
-                  status.html("<img src='img/loading.gif'/>");
+                  status.html("<img src='../images/img/loading.gif'/>");
               },
               success:function(response){
                   if(response.valid==true){
                     status.addClass("checked");
+                    llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');                    
                   }else{
                     status.addClass("error");
+                    llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
                   }
-                  status.html(response.msg);
+                  status.html(response.msg);                  
               }
             })
           }else{
-              status.html("Ingrese un usuario");
+              status.html(" ");
           }
  
         });
  
       })
     </script>
-</head>
-
-<body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
-
-<?php
-    $view= new stdClass(); 
-    $view->disableLayout=false;
-if ($view->disableLayout==false)
-    {
-      include_once ('movimientos/agregar_componentes_diario.php');
-    }
- ?>   
-</body>
-</html>
 <style type="text/css">
    span{
         color:#555555;
@@ -84,3 +72,18 @@ if ($view->disableLayout==false)
         color:#EA5200;
       }
 </style>
+
+</head>
+
+<body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
+<?php
+    $view= new stdClass(); 
+    $view->disableLayout=false;
+if ($view->disableLayout==false)
+    {
+      include_once ('movimientos/agregar_componentes_diario.php');
+    }
+ ?>   
+</body>
+</html>
+

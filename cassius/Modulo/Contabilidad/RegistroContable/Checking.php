@@ -1,28 +1,27 @@
 <?php
+$GLOBALS['ter1']="";
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpassword = "123";
-$dbname = "dbconjun";
-
-$id = mysql_connect($dbhost, $dbuser, $dbpassword) or die("error en coneccion: " . mysql_error()); 
-mysql_select_db($dbname, $id); 
+ include "../php/dao/terceros.php";
+  
  
-if (isset($_POST['tercero'])) {
-  sleep(2);
-  $query="SELECT idterceros FROM terceros WHERE nombretercero = '".$_POST['tercero']."'";
+if (isset($_GET['tercero'])) {
 
-  $rs_User = mysql_query($query) or die(mysql_error());
- 
-  $num_rows=mysql_num_rows($rs_User);
+  //sleep(0.999);
+
+    $TerceroDAO = new TerceroDAO();
+    $newTerceros = new Terceros();
+    $Terceros = $TerceroDAO->chequiarTER($_GET['tercero']);
+
+  
+  $num_rows=$GLOBALS['ter1'];
  
   
   if($num_rows==0){
-    $checking=true;
-    $msg="ok";
+     $checking=false;
+     $msg="X"; 
   }else{
-   $checking=false;
-   $msg="X"; 
+    $checking=true;
+    $msg="ok";  
   }
  
   $json=array("valid"=>$checking, "msg" => $msg);

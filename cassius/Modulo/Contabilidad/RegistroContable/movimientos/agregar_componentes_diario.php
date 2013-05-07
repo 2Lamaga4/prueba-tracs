@@ -44,10 +44,10 @@
               <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
                 value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()" required/> 
              <span id="status"></span>
+
               <td valign="middle"><div id="ter2">
                 
-              </div></td>
-              <center><div id="ter"></div></center>
+              </div></td>              
             </td>
           </tr>
           <tr>
