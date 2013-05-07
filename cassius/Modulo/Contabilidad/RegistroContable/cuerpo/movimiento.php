@@ -1,6 +1,7 @@
 <?php
-  $GLOBALS['nota']="";
-  $GLOBALS['contador'] = 20;
+      $GLOBALS['nota']="";
+      $GLOBALS['contador'] = $MovimientosDAO->contar()+1;
+      $GLOBALS['res'] = "";
 ?>
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../index.php'"/>
@@ -61,21 +62,35 @@
                 if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
                       {
                       echo '<article class="MOlefe"> - '.substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4).'</article>';
-                      $GLOBALS['contador']--;
+
+                          $GLOBALS['contador']--;
+                          $GLOBALS['res'] = 0;
                   }
-                  $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
+                   else{
+                        $GLOBALS['res'] = 1;
+                   }
+                      $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
               ?>
-
+              
             <tr>
-              <td><span class="texto_azul2 MOle"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php $item->getNumero(); echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
-
+              <td><span class="texto_azul2 MOle">
+               <?php
+                    if($GLOBALS['res']!=1){
+                  ?>
+                     <strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
+                     <?php  echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
+                  <?php
+                    }
+               ?>
+                
+                      
                         <?php $num = $item->getId();
                           if(!$MovimientosDAO->suma($item->getId())){
 
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error diferencia entre valores! </article>
-                                  <input class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(http://localhost/www/cassiusmastre/maqueta/images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
+                                  <input class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                               ";                              
                            }  
                         ?>
