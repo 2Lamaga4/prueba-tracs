@@ -1,4 +1,5 @@
-<?php $GLOBALS['nota']="";?>
+<?php $GLOBALS['nota']="";
+      $GLOBALS['contador'] = 20;?>
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../index.php'"/>
 </div>
@@ -56,18 +57,16 @@
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
              <?php    
 
-                      if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
-                      {
+                if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
+                  {       
                           echo substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
-                      }else{
-
-                      }
-
+                          $GLOBALS['contador']--;
+                  }
                       $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
               ?>
 
             <tr>
-              <td><span class="texto_azul2"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php echo $item->getNumero(); ?></strong></span><strong> - </strong>
+              <td><span class="texto_azul2"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php $item->getNumero(); echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
              
                         <?php $num = $item->getId();
                           if(!$MovimientosDAO->suma($item->getId())){

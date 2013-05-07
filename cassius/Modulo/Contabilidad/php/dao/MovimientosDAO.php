@@ -295,7 +295,25 @@ class MovimientosDAO{
        return true;
     }
 	
-	
+	    function contar(){
+        //var_dump($is);
+        $this->iden=$is;
+        $sql = "SELECT distinct COUNT(distinct fecha) as item FROM movimiento ";
+        $this->daoConnection->consulta($sql);
+        $this->daoConnection->leerVarios();
+        $numregistros = $this->daoConnection->numregistros();
+        $i=0;
+        if($numregistros == 0){
+            return $lista;
+        }
+       $a = $this->daoConnection->ObjetoConsulta2[$i][0];
+       if($a!=$b){
+          return false;
+       }
+
+       return $a;
+    }
+    
 
 }
 
