@@ -3,7 +3,7 @@
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet"/>
 <link href="../css/stylesgregar_tercero.css" rel="stylesheet"/>
-<link href="../contabilidad/css/stylemovimiento.css" rel="stylesheet"/>
+<link href="../css/stylemovimiento.css" rel="stylesheet"/>
 <script src="../jslib/mootools-1.2-core-compressed.js"></script>
 <script src="../jslib/vlaCal-v2.1-compressed.js"></script>
 <script src="../Scripts/globos_ayuda.js" ></script>

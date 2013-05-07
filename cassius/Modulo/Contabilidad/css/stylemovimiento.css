@@ -1,0 +1,39 @@
+.editE{
+      color: #fff; 
+      font-family: Verdana, Geneva, sans-serif; 
+      font-size: 12px;
+      position: absolute;
+      margin-top: -10px;
+      margin-left: 450px;
+      }
+  .mofM{
+      position: absolute;
+      margin-top: 3px;
+      margin-left: 650px;
+  }    
+  #rojo{
+    background: #E24B4B;
+    width: 780px;
+    height: 60px;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -3px;
+    z-index: 0;
+  }
+  .MOle{
+    position: absolute;
+    z-index: 99;
+  }
+  .MOle img{
+    margin-left: -760px;
+  }
+  .terceroMO{
+    position: absolute;
+    margin-top: -10px;
+  }
+  .MOlefe{
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 5px;
+    z-index: 99;
+  }

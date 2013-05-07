@@ -1,5 +1,7 @@
-<?php $GLOBALS['nota']="";
-      $GLOBALS['contador'] = 20;?>
+<?php
+  $GLOBALS['nota']="";
+  $GLOBALS['contador'] = 20;
+?>
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../index.php'"/>
 </div>
@@ -53,40 +55,46 @@
             $doc = $DocumentoDAO->get($item->getTipodoc());            
             $mvCuentas = $MovimientosDAO->getList_cuentas($item->getId());
        ?>
-        <tr>
+        <tr>  
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
              <?php    
-
                 if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
-                  {       
-                          echo substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
-                          $GLOBALS['contador']--;
+                      {
+                      echo '<article class="MOlefe"> - '.substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4).'</article>';
+                      $GLOBALS['contador']--;
                   }
-                      $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
+                  $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
               ?>
 
             <tr>
-              <td><span class="texto_azul2"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php $item->getNumero(); echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
-             
+              <td><span class="texto_azul2 MOle"><strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?><?php $item->getNumero(); echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
+
                         <?php $num = $item->getId();
                           if(!$MovimientosDAO->suma($item->getId())){
-                              echo "<pre> !Error diferencia entre valores </pre>";
+
+                              echo "
+                              <section id='rojo'></section>
+                              <article class='editE'> ¡Error diferencia entre valores! </article>
+                                  <input class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(http://localhost/www/cassiusmastre/maqueta/images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
+                              ";                              
                            }  
                         ?>
-            </td>
-             
-                 
-                
+            </td>           
             </tr>
             <tr>
               <td><img src="../images/line2.gif" width="760" height="1" /></td>
+              <td class="MOle"><img src="../images/line2.gif" width="760" height="1" /></td>
             </tr>
             <tr>
 
-              <td><strong>&nbsp;Nombre de tercero:</strong> 
+              <td style="height:15px;">
+                <article class="MOle terceroMO">
+                <strong>&nbsp;Nombre de tercero:</strong> 
              <?php echo $tercero->getNombretercero(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nit:</strong> 
                 <?php echo $tercero->getNodocumento(); ?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Concepto:</strong> 
-                <?php echo $item->getConcepto(); ?></td>
+                <?php echo $item->getConcepto(); ?>
+                </article>
+              </td>
             </tr>
           </table></td>
           <td width="164" align="left" valign="middle" bgcolor="#D9B0B3" class="texto_azul"> &nbsp;&nbsp;<span class="texto_azul_peque">Documento</span>: <?php echo $doc->getSigla(); ?> <?php echo $item->getNumdoc(); ?></td>
