@@ -38,7 +38,7 @@
               }
             })
           }else{
-              status.html("Ingrese un usuario");
+              status.html(" ");
           }
  
         });
@@ -76,20 +76,3 @@
 ?>
 </body>
 </html>
-<style type="text/css">
-   span{
-        color:#555555;
-        font-weight:bold;
-        padding-bottom:2px;
-        padding-left:16px;
-      }
- 
-      span.checked{
-        background:url("../images/img/checked.gif") no-repeat scroll 0 0 transparent;
-        color:#3581CC;
-      }
-      span.error{
-        background:url("../images/img/unchecked.gif") no-repeat scroll 0 0 transparent;
-        color:#EA5200;
-      }
-</style>
