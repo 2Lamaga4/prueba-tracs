@@ -67,7 +67,10 @@
     <table width="340" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="149" class="texto_azul" align="left"><strong>Cédula:</strong></td>
-          <td width="191"><input name="cedula" type="number" class="textarea_redondo2" id="cedula" style="width:200px;" value="" required="number" />
+          <td width="191">           
+            <input name="cedula" type="text" class="textarea_redondo2" id="tercero"
+                value="" autocomplete="off" style="width:200px;" onblur="javascript:dato_tercero()" required/> 
+                 <span id="status"></span>
             </td>
         </tr>
       </table></td>

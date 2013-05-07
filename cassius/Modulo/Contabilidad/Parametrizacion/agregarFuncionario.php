@@ -10,6 +10,41 @@
 <script src="../Scripts/transicion.js" ></script>
 <script src="../script/funcionarios.js" ></script>
 <script src="../Scripts/ParametrizacionFuncionario.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+ 
+        $("input[name=cedula]").keyup(function(e){
+          var cedula = $(this).val();
+          var status=$("#status");
+ 
+          status.removeClass("checked").removeClass("error")
+          if(cedula.length > 0){
+            $.ajax({
+              type:"POST",
+              url:"checking.php",
+              data:"cedula="+cedula,
+              dataType:"json",
+              beforeSend:function(){
+                  status.html("<img src='../images/img/loading.gif'/>");
+              },
+              success:function(response){
+                  if(response.valid==true){
+                    status.addClass("checked");
+                  }else{
+                    status.addClass("error");
+                  }
+                  status.html(response.msg);
+              }
+            })
+          }else{
+              status.html("Ingrese un usuario");
+          }
+ 
+        });
+ 
+      })
+  </script>
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK']) == 2){?>onload="OK2()"<?php } ?>>
 <?php
@@ -41,3 +76,20 @@
 ?>
 </body>
 </html>
+<style type="text/css">
+   span{
+        color:#555555;
+        font-weight:bold;
+        padding-bottom:2px;
+        padding-left:16px;
+      }
+ 
+      span.checked{
+        background:url("../images/img/checked.gif") no-repeat scroll 0 0 transparent;
+        color:#3581CC;
+      }
+      span.error{
+        background:url("../images/img/unchecked.gif") no-repeat scroll 0 0 transparent;
+        color:#EA5200;
+      }
+</style>
