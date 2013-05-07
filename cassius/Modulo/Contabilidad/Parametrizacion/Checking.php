@@ -1,32 +1,21 @@
 <?php
-
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpassword = "123";
-$dbname = "dbconjun";
-
-$id = mysql_connect($dbhost, $dbuser, $dbpassword) or die("error en coneccion: " . mysql_error()); 
-mysql_select_db($dbname, $id); 
- 
+   include "../php/dao/checquian.php";
 if (isset($_POST['cedula'])) {
-  sleep(2);
-  $query="SELECT idterceros FROM terceros WHERE nombretercero = '".$_POST['cedula']."'";
+  sleep(2);//tiempo
 
-  $rs_User = mysql_query($query) or die(mysql_error());
- 
-  $num_rows=mysql_num_rows($rs_User);
- 
-  
-  if($num_rows==0){
+  var_export($_REQUEST['cedula']);
+$confir = new Checking();
+$con = $confir->chequiar($_POST['cedula']);
+
+echo "hola";
+  if($con){
     $checking=true;
-    $msg="ok";
+    $msg="Ya esta registrada"; 
   }else{
    $checking=false;
-   $msg="X"; 
+    $msg="OK"; 
   }
- 
   $json=array("valid"=>$checking, "msg" => $msg);
- 
   echo json_encode($json);
  
 }

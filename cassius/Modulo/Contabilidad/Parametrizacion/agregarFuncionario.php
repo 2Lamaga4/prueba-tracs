@@ -10,8 +10,8 @@
 <script src="../Scripts/transicion.js" ></script>
 <script src="../script/funcionarios.js" ></script>
 <script src="../Scripts/ParametrizacionFuncionario.js"></script>
-<script src="../Scripts/jquery.min.js"></script>
-    <script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript">
       $(function(){
  
         $("input[name=cedula]").keyup(function(e){
@@ -38,7 +38,7 @@
               }
             })
           }else{
-              status.html(" ");
+              status.html("Ingrese un usuario");
           }
  
         });
@@ -76,3 +76,20 @@
 ?>
 </body>
 </html>
+<style type="text/css">
+   span{
+        color:#555555;
+        font-weight:bold;
+        padding-bottom:2px;
+        padding-left:16px;
+      }
+ 
+      span.checked{
+        background:url("../../images/img/checked.gif") no-repeat scroll 0 0 transparent;
+        color:#3581CC;
+      }
+      span.error{
+        background:url("../../images/img/unchecked.gif") no-repeat scroll 0 0 transparent;
+        color:#EA5200;
+      }
+</style>

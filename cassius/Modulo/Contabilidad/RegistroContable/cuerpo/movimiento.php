@@ -77,17 +77,11 @@
                <?php
                     if($GLOBALS['res']!=1){
                   ?>
-                     <strong>-Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
+                     <strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
                      <?php  echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
                   <?php
-                    } 
-                    else{
-                    ?>
-                     <strong>-</strong></span><strong> - </strong>
-                  <?php
-
                     }
-
+                  
                ?>
                 
                       
@@ -97,7 +91,7 @@
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error diferencia entre valores! </article>
-                                  <input onclick='popUp();' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
+                                  <input class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                               ";                              
                            }  
                         ?>

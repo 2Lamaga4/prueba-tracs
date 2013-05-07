@@ -10,8 +10,7 @@
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/transicion.js" ></script>
 <script src="../Scripts/img.js"></script>
-<script src="../Scripts/scrtiprcmovimientos.js"></script> 
-<script src="../Scripts/movimiento.js"></script> 
+<script src="../Scripts/scrtiprcmovimientos.js"></script>  
 </head>
 <body class="interna2" OnContextMenu="return false">
  <?php
