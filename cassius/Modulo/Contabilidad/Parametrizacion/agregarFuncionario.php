@@ -5,12 +5,13 @@
 <link href="../css/stylesgregar_tercero.css" rel="stylesheet" />
 <link href="../css/funcionarios.css" rel="stylesheet" />
 <script src="../Scripts/img.js"></script>
+-<script src="../Scripts/movimiento.js"></script> 
 <script src="../Scripts/globos_ayuda.js" ></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/transicion.js" ></script>
 <script src="../script/funcionarios.js" ></script>
 <script src="../Scripts/ParametrizacionFuncionario.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="../Scripts/jquery.min.js"></script>
     <script type="text/javascript">
       $(function(){
  
@@ -38,7 +39,7 @@
               }
             })
           }else{
-              status.html("Ingrese un usuario");
+              status.html(" ");
           }
  
         });
