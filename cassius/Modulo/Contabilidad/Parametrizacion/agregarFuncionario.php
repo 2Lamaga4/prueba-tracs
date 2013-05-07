@@ -22,7 +22,7 @@
           status.removeClass("checked").removeClass("error")
           if(cedula.length > 0){
             $.ajax({
-              type:"POST",
+              type:"GET",
               url:"checking.php",
               data:"cedula="+cedula,
               dataType:"json",

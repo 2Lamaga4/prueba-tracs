@@ -84,7 +84,8 @@
                    else{
                     ?>
                      <strong>-</strong></span><strong> - </strong>
-                  <?php                  
+                  <?php 
+                  }                 
                ?>                                  
                         <?php $num = $item->getId();
                           if(!$MovimientosDAO->suma($item->getId())){

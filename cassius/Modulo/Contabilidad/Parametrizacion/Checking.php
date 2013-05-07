@@ -1,21 +1,30 @@
 <?php
-   include "../php/dao/checquian.php";
-if (isset($_POST['cedula'])) {
-  sleep(2);//tiempo
+$GLOBALS['che1']="";
 
-  var_export($_REQUEST['cedula']);
-$confir = new Checking();
-$con = $confir->chequiar($_POST['cedula']);
+ include "../php/dao/checquian.php";
 
-echo "hola";
-  if($con){
+  
+ 
+if (isset($_GET['cedula'])) {
+
+  sleep(0.999);
+  $objche = new Checking();  
+  $entiche1 = new che();   
+  $entiche =  $objche->chequiar($_GET['cedula']);
+  $entiche1->setId($entiche);
+
+  $cher=$GLOBALS['che1'];
+
+  
+    $checking=false;
+    $msg="X"; 
+  if($cher==0){
     $checking=true;
-    $msg="Ya esta registrada"; 
-  }else{
-   $checking=false;
-    $msg="OK"; 
+    $msg="ok";
   }
+ 
   $json=array("valid"=>$checking, "msg" => $msg);
+ 
   echo json_encode($json);
  
 }
