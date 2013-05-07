@@ -77,11 +77,17 @@
                <?php
                     if($GLOBALS['res']!=1){
                   ?>
-                     <strong>&nbsp;Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
+                     <strong>-Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
                      <?php  echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
                   <?php
+                    } 
+                    else{
+                    ?>
+                     <strong>-</strong></span><strong> - </strong>
+                  <?php
+
                     }
-                  
+
                ?>
                 
                       
