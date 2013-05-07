@@ -81,6 +81,7 @@
                      <?php  echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
                   <?php
                     }
+                  
                ?>
                 
                       
