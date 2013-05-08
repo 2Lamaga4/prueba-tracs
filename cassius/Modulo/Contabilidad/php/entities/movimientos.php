@@ -12,9 +12,10 @@
 		 private $tercero;
 		 private $idmovcuentas;
 		 private $codcuenta;
-		 private $debito;
+		 private $debito; 
 		 private $credito;
 		 private $idmovimiento;
+		 private $denominacion;
 					
 		 public function getId(){
 
@@ -105,6 +106,13 @@
 		 public function setIdmovimiento($idmovimiento){
 			 $this->idmovimiento = $idmovimiento;
 		 }
+		 public function setDenoinacion($denomina){
+		 	$this->denominacion=$denomina;
+		 }
+		  public function getDenoinacion(){
+		 	return $this->denominacion;
+		 }
+
 
 	}
 ?>

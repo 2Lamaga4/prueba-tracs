@@ -2,7 +2,8 @@
       $GLOBALS['nota']="";
       $GLOBALS['contador'] = $MovimientosDAO->contar()+1;
       $GLOBALS['res'] = "";
-?>
+      $GLOBALS['nummo'] = "";
+?> 
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../index.php'"/>
 </div>
@@ -58,7 +59,8 @@
        ?>
         <tr>  
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
-             <?php    
+             <?php  
+              $GLOBALS['nummo']=$item->getNumero(); 
                 if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
                       {
                       echo '<article class="MOlefe"> - '.substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4).'</article>';
@@ -78,7 +80,10 @@
                     if($GLOBALS['res']!=1){
                   ?>
                      <strong>-Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
-                     <?php  echo $GLOBALS['contador'] ?></strong></span><strong> - </strong>
+                     <?php  echo $GLOBALS['contador']
+
+                      ?></strong></span><strong> - </strong>
+
                   <?php
                     }
                    else{
@@ -89,10 +94,10 @@
                ?>                                  
                         <?php $num = $item->getId();
                           if(!$MovimientosDAO->suma($item->getId())){
-
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error diferencia entre valores! </article>
+                              <input id='idmovi' type='hidden' value='".$GLOBALS['nummo']."'/>
                               <input onclick='popUp();' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                              ";                              
                            }  

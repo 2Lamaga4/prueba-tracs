@@ -17,15 +17,23 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <script src="../Scripts/img.js"></script>   
 <?php
    include('cuerpo/agregar_comprobante_diariojs.php');
- ?> 
-</head>
-<body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
 
+ ?> 
+</head> 
+<body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
 <?php
     $view= new stdClass(); 
     $view->disableLayout=false;
 if ($view->disableLayout==false)
-    {
+    { include_once('../php/dao/daoConnection.php');
+	  include_once('../php/dao/MovimientosDAO.php');
+      include_once('../php/entities/movimientos.php');
+      include_once('../php/dao/TercerosDAO.php');
+      include_once('../php/entities/terceros.php');
+      include_once('../php/dao/DocumentoDAO.php');
+      include_once('../php/entities/documentos.php');
+      include_once('../php/dao/CuentaDAO.php');
+      include_once('../php/entities/cuentas.php');
       include_once ('cuerpo/Edita.php');
     }
  ?>   

@@ -1,13 +1,13 @@
 <?php   session_start();
-require_once('../php/dao/daoConnection.php');
-require_once('../php/dao/MovimientosDAO.php');
-require_once('../php/entities/movimientos.php');
-require_once('../php/dao/TercerosDAO.php');
-require_once('../php/entities/terceros.php');
-require_once('../php/dao/DocumentoDAO.php');
-require_once('../php/entities/documentos.php');
-require_once('../php/dao/CuentaDAO.php');
-require_once('../php/entities/cuentas.php');
+include_once('../php/dao/daoConnection.php');
+include_once('../php/dao/MovimientosDAO.php');
+include_once('../php/entities/movimientos.php');
+include_once('../php/dao/TercerosDAO.php');
+include_once('../php/entities/terceros.php');
+include_once('../php/dao/DocumentoDAO.php');
+include_once('../php/entities/documentos.php');
+include_once('../php/dao/CuentaDAO.php');
+include_once('../php/entities/cuentas.php');
 
 unset($_SESSION['arreglo']);
 unset($_SESSION['numero']);

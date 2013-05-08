@@ -7,7 +7,7 @@
         <td width="256" class="titulos" align="center">Edita Comprobante de diario</td>
       </tr>
     </table></td>
-  </tr>
+  </tr> 
   <tr>
     <td height="20" valign="middle" align="center">&nbsp;</td>
   </tr>
@@ -19,13 +19,8 @@
           <table width="220" border="0">
           <tr>
             <td width="166">&nbsp;<span class="texto_azul_peque">Documento</span>:
-             <select name="documento" class="textarea_redondo2" id="documento" style="width:80px; height:27px;" onchange="numero_documento();" required>
-            <option value="0">--</option>
-            <?php foreach($documento as $item){ ?>
-              <option value="<?php echo $item->getId(); ?>">
-              <?php echo $item->getNombredoc(); ?></option>
-            <?php } ?>
-            </select></td>
+             <input  type="text" name="documento" class="textarea_redondo2" id="documento" style="width:80px; height:27px;" onchange="numero_documento();" readonly="readonly" required>
+             </td>
             <td width="55"><div id="num_d"></div></td>
           </tr>
         </table>  
@@ -37,12 +32,12 @@
             <td>
               <span class="texto_azul2"><strong>&nbsp;Movimiento 
               <input name="num_movi" id="num_movi" type="hidden" value=" " />  </strong></span><strong> - </strong>
-              <input type="text" name="fecha" class="inputDate textarea_redondo2" id="inputDate" style="width:65px;" value="<?php echo date('d/m/Y'); ?>" readonly="readonly" />
+              <input type="text" name="fecha"  style="width:65px;" value="" readonly="readonly" />
 
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
 
-              <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
-                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()" required/> 
+              <input name="tercero" type="text" class="textarea_redondo2" id="tercero" 
+                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()"  readonly="readonly" required/> 
              <span id="status"></span>
               <td valign="middle"><div id="ter2">
                 

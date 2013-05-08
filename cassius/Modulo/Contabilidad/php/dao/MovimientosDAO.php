@@ -144,7 +144,8 @@ class MovimientosDAO{
         return $lista;
     }
     
-    function get_documento($id_tipo){
+    function get_documento($id_tipo)
+       {
 
         $newMovimientos= new movimientos();
 
@@ -190,6 +191,7 @@ class MovimientosDAO{
     }
     
     
+
     function save_movimiento_cueta($obj){
         $newMovimientos = new movimientos();
         $newMovimientos = $obj;
@@ -202,11 +204,39 @@ class MovimientosDAO{
             echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
             return false;
         }
-
         return true;
+    }
+    function mosTerMovi($id){
+         $terceros = new terceros();
+         $newMovimientos= new movimientos();
+         $query2="SELECT cuenta,denominacion,debito,credito FROM movimiento INNER JOIN movcuentas INNER JOIN puc  where id =  ".$id."  and idmovimiento = id and codcuenta=idpuc;";
+         $query="SELECT concepto,nombretercero,nodocumento FROM terceros INNER JOIN movimiento WHERE id = ".$id."and idterceros = tercero";
+         $this->daoConnection->consulta($query);
+         $this->daoConnection->leerVarios();
+         $numregistros = $this->daoConnection->numregistros();
+
+
+        if($numregistros == 0){
+            return null;
+        }
+         $i=0; 
+         $newMovimientos->setConcepto($this->daoConnection->ObjetoConsulta2[$i][0]))
+         $terceros->setNombretercero($this->daoConnection->ObjetoConsulta2[$i][1]));
+         $terceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][2]));
+         /////////////////////////////////////////////////////////////////
+         ////////////////////////////////////////////////////////////////
+         $this->daoConnection->consulta($query2);
+         $this->daoConnection->leerVarios();
+         $numregistros2 = $this->daoConnection->numregistros();
+         if($numregistros2 == 0){
+            return null;
+         }
+          $newMovimientos->setCodcuenta();
+          $newMovimientos->setDebito();
+          $newMovimientos->setCredit();
+           $newMovimientos->setDenoinacion();
 
     }
-
 
     function update($obj){
        $newTerceros = new terceros();
