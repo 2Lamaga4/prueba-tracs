@@ -1,0 +1,31 @@
+span{
+        color:#555555;
+        font-weight:bold;
+        padding-bottom:2px;
+        padding-left:16px;
+      }
+ 
+      span.checked{
+        background:url("img/checked.gif") no-repeat scroll 0 0 transparent;
+        color:#3581CC;
+      }
+      span.error{
+        background:url("img/unchecked.gif") no-repeat scroll 0 0 transparent;
+        color:#EA5200;
+        position: absolute;
+        top:0;
+        margin-top:58px;
+        margin-left: -200px;
+      }
+      #nitM{
+        position: absolute;
+        top: 0;
+        margin-top: -18px;
+        margin-left: 35px;
+      }
+      #documento{
+        margin-left: 15px;
+        top:0px;
+        margin-top: 105px;
+        position: absolute;
+      }

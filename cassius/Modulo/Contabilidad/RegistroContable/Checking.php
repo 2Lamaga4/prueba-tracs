@@ -18,10 +18,10 @@ if (isset($_GET['tercero'])) {
   
   if($num_rows==0){
      $checking=false;
-     $msg="X"; 
+     $msg='No existe Tercero. <a href="#"  onclick="javascript:agregar_Tercero()"> Agregar</a>'; 
   }else{
     $checking=true;
-    $msg="ok";  
+    $msg=" ";  
   }
  
   $json=array("valid"=>$checking, "msg" => $msg);

@@ -4,8 +4,9 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet" />
 <link href="../js/jquery.autocomplete.css" rel="stylesheet" />
-<link href="../css/datepicker.css"rel="stylesheet" />
-<script src="../Scripts/bloqueo_clic_derecho.js" ></script>
+<link href="../css/datepicker.css" rel="stylesheet" />
+<link href="../css/stylecmopobante.css"rel="stylesheet" />
+<script src="../Scripts/bloqueo_cli _derecho.js" ></script>
 <script src="../Scripts/codigo.js"></script>
 <script src="../js/jquery.js"></script>
 <script src='../js/jquery.bgiframe.min.js'></script>
@@ -18,61 +19,7 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <?php
    include('cuerpo/agregar_comprobante_diariojs.php');
  ?>  
-
-    <script type="text/javascript">
-      $(function(){
- 
-        $("input[name=tercero]").keyup(function(e){
-          var tercero = $(this).val();
-          var status=$("#status");
- 
-          status.removeClass("checked").removeClass("error")
-          if(tercero.length > 0){
-            $.ajax({
-              type:"GET",
-              url:"checking.php",
-              data:"tercero="+tercero,
-              dataType:"json",
-              beforeSend:function(){
-                  status.html("<img src='../images/img/loading.gif'/>");
-              },
-              success:function(response){
-                  if(response.valid==true){
-                    status.addClass("checked");
-                    llamarasincrono('tercero_campo2.php?tercero='+tercero, 'ter2');                    
-                  }else{
-                    status.addClass("error");
-                    llamarasincrono('tercero_campo.php?tercero='+tercero, 'ter');
-                  }
-                  status.html(response.msg);                  
-              }
-            })
-          }else{
-              status.html(" ");
-          }
- 
-        });
- 
-      })
-    </script>
-<style type="text/css">
-   span{
-        color:#555555;
-        font-weight:bold;
-        padding-bottom:2px;
-        padding-left:16px;
-      }
- 
-      span.checked{
-        background:url("img/checked.gif") no-repeat scroll 0 0 transparent;
-        color:#3581CC;
-      }
-      span.error{
-        background:url("img/unchecked.gif") no-repeat scroll 0 0 transparent;
-        color:#EA5200;
-      }
-</style>
-
+<script src="../Scripts/agregarcomprobamte.js"></script>
 </head>
 
 <body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
