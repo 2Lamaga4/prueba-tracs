@@ -5,7 +5,6 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <link href="../config/estilos_cassius.css" rel="stylesheet" />
 <link href="../js/jquery.autocomplete.css" rel="stylesheet" />
 <link href="../css/datepicker.css" rel="stylesheet" />
-<link href="../css/stylecmopobante.css"rel="stylesheet" />
 <script src="../Scripts/bloqueo_cli _derecho.js" ></script>
 <script src="../Scripts/codigo.js"></script>
 <script src="../js/jquery.js"></script>
@@ -31,6 +30,7 @@ if ($view->disableLayout==false)
       include_once ('movimientos/agregar_componentes_diario.php');
     }
  ?>   
+ <link href="../css/stylecmopobante.css"rel="stylesheet" />
 </body>
 </html>
 

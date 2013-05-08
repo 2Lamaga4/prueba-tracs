@@ -17,7 +17,7 @@ if (isset($_GET['cedula'])) {
 
   
     $checking=false;
-    $msg="X"; 
+    $msg="Ya existe"; 
   if($cher==0){
     $checking=true;
     $msg="ok";

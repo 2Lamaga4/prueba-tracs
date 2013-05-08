@@ -6,11 +6,11 @@ span{
       }
  
       span.checked{
-        background:url("img/checked.gif") no-repeat scroll 0 0 transparent;
+        background:url("../images/img/checked.gif") no-repeat scroll 0 0 transparent;
         color:#3581CC;
       }
       span.error{
-        background:url("img/unchecked.gif") no-repeat scroll 0 0 transparent;
+        background:url("../images/img/unchecked.gif") no-repeat scroll 0 0 transparent;
         color:#EA5200;
         position: absolute;
         top:0;
