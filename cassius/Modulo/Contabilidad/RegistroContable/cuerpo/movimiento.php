@@ -12,7 +12,7 @@
 <div id="fondo_home_contabilidad"></div>
 <div id="contenido_tabla2">
   <table width="950" border="0" align="center" cellpadding="0" cellspacing="1">
-    <tr>
+    <tr> 
       <td height="50" bgcolor="#CCCCCC" class="tr_tabla_interna2">
       <form method="post" name="form1" id="form1" action="">
       <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -97,8 +97,8 @@
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error diferencia entre valores! </article>
-                              <input id='idmovi' type='hidden' value='".$GLOBALS['nummo']."'/>
-                              <input onclick='popUp();' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
+                              <input id='idmovi".$GLOBALS['nummo']."' type='hidden' value='".$GLOBALS['nummo']."'/>
+                              <input   onclick='popUp(idmovi".$GLOBALS['nummo'].")' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                              ";                              
                            }  
                         ?>

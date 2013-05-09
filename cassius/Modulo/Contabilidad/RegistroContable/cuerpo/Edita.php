@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" action="../php/action/addMovimiento.php" onsubmit="return validar()">
+<form id="form1" name="form1" method="post" action="../php/action/editarMovimientos.php" onsubmit="return validar()">
 <table width="945" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="422" height="50" align="center" valign="middle" bgcolor="#ADB1CB">
@@ -19,11 +19,23 @@
           <table width="220" border="0">
           <tr>
             <td width="166">&nbsp;<span class="texto_azul_peque">Documento</span>:
-             <input  type="text" name="documento" class="textarea_redondo2" id="documento" style="width:80px; height:27px;" onchange="numero_documento();" readonly="readonly" required>
+                 <?php
+                 foreach ($movimientos as $item2) 
+                 {  if($_GlOBALS['repetidos']!=$item2->getDocumen()){
+
+
+                  ?>
+                  <input  type="text"  class="textarea_redondo2" id="documento2" style="width:80px; height:27px;" value="<?php echo $item2->getDocumen() ?>" readonly="readonly" required>
+                  <?php
+                     $_GlOBALS['repetidos']=$item2->getDocumen();
+                     }
+                  }
+                  $_GlOBALS['repetidos']="";
+               ?>
              </td>
             <td width="55"><div id="num_d"></div></td>
           </tr>
-        </table>  
+        </table>   
         </td>
 
         <td width="729" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul">
@@ -31,13 +43,20 @@
           <tr>
             <td>
               <span class="texto_azul2"><strong>&nbsp;Movimiento 
-              <input name="num_movi" id="num_movi" type="hidden" value=" " />  </strong></span><strong> - </strong>
-              <input type="text" name="fecha"  style="width:65px;" value="" readonly="readonly" />
-
+              <input  id="num_movi" type="hidden" value=" " />  </strong></span><strong> - </strong>
+              <input type="text" name="num_movis"  style="width:65px;" value="<?php echo $_GET['dato'];?>" readonly="readonly" />
+        
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
+            <?php 
+                  foreach ($terceros as $item1) {
+                   
+                     ?>
+                             <input  type="text" class="textarea_redondo2" id="tercero2" value="<?php echo $item1->getNombretercero() ?>"  style="width:180px;"    required/> 
+                     <?php 
+                         }
 
-              <input name="tercero" type="text" class="textarea_redondo2" id="tercero" 
-                value="" autocomplete="off" style="width:180px;" onblur="javascript:dato_tercero()"  readonly="readonly" required/> 
+              ?>
+             
              <span id="status"></span>
               <td valign="middle"><div id="ter2">
                 
@@ -51,8 +70,17 @@
           <tr>
             <td colspan="3">
               <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concepto:</strong>
-              <span class="td_tabla_interna">
-              <input name="concepto" type="text" class="textarea_redondo2" id="concepto" style="width:422px;" required/>
+                <?php
+                foreach ($movimientos as $item2) 
+                 { if( $_GlOBALS['repetidos']!=$item2->getConcepto()){
+                  ?>
+                <span class="td_tabla_interna">
+                <input name="concepto" type="text" class="textarea_redondo2" id="concepto2" value="<?php echo $item2->getConcepto() ?>" style="width:422px;" required/>
+                  <?php
+                   $_GlOBALS['repetidos'] = $item2->getConcepto();
+                   }
+               }
+               ?>
               </span>
             </td>
           </tr>
@@ -67,11 +95,26 @@
     <td height="18" valign="middle" align="center"><img src="../images/line2.gif" width="940" height="1" /></td>
   </tr>
   <tr>
+     
+    <?php 
+     $i=1;
+    foreach ($movimientos as $item3) {
+     
+      ?>
+
+      <input  value="<?php echo $item3->getCodcuenta();?>"/> 
+      <input  value="<?php echo $item3->getDenoinacion();?>"/>
+      <input name="<?php echo $i.'debito';?>" value="<?php echo $item3->getDebito();?>"/>
+      <input name="<?php echo $i.'credito';?>" value="<?php echo $item3->getCredito();?>"/>
+      <?php
+       $i++;
+      echo "</br>";
+     
+    }
+    ?>
+
     <td height="35" valign="top" align="center">
-    <input style="width:90px;"name="Entrar" type="submit" class="boton_redondo" id="Entrar" value="::: Aceptar :::" />
-    <input type="hidden" name="num_movimiento" id="num_movimiento" value=" " />
-    <input type="hidden" name="suma_debito" id="suma_debito" value="0" />
-    <input type="hidden" name="id_suma_debito" id="id_suma_debito" value="0" />
+    <input style="width:90px;" type="submit" class="boton_redondo" id="Entrar" value="::: Aceptar :::" />
     </td>
   </tr>
 </table>

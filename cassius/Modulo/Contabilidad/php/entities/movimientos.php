@@ -7,6 +7,7 @@
 		 private $fecha;
 		 private $tipodoc;
 		 private $numdoc;
+		 private $documento;
 		 private $concepto;
 		 private $estado;
 		 private $tercero;
@@ -91,6 +92,7 @@
 		 } 
 		 public function setDebito($debito){
 			 $this->debito = $debito;
+			
 		 }
 
 		 public function getCredito(){
@@ -98,6 +100,7 @@
 		 } 
 		 public function setCredito($credito){
 			 $this->credito = $credito;
+			
 		 }
 
 		 public function getIdmovimiento(){
@@ -113,6 +116,13 @@
 		 	return $this->denominacion;
 		 }
 
+		  public function setDocumen($documen){
+		 	$this->documento=$documen;
+		 }
+		  public function getDocumen(){
+		 	return $this->documento;
+		 }
+		 
 
 	}
 ?>

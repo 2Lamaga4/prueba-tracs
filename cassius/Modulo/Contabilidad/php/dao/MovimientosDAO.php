@@ -1,6 +1,6 @@
 <?php
-class MovimientosDAO{
 
+class MovimientosDAO{
     public $daoConnection;
     public $iden;
     function __construct(){
@@ -17,8 +17,6 @@ class MovimientosDAO{
     function getList(){
 
         $sql = 'SELECT * FROM movimiento GROUP BY(numero) ORDER BY fecha desc';
-
-
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
@@ -28,7 +26,7 @@ class MovimientosDAO{
         if($numregistros == 0){
             return $lista;
         }
-
+        $i=0;
 
         for($i = 0; $i < $numregistros ; $i++){
             $newMovimientos= new movimientos();
@@ -206,68 +204,80 @@ class MovimientosDAO{
         }
         return true;
     }
-    function mosTerMovi($id){
+
+    function mostrarter($id){
          $terceros = new terceros();
-         $newMovimientos= new movimientos();
-         $query2="SELECT cuenta,denominacion,debito,credito FROM movimiento INNER JOIN movcuentas INNER JOIN puc  where id =  ".$id."  and idmovimiento = id and codcuenta=idpuc;";
-         $query="SELECT concepto,nombretercero,nodocumento FROM terceros INNER JOIN movimiento WHERE id = ".$id."and idterceros = tercero";
+         $query="SELECT nombretercero,nodocumento FROM terceros INNER JOIN movimiento WHERE id = ".$id." and idterceros = tercero";
+        
          $this->daoConnection->consulta($query);
          $this->daoConnection->leerVarios();
          $numregistros = $this->daoConnection->numregistros();
-
-
-        if($numregistros == 0){
+         $lista=array();
+         if($numregistros == 0){
             return null;
         }
          $i=0; 
-         $newMovimientos->setConcepto($this->daoConnection->ObjetoConsulta2[$i][0]))
-         $terceros->setNombretercero($this->daoConnection->ObjetoConsulta2[$i][1]));
-         $terceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][2]));
-         /////////////////////////////////////////////////////////////////
-         ////////////////////////////////////////////////////////////////
+         for($i = 0; $i < $numregistros ; $i++){
+          $terceros->setNombretercero($this->daoConnection->ObjetoConsulta2[$i][0]);
+          $terceros->setNodocumento($this->daoConnection->ObjetoConsulta2[$i][1]);
+           $lista[$i]=$terceros;
+           }
+     
+           return $lista;
+    }
+
+    function mosTerMovi($id){
+         
+         $query2="SELECT concepto,cuenta,denominacion,debito,credito,nombredoc FROM movimiento INNER JOIN documentos INNER JOIN   movcuentas INNER JOIN puc  where id =  ".$id." and idmovimiento = id and codcuenta=idpuc  and numdoc =  iddocumentos;";
+  
          $this->daoConnection->consulta($query2);
          $this->daoConnection->leerVarios();
          $numregistros2 = $this->daoConnection->numregistros();
+          $lista=array();
          if($numregistros2 == 0){
             return null;
+
          }
-          $newMovimientos->setCodcuenta();
-          $newMovimientos->setDebito();
-          $newMovimientos->setCredit();
-           $newMovimientos->setDenoinacion();
 
+          for($i = 0; $i < $numregistros2 ; $i++){
+          $newMovimientos = new movimientos();
+          $newMovimientos->setConcepto($this->daoConnection->ObjetoConsulta2[$i][0]);
+          $newMovimientos->setCodcuenta($this->daoConnection->ObjetoConsulta2[$i][1]);
+          $newMovimientos->setDenoinacion($this->daoConnection->ObjetoConsulta2[$i][2]);
+          $newMovimientos->setDebito($this->daoConnection->ObjetoConsulta2[$i][3]);
+          $newMovimientos->setCredito($this->daoConnection->ObjetoConsulta2[$i][4]);
+          $newMovimientos->setDocumen($this->daoConnection->ObjetoConsulta2[$i][5]);
+           $lista[$i]=$newMovimientos;
+         }
+       
+          return  $lista;
     }
-
-    function update($obj){
-       $newTerceros = new terceros();
-        $newTerceros = $obj;
-        
-        $update_fields=array();
-        if($newTerceros->getTipodocumento())  
-             $update_fields[1]="tipodocumento = '".mysql_real_escape_string($newTerceros->getTipodocumento())."'"; 
-        if($newTerceros->getNodocumento())  
-             $update_fields[2]="nodocumento = '".mysql_real_escape_string($newTerceros->getNodocumento())."'"; 
-        if($newTerceros->getNombretercero())  
-             $update_fields[3]="nombretercero = '".mysql_real_escape_string($newTerceros->getNombretercero())."'"; 
-        if($newTerceros->getDireccion())  
-             $update_fields[4]="direccion = '".mysql_real_escape_string($newTerceros->getDireccion())."'";
-        if($newTerceros->getTelefono())  
-             $update_fields[5]="telefono = '".mysql_real_escape_string($newTerceros->getTelefono())."'";
-        if($newTerceros->getEmail())  
-             $update_fields[6]="email = '".mysql_real_escape_string($newTerceros->getEmail())."'";
-        if($newTerceros->getRegimen())  
-             $update_fields[7]="regimen = '".mysql_real_escape_string($newTerceros->getRegimen())."'";       
-                 
-        
-        $querty =   "UPDATE terceros SET ".implode(",",$update_fields)." WHERE idterceros = '".$newTerceros->getId()."' ";
-        //echo $querty.'<br />';
-        $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
-        if (!$result){
-            echo 'Ooops (saveTerceros): '.mysql_error();
-            return false;
+    
+    function update($obj,$id,$conceptos)
+    {
+      $k=0;
+      $query=array();
+      $arreglo=array();
+      $query2="SELECT idmovcuentas From movcuentas WHERE idmovimiento=".$id;
+      echo  $query2;
+      $this->daoConnection->consulta($query2);
+      $this->daoConnection->leerVarios();
+      $numregistros = $this->daoConnection->numregistros();
+      for($j=0;$j<$numregistros;$j++)
+        {
+             $arreglo[$j]=$this->daoConnection->ObjetoConsulta2[$j][0];
         }
 
-        return true;
+      foreach ($obj as $valor) {
+        $movimientos = new movimientos();
+        $movimientos = $valor;
+        $query[$k] = "UPDATE movcuentas SET debito=".$valor->getDebito()." ,  credito=".$valor->getCredito()." WHERE idmovcuentas=".$arreglo[$k]." ;";
+        mysql_query($query[$k], $this->daoConnection->Conexion_ID);
+        $k++;
+      }
+      $q = "UPDATE movimiento SET concepto ='".$conceptos."' WHERE id=".$id;
+      echo $q;
+       mysql_query($q, $this->daoConnection->Conexion_ID);
     }
 
 
