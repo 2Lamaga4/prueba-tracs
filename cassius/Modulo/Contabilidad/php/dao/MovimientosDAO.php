@@ -229,7 +229,6 @@ class MovimientosDAO{
     function mosTerMovi($id){
          
          $query2="SELECT concepto,cuenta,denominacion,debito,credito,nombredoc FROM movimiento INNER JOIN documentos INNER JOIN   movcuentas INNER JOIN puc  where id =  ".$id." and idmovimiento = id and codcuenta=idpuc  and numdoc =  iddocumentos;";
-  
          $this->daoConnection->consulta($query2);
          $this->daoConnection->leerVarios();
          $numregistros2 = $this->daoConnection->numregistros();

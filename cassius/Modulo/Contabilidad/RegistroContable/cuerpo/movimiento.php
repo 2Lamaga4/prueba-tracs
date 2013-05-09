@@ -60,7 +60,8 @@
         <tr>  
           <td width="780" height="60" align="left" valign="middle" bgcolor="#E6CCCD" class="texto_azul"><table width="770" border="0" cellpadding="0" cellspacing="3">
              <?php  
-              $GLOBALS['nummo']=$item->getNumero(); 
+              $GLOBALS['nummo']=$item->getId(); 
+       
                 if(strcmp(substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4),$GLOBALS['nota'])!=0)
                       {
                       echo '<article class="MOlefe"> - '.substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4).'</article>';
@@ -81,7 +82,7 @@
                   ?>
                      <strong>-Movimiento <?php if($item->getNumero() < 10) { ?>0<?php } ?>
                      <?php  echo $GLOBALS['contador']
-
+                       
                       ?></strong></span><strong> - </strong>
 
                   <?php
@@ -93,6 +94,7 @@
                   }                 
                ?>                                  
                         <?php $num = $item->getId();
+                  
                           if(!$MovimientosDAO->suma($item->getId())){
                               echo "
                               <section id='rojo'></section>
