@@ -37,3 +37,30 @@
     margin-top: 5px;
     z-index: 99;
   }
+  #CuentaF{
+    width:140px;
+    padding: 0px 0px 0px 0px;
+    height: 30px;
+  }
+#CuentaD input, 
+#CuentaF input{
+  width:90%;
+  margin-left: 8%;
+  border: none;
+  background: none;
+}
+#CuentaD{
+ width:472px;
+}
+#documento2{
+  position: absolute;
+  margin-top: -7px;
+}
+#Taab{
+border: solid rgba(0,0,0,0) 1.5px;
+
+}
+#Entrar{
+  position: absolute;
+
+}

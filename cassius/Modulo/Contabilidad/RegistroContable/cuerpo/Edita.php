@@ -19,13 +19,14 @@
           <table width="220" border="0">
           <tr>
             <td width="166">&nbsp;<span class="texto_azul_peque">Documento</span>:
+
                  <?php
                  foreach ($movimientos as $item2) 
                  {  if($_GlOBALS['repetidos']!=$item2->getDocumen()){
 
 
                   ?>
-                  <input  type="text"  class="textarea_redondo2" id="documento2" style="width:80px; height:27px;" value="<?php echo $item2->getDocumen() ?>" readonly="readonly" required>
+                  <input  type="text"  class="textarea_redondo2" id="documento2" style="width:125px; height:27px;" value="<?php echo $item2->getDocumen() ?>" readonly="readonly" required>
                   <?php
                      $_GlOBALS['repetidos']=$item2->getDocumen();
                      }
@@ -87,34 +88,59 @@
         </table></td>
       </tr>
       <tr>    
-          <td height="35" colspan="2" valign="top"><div id="cuentas"></div></td>
+          
       </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td height="18" valign="middle" align="center"><img src="../images/line2.gif" width="940" height="1" /></td>
-  </tr>
-  <tr>
-     
+      <table align="center" border="0" cellpadding="0" cellspacing="2" style="background-color: rgb(95, 115, 166);" width="900">
+  <tbody>
+    <tr>
+      <td class="td_resaltado_azul" height="30" style="background-color: rgb(119, 140, 164); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255); padding: 0px 0px 0px 10px;">
+        Cuenta</td>
+      <td class="td_resaltado_azul" style="background-color: rgb(119, 140, 164); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255); padding: 0px 0px 0px 10px;" width="471">
+        Descripci&oacute;n</td>
+      <td class="td_resaltado_azul" style="background-color: rgb(119, 140, 164); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255); padding: 0px 0px 0px 10px;">
+        D&eacute;bito</td>
+      <td class="td_resaltado_azul" style="background-color: rgb(119, 140, 164); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255); padding: 0px 0px 0px 10px;">
+        Cr&eacute;dito</td>
+    </tr>  
     <?php 
      $i=1;
     foreach ($movimientos as $item3) {
      
       ?>
-
-      <input  value="<?php echo $item3->getCodcuenta();?>"/> 
-      <input  value="<?php echo $item3->getDenoinacion();?>"/>
-      <input name="<?php echo $i.'debito';?>" value="<?php echo $item3->getDebito();?>"/>
-      <input name="<?php echo $i.'credito';?>" value="<?php echo $item3->getCredito();?>"/>
+<table id="Taab" align="center" border="0" cellpadding="0" cellspacing="1" style="" width="900">
+    <tr class="tr_tabla_interna" style="background-color: rgb(228, 238, 249); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(10, 97, 162);">
+      <td class="td_tabla_interna" id="CuentaF">
+        <input  value="<?php echo $item3->getCodcuenta();?>"/></td>
+      <td class="td_tabla_interna" id="CuentaD" style="padding: 0px 0px 0px 10px;">
+       <input  value="<?php echo $item3->getDenoinacion();?>"/></td>
+      <td class="td_tabla_interna" style="padding: 0px 0px 0px 3px;">     
+        <input class="textarea_redondo2" id="debito1" name="<?php echo $i.'debito';?>" value="<?php echo $item3->getDebito();?>" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; border: 1px solid rgb(0, 0, 102); padding: 3px 5px; font-family: Arial, Helvetica, Verdana, sans-serif; height: 20px; width: 80px;"/>
+     </td>
+      <td class="td_tabla_interna" style="padding: 0px 0px 0px 10px;">
+        <input class="textarea_redondo2" id="credito1" name="<?php echo $i.'credito';?>" value="<?php echo $item3->getCredito();?>" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; border: 1px solid rgb(0, 0, 102); padding: 3px 5px; font-family: Arial, Helvetica, Verdana, sans-serif; height: 20px; width: 80px;"/>
+    </td>
+    </tr>
+</table>
       <?php
-       $i++;
-      echo "</br>";
+       $i++;    
      
     }
     ?>
-
+</tbody>
+</table>  
+    </table></td>
+  </tr>
+  <tr>
+    <center>
+    <td height="18" valign="middle" align="center"><img src="../images/line2.gif" width="940" height="1" /></td>
+    </center>
+  </tr>
+    <td height="35" colspan="2" valign="top"><div id="cuentas"></div></td>
+  <tr>
     <td height="35" valign="top" align="center">
+      <center>
     <input style="width:90px;" type="submit" class="boton_redondo" id="Entrar" value="::: Aceptar :::" />
+   </center>
     </td>
   </tr>
 </table>
