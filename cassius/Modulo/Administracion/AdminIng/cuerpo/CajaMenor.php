@@ -15,20 +15,22 @@
           <td height="20">&nbsp;</td>
         </tr>
         <tr>
+           <form action="ingresarDatosCajaMenor.php" method="post">
           <article id="SaldoA">
               <div id="Salname"><strong>Saldo:</strong></div>
-              <div id="Salinp"><input type="text" name="saldo" class="textarea_redondo2" id="nombres2"  value="" /></div>
+              <div id="Salinp"><input type="text" name="saldo" class="textarea_redondo2" id="nombres2"   /></div>
           <article>
           <td height="40" bgcolor="#EAEAEA"><table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>No:</strong></td>
               <td width="226" class="titulos" align="left">0001</td>
+
               <td width="122" class="texto_azul"align="left"><strong>Fecha:</strong></td>
               <td width="284" class="texto_azul" align="left">
-                <input type="date" name="saldo" class="textarea_redondo2" id="nombres2"  value="" />
+                <input type="date" name="fecha" class="textarea_redondo2" id="nombres2"  value="" />
               </td>
-              </tr>
+              </tr> c
             </table></td>
         </tr>
         <tr>
@@ -36,7 +38,7 @@
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>Pagado a:</strong></td>
-              <td width="226" class="texto_azul" align="left"><input name="pagado" type="text" class="textarea_redondo2" id="pagado" style="width:200px;"/></td>
+              <td width="226" class="texto_azul" align="left"><input name="pagado" type="text" class="textarea_redondo2" id="tercero" style="width:200px;"  autocomplete="off"  required /></td>
               <td width="122" class="texto_azul"align="left"><strong>CC:</strong></td>
               <td width="284" class="texto_azul" align="left"><input name="cc" type="text" class="textarea_redondo2" id="cc" style="width:100px;"/></td>
               </tr>
@@ -47,7 +49,7 @@
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>Valor:</strong></td>
-              <td width="226" class="texto_azul" align="left"><input name="nombres2" type="text" class="textarea_redondo2" id="nombres2" style="width:100px;"/></td>
+              <td width="226" class="texto_azul" align="left"><input name="valor" type="text" class="textarea_redondo2" id="nombres2" style="width:100px;"/></td>
               <td width="122" class="texto_azul"align="left"><strong>Aprobado por:</strong></td>
               <td width="284" class="texto_azul" align="left"><select name="categoria6" class="textarea_redondo2" id="categoria8" style="width:200px; height:27px;">
                 <option>--</option>
@@ -65,7 +67,7 @@
               </tr>
           <article id="CaTe">
               <div id="CaTename"><strong>Categoria:</strong></div>
-              <div id="Cateinp"><input type="text" name="saldo" class="textarea_redondo2" id="nombres2"  value="" /></div>
+              <div id="Cateinp"><input type="text" name="categoria" class="textarea_redondo2" id="nombres2"  value="" /></div>
           <article>
           </table></td>
         </tr>
@@ -80,7 +82,8 @@
       </td>
     </tr>
     <tr>
-      <td height="40" colspan="3" align="center"><input name="agregar_propietario" type="button" class="boton_general" style="width:160px" id="agregar_propietario" value="::: Aceptar :::" onclick="location.href='#'"/></td>
+      <td height="40" colspan="3" align="center"><input name="agregar_propietario" type="submit" class="boton_general" style="width:160px" id="agregar_propietario" /></td>
+        </form>
     </tr>
     <tr>
       <td height="40" colspan="3" align="center"><img src="../images/line2.gif" width="930" height="1" /></td>

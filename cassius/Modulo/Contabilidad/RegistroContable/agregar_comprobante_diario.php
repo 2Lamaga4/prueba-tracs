@@ -13,7 +13,7 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <script src="../js/datepicker.js"></script>
 <script src="../js/eye.js"></script>
 <script src="../js/utils.js"></script>
-<script src="../js/layout.js?ver=1.0.2"></script>
+<script src="../js/layout.js?ver=1.0.2"></script> 
 <script src="../Scripts/img.js"></script>
 <?php
    include('cuerpo/agregar_comprobante_diariojs.php');

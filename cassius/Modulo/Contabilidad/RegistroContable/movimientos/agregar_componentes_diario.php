@@ -38,7 +38,7 @@
               <span class="texto_azul2"><strong>&nbsp;Movimiento 
               <input name="num_movi" id="num_movi" type="hidden" value="<?php if(count($movimiento) == 0){ echo count($movimiento) + 1; }else{ echo count($movimiento) + 1; }  ?>" /> <?php if(count($movimiento) == 0){ echo count($movimiento) + 1; }else{ echo count($movimiento) + 1; }  ?></strong></span><strong> - </strong>
               <input type="text" name="fecha" class="inputDate textarea_redondo2" id="inputDate" style="width:65px;" value="<?php echo date('d/m/Y'); ?>" readonly="readonly" />
-
+ 
               <strong>&nbsp;Nombre de tercero:</strong>&nbsp;
 
               <input name="tercero" type="text" class="textarea_redondo2" id="tercero"
