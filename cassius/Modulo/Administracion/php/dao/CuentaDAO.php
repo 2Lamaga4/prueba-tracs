@@ -18,7 +18,7 @@ class CuentaDAO{
 
         $sql = 'SELECT * from puc WHERE nivel = '.$nivel.' order by cuenta';
 
-        echo $sql;
+  
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();

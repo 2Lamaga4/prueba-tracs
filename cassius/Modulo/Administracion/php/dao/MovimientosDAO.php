@@ -14,7 +14,7 @@ class MovimientosDAO{
         return mysql_insert_id($this->daoConnection->Conexion_ID);
     }
     
-    function getList(){
+    function getList(){ 
 
         $sql = 'SELECT * FROM movimiento GROUP BY(numero) ORDER BY fecha desc';
         $this->daoConnection->consulta($sql);
@@ -179,7 +179,14 @@ class MovimientosDAO{
         $newMovimientos = $obj;
 
         $querty =   "insert into movimiento
-                    (numero,fecha,tipodoc,numdoc,concepto,estado,tercero) VALUES ('".mysql_real_escape_string($newMovimientos->getNumero())."', '".mysql_real_escape_string($newMovimientos->getFecha())."', '".mysql_real_escape_string($newMovimientos->getTipodoc())."', '".mysql_real_escape_string($newMovimientos->getNumdoc())."', '".mysql_real_escape_string($newMovimientos->getConcepto())."', '".mysql_real_escape_string($newMovimientos->getEstado())."', '".mysql_real_escape_string($newMovimientos->getTercero())."')";
+                    (numero,fecha,tipodoc,numdoc,concepto,estado,tercero) VALUES 
+                    ('".mysql_real_escape_string($newMovimientos->getNumero())."',
+                     '".mysql_real_escape_string($newMovimientos->getFecha())."',
+                      '".mysql_real_escape_string($newMovimientos->getTipodoc())."', 
+                      '".mysql_real_escape_string($newMovimientos->getNumdoc())."', 
+                      '".mysql_real_escape_string($newMovimientos->getConcepto())."', 
+                      '".mysql_real_escape_string($newMovimientos->getEstado())."', 
+                      '".mysql_real_escape_string($newMovimientos->getTercero())."')";
 
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         if (!$result){
@@ -199,7 +206,7 @@ class MovimientosDAO{
 
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
-
+                    
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         if (!$result){
             echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
@@ -305,9 +312,6 @@ class MovimientosDAO{
     
     
      function max_id(){
-
-
-
         $sql = 'SELECT MAX(id) FROM movimiento';
          $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
