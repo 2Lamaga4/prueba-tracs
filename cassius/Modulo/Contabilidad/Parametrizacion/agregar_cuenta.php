@@ -6,7 +6,7 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <script src="../Scripts/globos_ayuda.js" ></script>
 <script src="../Scripts/bloqueo_clic_derecho.js" ></script>
 <script src="../Scripts/globos_ayuda.js" ></script>
-<link href="../contabilidad/css/styleagregar_cuentas.css" rel="stylesheet"/>
+<link href="../css/styleagregar_cuentas.css" rel="stylesheet"/>
 <script src="../Scripts/img.js"></script>
 <script src="../Scripts/agregarCuentas.js"></script>
 </head>

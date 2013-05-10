@@ -63,7 +63,7 @@
         <tr>
           <td height="40" align="center">
   <!--administracion-->                         
-            <input name="admin" type="button" class="boton_administrador" id="admin" value="Administración" onclick="location.href='administracion_home.html'"/></td>
+            <input name="admin" type="button" class="boton_administrador" id="admin" value="Administración" onclick="location.href='Administracion/'"/></td>
         </tr>
       </table></td>
     </tr>

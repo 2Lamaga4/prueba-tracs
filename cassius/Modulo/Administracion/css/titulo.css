@@ -1,0 +1,45 @@
+/*
+
+*/
+
+#subtitulo4,
+#subtitulo3,
+#subtitulo2,
+#subtitulo1,
+#subtitulo{
+	margin-left:-190px;
+	position:absolute;
+	z-index:8;
+}
+
+#subtitulo {
+	left:263px;
+	top:19px;
+	width:431px;
+	height:35px;
+}
+#subtitulo1 {
+	left:50%;
+	top:95px;
+	width:384px;
+	height:35px;
+}
+#subtitulo2 {
+	left:50%;
+	top:95px;
+	width:565px;
+	height:35px;
+}
+#subtitulo3 {
+	height:35px;
+	left:50%;
+	top:95px;
+	width:552px;
+}
+#subtitulo4 {
+	left:50%;
+	top:95px;
+	width:350px;
+	height:35px;
+	margin-left:-150px;
+}
