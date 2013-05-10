@@ -1,0 +1,65 @@
+<?php session_start();?>
+<?php
+
+require_once('../dao/daoConnection.php');
+require_once('../dao/CuentaDAO.php');
+require_once('../entities/cuentas.php');
+
+
+
+$cuenta = $_REQUEST['cuenta'];
+$nivel = $_REQUEST['nivel'];  
+$auxiliar = $_REQUEST['auxiliar_g'.$nivel]; 
+$denominacion = accents2HTML($_REQUEST['denominacion_g'.$nivel]); 
+$descripcion = accents2HTML($_REQUEST['descripcion_g'.$nivel]); 
+
+if($nivel == 2){
+	$location = "location: ./../../Parametrizacion/agregar_grupo.php?OK=1";
+}else if($nivel == 3){
+	$location = "location: ./../../Parametrizacion/agregar_cuenta_p.php?OK=1";
+}else if($nivel == 4){
+	$location = "location: ./../../Parametrizacion/agregar_subcuenta.php?OK=1";
+}
+
+$CuentaDAO = new CuentaDAO();
+$cuentas = new cuentas();
+
+
+$cuentas->setCuenta($cuenta.$auxiliar);
+$cuentas->setDenominacion($denominacion);
+$cuentas->setDescripcion($descripcion);
+$cuentas->setEstado('Activo');
+$cuentas->setNivel($nivel);
+
+
+$CuentaDAO->save($cuentas);
+header($location);
+exit;
+
+
+
+function accents2HTML($mensaje){
+    $mensaje = str_replace("á","&aacute;",$mensaje);
+    $mensaje = str_replace("é","&eacute;",$mensaje);
+    $mensaje = str_replace("í","&iacute;",$mensaje);
+    $mensaje = str_replace("ó","&oacute;",$mensaje);
+    $mensaje = str_replace("ú","&uacute;",$mensaje);
+    $mensaje = str_replace("ñ","&ntilde;",$mensaje);
+    
+	$mensaje = str_replace("Á","&Aacute;",$mensaje);
+    $mensaje = str_replace("É","&Eacute;",$mensaje);
+    $mensaje = str_replace("Í","&Iacute;",$mensaje);
+    $mensaje = str_replace("Ó","&Oacute;",$mensaje);
+    $mensaje = str_replace("Ú","&Uacute;",$mensaje);
+    $mensaje = str_replace("Ñ","&Ntilde;",$mensaje);
+    return $mensaje;
+}
+
+function findexts ($filename) 
+ { 
+	 $filename = strtolower($filename) ; 
+	 $exts = split("[/\\.]", $filename) ; 
+	 $n = count($exts)-1; 
+	 $exts = $exts[$n]; 
+	 return $exts; 
+ } 

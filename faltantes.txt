@@ -1,25 +1,2 @@
-1)modulo_financiero/contabilidad/parametrizacion_cuentas.php
+11051001 caja menor autorizada
 
-*modificar
-
-2)modulo_financiero/rc_movimientos.php
-
-*modificar cuentas Xnuevo --->solicitar la maqueta
-
-
-3)modulo_financiero/contabilidad/terceros.php
-
-*activacion de usurios--->solicitarlo mañana maqueta y boton
-
-4)modulo_financiero/agregar_tercero.php
-
-*cambiar el cc y cc extrangero por codigo html ---> a php consulta
-
-6)modulo_financiero/registro_documentos.html
-tablas q maneja el aplicativo
-
-
-
-** mirar titulos....
-
-http://cssdeck.com/labs/waving-indian-national-flag
