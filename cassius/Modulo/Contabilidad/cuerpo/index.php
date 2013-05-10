@@ -23,7 +23,7 @@
       <li><input name="movimientos" type="button" class="boton_general" id="movimientos" value="Movimientos" onclick="location.href='RegistroContable/rc_movimientos.php'"/></li>
       <li>------------------------------------------------</li>
       <li><input name="estados_financieros" type="button" class="boton_general" id="estados_financieros" value="Estados Financieros" onclick="location.href='rc_estados_financieros.html'"/></li>
-      <li><input name="caja" type="button" class="boton_general" id="caja" value="Movimiento caja menor" onclick="location.href='rc_caja.html'"/></li>
+      <li><input name="caja" type="button" class="boton_general" id="caja" value="Movimiento caja menor" onclick="location.href='RegistroContable/MovimientoCajaMenor.php'"/></li>
       <li></li>
     </ul>      
   </article>

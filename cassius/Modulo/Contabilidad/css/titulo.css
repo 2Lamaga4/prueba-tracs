@@ -6,6 +6,7 @@
 @parametrizacion_documentos.php
  */
 
+#subtitulo4,
 #subtitulo3,
 #subtitulo2,
 #subtitulo1,
@@ -38,4 +39,11 @@
 	left:50%;
 	top:95px;
 	width:552px;
+}
+#subtitulo4 {	
+	left:50%;
+	top:95px;
+	width:350px;
+	height:35px;
+	margin-left:-180px;
 }
