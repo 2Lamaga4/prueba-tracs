@@ -3,7 +3,7 @@
       $GLOBALS['contador'] = $MovimientosDAO->contar()+1;
       $GLOBALS['res'] = "";
       $GLOBALS['nummo'] = "";
-?> 
+?>  
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../index.php'"/>
 </div>
@@ -14,7 +14,7 @@
   <table width="950" border="0" align="center" cellpadding="0" cellspacing="1">
     <tr> 
       <td height="50" bgcolor="#CCCCCC" class="tr_tabla_interna2">
-      <form method="post" name="form1" id="form1" action="">
+      <form method="post" name="form1" id="form1" action=""> 
       <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="82" class="texto_azul" align="right"><strong>Fecha:&nbsp;&nbsp;</strong></td>
@@ -95,10 +95,18 @@
                ?>                                  
                         <?php $num = $item->getId();
                   
-                          if(!$MovimientosDAO->suma($item->getId())){
+                          if($MovimientosDAO->suma($item->getId())==1){
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error diferencia entre valores! </article>
+                              <input id='idmovi".$GLOBALS['nummo']."' type='hidden' value='".$GLOBALS['nummo']."'/>
+                              <input   onclick='popUp(idmovi".$GLOBALS['nummo'].")' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
+                             ";                              
+                           }  
+                             if($MovimientosDAO->suma($item->getId())==2){
+                              echo "
+                              <section id='rojo'></section>
+                              <article class='editE'> ¡Error balance vacio! </article>
                               <input id='idmovi".$GLOBALS['nummo']."' type='hidden' value='".$GLOBALS['nummo']."'/>
                               <input   onclick='popUp(idmovi".$GLOBALS['nummo'].")' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                              ";                              

@@ -45,10 +45,12 @@ class MovimientosDAO{
         return $lista;
     }
     
+    
     function getList_fecha($fecha1,$fecha2){
 
         $sql = 'SELECT * from movimiento WHERE fecha BETWEEN "'.$fecha1.'" AND "'.$fecha2.'" ORDER BY fecha desc';
 
+      var_dump($sql);
 
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
@@ -59,6 +61,7 @@ class MovimientosDAO{
         if($numregistros == 0){
             return $lista;
         }
+
 
 
         for($i = 0; $i < $numregistros ; $i++){
@@ -328,10 +331,13 @@ class MovimientosDAO{
        $a = $this->daoConnection->ObjetoConsulta2[$i][0];
        $b = $this->daoConnection->ObjetoConsulta2[$i][1];
        if($a!=$b){
-          return false;
+          return 1;
+       }
+       if($a=0 && $b=0){
+         return 2; 
        }
 
-       return true;
+       return 3;
     }
     
         function contar(){

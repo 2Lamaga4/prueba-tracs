@@ -10,7 +10,7 @@ include_once('../php/dao/CuentaDAO.php');
 include_once('../php/entities/cuentas.php');
 
 unset($_SESSION['arreglo']);
-unset($_SESSION['numero']);
+unset($_SESSION['numero']); 
 
 
 $fecha1 = "";
