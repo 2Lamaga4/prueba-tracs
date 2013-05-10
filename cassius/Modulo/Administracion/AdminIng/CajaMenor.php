@@ -1,6 +1,8 @@
 <?php
+
   include_once ('../../../info.php');//se llama la informacion de la pagina
-  
+
+
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="../css/StyleCajaMejor.css" rel="stylesheet" type="text/css" />
@@ -15,7 +17,14 @@
 </head>
 <body>
 <?php
+  include_once('../php/dao/daoConnection.php');
+  include_once('../php/dao/CuentaDAO.php');
+  include_once('../php/entities/cuentas.php');
 
+  $cuentasDAO = new CuentaDAO();
+  $cuentas = new cuentas();
+
+  $cuentas=$cuentasDAO->getList(5);
 $view= new stdClass(); 
 $view->disableLayout=false;
 

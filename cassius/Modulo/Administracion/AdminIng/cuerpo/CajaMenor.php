@@ -30,7 +30,7 @@
               <td width="284" class="texto_azul" align="left">
                 <input type="date" name="fecha" class="textarea_redondo2" id="nombres2"  value="" />
               </td>
-              </tr> c
+              </tr>
             </table></td>
         </tr>
         <tr>
@@ -67,7 +67,22 @@
               </tr>
           <article id="CaTe">
               <div id="CaTename"><strong>Categoria:</strong></div>
-              <div id="Cateinp"><input type="text" name="categoria" class="textarea_redondo2" id="nombres2"  value="" /></div>
+              <div id="Cateinp">
+                <select name="categoria" class="texto_azul">
+                    <option value="0">---</option>
+                    <?php 
+                          foreach ($cuentas as $items) {
+                            ?>
+                              <option value="<?php echo $items->getId()?>"><?php echo $items->getDenominacion()?></option>
+                            <?php
+                          }
+
+
+                    ?>
+                </select>
+            
+
+              </div>
           <article>
           </table></td>
         </tr>

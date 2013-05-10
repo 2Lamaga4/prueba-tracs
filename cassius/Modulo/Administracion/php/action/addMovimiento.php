@@ -1,13 +1,13 @@
 <?php session_start();?>
 <?php
 print_r($_REQUEST);
-require_once('../dao/daoConnection.php');
-require_once('../dao/MovimientosDAO.php');
-require_once('../entities/movimientos.php');
-require_once('../dao/AfectaDAO.php');
-require_once('../entities/afecta.php');
-require_once('../dao/CuentaDAO.php');
-require_once('../entities/cuentas.php');
+include_once('../dao/daoConnection.php');
+include_once('../dao/MovimientosDAO.php');
+include_once('../entities/movimientos.php');
+include_once('../dao/AfectaDAO.php');
+include_once('../entities/afecta.php');
+include_once('../dao/CuentaDAO.php');
+include_once('../entities/cuentas.php');
 
 $num_movi = $_REQUEST['num_movi']; 
 $fecha = substr($_REQUEST['fecha'],6,4)."/".substr($_REQUEST['fecha'],3,2)."/".substr($_REQUEST['fecha'],0,2); 
