@@ -1,3 +1,10 @@
+<?php
+      $GLOBALS['nota']="";
+      $GLOBALS['contador'] = $MovimientosDAO->contar()+1;
+      $GLOBALS['res'] = "";
+      $GLOBALS['nummo'] = "";
+      $GLOBALS['suma'] = 0;
+?>  
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../'"/>
 </div>
@@ -41,26 +48,106 @@
               <td align="center" bgcolor="#04447D"><strong>Pagado a</strong></td>
               <td align="center" bgcolor="#04447D"><strong>Aprobado por</strong></td>
               <td align="center" bgcolor="#04447D" class="texto_blanco"><strong>Valor</strong></td>
-            </tr>
+            </tr>         
+<!-- -->
 
-            
-            <tr class="tr_tabla_interna">
-              <td width="120" height="30" align="center"><strong>9807689<span class="texto_azul_peque"></span></strong></td>
-              <td width="132" align="center"><strong>12/11/2012<span class="texto_azul_peque"></span></strong></td>
-              <td width="275" align="left">&nbsp;&nbsp;&nbsp;Julian Rátiva</td>
-              <td width="275" align="left">&nbsp;&nbsp;Presidente asamblea</td>
-              <td width="102" align="center" bgcolor="#27669B" class="texto_blanco"><strong>254.000</strong></td>
-            </tr>
-      
+<?php if(count($movimiento) > 0){       
+         foreach($movimiento as $item){ 
+            $tercero = $TercerosDAO->get($item->getTercero());
+            $doc = $DocumentoDAO->get($item->getTipodoc());            
+            $mvCuentas = $MovimientosDAO->getList_cuentas($item->getId());
+            if( $doc->getSigla() == 'RCM' ){ 
+                          $GLOBALS['nummo']=$item->getId();  
+                          $GLOBALS['contador']--;
+                          $GLOBALS['res'] = 0;  
 
+                 // echo 'movimiento'.$GLOBALS['contador']; 
+                 // echo 'Nit: '.$tercero->getNodocumento(); 
+                //echo 'Concepto: '.$item->getConcepto();
+                 // echo 'Documento: '.$doc->getSigla();      
+
+?> 
+      <tr class="tr_tabla_interna" id="tablaF">    
+              <td width="120" height="30" align="center"><strong>
+                    <?php echo $item->getNumdoc(); ?>
+                  <span class="texto_azul_peque"></span></strong></td>
+              <td width="132" align="center"><strong>
+                <?php echo ''.substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4).' ';?>
+                <span class="texto_azul_peque"></span></strong></td>
+              <td width="275" align="left">&nbsp;&nbsp;&nbsp;
+                 <?php echo ''.$tercero->getNombretercero(); ?>
+              </td>
+              <td width="275" align="left">&nbsp;&nbsp;
+                Presidente asamblea
+              </td>
+<?php 
+
+foreach($mvCuentas as $item2){ 
+             $cuenta = $CuentaDAO->get($item2->getCodcuenta()); 
+             // echo 'cuenta:'.$cuenta->getCuenta();                          
+//if(){}
+            ?> 
+            <td width="102" align="center" bgcolor="#27669B" class="texto_blanco" id="valor">
+            <strong> 
+                
+<?php 
+            foreach($mvCuentas as $item2){ 
+             $cuenta = $CuentaDAO->get($item2->getCodcuenta());                
+            ?> 
+                <tr class="tr_tabla_interna">
+                  <td width="74" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
+                  <td class="td_tabla_interna"><?php echo $cuenta->getDenominacion(); ?></td>
+                  <td width="108" align="center" class="td_tabla_interna">
+                    <?php echo $item2->getDebito();?>
+                  </td>
+                  <td width="113" align="center" class="td_tabla_interna">
+                    <?php echo $item2->getCredito();?>
+                  </td>
+                </tr>
+          <?php } ?>  
+                
+            </strong></td>
+            </tr> 
+
+          <?php } ?> 
+        
+
+<?php /*
+
+            foreach($mvCuentas as $item2){ 
+             $cuenta = $CuentaDAO->get($item2->getCodcuenta());  
+                 //echo 'cuenta:'.$cuenta->getCuenta(); 
+                 //echo 'Denominacion:'.$cuenta->getDenominacion();
+                 //echo 'Debito:'.$item2->getDebito();
+?> 
+          <td width="102" align="center" bgcolor="#27669B" class="texto_blanco" id="valor">
+            <strong>        
+              <?php
+              $GLOBALS['suma'] = $item2->getCredito()+$GLOBALS['suma'];
+
+               echo ''.$item2->getCredito();?>
+            </strong></td>
+            </tr>                        
+  <?php 
+              }*/
+            }
+          }
+        }          
+else{ ?>    
+         <tr>        
+          <td height="30" align="center" valign="middle" class="texto_azul"><strong>No hay registro</strong></td>
+        </tr>     
+<?php } ?>     
+
+<!-- -->
             <tr class="texto_blanco">
               <td height="40" colspan="4" align="right" bgcolor="#04447D"><strong>TOTAL&nbsp;&nbsp;</strong></td>
-              <td align="center" bgcolor="#04447D" class="texto_blanco"><strong>500.000</strong></td>
+              <td align="center" bgcolor="#04447D" class="texto_blanco"><strong><?php echo $GLOBALS['suma']?></strong></td>
             </tr>
             </table></td>
           </tr>
       </table></td>
-    </tr>
+       </tr>
     <tr>
       <td height="20" align="center"><img src="../images/line.gif" width="945" height="1" /></td>
     </tr>
@@ -74,15 +161,17 @@
       <td align="rigth"><table width="230" border="0" align="right" cellpadding="0" cellspacing="1">
         <tr>
           <td width="50" class="texto_azul">Página:</td>
-          <td width="30"><img src="../images/btn_flecha_atras.png" name="atras" width="30" height="20" border="0" id="atras" onmouseover="MM_swapImage('atras','','../images/btn_flecha_atras_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+          <td width="30"><img src="../images/btn_flecha_atras.png" name="atras" width="30" height="20" border="0" id="atras" onmouseover="MM_swapImage('atras','','images/btn_flecha_atras_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
           <td width="30" class="td_paginacion_resaltado">1</td>
           <td width="30" class="td_paginacion">2</td>
           <td width="30" class="td_paginacion">3</td>
           <td width="30" class="td_paginacion">4</td>
-          <td width="30"><img src="../images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','../images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+          <td width="30"><img src="../images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
         </tr>
       </table></td>
     </tr>
   </table>
 </div>
 <div class="titulos" id="subtitulo4">&gt; Movimiento Caja menor</div>
+</body>
+</html>

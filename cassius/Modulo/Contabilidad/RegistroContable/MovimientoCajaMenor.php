@@ -11,13 +11,14 @@
 <script src="../Scripts/transicion.js"></script>
 </head>
 <body class="interna2" onload="MM_preloadImages('images/btn_flecha_atras_roll.png','images/btn_flecha_adelante_roll.png')" OnContextMenu="return false">
+<?php 
 
-<?php
     $view= new stdClass(); 
     $view->disableLayout=false;
 
     if ($view->disableLayout==false)
     {
+      include_once ('cuerpo/movimientophp.php');	
       include_once ('cuerpo/MovimientoCajaMenor.php');
     }
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-05-2013 a las 01:01:57
+-- Tiempo de generación: 10-05-2013 a las 19:06:14
 -- Versión del servidor: 5.5.8
 -- Versión de PHP: 5.3.5
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `afecta` (
   PRIMARY KEY (`idafecta`),
   KEY `iddocumentos` (`iddocumentos`),
   KEY `idpuc` (`idpuc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `afecta`
@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `afecta` (
 INSERT INTO `afecta` (`idafecta`, `iddocumentos`, `idpuc`, `tipo`) VALUES
 (1, 1, 8, 'DÃ©bito'),
 (2, 1, 18, 'CrÃ©dito'),
-(4, 1, 9, 'CrÃ©dito');
+(4, 1, 9, 'CrÃ©dito'),
+(5, 5, 271, 'DÃ©bito');
 
 -- --------------------------------------------------------
 
@@ -181,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `documentos` (
   `descripcion` longtext,
   `ctasafecta` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`iddocumentos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Volcar la base de datos para la tabla `documentos`
@@ -191,7 +192,8 @@ INSERT INTO `documentos` (`iddocumentos`, `sigla`, `nombredoc`, `descripcion`, `
 (1, 'CXC', 'Cuentas por cobrar', '', NULL),
 (2, 'CD', 'Comprobante de Diario', '', NULL),
 (3, 'SI', 'Saldos Iniciales', 'Este comprobante ingresa la informacion inicial de la Contabilidad', NULL),
-(4, 'ND', 'Nota Debito', '', NULL);
+(4, 'ND', 'Nota Debito', '', NULL),
+(5, 'RCM', 'recivo de caja menor', 'descripcion de recivo', NULL);
 
 -- --------------------------------------------------------
 
@@ -242,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
 
 INSERT INTO `funcionarios` (`idfuncionarios`, `tipodocumento`, `nodocumento`, `nombres`, `apellidos`, `rutnit`, `telefono`, `celular`, `direccion`, `cargo`) VALUES
 (1, 1, 80188262, 'Ernesto Andres', 'Alvarez lopez', '69235842-21', '5489263', '3105263984', 'Cll 34 No 58- 26 cuadrante 8 bloque 6', 2),
-(2, 1, 80188262, 'Nelsi aurora', 'Mendez gomez', '69235842-21', '5489263', '3105263984', 'Cll 99 No 100- 26 cuadrante 8 bloque 6', 1),
+(2, 1, 80188261, 'Nelsi aurora', 'Mendez gomez', '69235842-21', '5489263', '3105263984', 'Cll 99 No 100- 26 cuadrante 8 bloque 6', 1),
 (3, 1, 80188262, 'Cesar mauricio', 'Mendez gomez', '79.235.369', '5489263', '3105263984', 'Cll 23 NO 56-96', 3);
 
 -- --------------------------------------------------------
@@ -426,15 +428,15 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
   PRIMARY KEY (`idmovcuentas`),
   KEY `idx_movcuentas` (`idmovimiento`),
   KEY `idx_movcuentas_0` (`codcuenta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Volcar la base de datos para la tabla `movcuentas`
 --
 
 INSERT INTO `movcuentas` (`idmovcuentas`, `codcuenta`, `debito`, `credito`, `idmovimiento`) VALUES
-(1, 1, 34566, 0, 1),
-(2, 2, 1000, 34566, 1),
+(1, 1, 1, 40, 1),
+(2, 2, 200, 100, 1),
 (3, 8, 21233, 0, 3),
 (4, 18, 0, 21233, 3),
 (5, 8, 100, 0, 5),
@@ -448,7 +450,16 @@ INSERT INTO `movcuentas` (`idmovcuentas`, `codcuenta`, `debito`, `credito`, `idm
 (13, 76, 0, 600, 12),
 (14, 77, 0, 313836, 13),
 (15, 77, 0, 23789, 14),
-(16, 77, 0, 600, 15);
+(16, 77, 0, 600, 15),
+(17, 76, 500, 0, 17),
+(18, 77, 0, 10, 17),
+(19, 76, 0, 5555, 18),
+(20, 77, 4441, 0, 18),
+(21, 76, 0, 500, 20),
+(22, 77, 300, 10, 20),
+(23, 8, 500, 0, 21),
+(24, 8, 0, 400, 21),
+(25, 271, 500, 0, 25);
 
 -- --------------------------------------------------------
 
@@ -469,14 +480,14 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
   KEY `idx_movimiento` (`tipodoc`),
   KEY `idx_movimiento_0` (`estado`),
   KEY `idx_movimiento_1` (`tercero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Volcar la base de datos para la tabla `movimiento`
 --
 
 INSERT INTO `movimiento` (`id`, `numero`, `fecha`, `tipodoc`, `numdoc`, `concepto`, `estado`, `tercero`) VALUES
-(1, 1, '2013-03-29 00:00:00', 1, 1, 'awsedrftgyhu', 1, 2),
+(1, 1, '2013-03-29 00:00:00', 1, 1, '123', 1, 2),
 (2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2),
 (3, 3, '2013-04-25 00:00:00', 1, 2, 'pago de Administracion', 1, 2),
 (4, 3, '2013-05-06 00:00:00', 2, 2, 'viva la gente', 1, 1),
@@ -490,7 +501,16 @@ INSERT INTO `movimiento` (`id`, `numero`, `fecha`, `tipodoc`, `numdoc`, `concept
 (12, 11, '2013-05-07 00:00:00', 2, 7, 'PROBANDO ANDO', 1, 1),
 (13, 12, '2013-05-06 00:00:00', 3, 1, 'ecci vs minuto', 1, 1),
 (14, 13, '2013-05-08 00:00:00', 3, 2, 'minuto vs jorge', 1, 1),
-(15, 14, '2013-05-07 00:00:00', 4, 1, 'ECCI VS MINUTO', 1, 1);
+(15, 14, '2013-05-07 00:00:00', 4, 1, 'ECCI VS MINUTO', 1, 1),
+(17, 15, '2013-05-12 00:00:00', 3, 3, 'sdsad', 1, 1),
+(18, 16, '2013-05-09 00:00:00', 2, 3, 'hija', 1, 56),
+(19, 17, '2013-05-12 00:00:00', 3, 4, 'g', 1, 100),
+(20, 18, '2013-05-09 00:00:00', 4, 2, 'ESTA SI FUNCIONA', 1, 62),
+(21, 19, '2013-05-10 00:00:00', 5, 1, 'hagan un dise&ntilde;o bien gracias por la humanidad no sean tan mmm', 1, 1),
+(22, 20, '2013-05-13 00:00:00', 2, 8, 'fsd', 1, 1),
+(23, 21, '2013-05-10 00:00:00', 2, 9, 'hagan un dise&ntilde;o bien gracias por la humanidad no sean tan mmm', 1, 10),
+(24, 22, '2013-05-10 00:00:00', 5, 2, 'fdf', 1, 1),
+(25, 23, '2013-05-14 00:00:00', 5, 3, 'hola', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -577,7 +597,7 @@ CREATE TABLE IF NOT EXISTS `puc` (
   `nivel` int(11) DEFAULT NULL,
   PRIMARY KEY (`idpuc`),
   KEY `nivel` (`nivel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=271 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=272 ;
 
 --
 -- Volcar la base de datos para la tabla `puc`
@@ -853,7 +873,8 @@ INSERT INTO `puc` (`idpuc`, `cuenta`, `denominacion`, `descripcion`, `estado`, `
 (267, 11111, '1', '1', 'Activo', 5),
 (268, 1111111111, '1111111', '111111', 'Activo', 2),
 (269, 2147483647, '11111111', '11111111', 'Activo', 3),
-(270, 2147483647, '11111', '11111', 'Activo', 3);
+(270, 2147483647, '11111', '11111', 'Activo', 3),
+(271, 11051001, 'caja menor autorizada', 'descipcion caja menor autorizada', 'Activo', 5);
 
 -- --------------------------------------------------------
 
