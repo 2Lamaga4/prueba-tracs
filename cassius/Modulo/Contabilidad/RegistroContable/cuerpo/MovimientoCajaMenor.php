@@ -81,44 +81,12 @@
                 Presidente asamblea
               </td>
 <?php 
-
-foreach($mvCuentas as $item2){ 
-             $cuenta = $CuentaDAO->get($item2->getCodcuenta()); 
-             // echo 'cuenta:'.$cuenta->getCuenta();                          
-//if(){}
-            ?> 
-            <td width="102" align="center" bgcolor="#27669B" class="texto_blanco" id="valor">
-            <strong> 
-                
-<?php 
             foreach($mvCuentas as $item2){ 
-             $cuenta = $CuentaDAO->get($item2->getCodcuenta());                
-            ?> 
-                <tr class="tr_tabla_interna">
-                  <td width="74" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
-                  <td class="td_tabla_interna"><?php echo $cuenta->getDenominacion(); ?></td>
-                  <td width="108" align="center" class="td_tabla_interna">
-                    <?php echo $item2->getDebito();?>
-                  </td>
-                  <td width="113" align="center" class="td_tabla_interna">
-                    <?php echo $item2->getCredito();?>
-                  </td>
-                </tr>
-          <?php } ?>  
-                
-            </strong></td>
-            </tr> 
-
-          <?php } ?> 
-        
-
-<?php /*
-
-            foreach($mvCuentas as $item2){ 
-             $cuenta = $CuentaDAO->get($item2->getCodcuenta());  
+             $cuenta = $CuentaDAO->get($item2->getCodcuenta());           
                  //echo 'cuenta:'.$cuenta->getCuenta(); 
                  //echo 'Denominacion:'.$cuenta->getDenominacion();
                  //echo 'Debito:'.$item2->getDebito();
+ if($cuenta->getCuenta()<>'11051001'){         
 ?> 
           <td width="102" align="center" bgcolor="#27669B" class="texto_blanco" id="valor">
             <strong>        
@@ -128,8 +96,8 @@ foreach($mvCuentas as $item2){
                echo ''.$item2->getCredito();?>
             </strong></td>
             </tr>                        
-  <?php 
-              }*/
+  <?php }
+              }
             }
           }
         }          
