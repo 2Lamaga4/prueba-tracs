@@ -28,7 +28,7 @@
 
               <td width="122" class="texto_azul"align="left"><strong>Fecha:</strong></td>
               <td width="284" class="texto_azul" align="left">
-                <input type="date" name="fecha" class="textarea_redondo2" id="nombres2"  value="" />
+                <input type="date" name="fecha" class="textarea_redondo2" id="nombres2"  value="" required/>
               </td>
               </tr>
             </table></td>
@@ -62,7 +62,7 @@
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>Valor:</strong></td>
-              <td width="226" class="texto_azul" align="left"><input name="valor" type="text" class="textarea_redondo2" id="nombres2" style="width:100px;"/></td>
+              <td width="226" class="texto_azul" align="left"><input name="valor" type="text" class="textarea_redondo2" id="nombres2" style="width:100px;" required="number"/></td>
               <td width="122" class="texto_azul"align="left"><strong>Aprobado por:</strong></td>
               <td width="284" class="texto_azul" align="left"><select name="categoria6" class="textarea_redondo2" id="categoria8" style="width:200px; height:27px;">
                 <option>--</option>

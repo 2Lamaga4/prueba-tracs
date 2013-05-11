@@ -17,11 +17,11 @@ $terceros = new terceros();
 $documentos = new documentos();
 $cuentasDAO = new CuentaDAO();
 $cuentas = new cuentas();
-
+$loclisacion="location: CajaMenor.php";
 ///////////////////////////////////////////
 //
-$id = $MovimientosDAO->max_id();
-$id+1;
+
+
 
 $movimientos = $MovimientosDAO->get_documento(5);
 
@@ -34,13 +34,13 @@ $terceros = $tercer;
 	$movimientos->setNumero($num_movi);
 	$movimientos->setFecha($_POST['fecha']);
     $movimientos->setTipodoc(5);
-    $movimientos->setNumdoc($movimientos->getNumdoc());
+    $movimientos->setNumdoc($movimientos->getNumdoc()+1);
     $movimientos->setConcepto($_POST['concepto']);
     $movimientos->setEstado(1);
     $movimientos->setTercero($terceros->getId());
 
 //////////////Vamos a pasar los datos a la funcion guardar de dao////////////////////
-
+   echo $id = $MovimientosDAO->max_id();
 	$MovimientosDAO->save($movimientos);
 	$movimientos->setCodcuenta($_POST['categoria']);
 	$movimientos->setCredito($_POST['valor']);
@@ -48,7 +48,8 @@ $terceros = $tercer;
 	$movimientos->setIdmovimiento($id);
 	$MovimientosDAO->save_movimiento_cueta($movimientos);
 
-
+//header($loclisacion);
+//exit;
 
 
  ?>
