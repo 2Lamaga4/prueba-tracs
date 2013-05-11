@@ -94,6 +94,10 @@
                   }                 
                ?>                                  
                         <?php $num = $item->getId();
+                          if($doc->getSigla()=="RCM"){
+
+                          }else{
+
                   
                           if($MovimientosDAO->suma($item->getId())==1){
                               echo "
@@ -103,7 +107,7 @@
                               <input   onclick='popUp(idmovi".$GLOBALS['nummo'].")' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                              ";                              
                            }  
-                             if($MovimientosDAO->suma($item->getId())==2){
+                             if($MovimientosDAO->suma($item->getId())==2 ){
                               echo "
                               <section id='rojo'></section>
                               <article class='editE'> ¡Error balance vacio! </article>
@@ -111,6 +115,7 @@
                               <input   onclick='popUp(idmovi".$GLOBALS['nummo'].")' class='boton_modificar_int mofM' id='modificar_int17' name='modificar_int7' style='cursor: pointer; border: none; font-family: Arial, Helvetica, Verdana, sans-serif; color: rgb(255, 255, 255); background-image: url(../images/fondo_btn_modificar_int.jpg); height: 17px; width: 87px;' type='button' value='Modificar' />
                              ";                              
                            }  
+                             }
                         ?>
             </td>           
             </tr>
