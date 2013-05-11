@@ -144,6 +144,14 @@ else{ ?>
           <td width="30" class="td_paginacion">2</td>
           <td width="30" class="td_paginacion">3</td>
           <td width="30" class="td_paginacion">4</td>
+          <td width="30" class="td_paginacion">5</td>
+          <td width="30" class="td_paginacion">6</td>
+          <td width="30" class="td_paginacion">7</td>
+          <td width="30" class="td_paginacion">8</td>
+          <td width="30" class="td_paginacion">9</td>
+          <td width="30" class="td_paginacion">10</td>
+          <td width="30" class="td_paginacion">11</td>
+          <td width="30" class="td_paginacion">12</td>
           <td width="30"><img src="../images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
         </tr>
       </table></td>
