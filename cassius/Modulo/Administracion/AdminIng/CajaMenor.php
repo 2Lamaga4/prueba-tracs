@@ -13,21 +13,28 @@
 <script src="../script/bloqueo_clic_derecho.js" ></script>
 <script src="../script/tercero.js"></script>
 <!--<script src="../script/transicion.js"></script> -->
+<script>
+  function ok(){
+           alert('Agregado con exito');
+  }
+</script>
 
 </head>
-<body>
+<body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK'])==1){ echo 'Onload="ok();"';}?>>
 <?php
  
   include_once('../php/dao/CuentaDAO.php');
   include_once('../php/entities/cuentas.php');
+  include_once('../php/dao/MovimientosDAO.php');
   include_once('../php/dao/terceros.php');
   include_once('../php/entities/terceros.php');
-
+  $MovimientosDAO = new MovimientosDAO(); 
   $cuentasDAO = new CuentaDAO();
   $cuentas = new cuentas();
   $TercerosDAO = new TerceroDAO();
   $terceros = new terceros(); 
   $terceros = $TercerosDAO->getListC();
+  $sal=$MovimientosDAO->saldo();
   $cuentas=$cuentasDAO->getList(5);
 $view= new stdClass(); 
 $view->disableLayout=false;

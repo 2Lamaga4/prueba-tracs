@@ -198,12 +198,24 @@ class MovimientosDAO{
               mysql_query("COMMIT",$this->daoConnection->Conexion_ID);
               echo "Transacción exitosa";
               return true;
-        }
-
-      
+        } 
     }
-    
-    
+
+
+    function saldo(){
+        $consulta="SELECT SUM(debito) FROM movimiento INNER JOIN movcuentas WHERE codcuenta='271' AND tipodoc='5' AND id = idmovimiento";
+         $this->daoConnection->consulta($consulta);
+         $this->daoConnection->leerVarios();
+         $numregistros = $this->daoConnection->numregistros();
+         $i=0;
+       return  $this->daoConnection->ObjetoConsulta2[$i][0];
+    }
+
+    function modificarsaldo($credito){
+          $saldo = "UPDATE movcuentas SET debito =".$credito." WHERE codcuenta='271' ";
+           mysql_query($saldo, $this->daoConnection->Conexion_ID);
+  
+    }
 
     function save_movimiento_cueta($obj){
         $newMovimientos = new movimientos();

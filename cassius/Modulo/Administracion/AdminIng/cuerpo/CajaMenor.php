@@ -1,6 +1,4 @@
-</head>
 
-<body class="interna2" OnContextMenu="return false">
 <div id="salir2">
   <input name="exit" type="button" class="boton_salir" id="exit" value="Salir" onclick="location.href='../'"/>
 </div>
@@ -18,7 +16,7 @@
            <form action="ingresarDatosCajaMenor.php" method="post">
           <article id="SaldoA">
               <div id="Salname"><strong>Saldo:</strong></div>
-              <div id="Salinp"><input type="text" name="saldo" class="textarea_redondo2" id="nombres2"   /></div>
+              <div id="Salinp"><input type="text" name="saldo" class="textarea_redondo2" id="nombres2"  value="<?php echo $sal; ?>" /></div>
           <article>
           <td height="40" bgcolor="#EAEAEA"><table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
@@ -170,5 +168,3 @@
   </table>
 </div>
 <div class="titulos" id="subtitulo4">&gt; Caja menor</div>
-</body>
-</html>

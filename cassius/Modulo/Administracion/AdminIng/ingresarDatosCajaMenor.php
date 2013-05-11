@@ -17,12 +17,12 @@ $terceros = new terceros();
 $documentos = new documentos();
 $cuentasDAO = new CuentaDAO();
 $cuentas = new cuentas();
-$loclisacion="location: CajaMenor.php";
+$loclisacion="location: CajaMenor.php?OK=1";
 ///////////////////////////////////////////
 //
 
-
-
+$saldo = $MovimientosDAO->saldo();
+echo $saldo;
 $movimientos = $MovimientosDAO->get_documento(5);
 
 
@@ -30,8 +30,9 @@ $num_movi = count($MovimientosDAO->getList())+1;
 $tercer = $TercerosDAO->Validar_tercero2($_POST['pagado']);
 $terceros = $tercer;
 
-
-	$movimientos->setNumero($num_movi);
+if($saldo-$_POST['valor'] > 0){
+$d=$saldo-$_POST['valor'];
+$movimientos->setNumero($num_movi);
 	$movimientos->setFecha($_POST['fecha']);
     $movimientos->setTipodoc(5);
     $movimientos->setNumdoc($movimientos->getNumdoc()+1);
@@ -41,12 +42,6 @@ $terceros = $tercer;
       $MovimientosDAO->save($movimientos);
 //////////////Vamos a pasar los datos a la funcion guardar de dao////////////////////
   
-	
-
-	
-
-
- 
 $id = $MovimientosDAO->max_id();
 
 	$movimientos->setCodcuenta($_POST['categoria']);
@@ -54,9 +49,10 @@ $id = $MovimientosDAO->max_id();
 	$movimientos->setDebito(0);
 	$movimientos->setIdmovimiento($id);
 	$MovimientosDAO->save_movimiento_cueta($movimientos);
-
+	$MovimientosDAO->modificarsaldo($d);
 header($loclisacion);
 exit;
-
+}
+	
 
  ?>

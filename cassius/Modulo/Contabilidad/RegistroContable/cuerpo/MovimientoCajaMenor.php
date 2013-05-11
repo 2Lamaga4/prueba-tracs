@@ -159,7 +159,7 @@ else{ ?>
       <td height="20" align="center">
         <?php 
 
-       // include('estadisticas/estadisticas.php');
+        include('estadisticas/estadisticas.php');
         ?>
       </td>
     </tr>
