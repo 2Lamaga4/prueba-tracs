@@ -30,7 +30,7 @@ $num_movi = count($MovimientosDAO->getList())+1;
 $tercer = $TercerosDAO->Validar_tercero2($_POST['pagado']);
 $terceros = $tercer;
 
-if($saldo-$_POST['valor'] > 0){
+if($saldo-$_POST['valor'] > 0 && $saldo!=0){
 $d=$saldo-$_POST['valor'];
 $movimientos->setNumero($num_movi);
 	$movimientos->setFecha($_POST['fecha']);
@@ -43,16 +43,19 @@ $movimientos->setNumero($num_movi);
 //////////////Vamos a pasar los datos a la funcion guardar de dao////////////////////
   
 $id = $MovimientosDAO->max_id();
-
+	$movimientos->setSaldo($_POST['saldo']);
 	$movimientos->setCodcuenta($_POST['categoria']);
 	$movimientos->setCredito($_POST['valor']);
 	$movimientos->setDebito(0);
 	$movimientos->setIdmovimiento($id);
 	$MovimientosDAO->save_movimiento_cueta($movimientos);
 	$MovimientosDAO->modificarsaldo($d);
-header($loclisacion);
-exit;
+}else{
+	echo " <script>
+ 		alert('saldo insuficiente');
+       </script>";
 }
-	
 
+	header($loclisacion);
+exit;
  ?>

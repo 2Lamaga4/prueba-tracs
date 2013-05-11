@@ -17,7 +17,13 @@
 		 private $credito;
 		 private $idmovimiento;
 		 private $denominacion;
-					
+		 private $saldo;
+		 public function setSaldo($saldo){
+		 			$this->saldo=$saldo;
+		 }
+		public function getSaldo(){
+		 	return $this->saldo;
+		 }	
 		 public function getId(){
 
 			 return $this->id; 
