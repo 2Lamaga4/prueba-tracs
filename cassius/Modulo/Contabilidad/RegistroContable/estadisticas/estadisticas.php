@@ -77,6 +77,6 @@
 		</script> 
  
    	
-<div id="NUmeses" style="width: 900px; height: 500px;margin-left:10px; float:left">
+<div id="NUmeses" style="width: 920px; height: 350px;margin-left:10px; float:left">
 </div> 
                 

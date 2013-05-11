@@ -5,6 +5,7 @@
 <link href="../config/estilos_cassius.css" rel="stylesheet"/>
 <link href="../css/titulo.css" rel="stylesheet"/>
 <link href="../css/styleMovimientoCajaMenor.css" rel="stylesheet"/>
+<link href="../css/Movimientocaja.php" rel="stylesheet"/>
 <script src="../Scripts/MovimientoCajaMenor.js"></script>
 <script src="../Scripts/globos_ayuda.js"></script>
 <script src="../Scripts/bloqueo_clic_derecho.js"></script>
