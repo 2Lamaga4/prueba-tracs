@@ -120,7 +120,14 @@ else{ ?>
       <td height="20" align="center"><img src="../images/line.gif" width="945" height="1" /></td>
     </tr>
     <tr>
-      <td height="20" align="center"><img src="../images/caja_menor.png" width="513" height="307" /></td>
+      <td height="20" align="center">
+
+
+        <img src="../images/caja_menor.png" width="513" height="307" />
+
+
+
+      </td>
     </tr>
     <tr>
       <td height="20" align="center"><img src="../images/line.gif" width="945" height="1" /></td>
