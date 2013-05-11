@@ -123,7 +123,10 @@ else{ ?>
       <td height="20" align="center">
 
 
-        <img src="../images/caja_menor.png" width="513" height="307" />
+        <?php 
+
+        include('estadisticas/estadisticas.php');
+        ?>
 
 
 

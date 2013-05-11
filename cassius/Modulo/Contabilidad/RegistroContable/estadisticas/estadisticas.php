@@ -1,10 +1,9 @@
-<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
-<script src="js/jquery.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/highcharts.js"></script> 
-<script type="text/javascript" src="js/modules/exporting.js"></script> 
-<script src="js/funciones.js" type="text/javascript"></script>
-		<script type="text/javascript"> 
+
+<link rel="stylesheet"  href="estadisticas/css/estilos.css"/>
+<script src="estadisticas/js/jquery.js" ></script>
+<script  src="estadisticas/js/highcharts.js"></script> 
+<script  src="estadisticas/js/modules/exporting.js"></script> 
+		<script > 
 		
 			var chart;
 			$(document).ready(function() {
@@ -76,7 +75,7 @@
 				
 		</script> 
  
-    	
-<div id="NUmeses" style="width: 450px; height: 300px; float:left">
+   	
+<div id="NUmeses" style="width: 900px; height: 500px;margin-left:10px; float:left">
 </div> 
                 
