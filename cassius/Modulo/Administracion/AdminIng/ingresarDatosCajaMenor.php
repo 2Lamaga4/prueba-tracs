@@ -20,8 +20,8 @@ $cuentas = new cuentas();
 
 ///////////////////////////////////////////
 //
-$id= $MovimientosDAO->max_id();
-
+$id = $MovimientosDAO->max_id();
+$id+1;
 
 $movimientos = $MovimientosDAO->get_documento(5);
 

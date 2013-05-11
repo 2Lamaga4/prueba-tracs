@@ -17,13 +17,17 @@
 </head>
 <body>
 <?php
-  include_once('../php/dao/daoConnection.php');
+ 
   include_once('../php/dao/CuentaDAO.php');
   include_once('../php/entities/cuentas.php');
+  include_once('../php/dao/terceros.php');
+  include_once('../php/entities/terceros.php');
 
   $cuentasDAO = new CuentaDAO();
   $cuentas = new cuentas();
-
+  $TercerosDAO = new TerceroDAO();
+  $terceros = new terceros(); 
+  $terceros = $TercerosDAO->getListC();
   $cuentas=$cuentasDAO->getList(5);
 $view= new stdClass(); 
 $view->disableLayout=false;
