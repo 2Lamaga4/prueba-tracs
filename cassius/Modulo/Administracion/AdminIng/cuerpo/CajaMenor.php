@@ -36,19 +36,10 @@
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>Pagado a:</strong></td>
-              <td width="226" class="texto_azul" align="left">
-                 <select name="pagado"  class="textarea_redondo2" style="width:200px; height:27px;">
-                    <option value="0">---</option>
-                    <?php 
-                          foreach ( $terceros as $items) {
-                            ?>
-                              <option value="<?php echo  $items->getNombretercero()?>"><?php echo $items->getNombretercero()?></option>
-                            <?php
-                          }
-
-
-                    ?>
-                </select>
+              <td width="226" class="texto_azul" align="left">  
+                             
+                  <input name=" " type="text" value="" name="pagado"  class="textarea_redondo2" style="width:200px; height:20px;"/>
+             
               </td>
               <td width="122" class="texto_azul"align="left"><strong>CC:</strong></td>
               <td width="284" class="texto_azul" align="left"><input name="cc" type="text" class="textarea_redondo2" id="cc" style="width:100px;"/></td>

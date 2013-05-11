@@ -1,8 +1,5 @@
 <?php
-
   include_once ('../../../info.php');//se llama la informacion de la pagina
-
-
 ?>
 <link href="../config/estilos_cassius.css" rel="stylesheet" type="text/css" />
 <link href="../css/StyleCajaMejor.css" rel="stylesheet" type="text/css" />
@@ -13,6 +10,10 @@
 <script src="../script/bloqueo_clic_derecho.js" ></script>
 <script src="../script/tercero.js"></script>
 <!--<script src="../script/transicion.js"></script> -->
+<?php
+  // include('cuerpo/agregar_comprobante_diariojs.php');
+ ?>  
+<script src="../../Contabilidad/Scripts/agregarcomprobamte.js"></script>
 <script>
   function ok(){
            alert('Agregado con exito');
@@ -26,8 +27,10 @@
   include_once('../php/dao/CuentaDAO.php');
   include_once('../php/entities/cuentas.php');
   include_once('../php/dao/MovimientosDAO.php');
+  include_once('../php/dao/TercerosDAO.php');
   include_once('../php/dao/terceros.php');
   include_once('../php/entities/terceros.php');
+
   $MovimientosDAO = new MovimientosDAO(); 
   $cuentasDAO = new CuentaDAO();
   $cuentas = new cuentas();
