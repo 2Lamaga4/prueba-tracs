@@ -11,7 +11,7 @@
 <script src="../script/tercero.js"></script>
 <!--<script src="../script/transicion.js"></script> -->
 <?php
-  // include('cuerpo/agregar_comprobante_diariojs.php');
+   include('../../Contabilidad/RegistroContable/cuerpo/agregar_comprobante_diariojs.php');
  ?>  
 <script src="../../Contabilidad/Scripts/agregarcomprobamte.js"></script>
 <script>
