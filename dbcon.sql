@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.5.7
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-05-2013 a las 19:06:14
+-- Tiempo de generación: 11-05-2013 a las 06:46:17
 -- Versión del servidor: 5.5.8
 -- Versión de PHP: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,17 +34,16 @@ CREATE TABLE IF NOT EXISTS `afecta` (
   PRIMARY KEY (`idafecta`),
   KEY `iddocumentos` (`iddocumentos`),
   KEY `idpuc` (`idpuc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Volcar la base de datos para la tabla `afecta`
+-- Volcado de datos para la tabla `afecta`
 --
 
 INSERT INTO `afecta` (`idafecta`, `iddocumentos`, `idpuc`, `tipo`) VALUES
 (1, 1, 8, 'DÃ©bito'),
 (2, 1, 18, 'CrÃ©dito'),
-(4, 1, 9, 'CrÃ©dito'),
-(5, 5, 271, 'DÃ©bito');
+(6, 5, 271, 'DÃ©bito');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `aptobod` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `aptobod`
+-- Volcado de datos para la tabla `aptobod`
 --
 
 INSERT INTO `aptobod` (`id_reg`, `IdunidadV`, `idbodega`) VALUES
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `aptoparq` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
--- Volcar la base de datos para la tabla `aptoparq`
+-- Volcado de datos para la tabla `aptoparq`
 --
 
 INSERT INTO `aptoparq` (`id_reg`, `IdunidadV`, `idparqueadero`) VALUES
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `bodegas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Volcar la base de datos para la tabla `bodegas`
+-- Volcado de datos para la tabla `bodegas`
 --
 
 INSERT INTO `bodegas` (`idbodega`, `bodega`, `Descripcion`, `Coheficiente`, `Matinmobiliaria`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
@@ -131,10 +131,10 @@ CREATE TABLE IF NOT EXISTS `cargos` (
   `nombrecargo` varchar(255) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idcargo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Volcar la base de datos para la tabla `cargos`
+-- Volcado de datos para la tabla `cargos`
 --
 
 INSERT INTO `cargos` (`idcargo`, `nombrecargo`, `descripcion`) VALUES
@@ -143,8 +143,7 @@ INSERT INTO `cargos` (`idcargo`, `nombrecargo`, `descripcion`) VALUES
 (3, 'Revisor Fiscal', 'Es la persona nombrada por la asamblea de propietarios para realizar inspeccion y dar fe de la situacion operativa y financiera del conjunto'),
 (4, 'Presidente del consejo', 'Es la persona encargada de presidir las reuniones del consejo'),
 (5, 'Consejero', 'Miembro del Consejo'),
-(6, 'Vigilante', 'Ingreso del Vigilante'),
-(7, '11', '1');
+(6, 'Vigilante', 'Ingreso del Vigilante');
 
 -- --------------------------------------------------------
 
@@ -159,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `color` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Volcar la base de datos para la tabla `color`
+-- Volcado de datos para la tabla `color`
 --
 
 INSERT INTO `color` (`idcolor`, `color`) VALUES
@@ -185,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `documentos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Volcar la base de datos para la tabla `documentos`
+-- Volcado de datos para la tabla `documentos`
 --
 
 INSERT INTO `documentos` (`iddocumentos`, `sigla`, `nombredoc`, `descripcion`, `ctasafecta`) VALUES
@@ -193,7 +192,7 @@ INSERT INTO `documentos` (`iddocumentos`, `sigla`, `nombredoc`, `descripcion`, `
 (2, 'CD', 'Comprobante de Diario', '', NULL),
 (3, 'SI', 'Saldos Iniciales', 'Este comprobante ingresa la informacion inicial de la Contabilidad', NULL),
 (4, 'ND', 'Nota Debito', '', NULL),
-(5, 'RCM', 'recivo de caja menor', 'descripcion de recivo', NULL);
+(5, 'RCM', 'recivo de caja menor', 'xdcf', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `estado` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `estado`
+-- Volcado de datos para la tabla `estado`
 --
 
 INSERT INTO `estado` (`idestado`, `nestado`, `descripcion`) VALUES
@@ -239,12 +238,12 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Volcar la base de datos para la tabla `funcionarios`
+-- Volcado de datos para la tabla `funcionarios`
 --
 
 INSERT INTO `funcionarios` (`idfuncionarios`, `tipodocumento`, `nodocumento`, `nombres`, `apellidos`, `rutnit`, `telefono`, `celular`, `direccion`, `cargo`) VALUES
 (1, 1, 80188262, 'Ernesto Andres', 'Alvarez lopez', '69235842-21', '5489263', '3105263984', 'Cll 34 No 58- 26 cuadrante 8 bloque 6', 2),
-(2, 1, 80188261, 'Nelsi aurora', 'Mendez gomez', '69235842-21', '5489263', '3105263984', 'Cll 99 No 100- 26 cuadrante 8 bloque 6', 1),
+(2, 1, 80188262, 'Nelsi aurora', 'Mendez gomez', '69235842-21', '5489263', '3105263984', 'Cll 99 No 100- 26 cuadrante 8 bloque 6', 1),
 (3, 1, 80188262, 'Cesar mauricio', 'Mendez gomez', '79.235.369', '5489263', '3105263984', 'Cll 23 NO 56-96', 3);
 
 -- --------------------------------------------------------
@@ -260,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `genero` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `genero`
+-- Volcado de datos para la tabla `genero`
 --
 
 INSERT INTO `genero` (`IdGenero`, `Genero`) VALUES
@@ -304,44 +303,44 @@ CREATE TABLE IF NOT EXISTS `historico` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=246 ;
 
 --
--- Volcar la base de datos para la tabla `historico`
+-- Volcado de datos para la tabla `historico`
 --
 
 INSERT INTO `historico` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelularContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
-(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, '1', '1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
-(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
-(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, '1', '1', '2012-12-09', NULL, NULL, NULL, NULL),
-(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, '1', '1', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, '1', '1', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
-(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
-(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, '1', '1', '2013-03-01', NULL, NULL, NULL, NULL),
-(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, '1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
-(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, '1', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
-(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, '1', '1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, '1', '1', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
-(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL),
-(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, '1', '1', '2013-03-17', NULL, NULL, NULL, NULL);
+(7, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(8, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(9, 'elmo', 'cosquilla', 1, '', 0, 0, NULL, '2012-09-04', '', 1, ' ', 0, 0, '', 10, b'1', b'1', '2012-09-04', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(64, 'Julio Moises', 'Trucco Randell', 1, '30874664', 5341032, 2147483647, NULL, '1982-12-02', 'Bogota', 1, 'Jacinto W. Iborra', 8719418, 2147483647, 'metus.facilisis@malesuadafames.com', 73, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(91, 'Elias Gerardo', 'Tangarife Velacorte', 1, '41378052', 2296825, 2147483647, NULL, '1988-12-08', 'Bogota', 1, 'Anastacia K. Shehata', 3754690, 2088793213, 'sit@elitEtiamlaoreet.org', 17, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(180, 'Arnoldo Elias', 'Cubillas Carballo', 1, '74785645', 2842384, 1705882836, NULL, '1975-03-20', 'Bogota', 1, 'Jose S. Rianzar', 7810763, 2147483647, 'risus@ipsum.com', 9, b'1', b'1', '2012-12-09', NULL, NULL, NULL, NULL),
+(208, '', '', 1, '', 0, 0, NULL, '2013-01-01', '', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-01', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(211, 'Fingas', 'roma', 1, '00019383', 0, 0, NULL, '2013-01-02', 'Bogota', 1, '_', 0, 0, '', 83, b'1', b'1', '2013-01-02', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(215, 'cesar', 'gomez', 1, '80803705', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(216, 'William', 'Bueno Hernandez', 1, '79689582', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(217, 'adsds', 'asdaf', 1, '2123', 0, 0, NULL, '2005-01-04', '', 1, '_', 0, 0, '', 7, b'1', b'1', '2013-03-01', NULL, NULL, NULL, NULL),
+(218, 'Seguro', 'Dos', 1, '5212', 21345, 3132, NULL, '2008-01-01', 'bogota', 1, 'dato1_dato2', 22, 31333, 'ceeeeee@ho.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(219, 'pruebas ', 'seguro', 1, '2134', 212, 31333, NULL, '2008-01-16', 'Bogota', 1, '_', 0, 0, 'cadff@hotmail.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(220, 'william ', 'Bueno Hernandez', 1, '79689689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(221, 'asdf', 'reee', 1, '245', 222, 33333, NULL, '2006-01-18', '', 1, '_', 0, 0, 'sadfasss@ss.com', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(222, 'eee', 'w3333', 1, '983', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 9, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(223, 'Jaime Antonio', 'Garcia', 1, '56978548', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(224, 'William', 'Bueno Hernandez', 1, '79689', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(225, 'Jaime Antonio', 'Garcia', 1, '3456778', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 7, b'1', NULL, '2013-03-15', NULL, NULL, NULL, NULL),
+(228, 'cesar', 'hernandez', 1, '6785678', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(229, 'angelica', 'camacho', 1, '345876', 0, 0, NULL, '0000-00-00', '', 2, '_', 0, 0, '', 91, b'1', NULL, '2013-03-17', NULL, NULL, NULL, NULL),
+(230, 'andres', 'peralta', 1, '25567', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(231, 'nombre uno', 'apellido uno', 1, '1234', 213, 313, NULL, '2004-06-16', 'bogota', 1, 'nombre dos_apellido dos', 444, 555, 'ceeeeee@hot.com', 7, b'1', b'1', '2013-01-13', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(232, 'camilo', 'guzman', 1, '27893876', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(233, 'julian', 'castro', 1, '256376', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(234, 'juan', 'camacho', 1, '6378982', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(235, 'carlos ', 'siempira', 1, '6789098', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(237, 'pepe', 'silva', 1, '67895346', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(239, 'giovanni', 'gomez', 1, '62553739', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(241, 'andres', 'gallego', 1, '7365436', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(242, '6', '6', 1, '1', 5, 5, NULL, '0000-00-00', '5', 1, '_5', 5, 5, '5@HOTMAIL.COM', 89, b'1', b'1', '2013-01-15', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00'),
+(243, 'pruebas', 'cesar', 1, '3453', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(244, 'asdfafs', 'sadfasdfs', 1, '333', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL),
+(245, 'sadfas', 'sadfasfasdfasf', 1, '233', 0, 0, NULL, '0000-00-00', '', 1, '_', 0, 0, '', 91, b'1', b'1', '2013-03-17', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -357,7 +356,7 @@ CREATE TABLE IF NOT EXISTS `identificacion` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `identificacion`
+-- Volcado de datos para la tabla `identificacion`
 --
 
 INSERT INTO `identificacion` (`IdTipoidentificacion`, `Identificacion`, `Sigla`) VALUES
@@ -377,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `marcaveh` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Volcar la base de datos para la tabla `marcaveh`
+-- Volcado de datos para la tabla `marcaveh`
 --
 
 INSERT INTO `marcaveh` (`idmarca`, `marca`) VALUES
@@ -406,7 +405,7 @@ CREATE TABLE IF NOT EXISTS `minuta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `minuta`
+-- Volcado de datos para la tabla `minuta`
 --
 
 INSERT INTO `minuta` (`idregistro`, `fecha`, `hora`, `titulo`, `novedad`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
@@ -428,38 +427,21 @@ CREATE TABLE IF NOT EXISTS `movcuentas` (
   PRIMARY KEY (`idmovcuentas`),
   KEY `idx_movcuentas` (`idmovimiento`),
   KEY `idx_movcuentas_0` (`codcuenta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Volcar la base de datos para la tabla `movcuentas`
+-- Volcado de datos para la tabla `movcuentas`
 --
 
 INSERT INTO `movcuentas` (`idmovcuentas`, `codcuenta`, `debito`, `credito`, `idmovimiento`) VALUES
-(1, 1, 1, 40, 1),
-(2, 2, 200, 100, 1),
+(1, 1, 34566, 0, 1),
+(2, 2, 0, 34566, 1),
 (3, 8, 21233, 0, 3),
 (4, 18, 0, 21233, 3),
-(5, 8, 100, 0, 5),
-(6, 18, 0, 100, 5),
-(7, 8, 5000, 0, 6),
-(8, 18, 0, 5000, 6),
-(9, 8, 1, 0, 7),
-(10, 18, 0, 100, 7),
-(11, 76, 0, 5000, 10),
-(12, 76, 0, 314302, 11),
-(13, 76, 0, 600, 12),
-(14, 77, 0, 313836, 13),
-(15, 77, 0, 23789, 14),
-(16, 77, 0, 600, 15),
-(17, 76, 500, 0, 17),
-(18, 77, 0, 10, 17),
-(19, 76, 0, 5555, 18),
-(20, 77, 4441, 0, 18),
-(21, 76, 0, 500, 20),
-(22, 77, 300, 10, 20),
-(23, 8, 500, 0, 21),
-(24, 8, 0, 400, 21),
-(25, 271, 500, 0, 25);
+(5, 23, 0, 6000, 3),
+(6, 26, 0, 4000, 3),
+(7, 40, 0, 1000, 6),
+(8, 19, 0, 4000, 7);
 
 -- --------------------------------------------------------
 
@@ -480,37 +462,18 @@ CREATE TABLE IF NOT EXISTS `movimiento` (
   KEY `idx_movimiento` (`tipodoc`),
   KEY `idx_movimiento_0` (`estado`),
   KEY `idx_movimiento_1` (`tercero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- Volcar la base de datos para la tabla `movimiento`
+-- Volcado de datos para la tabla `movimiento`
 --
 
 INSERT INTO `movimiento` (`id`, `numero`, `fecha`, `tipodoc`, `numdoc`, `concepto`, `estado`, `tercero`) VALUES
-(1, 1, '2013-03-29 00:00:00', 1, 1, '123', 1, 2),
+(1, 1, '2013-03-29 00:00:00', 1, 1, 'awsedrftgyhu', 1, 2),
 (2, 2, '2013-03-29 00:00:00', 2, 1, 'dfdsfsdfsdfsd', 1, 2),
 (3, 3, '2013-04-25 00:00:00', 1, 2, 'pago de Administracion', 1, 2),
-(4, 3, '2013-05-06 00:00:00', 2, 2, 'viva la gente', 1, 1),
-(5, 4, '2013-05-06 00:00:00', 1, 3, 'hagan un dise&ntilde;o bien gracias por la humanidad no sean tan mmm', 1, 1),
-(6, 5, '2013-05-06 00:00:00', 1, 4, 'JO', 1, 1),
-(7, 6, '2013-05-06 00:00:00', 1, 5, 'ju', 1, 1),
-(8, 7, '2013-05-06 00:00:00', 2, 3, 'bbbb', 1, 1),
-(9, 8, '2013-05-06 00:00:00', 2, 4, 'car', 1, 1),
-(10, 9, '2013-05-06 00:00:00', 2, 5, 'car', 1, 1),
-(11, 10, '2013-05-06 00:00:00', 2, 6, 'car', 1, 1),
-(12, 11, '2013-05-07 00:00:00', 2, 7, 'PROBANDO ANDO', 1, 1),
-(13, 12, '2013-05-06 00:00:00', 3, 1, 'ecci vs minuto', 1, 1),
-(14, 13, '2013-05-08 00:00:00', 3, 2, 'minuto vs jorge', 1, 1),
-(15, 14, '2013-05-07 00:00:00', 4, 1, 'ECCI VS MINUTO', 1, 1),
-(17, 15, '2013-05-12 00:00:00', 3, 3, 'sdsad', 1, 1),
-(18, 16, '2013-05-09 00:00:00', 2, 3, 'hija', 1, 56),
-(19, 17, '2013-05-12 00:00:00', 3, 4, 'g', 1, 100),
-(20, 18, '2013-05-09 00:00:00', 4, 2, 'ESTA SI FUNCIONA', 1, 62),
-(21, 19, '2013-05-10 00:00:00', 5, 1, 'hagan un dise&ntilde;o bien gracias por la humanidad no sean tan mmm', 1, 1),
-(22, 20, '2013-05-13 00:00:00', 2, 8, 'fsd', 1, 1),
-(23, 21, '2013-05-10 00:00:00', 2, 9, 'hagan un dise&ntilde;o bien gracias por la humanidad no sean tan mmm', 1, 10),
-(24, 22, '2013-05-10 00:00:00', 5, 2, 'fdf', 1, 1),
-(25, 23, '2013-05-14 00:00:00', 5, 3, 'hola', 1, 10);
+(6, 4, '2013-05-10 00:00:00', 5, 1, 'dasfasad', 1, 215),
+(7, 5, '2013-05-11 00:00:00', 5, 2, 'fdgfsgsd', 1, 216);
 
 -- --------------------------------------------------------
 
@@ -527,7 +490,7 @@ CREATE TABLE IF NOT EXISTS `nivel` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Volcar la base de datos para la tabla `nivel`
+-- Volcado de datos para la tabla `nivel`
 --
 
 INSERT INTO `nivel` (`id`, `nivel`, `detalle`, `descripcion`) VALUES
@@ -560,7 +523,7 @@ CREATE TABLE IF NOT EXISTS `parqueaderos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
--- Volcar la base de datos para la tabla `parqueaderos`
+-- Volcado de datos para la tabla `parqueaderos`
 --
 
 INSERT INTO `parqueaderos` (`idparqueadero`, `parqueadero`, `Descripcion`, `Coheficiente`, `Matinmobiliaria`, `idtipopq`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`, `estado`) VALUES
@@ -600,12 +563,12 @@ CREATE TABLE IF NOT EXISTS `puc` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=272 ;
 
 --
--- Volcar la base de datos para la tabla `puc`
+-- Volcado de datos para la tabla `puc`
 --
 
 INSERT INTO `puc` (`idpuc`, `cuenta`, `denominacion`, `descripcion`, `estado`, `nivel`) VALUES
 (1, 1, 'ACTIVO', 'Agrupa el conjunto de las cuentas que representan los bienes y derechos tangibles e intangibles de propiedad del ente economico, que en la medida de su utilizacion, son fuente potencial de beneficios presentes o futuros. Comprende los siguientes grupos: el disponible, las inversiones, los deudores, los inventarios, las propiedades, planta y equipo, los intangibles, los diferidos, los otros activos y las valorizaciones.\r\n\r\nLas cuentas que integran esta clase tendran saldo de naturaleza debito, con excepcion de las provisiones, las depreciaciones, el agotamiento y las amortizaciones acumuladas, que seran deducidas, de manera separada, de los correspondientes grupos de cuentas.', 'Activo', 1),
-(2, 11, 'DISPONIBLE', 'Comprende las cuentas que registran los rdez inmediata, total o ecursos de liquiparcial con que cuenta el ente economico y puede utilizar para fines generales o especificos, dentro de los cuales podemos mencionar la caja, los depositos en bancos y otras entidades financieras, las remesas en transito y los fondos.', 'Activo', 2),
+(2, 11, 'DISPONIBLE', 'Comprende las cuentas que registran los recursos de liquidez inmediata, total o parcial con que cuenta el ente economico y puede utilizar para fines generales o especificos, dentro de los cuales podemos mencionar la caja, los depositos en bancos y otras entidades financieras, las remesas en transito y los fondos.', 'Activo', 2),
 (3, 1105, 'CAJA', NULL, 'Activo', 3),
 (4, 110505, 'Caja General', NULL, 'Activo', 4),
 (5, 110510, 'Caja Menor', NULL, 'Activo', 4),
@@ -874,7 +837,7 @@ INSERT INTO `puc` (`idpuc`, `cuenta`, `denominacion`, `descripcion`, `estado`, `
 (268, 1111111111, '1111111', '111111', 'Activo', 2),
 (269, 2147483647, '11111111', '11111111', 'Activo', 3),
 (270, 2147483647, '11111', '11111', 'Activo', 3),
-(271, 11051001, 'caja menor autorizada', 'descipcion caja menor autorizada', 'Activo', 5);
+(271, 11051001, 'Caja Menor Autorizada', 'cualquier cosa', 'Activo', 5);
 
 -- --------------------------------------------------------
 
@@ -890,7 +853,7 @@ CREATE TABLE IF NOT EXISTS `regimen` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Volcar la base de datos para la tabla `regimen`
+-- Volcado de datos para la tabla `regimen`
 --
 
 INSERT INTO `regimen` (`idregimen`, `nombreregimen`, `descripcion`) VALUES
@@ -915,11 +878,6 @@ CREATE TABLE IF NOT EXISTS `repositorio` (
   PRIMARY KEY (`IdRepositorio`),
   KEY `IdUsuario` (`IdUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Volcar la base de datos para la tabla `repositorio`
---
-
 
 -- --------------------------------------------------------
 
@@ -958,7 +916,7 @@ CREATE TABLE IF NOT EXISTS `residentes` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=241 ;
 
 --
--- Volcar la base de datos para la tabla `residentes`
+-- Volcado de datos para la tabla `residentes`
 --
 
 INSERT INTO `residentes` (`IdResidentes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Telefono`, `Celular`, `Direccion`, `FechaNacimiento`, `LugarNacimiento`, `IdGenero`, `NombreContacto`, `TelefonoContacto`, `CelefonoContacto`, `Email`, `IdUnidadV`, `Residente`, `Propietario`, `FechaIngreso`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
@@ -1197,7 +1155,7 @@ CREATE TABLE IF NOT EXISTS `ringreso` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Volcar la base de datos para la tabla `ringreso`
+-- Volcado de datos para la tabla `ringreso`
 --
 
 INSERT INTO `ringreso` (`idringreso`, `idvehiculo`, `diaentrada`, `horaentrada`, `diasalida`, `horasalida`, `idusuario_creacion`, `fecha_creacion`, `idusuario_modificacion`, `fecha_modificacion`, `novedades`) VALUES
@@ -1228,10 +1186,10 @@ CREATE TABLE IF NOT EXISTS `terceros` (
   KEY `idx_terceros` (`tipodocumento`),
   KEY `idx_terceros_0` (`regimen`),
   KEY `idx_terceros_1` (`tipotercero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=217 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=261 ;
 
 --
--- Volcar la base de datos para la tabla `terceros`
+-- Volcado de datos para la tabla `terceros`
 --
 
 INSERT INTO `terceros` (`idterceros`, `tipodocumento`, `nodocumento`, `nombretercero`, `direccion`, `telefono`, `email`, `regimen`, `Estado`, `tipotercero`, `idunidadv`) VALUES
@@ -1463,7 +1421,7 @@ CREATE TABLE IF NOT EXISTS `tipopq` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Volcar la base de datos para la tabla `tipopq`
+-- Volcado de datos para la tabla `tipopq`
 --
 
 INSERT INTO `tipopq` (`idtipopq`, `nombretipopq`, `descripcion`) VALUES
@@ -1485,7 +1443,7 @@ CREATE TABLE IF NOT EXISTS `tipotercero` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Volcar la base de datos para la tabla `tipotercero`
+-- Volcado de datos para la tabla `tipotercero`
 --
 
 INSERT INTO `tipotercero` (`idtipotercero`, `ntipotercero`) VALUES
@@ -1512,7 +1470,7 @@ CREATE TABLE IF NOT EXISTS `unidadv` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
 
 --
--- Volcar la base de datos para la tabla `unidadv`
+-- Volcado de datos para la tabla `unidadv`
 --
 
 INSERT INTO `unidadv` (`IdUnidadV`, `Apartamento`, `Descripcion`, `Coheficiente`, `Matinmobiliaria`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
@@ -1647,7 +1605,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
--- Volcar la base de datos para la tabla `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `login`, `clave`, `tipo`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `Email`, `FechaNacimiento`, `LugarNacimiento`, `Telefono`, `Celular`, `IdGenero`, `Direccion`, `NombreContacto`, `TelefonoContacto`, `CelularContacto`, `FechaIngreso`, `Fecha_Creacion`) VALUES
@@ -1676,7 +1634,7 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Volcar la base de datos para la tabla `vehiculos`
+-- Volcado de datos para la tabla `vehiculos`
 --
 
 INSERT INTO `vehiculos` (`idvehiculo`, `placa`, `idcolor`, `idmarca`, `modelo`, `idresidentes`) VALUES
@@ -1721,7 +1679,7 @@ CREATE TABLE IF NOT EXISTS `vehparq` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Volcar la base de datos para la tabla `vehparq`
+-- Volcado de datos para la tabla `vehparq`
 --
 
 INSERT INTO `vehparq` (`idvehparq`, `idvehiculo`, `idparqueadero`) VALUES
@@ -1775,7 +1733,7 @@ CREATE TABLE IF NOT EXISTS `visitantes` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
--- Volcar la base de datos para la tabla `visitantes`
+-- Volcado de datos para la tabla `visitantes`
 --
 
 INSERT INTO `visitantes` (`IdVisitantes`, `Nombres`, `Apellidos`, `IdTipoidentificacion`, `NoDocumento`, `IdGenero`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`, `carro`, `placa`, `marca`, `color`, `parqueadero`, `novedades`, `edad`) VALUES
@@ -1839,7 +1797,7 @@ CREATE TABLE IF NOT EXISTS `visitas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
 
 --
--- Volcar la base de datos para la tabla `visitas`
+-- Volcado de datos para la tabla `visitas`
 --
 
 INSERT INTO `visitas` (`IdVisitas`, `IdVisitantes`, `IdUnidadV`, `IdResidentes`, `Diaentrada`, `Horaentrada`, `Diasalida`, `Horasalida`, `IdUsuario_Creacion`, `Fecha_Creacion`, `IdUsuario_Modificacion`, `Fecha_Modificacion`) VALUES
@@ -1882,7 +1840,7 @@ INSERT INTO `visitas` (`IdVisitas`, `IdVisitantes`, `IdUnidadV`, `IdResidentes`,
 (41, 35, 6, 28, '2013-04-13', '20:59:45', NULL, NULL, '1', NULL, NULL, NULL);
 
 --
--- Filtros para las tablas descargadas (dump)
+-- Restricciones para tablas volcadas
 --
 
 --
@@ -1966,9 +1924,9 @@ ALTER TABLE `residentes`
 -- Filtros para la tabla `terceros`
 --
 ALTER TABLE `terceros`
+  ADD CONSTRAINT `fk_terceros_tipotercero` FOREIGN KEY (`tipotercero`) REFERENCES `tipotercero` (`idtipotercero`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_terceros_identificacion` FOREIGN KEY (`tipodocumento`) REFERENCES `identificacion` (`IdTipoidentificacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_terceros_regimen` FOREIGN KEY (`regimen`) REFERENCES `regimen` (`idregimen`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_terceros_tipotercero` FOREIGN KEY (`tipotercero`) REFERENCES `tipotercero` (`idtipotercero`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_terceros_regimen` FOREIGN KEY (`regimen`) REFERENCES `regimen` (`idregimen`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `vehiculos`
@@ -1998,3 +1956,7 @@ ALTER TABLE `visitas`
   ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`IdVisitantes`) REFERENCES `visitantes` (`IdVisitantes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `visitas_ibfk_2` FOREIGN KEY (`IdUnidadV`) REFERENCES `unidadv` (`IdUnidadV`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `visitas_ibfk_3` FOREIGN KEY (`IdResidentes`) REFERENCES `residentes` (`IdResidentes`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
