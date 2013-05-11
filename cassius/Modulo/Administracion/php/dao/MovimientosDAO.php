@@ -24,7 +24,7 @@ class MovimientosDAO{
         $lista=array();
 
         if($numregistros == 0){
-            return $lista;
+            return $lista; 
         }
         $i=0;
 
@@ -191,11 +191,16 @@ class MovimientosDAO{
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         if (!$result){
             echo 'Ooops (saveMovimientos): '.mysql_error();
+            mysql_query("ROLLBACK",$this->daoConnection->Conexion_ID);
+            echo "Error en la transaccion";
             return false;
+              } else {
+              mysql_query("COMMIT",$this->daoConnection->Conexion_ID);
+              echo "Transacción exitosa";
+              return true;
         }
 
-        return true;
-
+      
     }
     
     
@@ -206,7 +211,7 @@ class MovimientosDAO{
 
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
-                    
+                    echo $querty;
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         if (!$result){
             echo 'Ooops (saveMovimientosCuenta): '.mysql_error();

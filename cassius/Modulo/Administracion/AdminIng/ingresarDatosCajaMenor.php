@@ -38,18 +38,25 @@ $terceros = $tercer;
     $movimientos->setConcepto($_POST['concepto']);
     $movimientos->setEstado(1);
     $movimientos->setTercero($terceros->getId());
-
+      $MovimientosDAO->save($movimientos);
 //////////////Vamos a pasar los datos a la funcion guardar de dao////////////////////
-   echo $id = $MovimientosDAO->max_id();
-	$MovimientosDAO->save($movimientos);
+  
+	
+
+	
+
+
+ 
+$id = $MovimientosDAO->max_id();
+
 	$movimientos->setCodcuenta($_POST['categoria']);
 	$movimientos->setCredito($_POST['valor']);
 	$movimientos->setDebito(0);
 	$movimientos->setIdmovimiento($id);
 	$MovimientosDAO->save_movimiento_cueta($movimientos);
 
-//header($loclisacion);
-//exit;
+header($loclisacion);
+exit;
 
 
  ?>
