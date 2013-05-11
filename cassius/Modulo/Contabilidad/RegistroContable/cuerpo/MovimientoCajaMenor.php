@@ -136,10 +136,12 @@ else{ ?>
       <td height="20" align="center"><img src="../images/line.gif" width="945" height="1" /></td>
     </tr>
     <tr>
-      <td align="rigth"><table width="230" border="0" align="right" cellpadding="0" cellspacing="1">
+      <td align="rigth">
+        <table width="400" border="0" align="right" cellpadding="0" cellspacing="1">
         <tr>
           <td width="50" class="texto_azul">Página:</td>
-          <td width="30"><img src="../images/btn_flecha_atras.png" name="atras" width="30" height="20" border="0" id="atras" onmouseover="MM_swapImage('atras','','images/btn_flecha_atras_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+          <td width="30">
+            <img src="../images/btn_flecha_atras.png" name="atras" width="30" height="20" border="0" id="atras" onmouseover="MM_swapImage('atras','','../images/btn_flecha_atras_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
           <td width="30" class="td_paginacion_resaltado">1</td>
           <td width="30" class="td_paginacion">2</td>
           <td width="30" class="td_paginacion">3</td>
@@ -152,7 +154,7 @@ else{ ?>
           <td width="30" class="td_paginacion">10</td>
           <td width="30" class="td_paginacion">11</td>
           <td width="30" class="td_paginacion">12</td>
-          <td width="30"><img src="../images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
+          <td width="30"><img src="../images/btn_flecha_adelante.png" name="adelante" width="30" height="20" border="0" id="adelante" onmouseover="MM_swapImage('adelante','','../images/btn_flecha_adelante_roll.png',1)" onmouseout="MM_swapImgRestore()" /></td>
         </tr>
       </table></td>
     </tr>
