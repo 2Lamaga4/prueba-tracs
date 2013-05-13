@@ -22,7 +22,7 @@ class MovimientosDAO{
         $numregistros = $this->daoConnection->numregistros();
 
         $lista=array();
-
+ 
         if($numregistros == 0){
             return $lista; 
         }
@@ -200,23 +200,18 @@ class MovimientosDAO{
               return true;
         } 
     }
-
+///sume lo db - cr = saldo
 
     function saldo(){
-        $consulta="SELECT debito FROM movimiento INNER JOIN movcuentas WHERE codcuenta='271' AND tipodoc='5' AND id = idmovimiento";
+        $consulta="SELECT debito, sum(credito) FROM movimiento INNER JOIN movcuentas WHERE codcuenta='271' AND tipodoc='5' AND id = idmovimiento";
          $this->daoConnection->consulta($consulta);
          $this->daoConnection->leerVarios();
          $numregistros = $this->daoConnection->numregistros();
          $i=0;
-       return  $this->daoConnection->ObjetoConsulta2[$i][0];
+       return  $this->daoConnection->ObjetoConsulta2[$i][0]-$this->daoConnection->ObjetoConsulta2[$i][1];
     }
 
-    function modificarsaldo($credito){
-          $saldo = "UPDATE movcuentas SET debito =".$credito." WHERE codcuenta='271' ";
-           mysql_query($saldo, $this->daoConnection->Conexion_ID);
   
-    }
-
     function save_movimiento_cueta($obj){
         $newMovimientos = new movimientos();
         $newMovimientos = $obj;
@@ -224,7 +219,7 @@ class MovimientosDAO{
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
         $qe="insert into movcuentas
-                    (codcuenta,debito,credito,idmovimiento) VALUES (271,".$newMovimientos->getSaldo().",0,".$newMovimientos->getIdmovimiento().")";
+                    (codcuenta,debito,credito,idmovimiento) VALUES (271,0,".mysql_real_escape_string($newMovimientos->getCredito()).",".$newMovimientos->getIdmovimiento().")";
 
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         $r=mysql_query($qe, $this->daoConnection->Conexion_ID);
