@@ -45,7 +45,7 @@ $movimientos->setNumero($num_movi);
 $id = $MovimientosDAO->max_id();
 
 	$movimientos->setCodcuenta($_POST['categoria']);
-	$movimientos->setCredito($_POST['valor']);
+	$movimientos->setCredito(0);
 	$movimientos->setDebito($_POST['valor']);
 	$movimientos->setIdmovimiento($id);
 	$MovimientosDAO->save_movimiento_cueta($movimientos);
