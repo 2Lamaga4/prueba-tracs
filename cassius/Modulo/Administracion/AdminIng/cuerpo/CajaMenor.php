@@ -11,7 +11,7 @@
       <td width="810" height="20" colspan="3"><table width="900" border="0" align="center" cellpadding="0" cellspacing="2">
         <tr>
           <td height="20">&nbsp;</td>
-        </tr>
+        </tr> 
         <tr>
            <form action="ingresarDatosCajaMenor.php" method="post">
           <article id="SaldoA">
@@ -22,7 +22,7 @@
             <tr>
               <td width="49" height="35" class="texto_azul" >&nbsp;</td>
               <td width="119" class="texto_azul" align="left"><strong>No:</strong></td>
-              <td width="226" class="titulos" align="left">0001</td>
+              <td width="226" class="titulos" align="left"><?php echo str_pad($consecutivo, $fill, '0', STR_PAD_LEFT);?></td>
 
               <td width="122" class="texto_azul"align="left"><strong>Fecha:</strong></td>
               <td width="284" class="texto_azul" align="left">

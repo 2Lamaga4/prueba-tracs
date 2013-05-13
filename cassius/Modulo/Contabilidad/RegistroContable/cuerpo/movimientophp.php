@@ -12,8 +12,7 @@ include_once('../php/entities/cuentas.php');
 unset($_SESSION['arreglo']);
 unset($_SESSION['numero']); 
 
-
-$fecha1 = "";
+$fecha1 = ""; 
 if(isset($_REQUEST['fecha1'])){
 
   if($_REQUEST['fecha1'] != ""){

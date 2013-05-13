@@ -21,7 +21,7 @@ class MovimientosDAO{
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
 
-        $lista=array();
+        $lista=array(); 
 
         if($numregistros == 0){
             return $lista;
@@ -47,9 +47,9 @@ class MovimientosDAO{
     
     
     function getList_fecha($fecha1,$fecha2){
-
+     
         $sql = 'SELECT * from movimiento WHERE fecha BETWEEN "'.$fecha1.'" AND "'.$fecha2.'" ORDER BY fecha desc';
-
+       echo $sql;
       var_dump($sql);
 
         $this->daoConnection->consulta($sql);
@@ -148,10 +148,10 @@ class MovimientosDAO{
     function get_documento($id_tipo)
        {
 
-        $newMovimientos= new movimientos();
+     $newMovimientos = new movimientos();
 
         $sql = 'SELECT max(numdoc) as numdoc from movimiento where tipodoc = "'.mysql_real_escape_string($id_tipo).'"';
-
+       
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();

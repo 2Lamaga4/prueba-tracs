@@ -19,18 +19,19 @@
            alert('Agregado con exito');
   }
 </script>
-
 </head>
 <body class="interna2" OnContextMenu="return false" <?php if(isset($_GET['OK'])==1){ echo 'Onload="ok();"';}?>>
 <?php
- 
+  
+ include_once('../php/entities/movimientos.php');
   include_once('../php/dao/CuentaDAO.php');
   include_once('../php/entities/cuentas.php');
   include_once('../php/dao/MovimientosDAO.php');
   include_once('../php/dao/TercerosDAO.php');
   include_once('../php/dao/terceros.php');
   include_once('../php/entities/terceros.php');
-
+ 
+$movimientos = new movimientos();
   $MovimientosDAO = new MovimientosDAO(); 
   $cuentasDAO = new CuentaDAO();
   $cuentas = new cuentas();
@@ -39,6 +40,10 @@
   $terceros = $TercerosDAO->getListC();
   $sal=$MovimientosDAO->saldo();
   $cuentas=$cuentasDAO->getList(5);
+$movimientos = $MovimientosDAO->get_documento(5);
+        $consecutivo= $movimientos->getNumdoc()+1;
+    $fill = 4;//cantidad de digitos (si no se completan se rellanan con 0)
+  echo str_pad($consecutivo, $fill, '0', STR_PAD_LEFT);//la magia
 $view= new stdClass(); 
 $view->disableLayout=false;
 
