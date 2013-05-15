@@ -10,10 +10,10 @@ $vari=$_GET['tercero'];
 
      	$msm="";
 
-  for ($i=0; $i <= $vari; $i++) { 
+  for ($i=0; $i <$vari; $i++) { 
 
     		$temp='<input  type="text" value="'.$vari.'"/>
-     <div id="contenido'.$vari.'" ></div>';
+            <div id="contenido'.$vari.'"></div>';
 
     		$msm=$msm.$temp;
     	}  	

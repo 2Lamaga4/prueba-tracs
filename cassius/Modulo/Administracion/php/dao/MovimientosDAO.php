@@ -217,13 +217,13 @@ class MovimientosDAO{
         $newMovimientos = $obj;
 
         $querty =   "insert into movcuentas
-                    (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
+                    (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", 0, ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
         $qe="insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (271,0,".mysql_real_escape_string($newMovimientos->getCredito()).",".$newMovimientos->getIdmovimiento().")";
 
         $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
         $r=mysql_query($qe, $this->daoConnection->Conexion_ID);
-        if (!$result){
+        if (!$result){ 
             echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
             return false;
         }
