@@ -43,7 +43,7 @@ $movimientos = new movimientos();
 $movimientos = $MovimientosDAO->get_documento(5);
         $consecutivo= $movimientos->getNumdoc()+1;
     $fill = 4;//cantidad de digitos (si no se completan se rellanan con 0)
-  echo str_pad($consecutivo, $fill, '0', STR_PAD_LEFT);//la magia
+ 
 $view= new stdClass(); 
 $view->disableLayout=false;
 

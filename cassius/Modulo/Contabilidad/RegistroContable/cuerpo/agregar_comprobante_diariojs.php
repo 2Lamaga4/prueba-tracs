@@ -5,7 +5,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   ancho=screen.width;
   yposi=(alto-540)/2;
   xposi=(ancho-970)/2;
-  ventana.moveTo(xposi,yposi);
+  ventana.moveTo(xposi,yposi); 
 }
 function dato_tercero(){
 	var tercero = document.getElementById('tercero').value;
@@ -33,13 +33,14 @@ function numero_documento(){
 		mostar_item();
 	}
 }
-function mostar_item(){
+function mostar_item(){  
 	alert('Por favor ingrese a continuacion los valores de las cuentas.');
+
      llamarasincrono('agregar_item.php', 'agregar_i');
 }
 function datos_tercero(id,nombre){
 	document.getElementById('identifica').value = id;
-	document.getElementById('tercero').value = nombre;
+	document.getElementById('tercero').value = nombre; 
 	document.getElementById('concepto').focus();
 	llamarasincrono('tercero_campo.php?nit='+id, 'ter');
 }

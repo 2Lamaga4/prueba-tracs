@@ -8,7 +8,7 @@
       </tr>
     </table></td>
   </tr> 
-  <tr>
+  <tr> 
     <td height="20" valign="middle" align="center">&nbsp;</td>
   </tr>
   <tr>
@@ -126,7 +126,10 @@
      
     }
     ?>
+   
 </tbody>
+<?php include_once("cuentasmas.php");?>
+
 </table>  
     </table></td>
   </tr>
@@ -138,7 +141,8 @@
     <td height="35" colspan="2" valign="top"><div id="cuentas"></div></td>
   <tr>
     <td height="35" valign="top" align="center">
-      <center>
+    <center>
+    
     <input style="width:90px;" type="submit" class="boton_redondo" id="Entrar" value="::: Aceptar :::" />
    </center>
     </td>

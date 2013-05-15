@@ -22,20 +22,20 @@ $loclisacion="location: CajaMenor.php?OK=1";
 //
 
 $saldo = $MovimientosDAO->saldo();
-echo $saldo;
+
 $movimientos = $MovimientosDAO->get_documento(5);
 
 
 $num_movi = count($MovimientosDAO->getList())+1;
 $tercer = $TercerosDAO->Validar_tercero2($_POST['pagado']);
 $terceros = $tercer;
-
+$fill = 4;
 if($saldo-$_POST['valor'] > 0 && $saldo!=0){
-
+ 
 $movimientos->setNumero($num_movi);
 	$movimientos->setFecha($_POST['fecha']);
     $movimientos->setTipodoc(5);
-    $movimientos->setNumdoc($movimientos->getNumdoc()+1);
+    $movimientos->setNumdoc(str_pad($movimientos->getNumdoc()+1, $fill, '0', STR_PAD_LEFT));
     $movimientos->setConcepto($_POST['concepto']);
     $movimientos->setEstado(1);
     $movimientos->setTercero($terceros->getId());
