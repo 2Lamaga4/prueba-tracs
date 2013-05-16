@@ -43,7 +43,6 @@ SELECT(IdTipoidentificacion),NoDocumento,concat(Nombres," ",Apellidos),(Direccio
 DELETE FROM `dbconjun`.`terceros` WHERE `terceros`.`idterceros` >3;
 DELETE FROM `dbconjun`.`residentes` WHERE `residentes`.`IdResidentes` >10;
 
-
 /*tercerossss*/
 insert into tipotercero  (ntipotercero)values("Cliente")
 insert into tipotercero  (ntipotercero)values("Provedor")
