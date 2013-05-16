@@ -2,14 +2,13 @@
         function cargar(num){
 
           var tercero = num;
-          alert(tercero);
-          var status=$("#contenido");
- 
+          var status=$("#contenido"+num);
+          alert("contenido"+num);
           status.removeClass("checked").removeClass("error")
             $.ajax({
               type:"GET",
               url:"checking1.php",
-              data:"tercero="+tercero,
+              data:"tercero="+tercero, 
               dataType:"json",
               beforeSend:function(){
                   status.html("");

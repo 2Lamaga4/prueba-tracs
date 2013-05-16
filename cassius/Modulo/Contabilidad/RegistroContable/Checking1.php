@@ -5,25 +5,16 @@ $vari=$_GET['tercero'];
 
      $checking=false;
 
+   $msg='
+   <input class="textarea_redondo2" type="text"/>
+   <input class="textarea_redondo2" type="text"/>
+   <input class="textarea_redondo2" type="text"/>
+   <input class="textarea_redondo2" type="text"/>
+   <div id="contenido'.($vari+1).'"></div>
+   <a id="'.($vari+1).'" href="javascript:void(0)" onclick="javascript:cargar('.(($vari)+1).')">agregar cuenta</a>
+   ';
+   
 
-     if($vari==$vari){
-
-     	$msm="";
-
-  for ($i=0; $i <$vari; $i++) { 
-
-    		$temp='<input  type="text" value="'.$vari.'"/>
-            <div id="contenido'.$vari.'"></div>';
-
-    		$msm=$msm.$temp;
-    	}  	
-     $msg=''.$msm.'<a href="#" onclick="javascript:cargar('.($vari+1).');">Agregar Cuenta</a>'; 
-
- }
-    
-
-  
- 
   $json=array("valid"=>$checking, "msg" => $msg);
  
   echo json_encode($json);

@@ -41,7 +41,7 @@ if(count($afectas)> 0 ){
     <td width="80" height="30" class="td_tabla_interna"><?php echo $cuenta->getCuenta(); ?></td>
     <td class="td_tabla_interna"><?php echo $cuenta->getDenominacion(); ?></td>
      <td class="td_tabla_interna"><input name="debito<?php echo $item->getId(); ?>" type="text" class="textarea_redondo2" id="debito<?php echo $item->getId();; ?>" style="width:80px;" <?php if($item->getTipo() == "Crédito"){ ?>disabled="disabled"<?php } ?> /></td>
-    <td class="td_tabla_interna"><input name="credito<?php echo $item->getId();; ?>" type="text" class="textarea_redondo2" id="credito<?php echo $item->getId();; ?>" style="width:80px;" <?php if($item->getTipo() == "Débito"){ ?>disabled="disabled"<?php } ?>  /></td>
+    <td class="td_tabla_interna"><input name="credito<?php echo $item->getId(); ?>" type="text" class="textarea_redondo2" id="credito<?php echo $item->getId();; ?>" style="width:80px;" <?php if($item->getTipo() == "Débito"){ ?>disabled="disabled"<?php } ?>  /></td>
   </tr>
    
 <?php }
