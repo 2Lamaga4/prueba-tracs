@@ -10,6 +10,6 @@ if(isset($_REQUEST['n']) != ""){
 <tr class="tr_tabla_interna">
     <td height="30" colspan="4" class="td_tabla_interna">
     <div id="contenido1"></div>
-    <a href="#" onclick="javascript:cargar(<?php echo $n;?>);">Agregar Cuenta</a></td>
+    <a id = '1' href="#" onclick="javascript:cargar(<?php echo $n;?>,<?php echo $n; ?>);">Agregar Cuenta</a></td>
 </tr>
 </table>  

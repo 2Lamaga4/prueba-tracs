@@ -49,8 +49,7 @@ class MovimientosDAO{
     function getList_fecha($fecha1,$fecha2){
      
         $sql = 'SELECT * from movimiento WHERE fecha BETWEEN "'.$fecha1.'" AND "'.$fecha2.'" ORDER BY fecha desc';
-       echo $sql;
-      var_dump($sql);
+  
 
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
@@ -83,9 +82,8 @@ class MovimientosDAO{
     
     function getList_movi($movi){
 
-        $sql = 'SELECT * from movimiento WHERE  numero = '.$movi.' ORDER BY fecha desc';
-
-
+        //$sql = 'SELECT * from movimiento WHERE  numero = '.$movi.' ORDER BY fecha desc';
+       $sql='SELECT * from movimiento WHERE  numero in(select idmovimi from auxmovimientos WHERE contador='.$movi.') ORDER BY(fecha) desc';
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
@@ -200,12 +198,12 @@ class MovimientosDAO{
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
 
-        $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
-        if (!$result){
-            echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
-            return false;
-        }
-        return true;
+          $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
+          if (!$result){
+              echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
+              return false;
+          }
+          return true;
     }
 
     function mostrarter($id){
@@ -356,7 +354,28 @@ class MovimientosDAO{
 
        return $a;
     }
-    
+
+    function confir($contdor,$idnumero){
+           $sql="SELECT * FROM  auxmovimientos WHERE idmovimi=".$idnumero;
+           $this->daoConnection->consulta($sql);
+           $this->daoConnection->leerVarios();
+            $numregistros = $this->daoConnection->numregistros();
+              if($numregistros == 0){
+              if($this->inser($contdor,$idnumero)){
+                
+              }
+        }
+    }
+
+    function inser ($contador,$idnumero){
+      $sql="INSERT INTO auxmovimientos (contador,idmovimi)VALUES(".$contador.",".$idnumero.")";
+       $result = mysql_query($sql, $this->daoConnection->Conexion_ID);
+          if (!$result){
+              echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
+              return false;
+          }
+          return true;
+    }
 
 }
 

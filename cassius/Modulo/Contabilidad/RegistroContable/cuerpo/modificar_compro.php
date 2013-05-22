@@ -1,9 +1,11 @@
 <script>
-        function cargar(num){
+        function cargar(num,vacas){
+            var i = vacas;
+        
+           $('#'+i).attr("hidden", true);
 
           var tercero = num;
           var status=$("#contenido"+num);
-          alert("contenido"+num);
           status.removeClass("checked").removeClass("error")
             $.ajax({
               type:"GET",
@@ -24,7 +26,7 @@
                               
               }
             })
-          
- 
+          i++;
+        
         }        
  </script>

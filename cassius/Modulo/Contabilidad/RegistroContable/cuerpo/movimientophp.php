@@ -16,14 +16,14 @@ $fecha1 = "";
 if(isset($_REQUEST['fecha1'])){
 
   if($_REQUEST['fecha1'] != ""){
-  $fecha1 = substr($_REQUEST['fecha1'],6,4)."/".substr($_REQUEST['fecha1'],3,2)."/".substr($_REQUEST['fecha1'],0,2); 
+  $fecha1 = $_REQUEST['fecha1'];//substr($_REQUEST['fecha1'],6,4)."/".substr($_REQUEST['fecha1'],3,2)."/".substr($_REQUEST['fecha1'],0,2); 
   }
 }
 
 $fecha2 = "";
 if(isset($_REQUEST['fecha2'])){
   if($_REQUEST['fecha2'] != ""){
-    $fecha2 = substr($_REQUEST['fecha2'],6,4)."/".substr($_REQUEST['fecha2'],3,2)."/".substr($_REQUEST['fecha2'],0,2); 
+    $fecha2 = $_REQUEST['fecha2'];//substr($_REQUEST['fecha2'],6,4)."/".substr($_REQUEST['fecha2'],3,2)."/".substr($_REQUEST['fecha2'],0,2); 
   }
 }
 $movi = "";
