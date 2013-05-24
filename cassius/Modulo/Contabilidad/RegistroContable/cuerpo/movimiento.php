@@ -79,7 +79,9 @@
                    }
                       $GLOBALS['nota'] = substr($item->getfecha(),8,2)."/".substr($item->getfecha(),5,2)."/".substr($item->getfecha(),0,4);
               ?>
-              <?php $MovimientosDAO->confir($GLOBALS['contador'],$item->getNumero());?>
+              <?php $MovimientosDAO->confir($GLOBALS['contador'],$item->getNumero());
+                  $MovimientosDAO->confirdato($item->getfecha(),$GLOBALS['contador']);
+              ?>
             <tr>
               <td><span class="texto_azul2 MOle">
                <?php
@@ -89,12 +91,13 @@
                      <?php  
                     if(isset($_REQUEST['movi'])){
                       if($_REQUEST['movi'] != ""){
-
-                          //echo $item->$_REQUEST['movi']; 
+                           //echo $item->$_REQUEST['movi']; 
                            echo $_REQUEST['movi'];                         
 
                          }
-                         else{ echo $GLOBALS['contador']; echo $_REQUEST['movi'];  
+                         elseif($_REQUEST['fecha1'] && $_REQUEST['fecha2']){ 
+                            echo $MovimientosDAO->numerofecha($item->getfecha());
+                          
                        }
                        }
                          else{ echo $GLOBALS['contador'];

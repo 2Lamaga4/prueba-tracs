@@ -48,9 +48,9 @@ class MovimientosDAO{
     
     function getList_fecha($fecha1,$fecha2){
      
-        $sql = 'SELECT * from movimiento WHERE fecha BETWEEN "'.$fecha1.'" AND "'.$fecha2.'" ORDER BY fecha desc';
+       $sql = 'SELECT * from movimiento WHERE fecha BETWEEN "'.$fecha1.'" AND "'.$fecha2.'" ORDER BY fecha desc';
   
-
+    // $sql="SELECT * FROM movimiento WHERE id in(SELECT contador FROM fechacontado WHERE fecha BETWEEN '".$fecha1."' AND '".$fecha2."') ORDER BY fecha desc";
         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();
@@ -376,6 +376,41 @@ class MovimientosDAO{
           }
           return true;
     }
+
+    function confirdato($date,$contador)
+    { 
+         $sql="SELECT * FROM  fechacontado WHERE fecha='".$date."'";
+           $this->daoConnection->consulta($sql);
+           $this->daoConnection->leerVarios();
+            $numregistros = $this->daoConnection->numregistros();
+              if($numregistros == 0){
+           
+              if($this->inserl($date,$contador)){
+
+              }
+    }
+  }
+
+//
+    function inserl($date,$contador){
+         $sql="INSERT INTO fechacontado(fecha,contador )VALUES('".$date."',".$contador.")";
+       $result = mysql_query($sql, $this->daoConnection->Conexion_ID);
+          if (!$result){
+             echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
+              return false;
+          }
+          return true;
+    }
+
+    function numerofecha($fecha)
+    {
+        $con = "SELECT contador FROM fechacontado WHERE fecha='".$fecha."'";
+        $this->daoConnection->consulta($con);
+        $this->daoConnection->leerVarios();
+        $dato= $this->daoConnection->ObjetoConsulta2[0][0];
+        return $dato;
+    }
+
 
 }
 
