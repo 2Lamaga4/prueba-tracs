@@ -16,10 +16,14 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 <script src="../js/utils.js"></script>
 <script src="../js/layout.js?ver=1.0.2"></script>
 
+
 <script src="../Scripts/img.js"></script>   
+
 <?php
 include_once ("cuerpo/modificar_compro.php");
+include_once ("cuerpo/cuentas.php");
 ?>
+
 </head>  
 <body class="popup" onload="dato_tercero2(); <?php if($_GET['OK'] == 1){?>cerrarVentana()<?php } ?>"  onUnload="cerrar_v()" >
 <?php
