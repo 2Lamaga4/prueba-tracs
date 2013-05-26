@@ -32,7 +32,7 @@ for($i=2;$i<count($arrego);$i++)
       else{
       	  $movimientos->setCredito($arrego[$i]);
       	   $ar[$j]=$movimientos;
-   	       echo $j++;
+   	      
       }
      
    }

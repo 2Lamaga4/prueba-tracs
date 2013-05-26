@@ -22,4 +22,4 @@ if($idcuenta != 0){
 }
 
 ?>
-<input name="cuenta<?php echo $n; ?>" type="text" class="textarea_redondo2" id="cuenta<?php echo $n; ?>" style="width:400px;" value="<?php echo $descripcion; ?>" readonly="readonly" />
+<input name="cuent<?php echo $n; ?>" type="text" class="textarea_redondo2" id="cuenta<?php echo $n; ?>" style="width:400px;" value="<?php echo $descripcion; ?>" readonly="readonly" /> 

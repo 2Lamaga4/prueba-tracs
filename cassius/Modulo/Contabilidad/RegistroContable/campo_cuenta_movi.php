@@ -19,8 +19,7 @@ if(isset($_REQUEST['id']) != ""){
 for($a = 0; $a < $_SESSION['numero']; $a++){
 	$_SESSION['arreglo'][$a] = $a;
 }
-
-
+echo "hola";
  
 ?>
 <?php if(isset($_REQUEST['n']) > 0){ ?>

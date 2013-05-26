@@ -21,7 +21,7 @@ include_once ('../../../info.php');//se llama la informacion de la pagina
 
 <?php
 include_once ("cuerpo/modificar_compro.php");
-include_once ("cuerpo/cuentas.php");
+
 ?>
 
 </head>  
