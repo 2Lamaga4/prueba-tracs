@@ -44,12 +44,12 @@
               dataType:"json", 
               beforeSend:function(){
                   denominacion.html("");
-                  llamarasincrono('cuenta_documento.php?idcuenta='+j+'&n='+id, 'denominacion'+i);  
+                  llamarasincrono('cuenta_documento.php?idcuenta='+j+'&n='+i, 'denominacion'+i);  
               },
               success:function(response){
                   if(response.valid==true){
                     denominacion.addClass("checked");                  
-                    llamarasincrono('cuenta_documento.php?idcuenta='+j+'&n='+id, 'denominacion'+i);   
+                    llamarasincrono('cuenta_documento.php?idcuenta='+j+'&n='+i, 'denominacion'+i);   
                         alert("que jutas1");
                   }else{
                    denominacion.addClass("error"); 

@@ -40,7 +40,6 @@ $terceros->setTelefono($telefono);
 $terceros->setEmail($correo);
 $terceros->setRegimen($regimen);
 $terceros->setTipoter($tipoter);
-
 $TercerosDAO->save($terceros);
 header($location);
 exit;

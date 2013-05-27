@@ -197,7 +197,7 @@ class MovimientosDAO{
 
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
-
+          echo $querty;
           $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
           if (!$result){
               echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
@@ -259,7 +259,6 @@ class MovimientosDAO{
       $query=array();
       $arreglo=array();
       $query2="SELECT idmovcuentas From movcuentas WHERE idmovimiento=".$id;
-      echo  $query2;
       $this->daoConnection->consulta($query2);
       $this->daoConnection->leerVarios();
       $numregistros = $this->daoConnection->numregistros();
@@ -271,12 +270,13 @@ class MovimientosDAO{
       foreach ($obj as $valor) {
         $movimientos = new movimientos();
         $movimientos = $valor;
-        $query[$k] = "UPDATE movcuentas SET debito=".$valor->getDebito()." ,  credito=".$valor->getCredito()." WHERE idmovcuentas=".$arreglo[$k]." ;";
+        $query[$k] = "UPDATE movcuentas SET debito=".$valor->getDebito()." ,  credito= ".$valor->getCredito()." WHERE idmovcuentas =".$arreglo[$k]." ;";
+        echo $query;
         mysql_query($query[$k], $this->daoConnection->Conexion_ID);
         $k++;
       }
       $q = "UPDATE movimiento SET concepto ='".$conceptos."' WHERE id=".$id;
-      echo $q;
+   
        mysql_query($q, $this->daoConnection->Conexion_ID);
     }
 
@@ -406,6 +406,18 @@ class MovimientosDAO{
     {
         $con = "SELECT contador FROM fechacontado WHERE fecha='".$fecha."'";
         $this->daoConnection->consulta($con);
+        $this->daoConnection->leerVarios();
+        $dato= $this->daoConnection->ObjetoConsulta2[0][0];
+        return $dato;
+    }
+    function Insertarmodificar($obj)
+    {
+
+    }
+    function contarM($id){
+        $sql = "SELECT count(*) From movcuentas where idmovimiento =".$id."";
+ 
+         $this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $dato= $this->daoConnection->ObjetoConsulta2[0][0];
         return $dato;
