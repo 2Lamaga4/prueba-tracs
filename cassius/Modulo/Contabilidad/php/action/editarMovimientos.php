@@ -68,8 +68,9 @@ for($i=$d;$i<count($matrix2);$i++){
       $movimientos = new movimientos;   
 }
 //--------------//////--------------------------/////////////////////////--------////////////////
-header("location ../../RegistroContable/EditarMovimiento.php");
-exit;
+echo "hola";
+header("location: ../../RegistroContable/EditarMovimiento.php?dato=".$_POST['num_movis']."");
+exit(0);
 
 
 ?>
