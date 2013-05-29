@@ -142,7 +142,9 @@ class MovimientosDAO{
 
         return $lista;
     }
-    
+    function getMovimiento($idmovimiento){
+
+    }
     function get_documento($id_tipo)
        {
 
@@ -197,7 +199,6 @@ class MovimientosDAO{
 
         $querty =   "insert into movcuentas
                     (codcuenta,debito,credito,idmovimiento) VALUES (".mysql_real_escape_string($newMovimientos->getCodcuenta()).", ".mysql_real_escape_string($newMovimientos->getDebito()).", ".mysql_real_escape_string($newMovimientos->getCredito()).", ".mysql_real_escape_string($newMovimientos->getIdmovimiento()).")";
-          echo $querty;
           $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
           if (!$result){
               echo 'Ooops (saveMovimientosCuenta): '.mysql_error();
@@ -253,31 +254,12 @@ class MovimientosDAO{
           return  $lista;
     }
     
-    function update($obj,$id,$conceptos)
-    {
-      $k=0;
-      $query=array();
-      $arreglo=array();
-      $query2="SELECT idmovcuentas From movcuentas WHERE idmovimiento=".$id;
-      $this->daoConnection->consulta($query2);
-      $this->daoConnection->leerVarios();
-      $numregistros = $this->daoConnection->numregistros();
-      for($j=0;$j<$numregistros;$j++)
-        {
-             $arreglo[$j]=$this->daoConnection->ObjetoConsulta2[$j][0];
-        }
-
-      foreach ($obj as $valor) {
-        $movimientos = new movimientos();
-        $movimientos = $valor;
-        $query[$k] = "UPDATE movcuentas SET debito=".$valor->getDebito()." ,  credito= ".$valor->getCredito()." WHERE idmovcuentas =".$arreglo[$k]." ;";
-        echo $query;
-        mysql_query($query[$k], $this->daoConnection->Conexion_ID);
-        $k++;
-      }
-      $q = "UPDATE movimiento SET concepto ='".$conceptos."' WHERE id=".$id;
-   
-       mysql_query($q, $this->daoConnection->Conexion_ID);
+    function updateMovcuentas($obj)
+    { 
+          $newMovimientos = new movimientos();
+          $newMovimientos = $obj;
+          $querty = " UPDATE  movcuentas SET codcuenta=".$newMovimientos->getCodcuenta().",debito =".$newMovimientos->getDebito()." ,credito=".$newMovimientos->getCredito()." WHERE idmovcuentas = ".$newMovimientos->getIdmovcuentas()."";
+          $result = mysql_query($querty, $this->daoConnection->Conexion_ID);
     }
 
 
@@ -427,3 +409,5 @@ class MovimientosDAO{
 }
 
 ?>
+
+

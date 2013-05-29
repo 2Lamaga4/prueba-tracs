@@ -110,9 +110,9 @@
 <table id="Taab" align="center" border="0" cellpadding="0" cellspacing="1" style="" width="900">
     <tr class="tr_tabla_interna" style="background-color: rgb(228, 238, 249); font-size: 12px; font-family: Verdana, Geneva, sans-serif; color: rgb(10, 97, 162);">
       <td class="td_tabla_interna" id="CuentaF">
-        <input  value="<?php echo $item3->getCodcuenta();?>"/></td>
+        <input  value="<?php echo $item3->getCodcuenta();?>" name="<?php echo $i.'codigo';?>"/></td>
       <td class="td_tabla_interna" id="CuentaD" style="padding: 0px 0px 0px 10px;">
-       <input  value="<?php echo $item3->getDenoinacion();?>"/></td>
+       <input  value="<?php echo $item3->getDenoinacion(); ?>"  name="<?php echo $i.'denominacion';?>"/></td>
       <td class="td_tabla_interna" style="padding: 0px 0px 0px 3px;">     
         <input class="textarea_redondo2" id="debito1" name="<?php echo $i.'debito';?>" value="<?php echo $item3->getDebito();?>" style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; -webkit-box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; box-shadow: rgb(51, 51, 51) 0px 0px 9px inset; border: 1px solid rgb(0, 0, 102); padding: 3px 5px; font-family: Arial, Helvetica, Verdana, sans-serif; height: 20px; width: 80px;"/>
      </td>

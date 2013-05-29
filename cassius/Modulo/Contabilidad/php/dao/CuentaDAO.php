@@ -112,7 +112,6 @@ class CuentaDAO{
         $newCuenta = new cuentas();
 
         $sql = 'SELECT * from puc where cuenta = "'.mysql_real_escape_string($id).'"';
-
 		$this->daoConnection->consulta($sql);
         $this->daoConnection->leerVarios();
         $numregistros = $this->daoConnection->numregistros();

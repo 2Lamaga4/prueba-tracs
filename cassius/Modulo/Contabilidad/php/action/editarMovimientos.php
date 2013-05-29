@@ -9,7 +9,6 @@ include_once('../entities/cuentas.php');
 
 
 
-
 $daoMovi = new MovimientosDAO();
 $cuentas = new CuentaDAO();
 $cuen = new cuentas();
@@ -19,79 +18,58 @@ $arrego=array();
 $arreglo2 = array();
 $i=0;
 $j=0;
-$k=0;
+$k=2;
 foreach($_POST as $recorer){
-   if(!$recorer)
-      {
-         $arrego[$i]=0;
-      }else{
-       $arrego[$i]=$recorer;
-      }
-   $m=$i;
-     
-   $i++;
-  // echo "iis".$i;
-   
+    $arrego[$i]=$recorer;
+      $i++; 
 }
 
-$m = $i;
-$ar=array();
-$j=0;
 $d=$daoMovi->contarM($_POST['num_movis']);
-$s=$d;
-if(($d*4) == $i){
-  $d=$i-$d*4;
+$matrix2=array();
+for($i=0;$i<((count($arrego)-2)/4);$i++){
 
+  for($j=0;$j<4;$j++)
+     {  
+        $matrix2[$i][$j]=$arrego[$k];
+         if(!$matrix2[$i][$j]){
+           $matrix2[$i][$j]=0;
+         }
+        $k++;     
+      }
+  
+       echo "</br>";
 }
-else{
-     $d=$i-$d*4;
-     
+
+
+////////////////*********************////////////////////////////*//////////////////////////////
+$movimientos = new movimientos();
+$movimientos1 = new movimientos();
+$movimientos1 = $daoMovi->getList_cuentas($_POST['num_movis']);
+$i=0;
+foreach ($movimientos1 as $recorer){
+      $cuen =   $cuentas->getCuenta($matrix2[$i][0]);
+      $movimientos->setCodcuenta($cuen->getId());
+      $movimientos->setDebito($matrix2[$i][2]);
+      $movimientos->setCredito($matrix2[$i][3]);
+      $movimientos->setIdmovcuentas($recorer->getIdmovcuentas());
+      $daoMovi -> updateMovcuentas($movimientos);
+      $movimientos = new movimientos;   
+    $i++;
 }
-for($i=2;$i<count($arrego)-$d;$i++)
-   { 
 
-      if($i%2==0){
-          $movimientos = new movimientos();
-          $movimientos->setDebito($arrego[$i]);
-      }
-      else{
-           $movimientos->setCredito($arrego[$i]);
-            $ar[$j]=$movimientos;
-            $j++;
-            
-      }
-     
-   }
 
-   $daoMovi->update($ar,$_POST['num_movis'],$_POST['concepto']);
-   $matrix = array();
-   $matrix[100][100]="";
-
- $aux=count($arrego)-$d;
-
-$l=$aux;
- for($i=0;$i<($m/$aux-$s);$i++)
- {
-      for($k=0;$k<4;$k++)
-      {
-        $matrix[$i][$k]=$arrego[$l];
-        $l++;
-      }
-      echo "</br>";
-     
- }
- $movidmi = new movimientos;
-
-for($i=0;$i<($m/$aux-$s);$i++)
- {   $cuen = $cuentas->getCuenta($matrix[$i][0]);
-     $movidmi ->setCodcuenta($cuen->getId());
-     $movidmi ->setDebito($matrix[$i][2]);
-     $movidmi ->setCredito($matrix[$i][3]);
-     $movidmi ->setIdmovimiento($_POST['num_movis']);
-     $daoMovi ->save_movimiento_cueta($movidmi);
-     $movidmi = new movimientos;
-
- }
+for($i=$d;$i<count($matrix2);$i++){
+      $cuen =   $cuentas->getCuenta($matrix2[$i][0]);
+      $movimientos->setCodcuenta($cuen->getId());
+      $movimientos->setDebito($matrix2[$i][2]);
+      $movimientos->setCredito($matrix2[$i][3]);
+      $movimientos->setIdmovimiento($_POST['num_movis']);
+      $daoMovi -> save_movimiento_cueta($movimientos);
+      $movimientos = new movimientos;   
+}
+//--------------//////--------------------------/////////////////////////--------////////////////
+header("location ../../RegistroContable/EditarMovimiento.php");
+exit;
 
 
 ?>

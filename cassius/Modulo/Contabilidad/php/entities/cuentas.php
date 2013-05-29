@@ -25,7 +25,7 @@
 		 public function getDenominacion(){ 
 			 return $this->denominacion;
 		 } 
-		 public function setDenominacion($denominacion){
+		 public function setDenominacion($denominacion){ 
 			 $this->denominacion = $denominacion;
 		 } 
 		 public function getDescripcion(){
