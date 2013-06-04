@@ -2,6 +2,6 @@
 <?php
  		$this->BaseDatos = "dbconjun";
         $this->Servidor = "localhost";
-        $this->Usuario = "root";
+        $this->Usuario = "mjplay";
         $this->Clave = "123";
 ?>
