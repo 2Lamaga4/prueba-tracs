@@ -203,12 +203,12 @@ class MovimientosDAO{
 ///sume lo db - cr = saldo
 
     function saldo(){
-        $consulta="SELECT debito, sum(credito) FROM movimiento INNER JOIN movcuentas WHERE codcuenta='271' AND tipodoc='5' AND id = idmovimiento";
+        $consulta="SELECT sum(debito), sum(credito) FROM movimiento INNER JOIN movcuentas WHERE codcuenta='271' AND tipodoc='5' AND id = idmovimiento";
          $this->daoConnection->consulta($consulta);
          $this->daoConnection->leerVarios();
          $numregistros = $this->daoConnection->numregistros();
          $i=0;
-       return  $this->daoConnection->ObjetoConsulta2[$i][0]-$this->daoConnection->ObjetoConsulta2[$i][1];
+         return  $this->daoConnection->ObjetoConsulta2[$i][0]-$this->daoConnection->ObjetoConsulta2[$i][1];
     }
 
   
